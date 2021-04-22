@@ -143,6 +143,27 @@ Description: libraries for the PipeWire multimedia server - documentation
  .
  This package contains the API reference.
 
+
+Package: pipewire-locales
+Section: localization
+Build-Profiles: <!nodoc>
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Breaks: libpipewire-0.2-doc (<< 0.3.1)
+Replaces: libpipewire-0.2-doc (<< 0.3.1)
+Description: locales for the PipeWire multimedia server - localization
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains the locales for pipewire.
+
+
 Package: pipewire
 Section: video
 Architecture: linux-any

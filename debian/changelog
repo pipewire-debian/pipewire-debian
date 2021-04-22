@@ -1,3 +1,11 @@
+pipewire (0.3.26-1) experimental; urgency=medium
+
+  * New upstream release
+  * Adjust builds options to cope with pipewire switching more options to
+    features, actual options used are unchanged
+
+ -- Sourav Das <souravdas@gmail.com>  Thr, 22 Apr 2021 20:46:29 +0100
+
 pipewire (0.3.25-1) experimental; urgency=medium
 
   * New upstream release

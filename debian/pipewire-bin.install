@@ -18,6 +18,7 @@ usr/bin/pw-cli
 usr/bin/pw-dot
 usr/bin/pw-dump
 usr/bin/pw-loopback
+usr/bin/pw-link
 usr/bin/pw-metadata
 usr/bin/pw-mididump
 usr/bin/pw-midiplay
