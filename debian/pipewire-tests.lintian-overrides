@@ -1,0 +1,1 @@
+pipewire-tests: custom-library-search-path usr/libexec/* /usr/lib/*/spa-0.2/*

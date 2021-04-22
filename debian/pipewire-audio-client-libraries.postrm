@@ -1,0 +1,13 @@
+#!/bin/sh 
+# pipewire-audio-client-libraries.postrm, runs ldconfig 
+set -e 
+ 
+case "$1" in 
+       purge|remove) 
+               ldconfig 
+               ;; 
+       *)
+               ;; 
+esac 
+ 
+ 

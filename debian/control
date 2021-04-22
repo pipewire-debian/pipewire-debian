@@ -1,0 +1,276 @@
+Source: pipewire
+Section: libs
+Priority: optional
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Uploaders: Sourav Das <souravdas142@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               doxygen <!nodoc>,
+               graphviz <!nodoc>,
+               libasound2-dev,
+               libbluetooth-dev,
+               libdbus-1-dev,
+               libglib2.0-dev (>= 2.32.0),
+               libgstreamer-plugins-base1.0-dev,
+               libgstreamer1.0-dev,
+               libjack-jackd2-dev (>= 1.9.10),
+               libldacbt-abr-dev [!s390x !hppa !m68k !powerpc !ppc64 !sparc64],
+               libldacbt-enc-dev [!s390x !hppa !m68k !powerpc !ppc64 !sparc64],
+               libncurses-dev,
+               libopenaptx-dev (>= 0.2.0-5~),
+               libpulse-dev (>= 11.1),
+               libsbc-dev,
+               libsdl2-dev,
+               libsndfile1-dev (>= 1.0.20),
+               libsystemd-dev [linux-any],
+               libudev-dev [linux-any],
+               libv4l-dev,
+               meson (>= 0.50.0),
+               pkg-config (>= 0.22),
+               systemd [linux-any],
+               xmltoman
+Standards-Version: 4.5.1
+Vcs-Browser: https://gitlab.freedesktop.org/pipewire/pipewire
+Vcs-Git: https://gitlab.freedesktop.org/pipewire/pipewire.git
+Homepage: https://pipewire.org/
+
+Package: libpipewire-0.3-0
+Architecture: linux-any
+Multi-Arch: same
+Depends: libspa-0.2-modules (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: pipewire (= ${binary:Version})
+Description: libraries for the PipeWire multimedia server
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+
+Package: libpipewire-0.3-dev
+Section: libdevel
+Architecture: linux-any
+Multi-Arch: same
+Depends: libpipewire-0.3-0 (= ${binary:Version}),
+         libspa-0.2-dev (= ${binary:Version}),
+         ${misc:Depends}
+Suggests: pipewire-doc
+Description: libraries for the PipeWire multimedia server - development
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains the development files.
+
+Package: libpipewire-0.3-modules
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: pipewire (<< 0.3.5)
+Replaces: pipewire (<< 0.3.5)
+Description: libraries for the PipeWire multimedia server - modules
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains modules used by the PipeWire server and by clients,
+ and should not normally be depended on directly. PipeWire clients should
+ depend on the pipewire package instead.
+
+Package: libspa-0.2-dev
+Section: libdevel
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}
+Suggests: pipewire-doc
+Description: libraries for the PipeWire multimedia server Simple Plugin API - development
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains the development files for the Simple Plugin API.
+
+Package: libspa-0.2-modules
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: pipewire (<< 0.3.5)
+Replaces: pipewire (<< 0.3.5)
+Description: libraries for the PipeWire multimedia server Simple Plugin API - modules
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains core support modules used in the Simple Plugin API,
+ together with test and utility modules that do not introduce additional
+ dependencies. It should not normally be depended on directly: PipeWire
+ clients should depend on the pipewire package instead.
+
+Package: pipewire-doc
+Section: doc
+Build-Profiles: <!nodoc>
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Breaks: libpipewire-0.2-doc (<< 0.3.1)
+Replaces: libpipewire-0.2-doc (<< 0.3.1)
+Description: libraries for the PipeWire multimedia server - documentation
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains the API reference.
+
+Package: pipewire
+Section: video
+Architecture: linux-any
+Multi-Arch: same
+Depends: libpipewire-0.3-modules (= ${binary:Version}),
+         pipewire-bin (= ${binary:Version}),
+         ${misc:Depends},
+Description: audio and video processing engine multimedia server
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This metapackage makes PipeWire available for programs of the same
+ architecture, and provides the systemd user service necessary to run
+ pipewire on-demand.
+
+Package: pipewire-bin
+Section: video
+Architecture: linux-any
+Multi-Arch: foreign
+Depends: libpipewire-0.3-modules (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: pipewire (<< 0.3.5)
+Replaces: pipewire (<< 0.3.5)
+Description: PipeWire multimedia server - programs
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains the server and command-line utilities, and should
+ not normally be depended on directly. PipeWire clients should depend on
+ the pipewire package instead.
+
+Package: pipewire-audio-client-libraries
+Architecture: linux-any
+Multi-Arch: same
+Depends: pipewire (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Breaks: pipewire (<< 0.3.5)
+Replaces: pipewire (<< 0.3.5)
+Description: PipeWire multimedia server - audio client libraries
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains client libraries allowing programs designed for
+ the ALSA, JACK and PulseAudio APIs to use a PipeWire server for audio
+ playback and recording. They are not used by default, and are currently
+ considered to be experimental.
+
+Package: pipewire-tests
+Architecture: linux-any
+Depends: pipewire (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Section: misc
+Description: PipeWire multimedia server - tests and examples
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains automated and manual tests and example programs.
+
+Package: gstreamer1.0-pipewire
+Architecture: linux-any
+Multi-Arch: same
+Depends: pipewire (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Description: GStreamer 1.0 plugin for the PipeWire multimedia server
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains a plugin to make devices managed by the PipeWire
+ server available as GStreamer sources and sinks.
+
+Package: libspa-0.2-bluetooth
+Architecture: linux-any
+Multi-Arch: same
+Depends: libspa-0.2-modules (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: libraries for the PipeWire multimedia server - bluetooth plugins
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains a plugin to make Bluetooth audio devices such as
+ speakers and headsets available to the PipeWire server. It is considered
+ to be experimental, and is disabled by default (even if installed) to
+ avoid conflicts with equivalent functionality in PulseAudio.
+
+Package: libspa-0.2-jack
+Architecture: linux-any
+Multi-Arch: same
+Depends: libspa-0.2-modules (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: libraries for the PipeWire multimedia server - JACK client
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains a plugin to make PipeWire able to connect to a
+ JACK server, which will be used for audio playback and recording.
+ Using PipeWire for audio is considered to be experimental.

@@ -1,0 +1,12 @@
+usr/lib/*/spa-0.2/alsa
+usr/lib/*/spa-0.2/audioconvert
+usr/lib/*/spa-0.2/audiomixer
+usr/lib/*/spa-0.2/audiotestsrc
+usr/lib/*/spa-0.2/control
+usr/lib/*/spa-0.2/support
+usr/lib/*/spa-0.2/test
+usr/lib/*/spa-0.2/v4l2
+usr/lib/*/spa-0.2/videoconvert
+usr/lib/*/spa-0.2/videotestsrc
+usr/lib/*/spa-0.2/volume
+usr/lib/*/spa-0.2/vulkan

@@ -1,0 +1,14 @@
+#!/bin/sh 
+# pipewire-audio-client-libraries.postinst, runs ldconfig 
+set -e 
+ 
+case "$1" in 
+       configure) 
+               ldconfig 
+               ;; 
+       #abort-upgrade|abort-remove|abort-deconfigure) 
+	       *)
+               ;; 
+esac 
+ 
+ 

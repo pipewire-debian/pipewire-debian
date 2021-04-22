@@ -1,0 +1,83 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
+
+%:
+	dh $@
+
+ifneq ($(filter nodoc,$(DEB_BUILD_PROFILES)),)
+DOCS=disabled
+else
+DOCS=enabled
+endif
+
+ifneq (,$(filter s390x hppa m68k powerpc ppc64 sparc64,$(DEB_HOST_ARCH)))
+BLUEZ5_CODEC_LDAC=disabled
+else
+BLUEZ5_CODEC_LDAC=enabled
+endif
+
+
+
+override_dh_auto_configure:
+	dh_auto_configure -- --buildtype=plain \
+		-Daudiotestsrc=enabled \
+		-Dauto_features=enabled \
+		-Db_lto=true \
+		-Db_pie=true \
+		-Dlibcamera=disabled \
+		-Ddocs=enabled \
+		-Dexamples=enabled \
+		-Dinstalled_tests=enabled \
+		-Dman=enabled \
+		-Dtest=enabled \
+		-Dvideotestsrc=enabled \
+		-Dvolume=enabled \
+		$(NULL)
+	install -d debian/ld.so.conf.d
+	echo "/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3/jack/" > "debian/ld.so.conf.d/pipewire-jack-$(DEB_HOST_MULTIARCH).conf"
+
+test_timeout_multiplier = 1
+
+ifneq ($(filter arm hppa ia64 m68k riscv64 sh4 sparc%,$(DEB_HOST_ARCH_CPU)),)
+test_timeout_multiplier = 5
+endif
+
+ifneq ($(filter mips%,$(DEB_HOST_ARCH_CPU)),)
+test_timeout_multiplier = 10
+endif
+
+override_dh_auto_test:
+	dh_auto_test \
+		-- \
+		--timeout-multiplier $(test_timeout_multiplier) \
+		$(NULL)
+
+override_dh_missing:
+	dh_missing --fail-missing
+
+override_dh_makeshlibs:
+	dh_makeshlibs \
+		--exclude=/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0 \
+		--exclude=/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3 \
+		--exclude=/usr/lib/$(DEB_HOST_MULTIARCH)/spa-0.2 \
+		-- -c4
+
+
+override_dh_shlibdeps-arch:
+	dh_shlibdeps \
+		-ppipewire-audio-client-libraries \
+		-l/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3 \
+		-- \
+		-Ldebian/pipewire-audio-client-libraries.shlibs.local \
+		$(NULL)
+	dh_shlibdeps \
+		--remaining-packages \
+		-l/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3 \
+		$(NULL)
+
+
+
+
+
