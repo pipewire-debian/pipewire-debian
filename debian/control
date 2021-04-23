@@ -146,12 +146,10 @@ Description: libraries for the PipeWire multimedia server - documentation
 
 Package: pipewire-locales
 Section: localization
-Build-Profiles: <!nodoc>
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}
-Breaks: libpipewire-0.2-doc (<< 0.3.1)
-Replaces: libpipewire-0.2-doc (<< 0.3.1)
+Depends: pipewire (= ${binary:Version}),
+		 ${misc:Depends}
 Description: locales for the PipeWire multimedia server - localization
  PipeWire is a server and user space API to deal with multimedia
  pipelines. This includes:
@@ -170,7 +168,8 @@ Architecture: linux-any
 Multi-Arch: same
 Depends: libpipewire-0.3-modules (= ${binary:Version}),
          pipewire-bin (= ${binary:Version}),
-         ${misc:Depends},
+         ${misc:Depends}
+Suggests: pipewire-locales
 Description: audio and video processing engine multimedia server
  PipeWire is a server and user space API to deal with multimedia
  pipelines. This includes:
