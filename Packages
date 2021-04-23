@@ -1,0 +1,510 @@
+Package: gstreamer1.0-pipewire
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 143
+Depends: pipewire (= 0.3.26-1), libc6 (>= 2.28), libglib2.0-0 (>= 2.39.4), libgstreamer-plugins-base1.0-0 (>= 1.6.0), libgstreamer1.0-0 (>= 1.6.0), libpipewire-0.3-0 (= 0.3.26-1)
+Filename: ./gstreamer1.0-pipewire_0.3.26-1_amd64.deb
+Size: 48816
+MD5sum: 0cee5af81d8c77008ec1911b47d0b02d
+SHA1: 0d9369c77b7e2c580a042ce500e11e1c9aa49e06
+SHA256: 704a3a960fdb617f890ed3c60269097bd1559b8beb6167ca90c2e44fc3b1546b
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://pipewire.org/
+Description: GStreamer 1.0 plugin for the PipeWire multimedia server
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains a plugin to make devices managed by the PipeWire
+ server available as GStreamer sources and sinks.
+
+Package: libfdk-aac2
+Source: fdk-aac
+Version: 2.0.1-1
+Architecture: amd64
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 1296
+Depends: libc6 (>= 2.14)
+Filename: ./libfdk-aac2_2.0.1-1_amd64.deb
+Size: 616760
+MD5sum: e3601466f16a06972587101835b3e520
+SHA1: 50588adf633535792d1d38e89e33da7df50122b4
+SHA256: f352ae32eae4478befc942a0079c12f90187f3c0900b1b19df748c61a8b6b680
+Section: non-free/libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://github.com/mstorsjo/fdk-aac
+Description: Fraunhofer FDK AAC Codec Library - runtime files
+ The FDK AAC Codec Library For Android contains an encoder implementation
+ of the Advanced Audio Coding (AAC) audio codec.
+ .
+ This package contains the files needed to run a program compiled using
+ The Fraunhofer FDK AAC Codec Library.
+Original-Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+
+Package: libldacbt-abr2
+Source: libldac
+Version: 2.0.2.3+git20200429+ed310a0-4
+Architecture: amd64
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 29
+Depends: libc6 (>= 2.2.5), libldacbt-enc2 (>= 2.0.2)
+Filename: ./libldacbt-abr2_2.0.2.3+git20200429+ed310a0-4_amd64.deb
+Size: 4644
+MD5sum: c10ae7ce31daded6c7b73f098d2dbdae
+SHA1: 00efb7f4c8c12697463cab3bf70e36e4d7f0370e
+SHA256: fbea0cb67877c948d09ac11d942d95954f9fb78e3183c80c922ebd5bf4bb4d70
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://android.googlesource.com/platform/external/libldac
+Description: LDAC Bluetooth ABR library (shared library)
+ LDAC is a lossy audio coding technology enabling the transmission
+ of high-resolution audio content over a Bluetooth connection.
+ .
+ LDAC employs a hybrid coding scheme based on the modified discrete
+ cosine transform to provide more efficient data compression.
+ .
+ LDAC is used by Bluetooth audio devices such as headphones, smart
+ phones, portable media players, active speakers and home theaters.
+ .
+ This package ships the shared LDAC Bluetooth ABR library.
+Original-Maintainer: Andrej Shadura <andrewsh@debian.org>
+
+Package: libldacbt-enc2
+Source: libldac
+Version: 2.0.2.3+git20200429+ed310a0-4
+Architecture: amd64
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 67
+Depends: libc6 (>= 2.14)
+Filename: ./libldacbt-enc2_2.0.2.3+git20200429+ed310a0-4_amd64.deb
+Size: 24604
+MD5sum: 21bdd90c0b4563e7f0504feb2f728942
+SHA1: 9a068d03a74f9e0360479b2cb4263a47139d00ec
+SHA256: 8816b44831eb35b8841abd9bd85c6a260f10b6a0cf75e10162153f481cf59521
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://android.googlesource.com/platform/external/libldac
+Description: LDAC Bluetooth encoder library (shared library)
+ LDAC is a lossy audio coding technology enabling the transmission
+ of high-resolution audio content over a Bluetooth connection.
+ .
+ LDAC employs a hybrid coding scheme based on the modified discrete
+ cosine transform to provide more efficient data compression.
+ .
+ LDAC is used by Bluetooth audio devices such as headphones, smart
+ phones, portable media players, active speakers and home theaters.
+ .
+ This package ships the shared LDAC Bluetooth encoder library.
+Original-Maintainer: Andrej Shadura <andrewsh@debian.org>
+
+Package: libopenaptx0
+Source: libopenaptx
+Version: 0.2.0-5
+Architecture: amd64
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 42
+Depends: libc6 (>= 2.4)
+Filename: ./libopenaptx0_0.2.0-5_amd64.deb
+Size: 14196
+MD5sum: 656219e3c2e94250273e76eec7a62a99
+SHA1: 24a14c7c502a845f6b19c78752ae564a97e725a4
+SHA256: 2e3af093d3fb2af6a4ad5a4b0c267c26cf540726432b34d53b15ba30cdb44d75
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://github.com/pali/libopenaptx
+Description: Audio Processing Technology codec (aptX), shared libraries
+ Support for aptX and aptX HD codec variants; they both operate on raw 24-bit
+ signed stereo audio sample; at 6:1 fixed compress ratio for aptX; at 4:1 fixed
+ compress ratio for aptX HD.
+ .
+ This package contains the shared libraries.
+Original-Maintainer: Didier Raboud <odyx@debian.org>
+
+Package: libpipewire-0.3-0
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 748
+Depends: libspa-0.2-modules (= 0.3.26-1), libc6 (>= 2.28)
+Recommends: pipewire (= 0.3.26-1)
+Filename: ./libpipewire-0.3-0_0.3.26-1_amd64.deb
+Size: 204684
+MD5sum: 1f1e18c24282d595a6460027bb5a6065
+SHA1: 9efd271fad7124589229b539a84846fe6b557557
+SHA256: be14ba42d42093f8e4748b393b0e52272e1f56fb71b398d2e8f3825749836df3
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://pipewire.org/
+Description: libraries for the PipeWire multimedia server
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+
+Package: libpipewire-0.3-dev
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 338
+Depends: libpipewire-0.3-0 (= 0.3.26-1), libspa-0.2-dev (= 0.3.26-1)
+Suggests: pipewire-doc
+Filename: ./libpipewire-0.3-dev_0.3.26-1_amd64.deb
+Size: 50252
+MD5sum: 61f625e5c052142fc564808363bbf476
+SHA1: f589e112a56ebc9a4f6ac9520afdf1b44ef0fccb
+SHA256: 95384cbfdae754e10a6e29dc85dd5d6b4710ec57461c78a8c115d73bd871e188
+Section: libdevel
+Priority: optional
+Multi-Arch: same
+Homepage: https://pipewire.org/
+Description: libraries for the PipeWire multimedia server - development
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains the development files.
+
+Package: libpipewire-0.3-modules
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 1467
+Depends: libc6 (>= 2.28), libdbus-1-3 (>= 1.9.14), libpipewire-0.3-0 (= 0.3.26-1), libsystemd0
+Breaks: pipewire (<< 0.3.5)
+Replaces: pipewire (<< 0.3.5)
+Filename: ./libpipewire-0.3-modules_0.3.26-1_amd64.deb
+Size: 295884
+MD5sum: dd1498a208ad5ae682d6648dc7874df7
+SHA1: 6a75deee7701cd3adffffc7ac239430133c62b6a
+SHA256: c4c6e791b0c0c8315e2a612fb3fd4f1e1636f0f863201d290da8eabe4e46e2d7
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://pipewire.org/
+Description: libraries for the PipeWire multimedia server - modules
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains modules used by the PipeWire server and by clients,
+ and should not normally be depended on directly. PipeWire clients should
+ depend on the pipewire package instead.
+
+Package: libspa-0.2-bluetooth
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 448
+Depends: libspa-0.2-modules (= 0.3.26-1), libbluetooth3 (>= 4.91), libc6 (>= 2.28), libdbus-1-3 (>= 1.9.14), libfdk-aac1 (>= 0.1.4), libldacbt-abr2 (>= 2.0.2), libldacbt-enc2 (>= 2.0.2), libopenaptx0 (>= 0.2.0-5~), libsbc1
+Filename: ./libspa-0.2-bluetooth_0.3.26-1_amd64.deb
+Size: 148712
+MD5sum: 0a35b8f360b47a2291e26a7ddf5670ae
+SHA1: 9ac28707e9bc4ba106d509ff15983ab42e57a262
+SHA256: a03d62c088c7bac3a6dd420e55a15c27aa2a9e92ba389c0df01795f254ca3199
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://pipewire.org/
+Description: libraries for the PipeWire multimedia server - bluetooth plugins
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains a plugin to make Bluetooth audio devices such as
+ speakers and headsets available to the PipeWire server. It is considered
+ to be experimental, and is disabled by default (even if installed) to
+ avoid conflicts with equivalent functionality in PulseAudio.
+
+Package: libspa-0.2-dev
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 514
+Suggests: pipewire-doc
+Filename: ./libspa-0.2-dev_0.3.26-1_amd64.deb
+Size: 72760
+MD5sum: 8a6e9366c6745095770eab0b4955b43b
+SHA1: 2a764a42b82dea517097268cf287890adfc2c4a0
+SHA256: 19fc93b34a6f597654ce52e05aa46da3564bff028d6497545e5e4c44195ef83b
+Section: libdevel
+Priority: optional
+Multi-Arch: same
+Homepage: https://pipewire.org/
+Description: libraries for the PipeWire multimedia server Simple Plugin API - development
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains the development files for the Simple Plugin API.
+
+Package: libspa-0.2-jack
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 160
+Depends: libspa-0.2-modules (= 0.3.26-1), libc6 (>= 2.14), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125
+Filename: ./libspa-0.2-jack_0.3.26-1_amd64.deb
+Size: 45552
+MD5sum: 5df3407f4ee6fbadcab9150d5d80db96
+SHA1: 1fc7ef47a9ed59766c1d14d081369c86cd6bd7a9
+SHA256: 13fa752a0e5319c72bb7d46cb21533b06f20e666d2aa999e4a55fcde4377b09d
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://pipewire.org/
+Description: libraries for the PipeWire multimedia server - JACK client
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains a plugin to make PipeWire able to connect to a
+ JACK server, which will be used for audio playback and recording.
+ Using PipeWire for audio is considered to be experimental.
+
+Package: libspa-0.2-modules
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 1918
+Depends: libasound2 (>= 1.2.1.1), libc6 (>= 2.29), libdbus-1-3 (>= 1.9.14), libsystemd0, libudev1 (>= 183), libvulkan1 (>= 1.2.131.2)
+Breaks: pipewire (<< 0.3.5)
+Replaces: pipewire (<< 0.3.5)
+Filename: ./libspa-0.2-modules_0.3.26-1_amd64.deb
+Size: 430316
+MD5sum: 5a33a7edc4cc2ad8bc2f45b1cf7110dd
+SHA1: c4f16f06cb64d63310e5f2a7d983b98f8057874e
+SHA256: 2c2d3e0ed6ca6287acfb7f35bedcb2840f74c635d6a732272d7e71db1d75c497
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://pipewire.org/
+Description: libraries for the PipeWire multimedia server Simple Plugin API - modules
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains core support modules used in the Simple Plugin API,
+ together with test and utility modules that do not introduce additional
+ dependencies. It should not normally be depended on directly: PipeWire
+ clients should depend on the pipewire package instead.
+
+Package: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 32
+Depends: libpipewire-0.3-modules (= 0.3.26-1), pipewire-bin (= 0.3.26-1), init-system-helpers (>= 1.52)
+Suggests: pipewire-locales
+Filename: ./pipewire_0.3.26-1_amd64.deb
+Size: 10376
+MD5sum: b201fc93f151a9d0126c741d1548fb37
+SHA1: 8c6b84fc8c68a2c103979b2561fff0f02ac497f7
+SHA256: ea4bee2a86164dedb14b6fb9a7b6d4d30cd7eaab9bd54704d6d699e1892dee30
+Section: video
+Priority: optional
+Multi-Arch: same
+Homepage: https://pipewire.org/
+Description: audio and video processing engine multimedia server
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This metapackage makes PipeWire available for programs of the same
+ architecture, and provides the systemd user service necessary to run
+ pipewire on-demand.
+
+Package: pipewire-audio-client-libraries
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 624
+Depends: pipewire (= 0.3.26-1), libasound2 (>= 1.1.7), libc6 (>= 2.17), libpipewire-0.3-0 (= 0.3.26-1)
+Breaks: pipewire (<< 0.3.5)
+Replaces: pipewire (<< 0.3.5)
+Filename: ./pipewire-audio-client-libraries_0.3.26-1_amd64.deb
+Size: 117356
+MD5sum: 588689c6605645d84274150ab04f163f
+SHA1: e164f199952b0b55491cfffa2fc13b16d049d9d2
+SHA256: 946117c6ed62db697f448039e62ef3bd9c8a4d397cd5d9c7009bf9e0d6052891
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://pipewire.org/
+Description: PipeWire multimedia server - audio client libraries
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains client libraries allowing programs designed for
+ the ALSA, JACK and PulseAudio APIs to use a PipeWire server for audio
+ playback and recording. They are not used by default, and are currently
+ considered to be experimental.
+
+Package: pipewire-bin
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 1777
+Depends: libpipewire-0.3-modules (= 0.3.26-1), libasound2 (>= 1.2.1.1), libc6 (>= 2.29), libdbus-1-3 (>= 1.9.14), libncursesw6 (>= 6), libpipewire-0.3-0 (= 0.3.26-1), libsndfile1 (>= 1.0.20), libsystemd0, libtinfo6 (>= 6)
+Breaks: pipewire (<< 0.3.5)
+Replaces: pipewire (<< 0.3.5)
+Filename: ./pipewire-bin_0.3.26-1_amd64.deb
+Size: 377056
+MD5sum: 24bf3f2e05f3cd7d5aec0b34a4db026b
+SHA1: c0fb3b85452697c111003d9de7a869bdb28ac9f3
+SHA256: fe7ef3263995a76517a0cf813ae59070eca40d1b2cc36259e1210fc4070a6709
+Section: video
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://pipewire.org/
+Description: PipeWire multimedia server - programs
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains the server and command-line utilities, and should
+ not normally be depended on directly. PipeWire clients should depend on
+ the pipewire package instead.
+
+Package: pipewire-doc
+Source: pipewire
+Version: 0.3.26-1
+Architecture: all
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 32003
+Breaks: libpipewire-0.2-doc (<< 0.3.1)
+Replaces: libpipewire-0.2-doc (<< 0.3.1)
+Filename: ./pipewire-doc_0.3.26-1_all.deb
+Size: 22789712
+MD5sum: 3cb73bb973b83184a9597338e47185dd
+SHA1: 9ca938ed947af438ad2e406983b2af365e089306
+SHA256: 0f8a46706faf9a5c6b5cf558acd1b2b2dcb8ed1a834a9fe3de97fb4b7a8d4d6a
+Section: doc
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://pipewire.org/
+Description: libraries for the PipeWire multimedia server - documentation
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains the API reference.
+
+Package: pipewire-locales
+Source: pipewire
+Version: 0.3.26-1
+Architecture: all
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 460
+Depends: pipewire (= 0.3.26-1)
+Filename: ./pipewire-locales_0.3.26-1_all.deb
+Size: 53336
+MD5sum: d615a01874f01ae73cb4af20c4815d71
+SHA1: 41b2b8fa0381bad8642743e60b54bd8f9689ca54
+SHA256: 9054e805770407254cf953a74bdca74b729315b2c3b59752a45f6afc3b94b3be
+Section: localization
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://pipewire.org/
+Description: locales for the PipeWire multimedia server - localization
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains the locales for pipewire.
+
+Package: pipewire-tests
+Source: pipewire
+Version: 0.3.26-1
+Architecture: amd64
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Installed-Size: 1966
+Depends: pipewire (= 0.3.26-1), libc6 (>= 2.28), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, libpipewire-0.3-0 (= 0.3.26-1), libsdl2-2.0-0 (>= 2.0.10)
+Filename: ./pipewire-tests_0.3.26-1_amd64.deb
+Size: 292316
+MD5sum: 461ab661f1ff501eb464c5a658b9975a
+SHA1: 6597338fc7b1873b467aeda21c82b98499e69407
+SHA256: 4186c2cfe2c0f7de6e0cc17da0f63f04f168cf47586b8a5856070bae55ae8036
+Section: misc
+Priority: optional
+Homepage: https://pipewire.org/
+Description: PipeWire multimedia server - tests and examples
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains automated and manual tests and example programs.
+
