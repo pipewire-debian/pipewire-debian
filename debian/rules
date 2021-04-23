@@ -48,10 +48,22 @@ ifneq ($(filter mips%,$(DEB_HOST_ARCH_CPU)),)
 test_timeout_multiplier = 10
 endif
 
+#override_dh_auto_test:
+#	dh_auto_test \
+#		-- \
+#		--timeout-multiplier $(test_timeout_multiplier) \
+#		$(NULL)
+#
+# -------------------- COMMENT -----------------
+#
+#  somehow with --timeout-multiplier option build leads to fail
+#  in ubuntu 20.04, everything is ok >=21.04(didn't test on 20.10)
+#  there is no workaround I found without removing it. If anyone
+#  have an Idea with it, please give PR with solution.
+
 override_dh_auto_test:
 	dh_auto_test \
 		-- \
-		--timeout-multiplier $(test_timeout_multiplier) \
 		$(NULL)
 
 override_dh_missing:
