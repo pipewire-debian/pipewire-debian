@@ -3,7 +3,7 @@ Section: libs
 Priority: optional
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
 Uploaders: Sourav Das <souravdas142@gmail.com>
-Build-Depends: debhelper-compat (>= 12),
+Build-Depends: debhelper-compat (= 12),
                doxygen <!nodoc>,
                graphviz <!nodoc>,
                libasound2-dev,
