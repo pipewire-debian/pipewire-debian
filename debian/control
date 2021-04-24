@@ -27,7 +27,16 @@ Build-Depends: debhelper-compat (= 12),
                meson (>= 0.50.0),
                pkg-config (>= 0.22),
                systemd [linux-any],
-               xmltoman
+               xmltoman,
+	       libfdk-aac-dev,
+	       libdrm-dev,
+	       cmake,
+	       make,
+               valgrind,
+	       libavformat58,
+	       libavcodec58,
+	       libudev-dev,
+	       libv4l-dev
 Standards-Version: 4.5.1
 Vcs-Browser: https://gitlab.freedesktop.org/pipewire/pipewire
 Vcs-Git: https://gitlab.freedesktop.org/pipewire/pipewire.git
