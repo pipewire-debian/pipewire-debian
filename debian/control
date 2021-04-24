@@ -36,6 +36,7 @@ Build-Depends: debhelper-compat (= 12),
 	       libavformat58,
 	       libavcodec58,
 	       libudev-dev,
+	       libvulkan-dev,
 	       libv4l-dev
 Standards-Version: 4.5.1
 Vcs-Browser: https://gitlab.freedesktop.org/pipewire/pipewire
