@@ -1,11 +1,11 @@
-pipewire (0.3.26-1) experimental; urgency=medium
+pipewire (0.3.26-3) focal; urgency=medium
 
   * New upstream release
   * New pw-link tool added, I18n support, Add logind support.
   * Many Bluetooth improvements, support for hardware volumes
   * Support for 64 channel devices.
 
- -- Sourav Das <souravdas@gmail.com>  Fri, 23 Apr 2021 20:46:29 +0100
+ -- Sourav Das <souravdas@gmail.com>  Sat, 24 Apr 2021 20:46:29 +0100
 
 pipewire (0.3.25-1) experimental; urgency=medium
 
