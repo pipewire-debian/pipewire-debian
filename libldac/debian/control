@@ -1,0 +1,84 @@
+Source: libldac
+Section: libs
+Priority: optional
+Maintainer: Andrej Shadura <andrewsh@debian.org>
+Build-Depends:
+ debhelper-compat (= 12),
+ mini-soong
+Standards-Version: 4.5.0
+Homepage: https://android.googlesource.com/platform/external/libldac
+Rules-Requires-Root: no
+Vcs-Browser: https://salsa.debian.org/multimedia-team/libldac
+Vcs-Git: https://salsa.debian.org/multimedia-team/libldac.git
+
+Package: libldacbt-abr-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, libldacbt-abr2 (= ${binary:Version})
+Description: LDAC Bluetooth ABR library (development)
+ LDAC is a lossy audio coding technology enabling the transmission
+ of high-resolution audio content over a Bluetooth connection.
+ .
+ LDAC employs a hybrid coding scheme based on the modified discrete
+ cosine transform to provide more efficient data compression.
+ .
+ LDAC is used by Bluetooth audio devices such as headphones, smart
+ phones, portable media players, active speakers and home theaters.
+ .
+ This package ships development files for the LDAC Bluetooth ABR
+ library.
+
+Package: libldacbt-abr2
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: LDAC Bluetooth ABR library (shared library)
+ LDAC is a lossy audio coding technology enabling the transmission
+ of high-resolution audio content over a Bluetooth connection.
+ .
+ LDAC employs a hybrid coding scheme based on the modified discrete
+ cosine transform to provide more efficient data compression.
+ .
+ LDAC is used by Bluetooth audio devices such as headphones, smart
+ phones, portable media players, active speakers and home theaters.
+ .
+ This package ships the shared LDAC Bluetooth ABR library.
+
+Package: libldacbt-enc-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, libldacbt-enc2 (= ${binary:Version})
+Description: LDAC Bluetooth encoder library (development)
+ LDAC is a lossy audio coding technology enabling the transmission
+ of high-resolution audio content over a Bluetooth connection.
+ .
+ LDAC employs a hybrid coding scheme based on the modified discrete
+ cosine transform to provide more efficient data compression.
+ .
+ LDAC is used by Bluetooth audio devices such as headphones, smart
+ phones, portable media players, active speakers and home theaters.
+ .
+ This package ships development files for the LDAC Bluetooth encoder
+ library.
+
+Package: libldacbt-enc2
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: LDAC Bluetooth encoder library (shared library)
+ LDAC is a lossy audio coding technology enabling the transmission
+ of high-resolution audio content over a Bluetooth connection.
+ .
+ LDAC employs a hybrid coding scheme based on the modified discrete
+ cosine transform to provide more efficient data compression.
+ .
+ LDAC is used by Bluetooth audio devices such as headphones, smart
+ phones, portable media players, active speakers and home theaters.
+ .
+ This package ships the shared LDAC Bluetooth encoder library.

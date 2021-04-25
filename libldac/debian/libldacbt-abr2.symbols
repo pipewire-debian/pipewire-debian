@@ -1,0 +1,7 @@
+libldacBT_abr.so.2 libldacbt-abr2 #MINVER#
+* Build-Depends-Package: libldacbt-abr-dev
+ ldac_ABR_free_handle@Base 2.0.2
+ ldac_ABR_get_handle@Base 2.0.2
+ ldac_ABR_Init@Base 2.0.2
+ ldac_ABR_Proc@Base 2.0.2
+ ldac_ABR_set_thresholds@Base 2.0.2

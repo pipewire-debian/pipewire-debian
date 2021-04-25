@@ -1,0 +1,3 @@
+version=3
+https://github.com/mstorsjo/fdk-aac/releases \
+.*[^n]/(?:|v|r|REL_|rel-|fdk-aac(?:_|-))(\d[^\s/]*)\.(?:tar\.xz|txz|tar\.bz2|tbz2|tar\.gz|tgz)

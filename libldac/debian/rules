@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_CFLAGS_MAINT_APPEND = -Wall -pedantic -fsigned-char
+include /usr/share/dpkg/architecture.mk
+include /usr/share/dpkg/pkg-info.mk
+
+ifeq ($(DEB_HOST_ARCH),armel)
+export DEB_CPPFLAGS_MAINT_APPEND = -D_32BIT_FIXED_POINT
+endif
+
+export libldacBT_enc_soversion = $(basename $(DEB_VERSION_UPSTREAM))
+export libldacBT_abr_soversion = $(basename $(DEB_VERSION_UPSTREAM))
+
+export libdir = /usr/lib/$(DEB_HOST_MULTIARCH)
+
+%:
+	dh $@ --buildsystem=soong
+
+override_dh_auto_install:
+	dh_auto_install
+	mkdir -p debian/tmp/$(libdir)/pkgconfig
+	for d in debian/pkgconfig/*.pc; do \
+		sed -e 's,@VERSION@,$(DEB_VERSION_UPSTREAM),g' \
+			-e 's,@LIBDIR@,$(libdir),g' $$d > debian/tmp/$(libdir)/pkgconfig/$$(basename $$d); \
+	done

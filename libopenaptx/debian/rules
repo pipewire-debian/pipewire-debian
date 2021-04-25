@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+include /usr/share/dpkg/pkg-info.mk
+# Increase optimisation level for better performance
+export DEB_CFLAGS_MAINT_APPEND = -O3
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	# Enforce Debian's CFLAGS and LDFLAGS in build, as there's no configure pass
+	dh_auto_build -- \
+		CFLAGS="$(shell dpkg-buildflags --get CFLAGS)" \
+		LDFLAGS="$(shell dpkg-buildflags --get LDFLAGS)" \
+
+override_dh_auto_install:
+	# Pass PREFIX and LIBDIR that are not taken correctly from Makefile
+	dh_auto_install -- \
+		PREFIX=/usr \
+		LIBDIR=lib/${DEB_HOST_MULTIARCH}
+
+MANPAGES=debian/openaptxenc.1 debian/openaptxdec.1
+
+override_dh_installman: ${MANPAGES}
+	# Make sure the MANPAGES are installed
+	dh_installman -popenaptx-utils $^
+
+debian/%.1:
+	# Generate a manpage from the executable
+	PATH=.:$$PATH \
+	LD_PRELOAD=./libopenaptx.so.0 \
+		help2man \
+			--section=1 \
+			--version-string=${DEB_VERSION_UPSTREAM} \
+			--source="Debian (help2man)" \
+			--name="aptX $(patsubst openaptx%,%,$*)oder utility ${DEB_VERSION_UPSTREAM} (using libopenaptx ${DEB_VERSION_UPSTREAM})" \
+			--no-info \
+			--no-discard-stderr \
+			-o$@ $*
+
+execute_after_dh_clean:
+	rm -f ${MANPAGES}

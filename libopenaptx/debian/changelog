@@ -1,0 +1,53 @@
+libopenaptx (0.2.0-7) focal; urgency=medium
+
+  * rebuild
+
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 24 Apr 2021 20:14:41 +0100
+
+libopenaptx (0.2.0-5) unstable; urgency=medium
+
+  * Fix libopenaptx.pc to drop -Wl,rpath= setting (Closes: #980297)
+
+ -- Didier Raboud <odyx@debian.org>  Sun, 17 Jan 2021 20:14:41 +0100
+
+libopenaptx (0.2.0-4) unstable; urgency=medium
+
+  * Patch utils' binaries to add whitespace between examples, for better
+    help2man result
+  * Use help2man directly without include
+
+ -- Didier Raboud <odyx@debian.org>  Sat, 09 May 2020 20:05:05 +0200
+
+libopenaptx (0.2.0-3) unstable; urgency=medium
+
+  * Set DEB_CFLAGS_MAIN_APPEND to follow upstream's -O3 recommendation
+  * Refresh manpage examples from upstream's 0.2.0 README
+  * Strip relative path from manpage
+  * Use gbp.conf
+  * Bump debhelper to 13
+
+ -- Didier Raboud <odyx@debian.org>  Sat, 09 May 2020 17:07:04 +0200
+
+libopenaptx (0.2.0-2) unstable; urgency=medium
+
+  * Mark libopenaptx-dev Multi-Arch: same
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 01 May 2020 16:03:54 +0200
+
+libopenaptx (0.2.0-1) unstable; urgency=medium
+
+  * Update to upstream's 0.2.0
+    - Update d/copyright notice for Pali Rohár
+    - Add two symbols added in 0.2.0
+  * Set upstream metadata
+  * Put openaptx-utils in section sound (Closes: #956719)
+  * Install libopenaptx.{a,pc} in -dev
+  * Enforce CFLAGS and LDFLAGS in build, as there's no configure
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 20 Apr 2020 19:07:50 +0200
+
+libopenaptx (0.1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #955126)
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 27 Mar 2020 16:55:43 +0100

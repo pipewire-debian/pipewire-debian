@@ -1,0 +1,3 @@
+usr/include/*/ldacBT_abr.h usr/include/ldac/
+usr/lib/*/pkgconfig/ldacBT-abr.pc
+usr/lib/*/libldacBT_abr.so

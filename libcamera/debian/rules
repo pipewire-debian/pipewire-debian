@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE = 1
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+include /usr/share/dpkg/architecture.mk
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --libexecdir=lib/${DEB_HOST_MULTIARCH}
+
+override_dh_install:
+	dh_install -X/.doctrees/
+
+.PHONY: override_dh_auto_test
+override_dh_auto_test:
+
+
+.PHONY: licensecheck
+licensecheck:
+	licensecheck --deb-machine -r * \
+		> debian/copyright_newhints
+	cmp debian/copyright_hints debian/copyright_newhints \
+		&& rm debian/copyright_newhints

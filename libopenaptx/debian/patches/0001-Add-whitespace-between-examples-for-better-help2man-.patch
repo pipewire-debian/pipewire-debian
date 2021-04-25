@@ -1,0 +1,41 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Sat, 9 May 2020 19:45:08 +0200
+Subject: Add whitespace between examples for better help2man result
+
+---
+ openaptxdec.c | 3 +++
+ openaptxenc.c | 3 +++
+ 2 files changed, 6 insertions(+)
+
+diff --git a/openaptxdec.c b/openaptxdec.c
+index add2fab..5fdabaf 100644
+--- a/openaptxdec.c
++++ b/openaptxdec.c
+@@ -70,8 +70,11 @@ int main(int argc, char *argv[])
+             fprintf(stderr, "        --hd         Decode from aptX HD\n");
+             fprintf(stderr, "\n");
+             fprintf(stderr, "Examples:\n");
++            fprintf(stderr, "\n");
+             fprintf(stderr, "        %s < sample.aptx > sample.s24le\n", argv[0]);
++            fprintf(stderr, "\n");
+             fprintf(stderr, "        %s --hd < sample.aptxhd > sample.s24le\n", argv[0]);
++            fprintf(stderr, "\n");
+             fprintf(stderr, "        %s < sample.aptx | play -t raw -r 44.1k -L -e s -b 24 -c 2 -\n", argv[0]);
+             return 1;
+         } else if (strcmp(argv[i], "--hd") == 0) {
+diff --git a/openaptxenc.c b/openaptxenc.c
+index 08c58ef..4c6048f 100644
+--- a/openaptxenc.c
++++ b/openaptxenc.c
+@@ -62,8 +62,11 @@ int main(int argc, char *argv[])
+             fprintf(stderr, "        --hd         Encode to aptX HD\n");
+             fprintf(stderr, "\n");
+             fprintf(stderr, "Examples:\n");
++            fprintf(stderr, "\n");
+             fprintf(stderr, "        %s < sample.s24le > sample.aptx\n", argv[0]);
++            fprintf(stderr, "\n");
+             fprintf(stderr, "        %s --hd < sample.s24le > sample.aptxhd\n", argv[0]);
++            fprintf(stderr, "\n");
+             fprintf(stderr, "        sox sample.wav -t raw -r 44.1k -L -e s -b 24 -c 2 - | %s > sample.aptx\n", argv[0]);
+             return 1;
+         } else if (strcmp(argv[i], "--hd") == 0) {
