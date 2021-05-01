@@ -48,13 +48,13 @@
 
 ## [Launchpad PPA](https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream)
 
-:warning: **This repo is not obsolete. I will sync this repo with the Launchpad PPA to support other Debian based distros. The [devleopment](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important of this repo, I will be using that branch to push new patches related to building PipeWire and its dependencies.**
+:warning: **This repo is not obsolete. I will sync this repo with the Launchpad PPA to support other Debian based distros. The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire and its dependencies.**
 
 ## 1. PPA Configuration
 
 ### Add the Launchpad PPA...
 
-:bulb: **The recommended & convient way, see next [section](#or-add-github-ppa) for other Debian-based distros**
+:bulb: **The recommended & convenient way, see next [section](#or-add-github-ppa) for other Debian-based distros**
 
 ```bash
 You can update your system with unsupported packages from this untrusted PPA by adding ppa:pipewire-debian/pipewire-upstream
