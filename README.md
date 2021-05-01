@@ -54,7 +54,7 @@
 
 ### Add the Launchpad PPA...
 
-:bulb: **The recommended & convenient way, see next [section](#or-add-github-ppa) for other Debian-based distros**
+:bulb: **The recommended & convenient way, see next [section](#or-the-github-ppa) for other Debian-based distros**
 
 ```bash
 You can update your system with unsupported packages from this untrusted PPA by adding ppa:pipewire-debian/pipewire-upstream
@@ -98,34 +98,49 @@ sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.
 # Additionally, if you want to install `pipewire-doc`
 
 sudo apt install pipewire-doc
+```   
 
-# You don't need to uninstall PulseAudio to enable PipeWire, disable and mask PulseAudio related services to stop them
-
+    
+## 3. Post Installation Steps    
+You don't need to uninstall PulseAudio to enable PipeWire, disable and mask PulseAudio related services to stop them    
+```bash
 systemctl --user --now disable  pulseaudio.{socket,service}
 systemctl --user mask pulseaudio
-
-# After installation, enable PipeWire related services
-
-systemctl --user --now enable pipewire{,-pulse}{.socket,.service} pipewire-media-session.service
-
-# You can check which server is in use by running (as a user):
-
-pactl info | grep '^Server Name'
-
-# If your system doesn't have any sound, please reboot
 ```
+Enable and start PipeWire related services    
+```bash
+systemctl --user --now enable pipewire{,-pulse}.{socket,service} pipewire-media-session.service
+```
+You can check which server is in use by running (as a user):   
+```bash
+pactl info | grep '^Server Name'
+```
+If your system doesn't have any sound, please reboot    
+
+
 
 # :book: Wiki
 
-- [Gentoo-wiki](https://wiki.gentoo.org/wiki/PipeWire)
-- [Arch-wiki](https://wiki.archlinux.org/index.php/PipeWire)
+- [This Repo Wiki](https://github.com/pipewire-debian/pipewire-debian/wiki)
+- [Upstream-README](https://gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/README.md)
+- [Upstream-wiki](https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home)
+- **Gentoo**
+    - [Gentoo-wiki](https://wiki.gentoo.org/wiki/PipeWire)
+    - [Gentoo-Bluetooth-Wiki](https://wiki.gentoo.org/wiki/Bluetooth)
+- **Arch-Linux** 
+    - [Arch-wiki](https://wiki.archlinux.org/index.php/PipeWire)
+    - [Arch-Bluetooth-Wiki](https://wiki.archlinux.org/title/Bluetooth)
 - [Debian-wiki](https://wiki.debian.org/PipeWire)
+
+# :hammer_and_wrench: Troubleshooting  
+
+**See in wiki page - [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting)**
 
 # :fire: Notice
 
 If you have any issue regarding this PPA package, create a issue here.
 
-**For features, requests or bugs, create an issue on [upstream](https://gitlab.freedesktop.org/pipewire/pipewire).**
+**For features, requests or bugs, create an issue on [upstream](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues).**
 
 # :clap: Credits
 
