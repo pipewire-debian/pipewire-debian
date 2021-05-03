@@ -7,8 +7,9 @@ assignees: ''
 
 ---
 
-**If you Completed all troubleshoot options, check below**
-- [ ]  Did you check All troubleshoot options from [here](../wiki/Troubleshooting).
+**If you Completed all troubleshoot options, check below**     
+- [ ]  Did you Follow all installation instructions carefully from [here](../wiki/#1-ppa-configuration)?
+- [ ]  Did you check All troubleshoot options from [here](../wiki/Troubleshooting)?
 
 **Describe the bug**
 A clear and concise description of what the bug is.

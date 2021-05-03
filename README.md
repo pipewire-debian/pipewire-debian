@@ -32,6 +32,10 @@
   <a href="https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream">
     <img src="https://img.shields.io/website?down_message=PipeWire%200.3.26&label=Launchpad%20PPA&logo=UBUNTU&up_message=PipeWire%200.3.26&url=https%3A%2F%2Flaunchpad.net%2F~pipewire-debian%2F%2Barchive%2Fubuntu%2Fpipewire-upstream">
   </a>
+  <!-- Project License -->
+  <a href="https://choosealicense.com/licenses/mit/">
+    <img alt="MIT License" src="https://img.shields.io/github/license/pipewire-debian/pipewire-debian">
+  </a>
 </p>
 
 # PipeWire PPA for Ubuntu (>= 20.04)
@@ -41,7 +45,7 @@
 | :----------------------------------------------------------------------------------------------: | :----------------------: |
 |          [Original-PipeWire-Upstream](https://gitlab.freedesktop.org/pipewire/pipewire)          | **Forked** |
 | [PipeWire-debian-Upstream](https://salsa.debian.org/utopia-team/pipewire/-/tree/debian/0.3.25-1) |   **Forked**   |
-|                  [libfdk-aac2](https://packages.ubuntu.com/hirsute/libfdk-aac2)                  |     **Dependencies**     |
+|                  [libfdk-aac[12]](https://packages.ubuntu.com/hirsute/libfdk-aac2)                  |     **Dependencies**     |
 |                 [libopenaptx0](https://packages.ubuntu.com/hirsute/libopenaptx0)                 |     **Dependencies**     |
 |               [libldacbt-abr2](https://packages.ubuntu.com/hirsute/libldacbt-abr2)               |     **Dependencies**     |
 |               [libldacbt-enc2](https://packages.ubuntu.com/hirsute/libldacbt-enc2)               |     **Dependencies**     |
@@ -57,17 +61,23 @@
 :bulb: **The recommended & convenient way, see next [section](#or-the-github-ppa) for other Debian-based distros**
 
 ```bash
-You can update your system with unsupported packages from this untrusted PPA by adding ppa:pipewire-debian/pipewire-upstream
-to your system's Software Sources. (Read about installing)
+# You can update your system with unsupported packages from this untrusted PPA by adding ppa:pipewire-debian/pipewire-upstream
+# to your system's Software Sources.
 
 sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
 sudo apt-get update
 
-Technical details about this PPA
-This PPA can be added to your system manually by copying the lines below and adding them to your system's software sources.
+# This PPA can be added to your system manually by running below commands, It directly create 
+# a file under /etc/apt/sources.list.d/ containing source mirror list. 
+# First Download key from keyservers directly into the trusted set of keys, Run 2 commands below.
 
-deb http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu focal main
-deb-src http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu focal main
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 25088A0359807596
+
+echo "deb http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
+
+# Below is generaly not required unless you are not inspecting a package or not thinking about repackaging from the source.
+
+echo "deb-src http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
 ```
 
 ### ...or the Github PPA
@@ -90,7 +100,7 @@ sudo apt update
 
 sudo apt install libfdk-aac2 libldacbt-{abr,enc}2 libopenaptx0
 
-# If `libfdk-aac2` not found install `libfdk-aac`
+# If `libfdk-aac2` not found install `libfdk-aac1`
 # Install pipewire and additional packages
 
 sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,bin,locales,tests}}
