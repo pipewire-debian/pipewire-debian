@@ -1,3 +1,26 @@
+Package: blueman-git
+Version: 2.1.4-git-dbfad0a-1
+Architecture: amd64
+Maintainer: Sourav Das <souravdas142@gmail.com>,
+            Christopher Schramm <debian@cschramm.eu>
+Installed-Size: 3470
+Depends: libbluetooth3 (>= 4.91), libc6 (>= 2.4), dconf-gsettings-backend | gsettings-backend, python3 (<< 3.9), python3 (>= 3.8~), python3:any, dbus, default-dbus-session-bus | dbus-session-bus, bluez (>= 5), bluez-obexd, python3-gi (>= 3.27.2), notification-daemon, librsvg2-common, gnome-icon-theme | mate-icon-theme | elementary-xfce-icon-theme | adwaita-icon-theme | papirus-icon-theme, libpulse-mainloop-glib0, gir1.2-gtk-3.0, gir1.2-gdkpixbuf-2.0, gir1.2-glib-2.0, gir1.2-pango-1.0, python3-cairo, python3-gi-cairo, gir1.2-appindicator3-0.1, gir1.2-nm-1.0, policykit-1
+Recommends: pulseaudio-module-bluetooth
+Conflicts: blueman
+Replaces: blueman
+Provides: blueman
+Filename: ./blueman-git_2.1.4-git-dbfad0a-1_amd64.deb
+Size: 1087968
+MD5sum: 5771aa5b9ef817d1f5fb1730c3c4fbca
+SHA1: 2e14afcbdc55929f5aee6431acf276564ae77e95
+SHA256: 1de8de1327e23a5f5a8eac17b3d2c9e4f57ba5799633bada37bad20e4e17ed5a
+Section: x11
+Priority: optional
+Homepage: https://github.com/blueman-project/blueman
+Description: Graphical bluetooth manager git version
+ Blueman is a GTK+ bluetooth management utility for GNOME using bluez D-Bus
+ backend.
+
 Package: gstreamer1.0-pipewire
 Source: pipewire
 Version: 0.3.26-1
