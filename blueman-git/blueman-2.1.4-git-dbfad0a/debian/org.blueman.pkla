@@ -1,0 +1,6 @@
+[Changing system-wide settings through blueman]
+Identity=unix-group:netdev;unix-group:sudo
+Action=org.blueman.network.setup;org.blueman.dhcp.client;org.blueman.rfkill.setstate;org.blueman.pppd.pppconnect
+ResultAny=no
+ResultInactive=no
+ResultActive=yes

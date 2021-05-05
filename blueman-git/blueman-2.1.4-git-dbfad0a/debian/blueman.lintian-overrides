@@ -1,0 +1,4 @@
+# blueman-mechanism.service complements the org.blueman.Mechanism D-Bus service
+blueman: package-supports-alternative-init-but-no-init.d-script
+# blueman-adapters.desktop actually targets MATE and Xfce settings menus
+blueman: desktop-entry-limited-to-environments

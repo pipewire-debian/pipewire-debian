@@ -1,0 +1,2 @@
+debian/blueman.rules usr/share/polkit-1/rules.d/
+debian/org.blueman.pkla var/lib/polkit-1/localauthority/10-vendor.d
