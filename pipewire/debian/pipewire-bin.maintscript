@@ -1,2 +1,0 @@
-rm_conffile /etc/pipewire/media-session.d/with-jack 0.3.19-3~ pipewire-bin
-rm_conffile /etc/pipewire/media-session.d/with-pulseaudio 0.3.19-3~ pipewire-bin
