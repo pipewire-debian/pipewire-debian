@@ -30,7 +30,7 @@
   </a>
   <!-- PPA -->
   <a href="https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream">
-    <img src="https://img.shields.io/website?down_message=PipeWire%200.3.26&label=Launchpad%20PPA&logo=UBUNTU&up_message=PipeWire%200.3.26&url=https%3A%2F%2Flaunchpad.net%2F~pipewire-debian%2F%2Barchive%2Fubuntu%2Fpipewire-upstream">
+    <img src="https://img.shields.io/website?down_message=PipeWire%200.3.27&label=Launchpad%20PPA&logo=UBUNTU&up_message=PipeWire%200.3.27&url=https%3A%2F%2Flaunchpad.net%2F~pipewire-debian%2F%2Barchive%2Fubuntu%2Fpipewire-upstream">
   </a>
   <!-- Project License -->
   <a href="https://choosealicense.com/licenses/mit/">
@@ -124,7 +124,7 @@ sudo apt-get install blueman-git
 ```   
 
     
-## 3. Post Installation Steps form PipeWire or blueman-git        
+## 3. Post Installation Steps for PipeWire or blueman-git        
 You don't need to uninstall PulseAudio to enable PipeWire, disable and mask PulseAudio related services to stop them    
 ```bash
 systemctl --user --now disable  pulseaudio.{socket,service}
