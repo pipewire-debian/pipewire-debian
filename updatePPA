@@ -1,0 +1,60 @@
+#!/bin/bash
+
+echo -e "\nThis will update your PPA, Do you know what are you doing ?\n" 
+
+echo -n "Choose between y|Y|yes|Yes|n|N|No ==>> "
+read  confirm
+case "$confirm" in
+	"y"|"Y"|"yes"|"YES"|"YEs"|"Yes"|"yeS"|"YeS"|"yES"|"yEs")
+		;;
+	*)
+		exit
+		;;
+esac
+
+echo -e "\n"
+
+# Find out relative path from current dir
+RELPATH=`dirname "$0"`
+
+# Findout Absolute path of RELPATH
+ABSPATH=`cd "$RELPATH"; pwd`
+
+# cd into absolute path and then into ubuntu
+cd "$ABSPATH/ubuntu"
+
+echo "Creating Packages & Packages.gz..."
+dpkg-scanpackages --multiversion . > Packages
+gzip -k -f Packages
+
+echo "Creating Release, Release.gpg & InRelease..."
+apt-ftparchive release . > Release
+gpg --default-key "souravdas142@gmail.com" -abs -o - Release > Release.gpg
+gpg --default-key "souravdas142@gmail.com" --clearsign -o - Release > InRelease
+
+# Commit & push
+#git add -A
+#git commit -m update
+#git push 
+# We need to manually hadle any git related command
+
+echo -e "\nDo you want to commit the update ?\n"
+echo "This will run git cli in xterm environment"
+
+echo -n "Choose between y|Y|yes|Yes|n|N|No ==>> "
+read confirm
+case "$confirm" in
+	"y"|"Y"|"yes"|"YES"|"YEs"|"Yes"|"yeS"|"YeS"|"yES"|"yEs")
+		;;
+	*)
+		exit
+		;;
+esac
+
+echo -e "\n"
+
+cd ../
+
+# you should change the terminal what you like.
+# and do you git related work there.
+alacritty -e tmux new-session
