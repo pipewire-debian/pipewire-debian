@@ -1,1 +1,2 @@
-deb https://pipewire-debian.github.io/pipewire-debian ./
+deb https://pipewire-debian.github.io/pipewire-debian/ubuntu ./
+#deb-src https://pipewire-debian.github.io/pipewire-debian/ubuntu ./
