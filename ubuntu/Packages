@@ -23,16 +23,16 @@ Description: Graphical bluetooth manager git version
 
 Package: gstreamer1.0-pipewire
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
 Installed-Size: 143
-Depends: pipewire (= 0.3.26-1), libc6 (>= 2.28), libglib2.0-0 (>= 2.39.4), libgstreamer-plugins-base1.0-0 (>= 1.6.0), libgstreamer1.0-0 (>= 1.6.0), libpipewire-0.3-0 (= 0.3.26-1)
-Filename: ./gstreamer1.0-pipewire_0.3.26-1_amd64.deb
-Size: 48816
-MD5sum: 0cee5af81d8c77008ec1911b47d0b02d
-SHA1: 0d9369c77b7e2c580a042ce500e11e1c9aa49e06
-SHA256: 704a3a960fdb617f890ed3c60269097bd1559b8beb6167ca90c2e44fc3b1546b
+Depends: pipewire (= 0.3.27-1), libc6 (>= 2.28), libglib2.0-0 (>= 2.39.4), libgstreamer-plugins-base1.0-0 (>= 1.6.0), libgstreamer1.0-0 (>= 1.6.0), libpipewire-0.3-0 (= 0.3.27-1)
+Filename: ./gstreamer1.0-pipewire_0.3.27-1_amd64.deb
+Size: 48992
+MD5sum: 4e21a8adbb92272095e2199382aa9d33
+SHA1: a513415ec4d0ab2409ed2f394af3334445180f27
+SHA256: 09bb7e385e5acc0d33df57c2a7258db5888fbb40b42b6da1d1e92410aec9d447
 Section: libs
 Priority: optional
 Multi-Arch: same
@@ -157,17 +157,17 @@ Original-Maintainer: Didier Raboud <odyx@debian.org>
 
 Package: libpipewire-0.3-0
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
-Installed-Size: 748
-Depends: libspa-0.2-modules (= 0.3.26-1), libc6 (>= 2.28)
-Recommends: pipewire (= 0.3.26-1)
-Filename: ./libpipewire-0.3-0_0.3.26-1_amd64.deb
-Size: 204684
-MD5sum: 1f1e18c24282d595a6460027bb5a6065
-SHA1: 9efd271fad7124589229b539a84846fe6b557557
-SHA256: be14ba42d42093f8e4748b393b0e52272e1f56fb71b398d2e8f3825749836df3
+Installed-Size: 749
+Depends: libspa-0.2-modules (= 0.3.27-1), libc6 (>= 2.28)
+Recommends: pipewire (= 0.3.27-1)
+Filename: ./libpipewire-0.3-0_0.3.27-1_amd64.deb
+Size: 205304
+MD5sum: efd700b1fb459b0763109af5260b5d93
+SHA1: a602766bd8f19730701785321c889a92cdfee71e
+SHA256: 0852fe4505e5a0418bf50c2bba2c66d1320f3be3a195584d14dcf9ebb9afb336
 Section: libs
 Priority: optional
 Multi-Arch: same
@@ -183,17 +183,17 @@ Description: libraries for the PipeWire multimedia server
 
 Package: libpipewire-0.3-dev
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
-Installed-Size: 338
-Depends: libpipewire-0.3-0 (= 0.3.26-1), libspa-0.2-dev (= 0.3.26-1)
+Installed-Size: 340
+Depends: libpipewire-0.3-0 (= 0.3.27-1), libspa-0.2-dev (= 0.3.27-1)
 Suggests: pipewire-doc
-Filename: ./libpipewire-0.3-dev_0.3.26-1_amd64.deb
-Size: 50252
-MD5sum: 61f625e5c052142fc564808363bbf476
-SHA1: f589e112a56ebc9a4f6ac9520afdf1b44ef0fccb
-SHA256: 95384cbfdae754e10a6e29dc85dd5d6b4710ec57461c78a8c115d73bd871e188
+Filename: ./libpipewire-0.3-dev_0.3.27-1_amd64.deb
+Size: 50520
+MD5sum: b6f8eba84f959fe7f709ecc76db5a3b9
+SHA1: 4219c87259e87467b1cccec055b2e337e545ee23
+SHA256: be467a7618b9529a336b41d2ca2e395e7650581e9396d1b2631ce029fc5e6e4f
 Section: libdevel
 Priority: optional
 Multi-Arch: same
@@ -211,18 +211,18 @@ Description: libraries for the PipeWire multimedia server - development
 
 Package: libpipewire-0.3-modules
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
-Installed-Size: 1467
-Depends: libc6 (>= 2.28), libdbus-1-3 (>= 1.9.14), libpipewire-0.3-0 (= 0.3.26-1), libsystemd0
+Installed-Size: 1577
+Depends: libc6 (>= 2.28), libdbus-1-3 (>= 1.9.14), libpipewire-0.3-0 (= 0.3.27-1), libsystemd0
 Breaks: pipewire (<< 0.3.5)
 Replaces: pipewire (<< 0.3.5)
-Filename: ./libpipewire-0.3-modules_0.3.26-1_amd64.deb
-Size: 295884
-MD5sum: dd1498a208ad5ae682d6648dc7874df7
-SHA1: 6a75deee7701cd3adffffc7ac239430133c62b6a
-SHA256: c4c6e791b0c0c8315e2a612fb3fd4f1e1636f0f863201d290da8eabe4e46e2d7
+Filename: ./libpipewire-0.3-modules_0.3.27-1_amd64.deb
+Size: 309044
+MD5sum: 8d039f77416b6a4f3ac1ad54a349660b
+SHA1: b300cfa3e93e957b0550237502bec3183a2b9311
+SHA256: 1f3ac1221c83b331c1ac384ecb88b765685f12cd90c3f0d92254327a31e672c5
 Section: libs
 Priority: optional
 Multi-Arch: same
@@ -242,16 +242,16 @@ Description: libraries for the PipeWire multimedia server - modules
 
 Package: libspa-0.2-bluetooth
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
-Installed-Size: 448
-Depends: libspa-0.2-modules (= 0.3.26-1), libbluetooth3 (>= 4.91), libc6 (>= 2.28), libdbus-1-3 (>= 1.9.14), libfdk-aac1 (>= 0.1.4), libldacbt-abr2 (>= 2.0.2), libldacbt-enc2 (>= 2.0.2), libopenaptx0 (>= 0.2.0-5~), libsbc1
-Filename: ./libspa-0.2-bluetooth_0.3.26-1_amd64.deb
-Size: 148712
-MD5sum: 0a35b8f360b47a2291e26a7ddf5670ae
-SHA1: 9ac28707e9bc4ba106d509ff15983ab42e57a262
-SHA256: a03d62c088c7bac3a6dd420e55a15c27aa2a9e92ba389c0df01795f254ca3199
+Installed-Size: 452
+Depends: libspa-0.2-modules (= 0.3.27-1), libbluetooth3 (>= 4.91), libc6 (>= 2.28), libdbus-1-3 (>= 1.9.14), libfdk-aac1 (>= 0.1.4), libldacbt-abr2 (>= 2.0.2), libldacbt-enc2 (>= 2.0.2), libopenaptx0 (>= 0.2.0-5~), libsbc1
+Filename: ./libspa-0.2-bluetooth_0.3.27-1_amd64.deb
+Size: 149520
+MD5sum: c9fe8c2eb49f46a048e1a6fa2184564c
+SHA1: 24afc5e8f7fd25e7c5612613f14cd47714aa6c19
+SHA256: 594cd6c2c615b19c1606fecb737eb85cc7da1f18ee6587e74a9e729de99c6e5e
 Section: libs
 Priority: optional
 Multi-Arch: same
@@ -272,16 +272,16 @@ Description: libraries for the PipeWire multimedia server - bluetooth plugins
 
 Package: libspa-0.2-dev
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
 Installed-Size: 514
 Suggests: pipewire-doc
-Filename: ./libspa-0.2-dev_0.3.26-1_amd64.deb
-Size: 72760
-MD5sum: 8a6e9366c6745095770eab0b4955b43b
-SHA1: 2a764a42b82dea517097268cf287890adfc2c4a0
-SHA256: 19fc93b34a6f597654ce52e05aa46da3564bff028d6497545e5e4c44195ef83b
+Filename: ./libspa-0.2-dev_0.3.27-1_amd64.deb
+Size: 73016
+MD5sum: b55d2082eddd9ff7fc9469a777620177
+SHA1: 755693debf37d3c98029567ae60888a9fec31bd2
+SHA256: bdfb4947c409d8a1eeea37be7bdb3ca3f756a80fba7c7041c98728a7e44fcc0c
 Section: libdevel
 Priority: optional
 Multi-Arch: same
@@ -299,16 +299,16 @@ Description: libraries for the PipeWire multimedia server Simple Plugin API - de
 
 Package: libspa-0.2-jack
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
 Installed-Size: 160
-Depends: libspa-0.2-modules (= 0.3.26-1), libc6 (>= 2.14), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125
-Filename: ./libspa-0.2-jack_0.3.26-1_amd64.deb
-Size: 45552
-MD5sum: 5df3407f4ee6fbadcab9150d5d80db96
-SHA1: 1fc7ef47a9ed59766c1d14d081369c86cd6bd7a9
-SHA256: 13fa752a0e5319c72bb7d46cb21533b06f20e666d2aa999e4a55fcde4377b09d
+Depends: libspa-0.2-modules (= 0.3.27-1), libc6 (>= 2.14), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125
+Filename: ./libspa-0.2-jack_0.3.27-1_amd64.deb
+Size: 45656
+MD5sum: 073f0acaafe4665ccc10c39944d18294
+SHA1: d9b3c31aa7d39886f388c099b8b8e6b8503f9bd0
+SHA256: 2a3855fe353e99853c2e5c79b38f655f7769b8462d2fee2d06e4f2507ac691ed
 Section: libs
 Priority: optional
 Multi-Arch: same
@@ -328,18 +328,18 @@ Description: libraries for the PipeWire multimedia server - JACK client
 
 Package: libspa-0.2-modules
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
-Installed-Size: 1918
+Installed-Size: 1922
 Depends: libasound2 (>= 1.2.1.1), libc6 (>= 2.29), libdbus-1-3 (>= 1.9.14), libsystemd0, libudev1 (>= 183), libvulkan1 (>= 1.2.131.2)
 Breaks: pipewire (<< 0.3.5)
 Replaces: pipewire (<< 0.3.5)
-Filename: ./libspa-0.2-modules_0.3.26-1_amd64.deb
-Size: 430316
-MD5sum: 5a33a7edc4cc2ad8bc2f45b1cf7110dd
-SHA1: c4f16f06cb64d63310e5f2a7d983b98f8057874e
-SHA256: 2c2d3e0ed6ca6287acfb7f35bedcb2840f74c635d6a732272d7e71db1d75c497
+Filename: ./libspa-0.2-modules_0.3.27-1_amd64.deb
+Size: 431436
+MD5sum: 337cd39de6a4c3e9dadd4d4a3850f7f6
+SHA1: ba4d3779361988dcae643c94fb5d0f04e32ae605
+SHA256: 570130dd6279d2906d896b6a21b041c2ba97b6a61a369d3280169310da2d2bd8
 Section: libs
 Priority: optional
 Multi-Arch: same
@@ -359,17 +359,17 @@ Description: libraries for the PipeWire multimedia server Simple Plugin API - mo
  clients should depend on the pipewire package instead.
 
 Package: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
 Installed-Size: 32
-Depends: libpipewire-0.3-modules (= 0.3.26-1), pipewire-bin (= 0.3.26-1), init-system-helpers (>= 1.52)
+Depends: libpipewire-0.3-modules (= 0.3.27-1), pipewire-bin (= 0.3.27-1), init-system-helpers (>= 1.52)
 Suggests: pipewire-locales
-Filename: ./pipewire_0.3.26-1_amd64.deb
-Size: 10376
-MD5sum: b201fc93f151a9d0126c741d1548fb37
-SHA1: 8c6b84fc8c68a2c103979b2561fff0f02ac497f7
-SHA256: ea4bee2a86164dedb14b6fb9a7b6d4d30cd7eaab9bd54704d6d699e1892dee30
+Filename: ./pipewire_0.3.27-1_amd64.deb
+Size: 10528
+MD5sum: 992fa39f3730e7e963587d56b68d6006
+SHA1: 715057069198bc6fcaf81395cade5999dbf112c8
+SHA256: 00851ea23e6c57883add2d4f189c5761504aa903746db36aa04df79601154ce2
 Section: video
 Priority: optional
 Multi-Arch: same
@@ -389,18 +389,18 @@ Description: audio and video processing engine multimedia server
 
 Package: pipewire-audio-client-libraries
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
 Installed-Size: 624
-Depends: pipewire (= 0.3.26-1), libasound2 (>= 1.1.7), libc6 (>= 2.17), libpipewire-0.3-0 (= 0.3.26-1)
+Depends: pipewire (= 0.3.27-1), libasound2 (>= 1.1.7), libc6 (>= 2.17), libpipewire-0.3-0 (= 0.3.27-1)
 Breaks: pipewire (<< 0.3.5)
 Replaces: pipewire (<< 0.3.5)
-Filename: ./pipewire-audio-client-libraries_0.3.26-1_amd64.deb
-Size: 117356
-MD5sum: 588689c6605645d84274150ab04f163f
-SHA1: e164f199952b0b55491cfffa2fc13b16d049d9d2
-SHA256: 946117c6ed62db697f448039e62ef3bd9c8a4d397cd5d9c7009bf9e0d6052891
+Filename: ./pipewire-audio-client-libraries_0.3.27-1_amd64.deb
+Size: 117824
+MD5sum: bb12b20a2cb9bc830c1c5fdaa406b449
+SHA1: 06469a4d0d5c21661a59710514d9723bd78fa81a
+SHA256: 154750e1819bda4c2e894fb2f592a9eceb114a84c9c3bcaed12c14e0ee39cc1d
 Section: libs
 Priority: optional
 Multi-Arch: same
@@ -421,18 +421,18 @@ Description: PipeWire multimedia server - audio client libraries
 
 Package: pipewire-bin
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
-Installed-Size: 1777
-Depends: libpipewire-0.3-modules (= 0.3.26-1), libasound2 (>= 1.2.1.1), libc6 (>= 2.29), libdbus-1-3 (>= 1.9.14), libncursesw6 (>= 6), libpipewire-0.3-0 (= 0.3.26-1), libsndfile1 (>= 1.0.20), libsystemd0, libtinfo6 (>= 6)
+Installed-Size: 1773
+Depends: libpipewire-0.3-modules (= 0.3.27-1), libasound2 (>= 1.2.1.1), libc6 (>= 2.29), libdbus-1-3 (>= 1.9.14), libncursesw6 (>= 6), libpipewire-0.3-0 (= 0.3.27-1), libsndfile1 (>= 1.0.20), libsystemd0, libtinfo6 (>= 6)
 Breaks: pipewire (<< 0.3.5)
 Replaces: pipewire (<< 0.3.5)
-Filename: ./pipewire-bin_0.3.26-1_amd64.deb
-Size: 377056
-MD5sum: 24bf3f2e05f3cd7d5aec0b34a4db026b
-SHA1: c0fb3b85452697c111003d9de7a869bdb28ac9f3
-SHA256: fe7ef3263995a76517a0cf813ae59070eca40d1b2cc36259e1210fc4070a6709
+Filename: ./pipewire-bin_0.3.27-1_amd64.deb
+Size: 379144
+MD5sum: e4b333e5d29c9768007c25145b81be53
+SHA1: 7a9a0c03630c9314b7d415638074e6005a20137d
+SHA256: b1a1868f1f7660d8d41016528ec78cc9f527dbe2819d4dd3335917b4aff0cc42
 Section: video
 Priority: optional
 Multi-Arch: foreign
@@ -452,17 +452,17 @@ Description: PipeWire multimedia server - programs
 
 Package: pipewire-doc
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: all
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
-Installed-Size: 32003
+Installed-Size: 32393
 Breaks: libpipewire-0.2-doc (<< 0.3.1)
 Replaces: libpipewire-0.2-doc (<< 0.3.1)
-Filename: ./pipewire-doc_0.3.26-1_all.deb
-Size: 22789712
-MD5sum: 3cb73bb973b83184a9597338e47185dd
-SHA1: 9ca938ed947af438ad2e406983b2af365e089306
-SHA256: 0f8a46706faf9a5c6b5cf558acd1b2b2dcb8ed1a834a9fe3de97fb4b7a8d4d6a
+Filename: ./pipewire-doc_0.3.27-1_all.deb
+Size: 23071708
+MD5sum: 5035145e3324d23f135b16f6e0fdc5db
+SHA1: 956cd5cff9d3c93fdd2ce06404fa3e0945ae6944
+SHA256: 71d2f34f15a61706a6efed1c8d81ec559f149b3d1a2bf9396cfaf1b4683178e0
 Section: doc
 Priority: optional
 Multi-Arch: foreign
@@ -480,16 +480,16 @@ Description: libraries for the PipeWire multimedia server - documentation
 
 Package: pipewire-locales
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: all
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
-Installed-Size: 460
-Depends: pipewire (= 0.3.26-1)
-Filename: ./pipewire-locales_0.3.26-1_all.deb
-Size: 53336
-MD5sum: d615a01874f01ae73cb4af20c4815d71
-SHA1: 41b2b8fa0381bad8642743e60b54bd8f9689ca54
-SHA256: 9054e805770407254cf953a74bdca74b729315b2c3b59752a45f6afc3b94b3be
+Installed-Size: 467
+Depends: pipewire (= 0.3.27-1)
+Filename: ./pipewire-locales_0.3.27-1_all.deb
+Size: 54016
+MD5sum: 9da1cb3457ed796615ab2153403fc721
+SHA1: 754b8018129485c37abb3222108dbb182885516b
+SHA256: a4bc76b97e711c72a4abac83666d5c003ac987f72dd6862391a640dba624b2cb
 Section: localization
 Priority: optional
 Multi-Arch: foreign
@@ -507,16 +507,16 @@ Description: locales for the PipeWire multimedia server - localization
 
 Package: pipewire-tests
 Source: pipewire
-Version: 0.3.26-1
+Version: 0.3.27-1
 Architecture: amd64
 Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
 Installed-Size: 1966
-Depends: pipewire (= 0.3.26-1), libc6 (>= 2.28), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, libpipewire-0.3-0 (= 0.3.26-1), libsdl2-2.0-0 (>= 2.0.10)
-Filename: ./pipewire-tests_0.3.26-1_amd64.deb
-Size: 292316
-MD5sum: 461ab661f1ff501eb464c5a658b9975a
-SHA1: 6597338fc7b1873b467aeda21c82b98499e69407
-SHA256: 4186c2cfe2c0f7de6e0cc17da0f63f04f168cf47586b8a5856070bae55ae8036
+Depends: pipewire (= 0.3.27-1), libc6 (>= 2.28), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, libpipewire-0.3-0 (= 0.3.27-1), libsdl2-2.0-0 (>= 2.0.10)
+Filename: ./pipewire-tests_0.3.27-1_amd64.deb
+Size: 292592
+MD5sum: 5da81ae50e4b6b715a91661491a7edb3
+SHA1: b551fd8dce2dcf4fc6742d2b21a3d6244fdab5ee
+SHA256: 3f031603139dbc4fd7408eeb824dbe2d79125240c3b21dd2733d32863814b1f1
 Section: misc
 Priority: optional
 Homepage: https://pipewire.org/

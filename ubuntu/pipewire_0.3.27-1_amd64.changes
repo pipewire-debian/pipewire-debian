@@ -1,0 +1,133 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 06 May 2021 19:48:22 +0530
+Source: pipewire
+Binary: gstreamer1.0-pipewire libpipewire-0.3-0 libpipewire-0.3-dev libpipewire-0.3-modules libspa-0.2-bluetooth libspa-0.2-dev libspa-0.2-jack libspa-0.2-modules pipewire pipewire-audio-client-libraries pipewire-bin pipewire-doc pipewire-locales pipewire-tests
+Architecture: amd64 all
+Version: 0.3.27-1
+Distribution: focal
+Urgency: medium
+Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Changed-By: Sourav Das <souravdas142@gmail.com>
+Description:
+ gstreamer1.0-pipewire - GStreamer 1.0 plugin for the PipeWire multimedia server
+ libpipewire-0.3-0 - libraries for the PipeWire multimedia server
+ libpipewire-0.3-dev - libraries for the PipeWire multimedia server - development
+ libpipewire-0.3-modules - libraries for the PipeWire multimedia server - modules
+ libspa-0.2-bluetooth - libraries for the PipeWire multimedia server - bluetooth plugins
+ libspa-0.2-dev - libraries for the PipeWire multimedia server Simple Plugin API -
+ libspa-0.2-jack - libraries for the PipeWire multimedia server - JACK client
+ libspa-0.2-modules - libraries for the PipeWire multimedia server Simple Plugin API -
+ pipewire   - audio and video processing engine multimedia server
+ pipewire-audio-client-libraries - PipeWire multimedia server - audio client libraries
+ pipewire-bin - PipeWire multimedia server - programs
+ pipewire-doc - libraries for the PipeWire multimedia server - documentation
+ pipewire-locales - locales for the PipeWire multimedia server - localization
+ pipewire-tests - PipeWire multimedia server - tests and examples
+Changes:
+ pipewire (0.3.27-1) focal; urgency=medium
+ .
+   * New upstream release
+   * Fix bug that caused bluetooth devices to stop working.
+   * Fix session-manager crash when switching users caused by
+   * the DBus plugin cleanup errors.
+   * Improve volume handling of monitor ports.
+   * Fix GStreamer v4l2 support.
+   * Implement module-remap-sink and module-remap-source in
+   * pipewire-pulse.
+   * More fixes and improvements.
+Checksums-Sha1:
+ f68640e24ff833da5e032afea9c3304b411de825 166336 gstreamer1.0-pipewire-dbgsym_0.3.27-1_amd64.ddeb
+ a513415ec4d0ab2409ed2f394af3334445180f27 48992 gstreamer1.0-pipewire_0.3.27-1_amd64.deb
+ 9463777d74f2671453dcd40832937c27099840bc 595892 libpipewire-0.3-0-dbgsym_0.3.27-1_amd64.ddeb
+ a602766bd8f19730701785321c889a92cdfee71e 205304 libpipewire-0.3-0_0.3.27-1_amd64.deb
+ 4219c87259e87467b1cccec055b2e337e545ee23 50520 libpipewire-0.3-dev_0.3.27-1_amd64.deb
+ f026175b97c82b551f36fc00da19e0f260f6b599 1335596 libpipewire-0.3-modules-dbgsym_0.3.27-1_amd64.ddeb
+ b300cfa3e93e957b0550237502bec3183a2b9311 309044 libpipewire-0.3-modules_0.3.27-1_amd64.deb
+ 2198b8651d95aa8d13f3aba373145b63cb8a748f 563944 libspa-0.2-bluetooth-dbgsym_0.3.27-1_amd64.ddeb
+ 24afc5e8f7fd25e7c5612613f14cd47714aa6c19 149520 libspa-0.2-bluetooth_0.3.27-1_amd64.deb
+ 755693debf37d3c98029567ae60888a9fec31bd2 73016 libspa-0.2-dev_0.3.27-1_amd64.deb
+ 5e2f749177592681f709bd59c584cb5ec7706196 147400 libspa-0.2-jack-dbgsym_0.3.27-1_amd64.ddeb
+ d9b3c31aa7d39886f388c099b8b8e6b8503f9bd0 45656 libspa-0.2-jack_0.3.27-1_amd64.deb
+ 8bd48399b870b8985c3c1b942ba84eb7f79596a2 2238248 libspa-0.2-modules-dbgsym_0.3.27-1_amd64.ddeb
+ ba4d3779361988dcae643c94fb5d0f04e32ae605 431436 libspa-0.2-modules_0.3.27-1_amd64.deb
+ 08c1af66de55ab15c2df71a623e4fe345aaf3e2e 475392 pipewire-audio-client-libraries-dbgsym_0.3.27-1_amd64.ddeb
+ 06469a4d0d5c21661a59710514d9723bd78fa81a 117824 pipewire-audio-client-libraries_0.3.27-1_amd64.deb
+ a9619306f53ce6347e32796fcdc86bc62f7ded1a 1171964 pipewire-bin-dbgsym_0.3.27-1_amd64.ddeb
+ 7a9a0c03630c9314b7d415638074e6005a20137d 379144 pipewire-bin_0.3.27-1_amd64.deb
+ 956cd5cff9d3c93fdd2ce06404fa3e0945ae6944 23071708 pipewire-doc_0.3.27-1_all.deb
+ 754b8018129485c37abb3222108dbb182885516b 54016 pipewire-locales_0.3.27-1_all.deb
+ 4f795cf229edb55a0a56072ce17d49ed8c6c006f 1543340 pipewire-tests-dbgsym_0.3.27-1_amd64.ddeb
+ b551fd8dce2dcf4fc6742d2b21a3d6244fdab5ee 292592 pipewire-tests_0.3.27-1_amd64.deb
+ 777828a8a2cdbce7d6320a0be8f666c7d43eeb24 25522 pipewire_0.3.27-1_amd64.buildinfo
+ 715057069198bc6fcaf81395cade5999dbf112c8 10528 pipewire_0.3.27-1_amd64.deb
+Checksums-Sha256:
+ 3c687cc298fa80e4ce387606f6eae210fabf171b160012900eb455d2ac926e24 166336 gstreamer1.0-pipewire-dbgsym_0.3.27-1_amd64.ddeb
+ 09bb7e385e5acc0d33df57c2a7258db5888fbb40b42b6da1d1e92410aec9d447 48992 gstreamer1.0-pipewire_0.3.27-1_amd64.deb
+ 21d32d1ec8501b9163e4edb42c884f236c7cf879a554c37d6898d8adbd188746 595892 libpipewire-0.3-0-dbgsym_0.3.27-1_amd64.ddeb
+ 0852fe4505e5a0418bf50c2bba2c66d1320f3be3a195584d14dcf9ebb9afb336 205304 libpipewire-0.3-0_0.3.27-1_amd64.deb
+ be467a7618b9529a336b41d2ca2e395e7650581e9396d1b2631ce029fc5e6e4f 50520 libpipewire-0.3-dev_0.3.27-1_amd64.deb
+ 437145b84044702e57575fde0aaeeebaf5b769022c6be8d6199ac309281caf18 1335596 libpipewire-0.3-modules-dbgsym_0.3.27-1_amd64.ddeb
+ 1f3ac1221c83b331c1ac384ecb88b765685f12cd90c3f0d92254327a31e672c5 309044 libpipewire-0.3-modules_0.3.27-1_amd64.deb
+ 9893101fcaed0d7e8d2a65a0ace11a8f9c5a087c980a0e80a14c5071c52e624e 563944 libspa-0.2-bluetooth-dbgsym_0.3.27-1_amd64.ddeb
+ 594cd6c2c615b19c1606fecb737eb85cc7da1f18ee6587e74a9e729de99c6e5e 149520 libspa-0.2-bluetooth_0.3.27-1_amd64.deb
+ bdfb4947c409d8a1eeea37be7bdb3ca3f756a80fba7c7041c98728a7e44fcc0c 73016 libspa-0.2-dev_0.3.27-1_amd64.deb
+ 2eb6b972eda9b5e2229e7b98fa0ca18e1e2ad66ef775efce8e207c1882426150 147400 libspa-0.2-jack-dbgsym_0.3.27-1_amd64.ddeb
+ 2a3855fe353e99853c2e5c79b38f655f7769b8462d2fee2d06e4f2507ac691ed 45656 libspa-0.2-jack_0.3.27-1_amd64.deb
+ 341188afefd7a1e7a0b6285b2c3badd5b388b7108a97861023cb042fab0b64f9 2238248 libspa-0.2-modules-dbgsym_0.3.27-1_amd64.ddeb
+ 570130dd6279d2906d896b6a21b041c2ba97b6a61a369d3280169310da2d2bd8 431436 libspa-0.2-modules_0.3.27-1_amd64.deb
+ e647927f26f730b980a5fa5ca4c7bab04fbf64cfda4e71af2e66d1e2ab441ebd 475392 pipewire-audio-client-libraries-dbgsym_0.3.27-1_amd64.ddeb
+ 154750e1819bda4c2e894fb2f592a9eceb114a84c9c3bcaed12c14e0ee39cc1d 117824 pipewire-audio-client-libraries_0.3.27-1_amd64.deb
+ 4fbdd4cc7ec3b7c892a9def6aaaf281e80de5e0b34565a31e2039bbcb5adf52d 1171964 pipewire-bin-dbgsym_0.3.27-1_amd64.ddeb
+ b1a1868f1f7660d8d41016528ec78cc9f527dbe2819d4dd3335917b4aff0cc42 379144 pipewire-bin_0.3.27-1_amd64.deb
+ 71d2f34f15a61706a6efed1c8d81ec559f149b3d1a2bf9396cfaf1b4683178e0 23071708 pipewire-doc_0.3.27-1_all.deb
+ a4bc76b97e711c72a4abac83666d5c003ac987f72dd6862391a640dba624b2cb 54016 pipewire-locales_0.3.27-1_all.deb
+ 8c3e5542ffe990ec15a4f97fdae40dd9dbe2c4dfa1c1751f5dc939946f898440 1543340 pipewire-tests-dbgsym_0.3.27-1_amd64.ddeb
+ 3f031603139dbc4fd7408eeb824dbe2d79125240c3b21dd2733d32863814b1f1 292592 pipewire-tests_0.3.27-1_amd64.deb
+ ead3d144dc6aa21a026a75d24d689dec2a569f2e0675d15582a84fef47120b74 25522 pipewire_0.3.27-1_amd64.buildinfo
+ 00851ea23e6c57883add2d4f189c5761504aa903746db36aa04df79601154ce2 10528 pipewire_0.3.27-1_amd64.deb
+Files:
+ e8f12b0247db17a14cd05b1ec9adb2b9 166336 debug optional gstreamer1.0-pipewire-dbgsym_0.3.27-1_amd64.ddeb
+ 4e21a8adbb92272095e2199382aa9d33 48992 libs optional gstreamer1.0-pipewire_0.3.27-1_amd64.deb
+ 3cbc23f2f37ab4b4691bb3fd677d4c4e 595892 debug optional libpipewire-0.3-0-dbgsym_0.3.27-1_amd64.ddeb
+ efd700b1fb459b0763109af5260b5d93 205304 libs optional libpipewire-0.3-0_0.3.27-1_amd64.deb
+ b6f8eba84f959fe7f709ecc76db5a3b9 50520 libdevel optional libpipewire-0.3-dev_0.3.27-1_amd64.deb
+ 44d39f901c53f9bb1b4f3bd8dbf34974 1335596 debug optional libpipewire-0.3-modules-dbgsym_0.3.27-1_amd64.ddeb
+ 8d039f77416b6a4f3ac1ad54a349660b 309044 libs optional libpipewire-0.3-modules_0.3.27-1_amd64.deb
+ 7901100ee5ea4b97e995ad1f50672452 563944 debug optional libspa-0.2-bluetooth-dbgsym_0.3.27-1_amd64.ddeb
+ c9fe8c2eb49f46a048e1a6fa2184564c 149520 libs optional libspa-0.2-bluetooth_0.3.27-1_amd64.deb
+ b55d2082eddd9ff7fc9469a777620177 73016 libdevel optional libspa-0.2-dev_0.3.27-1_amd64.deb
+ c7757ff75a6b3840bea22f3a8da700c7 147400 debug optional libspa-0.2-jack-dbgsym_0.3.27-1_amd64.ddeb
+ 073f0acaafe4665ccc10c39944d18294 45656 libs optional libspa-0.2-jack_0.3.27-1_amd64.deb
+ 1c14148e7e2a5eea82997621ba9d3119 2238248 debug optional libspa-0.2-modules-dbgsym_0.3.27-1_amd64.ddeb
+ 337cd39de6a4c3e9dadd4d4a3850f7f6 431436 libs optional libspa-0.2-modules_0.3.27-1_amd64.deb
+ 71e6b7b4fadf27d43e4b115f790c8898 475392 debug optional pipewire-audio-client-libraries-dbgsym_0.3.27-1_amd64.ddeb
+ bb12b20a2cb9bc830c1c5fdaa406b449 117824 libs optional pipewire-audio-client-libraries_0.3.27-1_amd64.deb
+ fc05cb368a88bdccd9433dcaa3e3d8b5 1171964 debug optional pipewire-bin-dbgsym_0.3.27-1_amd64.ddeb
+ e4b333e5d29c9768007c25145b81be53 379144 video optional pipewire-bin_0.3.27-1_amd64.deb
+ 5035145e3324d23f135b16f6e0fdc5db 23071708 doc optional pipewire-doc_0.3.27-1_all.deb
+ 9da1cb3457ed796615ab2153403fc721 54016 localization optional pipewire-locales_0.3.27-1_all.deb
+ ab1ef519f717ec5f27f0c540a090023b 1543340 debug optional pipewire-tests-dbgsym_0.3.27-1_amd64.ddeb
+ 5da81ae50e4b6b715a91661491a7edb3 292592 misc optional pipewire-tests_0.3.27-1_amd64.deb
+ 8b6813f5ed8291103e538cd6e6ef5cdb 25522 libs optional pipewire_0.3.27-1_amd64.buildinfo
+ 992fa39f3730e7e963587d56b68d6006 10528 video optional pipewire_0.3.27-1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJLBAEBCgA1FiEEaLc9vKmhQwt+0iydY8WARVl9EscFAmCUEuMXHHNvdXJhdmRh
+czE0MkBnbWFpbC5jb20ACgkQY8WARVl9EsfUjg//Zjf+dfaPV6gQMQBsEH4YZML4
+qq9aJPcFH9Zc33G32XWn2Vq+cP9yArn8vhSkaxewjf8hdZ2hqm2t73iUmiafP41q
+AsmRUe7gLrjc7UyiXlEKWZQt9g3NUhMS/2BBjNVXKbHvUsZ0GbekecgQOJ/8wQY7
+DIosQdl2BDwoD5Wr5DrvZmbP+vL40RJlVGLb/BRQih+59TDg0kSG/qGO7EsqGVa1
+JTE3fENUTYuwZ8fODmbZbgaArT2RsYdzuG+RHwN+4oRpMvKt4IiK8hMNOgRMW2+c
+2WWEUMytre7InEoPgbfX1YZlDqxLcLhvfe8EcR8WwFXLWcB54HXFOZZolSHrOYfn
+G3wePYzB1XkzVHtOvM5Ijku8DMccKSNxbpctJGLBjrOEHgqNjmJhqMXPYD9HPeg4
+VLRdKAUYptiS0i+WAk3n0joTN49t2ZO15KGkZ/p7lspNeSzUdl+5oVTVGjWnu3Q/
+LHs4xdLxUAmM4Rv58B3HCwJIdC0czgYyMNsRyNqDQqQ9x27CumvvAlqlOPxaTRk5
+1dacFM/rmH5Pv4bjYyMjrqX5wRBYqp51v5q6A0kkNiqngJXDSAHQkgeLukmbQHGX
+VTxJpOfXipLrDtYEFO8RW/y6zTO2HqijZ+7FrWGaZrm3nKSArF2Z3SQMYXy6Ub+2
+/MhkLND9mKdcJVAo5BQ=
+=So3D
+-----END PGP SIGNATURE-----
