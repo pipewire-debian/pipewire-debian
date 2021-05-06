@@ -30,7 +30,7 @@
   </a>
   <!-- PPA -->
   <a href="https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream">
-    <img src="https://img.shields.io/website?down_message=PipeWire%200.3.26&label=Launchpad%20PPA&logo=UBUNTU&up_message=PipeWire%200.3.26&url=https%3A%2F%2Flaunchpad.net%2F~pipewire-debian%2F%2Barchive%2Fubuntu%2Fpipewire-upstream">
+    <img src="https://img.shields.io/website?down_message=PipeWire%200.3.27&label=Launchpad%20PPA&logo=UBUNTU&up_message=PipeWire%200.3.27&url=https%3A%2F%2Flaunchpad.net%2F~pipewire-debian%2F%2Barchive%2Fubuntu%2Fpipewire-upstream">
   </a>
   <!-- Project License -->
   <a href="https://choosealicense.com/licenses/mit/">
