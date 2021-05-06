@@ -1,3 +1,17 @@
+pipewire (0.3.27-1) focal; urgency=medium
+
+  * New upstream release
+  * Fix bug that caused bluetooth devices to stop working.
+  * Fix session-manager crash when switching users caused by
+  * the DBus plugin cleanup errors.
+  * Improve volume handling of monitor ports.
+  * Fix GStreamer v4l2 support.
+  * Implement module-remap-sink and module-remap-source in
+  * pipewire-pulse.
+  * More fixes and improvements.
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 06 May 2021 19:48:22 +0530
+
 pipewire (0.3.26-3) focal; urgency=medium
 
   * New upstream release
