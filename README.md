@@ -38,21 +38,23 @@
   </a>
 </p>
 
-# PipeWire PPA for Ubuntu (>= 20.04)
-#### _An upstream version of PipeWire for Ubuntu maintained with a 15 day release cycle_
+# PipeWire & blueman-git PPA for Ubuntu (>= 20.04)
+#### _An upstream version of blueman-git & PipeWire for Ubuntu maintained with a 15 day release cycle_
 
-|                                               Link                                               |          Description           |
+|                                               Link                                               |          Description     |
 | :----------------------------------------------------------------------------------------------: | :----------------------: |
-|          [Original-PipeWire-Upstream](https://gitlab.freedesktop.org/pipewire/pipewire)          | **Forked** |
-| [PipeWire-debian-Upstream](https://salsa.debian.org/utopia-team/pipewire/-/tree/debian/0.3.25-1) |   **Forked**   |
-|                  [libfdk-aac[12]](https://packages.ubuntu.com/hirsute/libfdk-aac2)                  |     **Dependencies**     |
+|          [Original-PipeWire-Upstream](https://gitlab.freedesktop.org/pipewire/pipewire)          |        **Forked**        |
+| [PipeWire-debian-Upstream](https://salsa.debian.org/utopia-team/pipewire/-/tree/debian/0.3.25-1) |        **Forked**        |
+|            [Original-blueman-Upstream](https://github.com/blueman-project/blueman)               |        **Forked**        |
+|            [blueman-debian-Upstream](https://salsa.debian.org/cschramm/blueman)                  |        **Forked**        |
+|                  [libfdk-aac[12]](https://packages.ubuntu.com/hirsute/libfdk-aac2)               |     **Dependencies**     |
 |                 [libopenaptx0](https://packages.ubuntu.com/hirsute/libopenaptx0)                 |     **Dependencies**     |
 |               [libldacbt-abr2](https://packages.ubuntu.com/hirsute/libldacbt-abr2)               |     **Dependencies**     |
 |               [libldacbt-enc2](https://packages.ubuntu.com/hirsute/libldacbt-enc2)               |     **Dependencies**     |
 
 ## [Launchpad PPA](https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream)
 
-:warning: **This repo is not obsolete. I will sync this repo with the Launchpad PPA to support other Debian based distros. The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire and its dependencies.**
+:warning: **This repo is not obsolete. I will sync this repo with the Launchpad PPA to support other Debian based distros. The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.**
 
 ## 1. PPA Configuration
 
@@ -85,13 +87,13 @@ echo "deb-src http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu 
 :bulb: **Use IFF you have a good reason - mostly for non-Ubuntu distros (eg. Kali, MX, Parrot, Mint, Deepin, etc)**
 
 ```bash
-curl -SsL https://pipewire-debian.github.io/pipewire-debian/KEY.gpg | sudo apt-key add -
-sudo curl -SsL -o /etc/apt/sources.list.d/pipewire.list https://pipewire-debian.github.io/pipewire-debian/pipewire.list
+curl -SsL https://pipewire-debian.github.io/pipewire-debian/ubuntu/KEY.gpg | sudo apt-key add -
+sudo curl -SsL -o /etc/apt/sources.list.d/pipewire.list https://pipewire-debian.github.io/pipewire-debian/ubuntu/pipewire.list
 sudo apt update
 
 ```
 
-## 2. Install PipeWire
+## 2. Install PipeWire Or blueman-git
 
 ### After adding one of the PPA's, follow the installation instructions below
 
@@ -107,11 +109,22 @@ sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.
 
 # Additionally, if you want to install `pipewire-doc`
 
-sudo apt install pipewire-doc
+sudo apt install pipewire-doc     
+
+
+# ~~~~~~~~~~~~~ For blueman-git  ~~~~~~~~~~~~~~~          
+
+# Before installing blueman-git, remove and purge any official version of blueman.        
+
+sudo apt-get remove --purge blueman && sudo rm -f /var/lib/blueman/network.state
+
+# Then, to install issue below command.
+
+sudo apt-get install blueman-git         
 ```   
 
     
-## 3. Post Installation Steps    
+## 3. Post Installation Steps form PipeWire or blueman-git        
 You don't need to uninstall PulseAudio to enable PipeWire, disable and mask PulseAudio related services to stop them    
 ```bash
 systemctl --user --now disable  pulseaudio.{socket,service}
@@ -127,6 +140,11 @@ pactl info | grep '^Server Name'
 ```
 If your system doesn't have any sound, please reboot    
 
+Incase of blueman, just enable below service.
+```bash
+sudo systemctl enable --now blueman-mechanism.service
+```
+
 
 
 # :book: Wiki
@@ -134,12 +152,14 @@ If your system doesn't have any sound, please reboot
 - [This Repo Wiki](https://github.com/pipewire-debian/pipewire-debian/wiki)
 - [Upstream-README](https://gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/README.md)
 - [Upstream-wiki](https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home)
+- [Upstream-blueman-wiki](https://github.com/blueman-project/blueman/wiki)
 - **Gentoo**
     - [Gentoo-wiki](https://wiki.gentoo.org/wiki/PipeWire)
     - [Gentoo-Bluetooth-Wiki](https://wiki.gentoo.org/wiki/Bluetooth)
 - **Arch-Linux** 
     - [Arch-wiki](https://wiki.archlinux.org/index.php/PipeWire)
     - [Arch-Bluetooth-Wiki](https://wiki.archlinux.org/title/Bluetooth)
+    - [blueman](https://wiki.archlinux.org/title/Blueman)
 - [Debian-wiki](https://wiki.debian.org/PipeWire)
 
 # :hammer_and_wrench: Troubleshooting  
@@ -150,12 +170,19 @@ If your system doesn't have any sound, please reboot
 
 If you have any issue regarding this PPA package, create a issue here.
 
-**For features, requests or bugs, create an issue on [upstream](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues).**
+**For features, requests or bugs, create an issue on [upstream](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues) For PW**
+**And for blueman on [here](https://github.com/blueman-project/blueman/issues/new)**    
 
 # :clap: Credits
 
-Original project maintainer:
+Original PipeWire project maintainer:
 [Wim Taymans](https://gitlab.freedesktop.org/wtaymans) - [Source](https://gitlab.freedesktop.org/pipewire/pipewire)
 
 Original maintainers (usually from Debian):
-Utopia Maintenance Team - Jeremy Bicha - [Source](https://salsa.debian.org/utopia-team/pipewire/-/tree/debian/0.3.25-1)
+Utopia Maintenance Team - Jeremy Bicha - [Source](https://salsa.debian.org/utopia-team/pipewire/-/tree/debian/0.3.25-1)      
+
+Original blueman project maintainer:
+[Christopher Schramm](https://github.com/cschramm) - [Source](https://github.com/blueman-project/blueman)   
+
+
+
