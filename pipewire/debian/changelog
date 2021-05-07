@@ -1,4 +1,4 @@
-pipewire (0.3.27-1) focal; urgency=medium
+pipewire (0.3.27-1~ubuntu20.04) focal; urgency=medium
 
   * New upstream release
   * Fix bug that caused bluetooth devices to stop working.
