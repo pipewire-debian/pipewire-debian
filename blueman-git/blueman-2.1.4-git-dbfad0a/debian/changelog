@@ -1,8 +1,9 @@
-blueman-git (2.1.4-git-dbfad0a-1) focal; urgency=medium
+blueman-git (2.1.4-git-dbfad0a-1~ubuntu21.04) hirsute; urgency=medium
 
   * Git version New
+  * Python3.9 rebuild
 
- -- Sourav Das <souravdas142@gmail.com>  Wed, 05 May 2021 14:09:32 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 07 May 2021 16:30:29 +0530
 
 blueman-git (2.1.4-git-1cf77b2-1) focal; urgency=medium
 
