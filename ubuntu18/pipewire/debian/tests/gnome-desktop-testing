@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -eu
+exec 2>&1
+
+exec gnome-desktop-testing-runner pipewire-0.3

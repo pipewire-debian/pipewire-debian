@@ -1,0 +1,53 @@
+Using pipewire for audio
+========================
+
+pipewire in Debian is primarily intended to be used for video
+(screen sharing and remote desktop, particularly in GNOME and KDE Wayland
+sessions). However, it can also be used for audio.
+
+This is not a supported scenario for Debian 11, and is considered
+experimental.
+
+Using pipewire as a substitute for PulseAudio
+---------------------------------------------
+
+This version of pipewire can be configured to act as a per-user
+audio service, replacing PulseAudio.
+
+This is not a supported scenario for Debian 11, and is considered
+experimental.
+
+To enable this:
+
+* create an empty file /etc/pipewire/media-session.d/with-pulseaudio
+
+* copy /usr/share/doc/pipewire/examples/systemd/user/pipewire-pulse.*
+  into /etc/systemd/user/
+
+* log out and back in
+
+Using pipewire as the default ALSA output device
+------------------------------------------------
+
+ALSA clients can be configured to output via pipewire instead of
+PulseAudio or directly to ALSA.
+
+To enable this:
+
+* create an empty file /etc/pipewire/media-session.d/with-alsa
+
+* copy /usr/share/doc/pipewire/examples/alsa.conf.d/99-pipewire-default.conf
+  into /etc/alsa/conf.d/
+
+Using pipewire as a substitute for JACK
+---------------------------------------
+
+JACK clients can be configured to output via pipewire instead of JACK.
+
+To enable this:
+
+* create an empty file /etc/pipewire/media-session.d/with-jack
+
+* either run JACK clients using the pw-jack(1) wrapper, or copy
+  /usr/share/doc/pipewire/examples/ld.so.conf.d/pipewire-jack-*.conf
+  into /etc/ld.so.conf.d/ and run ldconfig as root.

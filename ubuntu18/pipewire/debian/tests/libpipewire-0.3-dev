@@ -1,0 +1,41 @@
+#!/bin/sh
+# Copyright 2020 Collabora Ltd.
+# SPDX-License-Identifier: MIT
+
+set -eux
+
+if [ -n "${AUTOPKGTEST_ARTIFACTS-}" ]; then
+    WORKDIR="$AUTOPKGTEST_ARTIFACTS"
+else
+    WORKDIR="$(mktemp -d)"
+    trap 'cd /; rm -fr "$WORKDIR"' 0 INT QUIT ABRT PIPE TERM
+fi
+
+if [ -n "${DEB_HOST_GNU_TYPE:-}" ]; then
+    CROSS_COMPILE="$DEB_HOST_GNU_TYPE-"
+else
+    CROSS_COMPILE=
+fi
+
+cd "$WORKDIR"
+
+cat > "$WORKDIR/trivial.c" <<EOF
+#include <pipewire/pipewire.h>
+
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+    pw_init(&argc, &argv);
+    printf("Compiled with libpipewire %s\n"
+           "Linked with libpipewire %s\n",
+           pw_get_headers_version(),
+           pw_get_library_version());
+    return 0;
+}
+EOF
+
+# Deliberately word-splitting pkg-config's output:
+# shellcheck disable=SC2046
+"${CROSS_COMPILE}gcc" -otrivial trivial.c -lm $("${CROSS_COMPILE}pkg-config" --cflags --libs libpipewire-0.3)
+./trivial

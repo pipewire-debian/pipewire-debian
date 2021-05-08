@@ -1,0 +1,22 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Sun, 17 Jan 2021 20:11:07 +0100
+Subject: Fix libopenaptx.pc to drop -Wl,rpath= setting
+
+Closes: #980297
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index d59800f..5f72a1d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -54,7 +54,7 @@ install: $(BUILD)
+ 	$(MKDIR) $(DESTDIR)$(PREFIX)/$(PKGDIR)
+ 	$(PRINTF) 'prefix=%s\nexec_prefix=$${prefix}\nlibdir=$${exec_prefix}/%s\nincludedir=$${prefix}/%s\n\n' $(PREFIX) $(LIBDIR) $(INCDIR) > $(DESTDIR)$(PREFIX)/$(PKGDIR)/$(PCNAME)
+ 	$(PRINTF) 'Name: lib%s\nDescription: Open Source aptX codec library\nVersion: %u.%u.%u\n' $(NAME) $(MAJOR) $(MINOR) $(PATCH) >> $(DESTDIR)$(PREFIX)/$(PKGDIR)/$(PCNAME)
+-	$(PRINTF) 'Libs: -Wl,-rpath=$${libdir} -L$${libdir} -l%s\nCflags: -I$${includedir}\n' $(NAME) >> $(DESTDIR)$(PREFIX)/$(PKGDIR)/$(PCNAME)
++	$(PRINTF) 'Libs: -l%s\nCflags: -I$${includedir}\n' $(NAME) >> $(DESTDIR)$(PREFIX)/$(PKGDIR)/$(PCNAME)
+ 
+ uninstall:
+ 	for f in $(SOFILENAME) $(SONAME) $(LIBNAME) $(ANAME); do $(RM) $(DESTDIR)$(PREFIX)/$(LIBDIR)/$$f; done

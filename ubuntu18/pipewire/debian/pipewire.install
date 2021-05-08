@@ -1,0 +1,5 @@
+usr/lib/systemd/user/pipewire-media-session.service
+usr/lib/systemd/user/pipewire-pulse.service 
+usr/lib/systemd/user/pipewire-pulse.socket 
+usr/lib/systemd/user/pipewire.service
+usr/lib/systemd/user/pipewire.socket

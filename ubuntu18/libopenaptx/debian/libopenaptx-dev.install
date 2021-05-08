@@ -1,0 +1,4 @@
+usr/include/*
+usr/lib/*/lib*.so
+usr/lib/*/libopenaptx.a
+usr/lib/*/pkgconfig/libopenaptx.pc

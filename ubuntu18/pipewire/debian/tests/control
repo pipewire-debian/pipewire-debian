@@ -1,0 +1,10 @@
+Tests: gnome-desktop-testing
+Depends: gnome-desktop-testing, pipewire-tests
+
+Tests: gstreamer1.0-pipewire
+Restrictions: allow-stderr, superficial
+Depends: gstreamer1.0-pipewire, gstreamer1.0-tools
+
+Tests: libpipewire-0.3-dev
+Restrictions: allow-stderr, superficial
+Depends: build-essential, libpipewire-0.3-dev, pkg-config

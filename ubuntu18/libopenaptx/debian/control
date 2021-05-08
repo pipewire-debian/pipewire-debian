@@ -1,0 +1,48 @@
+Source: libopenaptx
+Maintainer: Didier Raboud <odyx@debian.org>
+Section: libs
+Priority: optional
+Build-Depends: debhelper-compat (= 11),
+               help2man,
+Standards-Version: 4.5.0
+Homepage: https://github.com/pali/libopenaptx
+Vcs-Browser: https://salsa.debian.org/debian/libopenaptx
+Vcs-Git: https://salsa.debian.org/debian/libopenaptx.git
+Rules-Requires-Root: no
+
+Package: libopenaptx0
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Audio Processing Technology codec (aptX), shared libraries
+ Support for aptX and aptX HD codec variants; they both operate on raw 24-bit
+ signed stereo audio sample; at 6:1 fixed compress ratio for aptX; at 4:1 fixed
+ compress ratio for aptX HD.
+ .
+ This package contains the shared libraries.
+
+Package: libopenaptx-dev
+Architecture: any
+Section: libdevel
+Depends: libopenaptx0 (= ${binary:Version}),
+         ${misc:Depends}
+Multi-Arch: same
+Description: Audio Processing Technology codec (aptX), development headers
+ Support for aptX and aptX HD codec variants; they both operate on raw 24-bit
+ signed stereo audio sample; at 6:1 fixed compress ratio for aptX; at 4:1 fixed
+ compress ratio for aptX HD.
+ .
+ This package contains the development headers.
+
+Package: openaptx-utils
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Audio Processing Technology codec (aptX), tools
+ Support for aptX and aptX HD codec variants; they both operate on raw 24-bit
+ signed stereo audio sample; at 6:1 fixed compress ratio for aptX; at 4:1 fixed
+ compress ratio for aptX HD.
+ .
+ This package contains the simple openaptxenc and openaptxdec utilities.

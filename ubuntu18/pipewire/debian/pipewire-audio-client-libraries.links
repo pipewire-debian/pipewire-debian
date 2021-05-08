@@ -1,0 +1,4 @@
+usr/share/alsa/alsa.conf.d/50-pipewire.conf etc/alsa/conf.d/50-pipewire.conf
+usr/share/alsa/alsa.conf.d/99-pipewire-default.conf  etc/alsa/conf.d/99-pipewire-default.conf
+usr/share/doc/pipewire-audio-client-libraries/README.Debian usr/share/doc/pipewire/examples/README.audio
+usr/share/doc/pipewire/examples usr/share/doc/pipewire-audio-client-libraries/examples
