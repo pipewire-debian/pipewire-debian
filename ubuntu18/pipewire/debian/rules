@@ -21,6 +21,7 @@ endif
 
 
 override_dh_auto_configure:
+	sudo cp -v /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/x86_64-linux-gnu/libintl.so
 	dh_auto_configure -- --buildtype=plain \
 		-Daudiotestsrc=enabled \
 		-Dauto_features=enabled \
