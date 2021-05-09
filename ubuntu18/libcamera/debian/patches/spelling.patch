@@ -1,0 +1,37 @@
+From: IOhannes m zmölnig <umlaeute@debian.org>
+Date: Sat Apr 18 23:22:57 2020 +0200
+Subject: Spelling fixes
+
+Forwarded: no
+Last-Update: 2020-06-30
+---
+ src/ipa/rkisp1/rkisp1.cpp                | 2 +-
+ src/libcamera/pipeline/rkisp1/rkisp1.cpp | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/ipa/rkisp1/rkisp1.cpp b/src/ipa/rkisp1/rkisp1.cpp
+index fbdc908..bfd76cf 100644
+--- a/src/ipa/rkisp1/rkisp1.cpp
++++ b/src/ipa/rkisp1/rkisp1.cpp
+@@ -176,7 +176,7 @@ void IPARkISP1::processEvent(const IPAOperationData &event)
+ 		break;
+ 	}
+ 	default:
+-		LOG(IPARkISP1, Error) << "Unkown event " << event.operation;
++		LOG(IPARkISP1, Error) << "Unknown event " << event.operation;
+ 		break;
+ 	}
+ }
+diff --git a/src/libcamera/pipeline/rkisp1/rkisp1.cpp b/src/libcamera/pipeline/rkisp1/rkisp1.cpp
+index 3c01821..3c3f3f3 100644
+--- a/src/libcamera/pipeline/rkisp1/rkisp1.cpp
++++ b/src/libcamera/pipeline/rkisp1/rkisp1.cpp
+@@ -429,7 +429,7 @@ void RkISP1CameraData::queueFrameAction(unsigned int frame,
+ 		metadataReady(frame, action.controls[0]);
+ 		break;
+ 	default:
+-		LOG(RkISP1, Error) << "Unkown action " << action.operation;
++		LOG(RkISP1, Error) << "Unknown action " << action.operation;
+ 		break;
+ 	}
+ }

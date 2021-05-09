@@ -1,0 +1,5 @@
+usr/lib/*/*.so.*
+usr/lib/*/*/*.so
+#usr/libexec
+usr/lib/*/*/ipa_proxy_linux
+usr/share

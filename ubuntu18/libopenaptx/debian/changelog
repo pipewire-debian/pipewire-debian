@@ -1,8 +1,8 @@
-libopenaptx (0.2.0-7) bionic; urgency=medium
+libopenaptx (0.2.0-8) bionic; urgency=medium
 
   * rebuild
 
- -- Sourav Das <souravdas142@gmail.com>  Sat, 24 Apr 2021 20:14:41 +0100
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 09 May 2021 06:44:12 +0530
 
 libopenaptx (0.2.0-5) unstable; urgency=medium
 
