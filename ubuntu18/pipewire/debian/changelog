@@ -1,4 +1,4 @@
-pipewire (0.3.27-1~ubuntu20.04) focal; urgency=medium
+pipewire (0.3.27-1~ubuntu18.04) bionic; urgency=medium
 
   * New upstream release
   * Fix bug that caused bluetooth devices to stop working.
@@ -10,7 +10,7 @@ pipewire (0.3.27-1~ubuntu20.04) focal; urgency=medium
   * pipewire-pulse.
   * More fixes and improvements.
 
- -- Sourav Das <souravdas142@gmail.com>  Thu, 06 May 2021 19:48:22 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 09 May 2021 17:34:42 +0530
 
 pipewire (0.3.26-3) focal; urgency=medium
 

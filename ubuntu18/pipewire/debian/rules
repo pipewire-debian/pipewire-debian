@@ -2,6 +2,10 @@
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
+#export DEB_BUILD_OPTIONS = nocheck
+
+# `export DEB_BUILD_OPTIONS = nocheck` without it the test is always failed, when `--libexecdir=/usr/libexec`
+# is not set explicitly, the debhelper autoconfigure it to  `/usr/lib/x86*/`  don't know why, This opn will skip test suite
 
 %:
 	dh $@
@@ -21,9 +25,11 @@ endif
 
 
 override_dh_auto_configure:
-	sudo cp -v /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/x86_64-linux-gnu/libintl.so
+	#below resolves `libintl found : NO`; but at the last moment there is unknown error.
+	#sudo cp -v /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/x86_64-linux-gnu/libintl.so
 	dh_auto_configure -- --buildtype=plain \
-		-Daudiotestsrc=enabled \
+        --libexecdir=/usr/libexec  \
+    	-Daudiotestsrc=enabled \
 		-Dauto_features=enabled \
 		-Db_lto=true \
 		-Db_pie=true \
