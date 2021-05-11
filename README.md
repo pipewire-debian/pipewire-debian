@@ -38,7 +38,7 @@
   </a>
 </p>
 
-# PipeWire & blueman-git PPA for Ubuntu (>= 20.04)
+# PipeWire & blueman-git PPA for Ubuntu (>= 18.04)
 #### _An upstream version of blueman-git & PipeWire for Ubuntu maintained with a 15 day release cycle_
 
 |                                               Link                                               |          Description     |
@@ -128,8 +128,24 @@ sudo apt-get install blueman-git
 You don't need to uninstall PulseAudio to enable PipeWire, disable and mask PulseAudio related services to stop them    
 ```bash
 systemctl --user --now disable  pulseaudio.{socket,service}
-systemctl --user mask pulseaudio
+systemctl --user mask pulseaudio        
 ```
+**Additional steps for ubuntu 18.04**        
+
+```bash        
+# You need to tell Pulseaudio not to respawn itself by issuing this command:     
+
+sed -i 's/.*autospawn.*/autospawn = no/g' ~/.config/pulse/client.conf        
+
+# If `~/.config/pulse/client.conf` not found then issue this,       
+
+sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf        
+
+# And finally issue        
+
+pulseaudio --kill        
+```        
+
 Enable and start PipeWire related services    
 ```bash
 systemctl --user --now enable pipewire{,-pulse}.{socket,service} pipewire-media-session.service
