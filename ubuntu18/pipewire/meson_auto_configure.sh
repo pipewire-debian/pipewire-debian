@@ -4,6 +4,7 @@
 meson configure build  --buildtype=plain \
 	--wrap-mode=nodownload --buildtype=plain \
 	--prefix=/usr --sysconfdir=/etc --localstatedir=/var \
+	--libexecdir=libexec \
     --libdir=lib/x86_64-linux-gnu \
 	-D audiotestsrc=enabled \
 	-D auto_features=enabled \
