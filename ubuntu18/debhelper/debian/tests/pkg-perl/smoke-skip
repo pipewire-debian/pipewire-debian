@@ -1,0 +1,5 @@
+# If we set the path to /usr/bin when run under autopkgtest,
+# other dh_* commands are tested as well. This might be nice
+# or not but it currently fails for dh_autotools-dev_updateconfig.
+# So let's skip t/size.t for now.
+t/size.t

@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use Debian::Debhelper::Dh_Version;
+use Debian::Debhelper::Dh_Lib ();
+
+my @provides;
+my $version = $Debian::Debhelper::Dh_Version::version;
+$version =~ s/~.*//; # Drop backports marker
+$version =~ s/^\d+\K\..*//;
+for (my $i = Debian::Debhelper::Dh_Lib::LOWEST_VIRTUAL_DEBHELPER_COMPAT_LEVEL ; $i <= $version ; $i++) {
+    push(@provides, "debhelper-compat (= $i)");
+}
+print "dh:CompatLevels=" . join(", ", @provides) . "\n";
+

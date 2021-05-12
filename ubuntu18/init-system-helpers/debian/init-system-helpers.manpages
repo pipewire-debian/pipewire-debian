@@ -1,0 +1,5 @@
+man8/invoke-rc.d.8
+man8/service.8
+man8/update-rc.d.8
+script/deb-systemd-helper.1p
+script/deb-systemd-invoke.1p

@@ -1,0 +1,123 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: *
+Copyright: 1997-2011 Joey Hess <joeyh@debian.org>
+           2015-2016 Niels Thykier <niels@thykier.net>
+License: GPL-2+
+
+Files: examples/* autoscripts/*
+Copyright: 1997-2011 Joey Hess <joeyh@debian.org>
+License: public-domain
+ These files are in the public domain.
+ .
+ Pedants who believe I cannot legally say that code I have written is in
+ the public domain may consider them instead to be licensed as follows:
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted under any circumstances. No warranty.
+
+Files: dh_perl
+Copyright: Brendan O'Dea <bod@debian.org>
+License: GPL-2+
+
+Files: dh_installcatalogs
+Copyright: Adam Di Carlo <aph@debian.org>
+License: GPL-2+
+
+Files: dh_usrlocal
+Copyright: Andrew Stribblehill <ads@debian.org>
+License: GPL-2+
+
+Files: dh_installlogcheck
+Copyright: Jon Middleton <jjm@debian.org>
+License: GPL-2+
+
+Files: dh_installudev
+Copyright: Marco d'Itri <md@Linux.IT>
+License: GPL-2+
+
+Files: dh_lintian
+Copyright: Steve Robbins <smr@debian.org>
+License: GPL-2+
+
+Files: dh_md5sums
+Copyright: Charles Briscoe-Smith <cpb4@ukc.ac.uk>
+License: GPL-2+
+
+Files: dh_bugfiles
+Copyright: Modestas Vainius <modestas@vainius.eu>
+License: GPL-2+
+
+Files: dh_installinit
+Copyright: 1997-2008 Joey Hess <joeyh@debian.org>
+           2009,2011 Canonical Ltd.
+License: GPL-3+
+
+Files: dh_installgsettings
+Copyright: 2010 Laurent Bigonville <bigon@debian.org>
+           2011 Josselin Mouette <joss@debian.org>
+License: GPL-2+
+
+Files: dh_ucf
+Copyright: 2011 Jeroen Schot <schot@A-Eskwadraat.nl>
+License: GPL-2+
+
+Files: dh_systemd_enable dh_systemd_start
+Copyright: 2013 Michael Stapelberg
+License: BSD-3-clause
+
+Files: lib/Debian/Debhelper/Buildsystem* lib/Debian/Debhelper/Dh_Buildsystems.pm
+Copyright: 2008-2009 Modestas Vainius
+License: GPL-2+
+
+Files: lib/Debian/Debhelper/Buildsystem/qmake.pm
+Copyright: 2010 Kel Modderman
+License: GPL-2+
+
+Files: man/po4a/po/fr.po
+Copyright: 2005-2011 Valery Perrin <valery.perrin.debian@free.fr>
+License: GPL-2+
+
+Files: man/po4a/po/es.po
+Copyright: 2005-2010 Software in the Public Interest
+License: GPL-2+
+
+Files: man/po4a/po/de.po
+Copyright: 2011 Chris Leick
+License: GPL-2+
+
+License: GPL-2+
+ The full text of the GPL version 2 is distributed in
+ /usr/share/common-licenses/GPL-2 on Debian systems.
+
+License: GPL-3+
+ The full text of the GPL version 3 is distributed in
+ /usr/share/common-licenses/GPL-3 on Debian systems.
+
+License: BSD-3-clause
+ All rights reserved.
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+     * Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+ .
+     * Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+ .
+     * Neither the name of Michael Stapelberg nor the
+       names of contributors may be used to endorse or promote products
+       derived from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY Michael Stapelberg ''AS IS'' AND ANY
+ EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL Michael Stapelberg BE LIABLE FOR ANY
+ DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

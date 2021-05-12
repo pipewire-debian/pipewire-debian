@@ -1,0 +1,5 @@
+script/deb-systemd-helper usr/bin
+script/deb-systemd-invoke usr/bin
+script/invoke-rc.d usr/sbin
+script/service usr/sbin
+script/update-rc.d usr/sbin

@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+# If you're looking for an example debian/rules that uses debhelper, see
+# the examples directory.
+#
+# Each debhelper command in this rules file has to be run using ./run,
+# to ensure that the commands and libraries in the source tree are used,
+# rather than the installed ones.
+#
+# We disable autoreconf to avoid build-depending on it (it does
+# nothing for debhelper and it keeps the set of B-D smaller)
+
+PERL ?= perl
+
+%:
+	./run dh $@ --without autoreconf --with build-stamp
+
+# Disable as they are unneeded (and we can then be sure debhelper
+# builds without needing autotools-dev, dh-strip-nondetermism etc.)
+override_dh_update_autotools_config override_dh_strip_nondeterminism:
+
+override_dh_auto_install:
+	./run dh_auto_install --destdir=debian/debhelper
+	PERLLIBDIR=$$($(PERL) -MConfig -e 'print $$Config{vendorlib}')/Debian/Debhelper ; \
+	    $(PERL) -I"debian/debhelper/$${PERLLIBDIR}" debian/gen-provides > debian/debhelper.substvars

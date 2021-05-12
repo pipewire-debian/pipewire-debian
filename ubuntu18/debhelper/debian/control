@@ -1,0 +1,76 @@
+Source: debhelper
+Section: devel
+Priority: optional
+Maintainer: 
+  Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>,
+  Sourav Das <souravdas142@gmail.com>
+XSBC-Original-Maintainer: Debhelper Maintainers <debhelper@packages.debian.org>
+Uploaders: 
+  Niels Thykier <niels@thykier.net>,
+  Sourav Das <souravdas142@gmail.com>
+Build-Depends: dpkg-dev (>= 1.18.0~),
+               perl:any,
+               po4a,
+Rules-Requires-Root: no
+Standards-Version: 4.3.0
+Testsuite: autopkgtest-pkg-perl
+Vcs-Git: https://salsa.debian.org/debian/debhelper.git
+Vcs-Browser: https://salsa.debian.org/debian/debhelper
+
+Package: debhelper
+Architecture: all
+Depends: autotools-dev,
+# Version 12 is where dh-autoreconf supports --sourcedirectory.
+# Version 16 fixes #887482, version 17 fixes #889567
+# Constraint can be relaxed if packages do not rely/require any of the
+# above fixes
+         dh-autoreconf (>= 17~),
+# Version constraint is to get a version of dh-strip-nondeterminism
+# without several bugs.  The constraint can be relaxed if an older
+# version is sufficient.
+         dh-strip-nondeterminism (>= 0.028~),
+# dbgsym support landed in 1.18.0, 1.18.2 fixes a related nasty bug.
+         dpkg (>= 1.18.0~),
+         dpkg-dev (>= 1.18.2~),
+         dwz,
+         file (>= 3.23),
+         libdpkg-perl (>= 1.17.14),
+         man-db,
+         po-debconf,
+         ${misc:Depends},
+         ${perl:Depends}
+Breaks: dh-systemd (<< 1.38),
+# To ensure cmake understands -DCMAKE_INSTALL_RUNSTATEDIR=/run as used in compat 11
+# - Can be dropped (with the caveat that cmake packages may behave differently
+#   depending on the version of cmake).
+        cmake (<< 3.9~),
+# meson build system uses --wrap-mode, which requires meson (>= 0.40.0)
+        meson (<< 0.40.0~),
+# Re-add if qt5-qmake is added to stretch-backports
+# The qmake cross wrapper was introduced in 5.9.2+dfsg-5, but got some important
+# fixes in the subsequent uploads. It is only needed for cross-building.
+#        qt5-qmake (<< 5.9.2+dfsg-8),
+Replaces: dh-systemd (<< 1.38), pkg-create-dbgsym
+Conflicts: pkg-create-dbgsym
+Suggests: dh-make
+Provides: ${dh:CompatLevels},
+          dh-sequence-dwz,
+          dh-sequence-installinitramfs,
+          dh-sequence-systemd,
+Multi-Arch: foreign
+Description: helper programs for debian/rules
+ A collection of programs that can be used in a debian/rules file to
+ automate common tasks related to building Debian packages. Programs
+ are included to install various files into your package, compress
+ files, fix file permissions, integrate your package with the Debian
+ menu system, debconf, doc-base, etc. Most Debian packages use debhelper
+ as part of their build process.
+
+Package: dh-systemd
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: debhelper (>= 9.20160709),
+         ${misc:Depends},
+Description: debhelper add-on to handle systemd unit files - transitional package
+ This package is for transitional purposes and can be removed safely.

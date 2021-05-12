@@ -1,0 +1,59 @@
+Source: init-system-helpers
+Section: admin
+Priority: optional
+Maintainer: Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>
+Uploaders: Sourav Das <souravdas142@gmail.com>,
+           Michael Biebl <biebl@debian.org>,
+           Martin Pitt <mpitt@debian.org>,
+           Felipe Sateler <fsateler@debian.org>
+Build-Depends: debhelper (>= 11),
+               perl:any,
+               python3-docutils
+Standards-Version: 4.2.1
+Vcs-Git: https://salsa.debian.org/debian/init-system-helpers.git
+Vcs-Browser: https://salsa.debian.org/debian/init-system-helpers
+
+Package: init-system-helpers
+Architecture: all
+Priority: required
+Essential: yes
+Multi-Arch: foreign
+Depends: perl-base (>= 5.20.1-3),
+         ${misc:Depends},
+         ${perl:Depends},
+Replaces: sysv-rc (<< 2.88dsf-59.3~),
+          sysvinit-utils (<< 2.88dsf-59.3),
+# sysv-rc now pre-depends on us and if we break them we get:
+# E: This installation run will require temporarily removing the essential package sysvinit-utils:amd64 due to a Conflicts/Pre-Depends loop. This is often bad, but if you really want to do it, activate the APT::Force-LoopBreak option.
+#Breaks: sysv-rc (<< 2.88dsf-59.3~)
+Breaks: systemd (<< 228),
+        sysvinit-utils (<< 2.88dsf-59.3~),
+Conflicts: file-rc (<< 0.8.17~),
+           openrc (<= 0.18.3-1),
+Description: helper tools for all init systems
+ This package contains helper tools that are necessary for switching between
+ the various init systems that Debian contains (e. g. sysvinit or
+ systemd). An example is deb-systemd-helper, a script that enables systemd unit
+ files without depending on a running systemd.
+ .
+ It also includes the "service", "invoke-rc.d", and "update-rc.d" scripts which
+ provide an abstraction for enabling, disabling, starting, and stopping
+ services for all supported Debian init systems as specified by the policy.
+ .
+ While this package is maintained by pkg-systemd-maintainers, it is NOT
+ specific to systemd at all. Maintainers of other init systems are welcome to
+ include their helpers in this package.
+
+Package: init
+Section: metapackages
+Architecture: any
+Priority: important
+XB-Important: yes
+Multi-Arch: foreign
+Pre-Depends: systemd-sysv [linux-any] ${alt:sysvinit},
+Depends: init-system-helpers (>= 1.25),
+         ${misc:Depends},
+Description: metapackage ensuring an init system is installed
+ This package is a metapackage which allows you to select from the available
+ init systems while ensuring that one of these is available on the system at
+ all times.

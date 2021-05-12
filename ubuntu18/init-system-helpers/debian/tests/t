@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+
+export TEST_ON_REAL_SYSTEM=1
+
+for test in t/*.t; do
+    echo "======== $(basename $test) ======="
+    perl $test
+done

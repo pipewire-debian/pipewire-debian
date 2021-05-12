@@ -1,0 +1,4 @@
+Tests: t
+Depends: @,
+  build-essential
+Restrictions: needs-root, breaks-testbed, allow-stderr, isolation-container
