@@ -1,0 +1,89 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_OPTIONS = nocheck
+include /usr/share/dpkg/default.mk
+include /usr/share/python/python.mk
+-include /usr/share/gnome-pkg-tools/1/rules/gnome-get-source.mk
+
+PYVERS := $(shell pyversions --requested -v debian/control) $(shell py3versions --supported -v)
+FLAVOURS := $(PYVERS) $(patsubst %,%-dbg,$(PYVERS))
+
+TESTSUITE_FAIL_CMD=exit 1
+NON_FATAL=( echo "*** test-suite FAILED but continuing anyway ***"; true; )
+ifneq ($(filter $(DEB_BUILD_ARCH), ),)
+# tests currently fail on these architectures
+    TESTSUITE_FAIL_CMD=$(NON_FATAL)
+endif
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@ --with python2,python3,gnome
+
+override_dh_auto_configure:
+	set -e && for x in $(FLAVOURS); do \
+	    dh_auto_configure --builddirectory=build-$$x -- PYTHON=/usr/bin/python$$x; \
+	done
+
+override_dh_auto_build:
+	set -e && for x in $(FLAVOURS); do \
+	    dh_auto_build --builddirectory=build-$$x; \
+	done
+
+# don't run the tests under fakeroot, otherwise they will try to connect to
+# root's session D-BUS
+override_dh_auto_test:
+ifeq (,$(filter nocheck, $(DEB_BUILD_OPTIONS)))
+ifeq ($(DEB_HOST_ARCH_OS), linux)
+	set -e; LC_ALL=C.UTF-8; export HOME=$(CURDIR)/debian/tmp/home; mkdir -p $$HOME/.local/share; unset LD_PRELOAD; \
+	for x in $(PYVERS); do \
+	        xvfb-run dh_auto_test --builddirectory=build-$$x || $(TESTSUITE_FAIL_CMD); \
+	        while [ -e /tmp/.X99-lock ]; do echo "Waiting for xvfb to finish..."; sleep 0.5; done; \
+	        xvfb-run dh_auto_test --builddirectory=build-$$x-dbg || $(NON_FATAL); \
+	        while [ -e /tmp/.X99-lock ]; do echo "Waiting for xvfb to finish..."; sleep 0.5; done; \
+	done;
+	# run the pep8 test but don't fail on it
+	cd build-$(shell py3versions -v -d) && $(MAKE) check.quality || $(NON_FATAL)
+endif
+endif
+
+# we remove stuff that we do not need, and rename the *.so modules to what
+# Python expects for that flavor (http://www.python.org/dev/peps/pep-3149/)
+# group the install directory by major Python version and dbg/non-dbg
+override_dh_auto_install:
+	set -e && for x in $(FLAVOURS); do \
+	    INST=debian/install-`echo $$x | sed 's/\.[0-9]*//'`; \
+	    dh_auto_install --builddirectory=build-$$x --destdir=$$INST; \
+	    find $$INST \( -name '*.pyc' -o -name '*.pyo' -o -name '*.la' \) -delete; \
+	done
+
+override_dh_auto_clean:
+	rm -rf build-*
+	dh_auto_clean
+
+override_dh_install-arch:
+	dh_install -ppython-gi -ppython-gi-cairo --sourcedir=debian/install-2
+	dh_install -ppython-gi-dbg --sourcedir=debian/install-2-dbg
+	dh_install -ppython3-gi -ppython3-gi-cairo -ppython-gi-dev --sourcedir=debian/install-3
+	dh_install -ppython3-gi-dbg --sourcedir=debian/install-3-dbg
+	# for -dev etc.; this is not expected to install any files
+	dh_install -a --remaining-packages --sourcedir=/nonexisting
+	# cairo.so is installed into a separate package; modelling this with
+	# *.install files is a pain, so just remove it manually
+	rm debian/python*-gi/usr/lib/python*/*-packages/gi/*cairo*
+
+override_dh_strip-arch:
+	dh_strip -ppython-gi --dbg-package=python-gi-dbg
+	dh_strip -ppython-gi-cairo --dbg-package=python-gi-dbg
+	dh_strip -ppython3-gi --dbg-package=python3-gi-dbg
+	dh_strip -a --remaining-packages --no-automatic-dbgsym
+
+# Do not run dh_makeshlibs, for some reasons the python bindings are build with
+# a SONAME set and this causes dh_makeshlibs to create a shlibs file and to
+# trigger ldconfig.
+override_dh_makeshlibs:
+
+override_dh_clean:
+	rm -rf debian/install-*
+	find \( -name '*.pyc' -o -name '*.pyo' -o -name '*.la' \) -print -delete; \
+	dh_clean

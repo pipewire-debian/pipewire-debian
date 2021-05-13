@@ -5,11 +5,11 @@ Maintainer: Christopher Schramm <debian@cschramm.eu>
 Homepage: https://github.com/blueman-project/blueman
 Vcs-Git: https://github.com/pipewire-debian/pipewire-debian.git
 Vcs-Browser: https://github.com/pipewire-debian/pipewire-debian
-Standards-Version: 4.5.0
+Standards-Version: 4.1.4
 Rules-Requires-Root: no
 Build-Depends: debhelper (>= 12), libglib2.0-dev,
                libtool, libbluetooth-dev (>= 5.0), intltool,
-               python3-dev (>= 3.2), cython3, python3-dbus, python-gi-dev,
+               python3-dev (>= 3.2), cython3, python3-dbus, python-gi-dev (>= 3.27),
                dh-python, libpolkit-agent-1-dev
 
 Package: blueman-git

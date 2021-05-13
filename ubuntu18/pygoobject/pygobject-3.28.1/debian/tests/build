@@ -1,0 +1,32 @@
+#!/bin/sh
+# autopkgtest check: Build and run a program against pygobject, to verify that
+# the headers and pkg-config file are installed correctly
+# (C) 2012 Canonical Ltd.
+# Author: Martin Pitt <martin.pitt@ubuntu.com>
+
+set -e
+
+WORKDIR=$(mktemp -d)
+trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
+cd $WORKDIR
+cat <<EOF > pytest.c
+#include <Python.h>
+#include <pygobject.h>
+#include <assert.h>
+
+int main()
+{
+    PyObject *gobject;
+
+    Py_InitializeEx (FALSE);
+    gobject = pygobject_init (-1, -1, -1);
+    assert (gobject != NULL);
+    return 0;
+}
+EOF
+
+gcc -o pytest pytest.c `pkg-config --cflags --libs python3 pygobject-3.0`
+echo "build: OK"
+[ -x pytest ]
+./pytest
+echo "run: OK"

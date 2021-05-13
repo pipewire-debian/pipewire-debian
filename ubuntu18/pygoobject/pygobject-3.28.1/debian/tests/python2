@@ -1,0 +1,3 @@
+#!/bin/sh -e
+mydir=`dirname $0`
+python $mydir/gitest.py -v

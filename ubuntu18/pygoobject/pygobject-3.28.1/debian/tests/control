@@ -1,0 +1,8 @@
+Tests: build
+Depends: build-essential, python-gi-dev, python3-dev
+
+Tests: python2 python3
+Depends: python-gi, python3-gi, gir1.2-glib-2.0
+
+Tests: python2-dbg python3-dbg
+Depends: python-gi-dbg, python3-gi-dbg, gir1.2-glib-2.0
