@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://gitlab.freedesktop.org/pipewire/pipewire">
-    <img alt="PipeWire Original Repo" src="https://github.com/souravdas142/dotfiles/raw/master/.local/share/logo/pw2.png" width="656" height="300">
+    <img alt="PipeWire Original Repo" src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/logo/PipeWire_logo.png" width="656" height="300">
   </a>
 </p>
 
@@ -54,13 +54,13 @@
 
 ## [Launchpad PPA](https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream)
 
-:warning: **This repo is not obsolete. I will sync this repo with the Launchpad PPA to support other Debian based distros. The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.**
+:warning: **This repo (`master` branch) Can be viewed as a mirror of Launchpad PPA. I will keep sync this with the LP PPA. The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.**
 
 ## 1. PPA Configuration
 
-### Add the Launchpad PPA...
+### Add the Launchpad PPA...       
 
-:bulb: **The recommended & convenient way, see next [section](#or-the-github-ppa) for other Debian-based distros**
+:bulb: **The recommended & convenient way, see next [section](#or-the-github-ppa) If you can't install from LP PPA**       
 
 ```bash
 # You can update your system with unsupported packages from this untrusted PPA by adding ppa:pipewire-debian/pipewire-upstream
@@ -84,7 +84,7 @@ echo "deb-src http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu 
 
 ### ...or the Github PPA
 
-:bulb: **Use IFF you have a good reason - mostly for non-Ubuntu distros (eg. Kali, MX, Parrot, Mint, Deepin, etc)**
+:bulb: **Use IFF you have a good reason Or If your distro (other debian based) Can't install from LP PPA.**           
 
 ```bash
 curl -SsL https://pipewire-debian.github.io/pipewire-debian/ubuntu/KEY.gpg | sudo apt-key add -
