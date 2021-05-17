@@ -1,0 +1,102 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: pipewire
+Source: https://gitlab.freedesktop.org/pipewire/pipewire
+License: Expat and LGPL-2.1+
+
+Files: *
+Copyright: 2009 Lennart Poettering
+           2010 David Henningsson
+           2013 Inigo Quilez
+           2015-2020 Wim Taymans
+           2016 Axis Communications
+           2018-2020 Collabora Ltd.
+           2020 Konsulko Group
+           2020 Sergey Bugaev
+           2020 Georges Basile Stavracas Neto
+License: Expat
+
+Files: spa/plugins/alsa/90-pipewire-alsa.rules
+       spa/plugins/alsa/acp/*
+       spa/plugins/alsa/mixer/paths/*
+       spa/plugins/alsa/mixer/profile-sets/*
+       spa/plugins/alsa/mixer/samples/*
+Copyright: 1999 Tom Tromey
+           2000 Red Hat, Inc.
+           2004-2009 Lennart Poettering
+           2006 Pierre Ossman
+           2006 Pierre Ossman for Cendio AB
+           2011 Intel Corporation
+           2011 Collabora Multimedia
+           2011 Arun Raghavan
+           2011 Wolfson Microelectronics PLC
+           2012 Feng Wei, Freescale Ltd.
+           2015-2020 Wim Taymans
+License: LGPL-2+ and LGPL-2.1+ and Expat
+
+Files: spa/plugins/bluez5/*
+Copyright: 2004-2010 Marcel Holtmann
+           2006-2010 Nokia Corporation
+           2016-2017 Arkadiusz Bokowy
+           2018 Wim Taymans
+           2019 Collabora Ltd.
+License: Expat and LGPL-2.1+
+
+Files: src/modules/module-client-node/v0/*
+       src/modules/module-protocol-native/v0/*
+       src/modules/module-portal.c
+Copyright: 2015-2017 Wim Taymans
+           2019 Red Hat Inc.
+License: LGPL-2+
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
+License: LGPL-2+
+ This package is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License can be found in "/usr/share/common-licenses/LGPL-2".
+
+License: LGPL-2.1+
+ This package is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License can be found in "/usr/share/common-licenses/LGPL-2.1".

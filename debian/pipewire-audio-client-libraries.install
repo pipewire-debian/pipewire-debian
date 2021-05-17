@@ -1,0 +1,8 @@
+debian/ld.so.conf.d/* usr/share/doc/pipewire/examples/ld.so.conf.d
+usr/bin/pw-jack
+usr/lib/*/alsa-lib/libasound_module_ctl_pipewire.so
+usr/lib/*/alsa-lib/libasound_module_pcm_pipewire.so
+usr/lib/*/pipewire-0.3/jack
+usr/share/alsa/alsa.conf.d/50-pipewire.conf
+usr/share/alsa/alsa.conf.d/99-pipewire-default.conf usr/share/doc/pipewire/examples/alsa.conf.d
+usr/share/man/man1/pw-jack.*

@@ -1,0 +1,4 @@
+etc/pipewire/media-session.d/with-jack
+etc/pipewire/media-session.d/with-pulseaudio
+usr/share/locale/cs/LC_MESSAGES/pipewire.mo
+usr/share/locale/gl/LC_MESSAGES/pipewire.mo
