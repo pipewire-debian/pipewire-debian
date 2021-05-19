@@ -1,3 +1,23 @@
+pipewire (0.3.28-1~ubuntu20.04) focal; urgency=medium
+
+  - Freewheeling was implemented. This makes it possible to
+    export projects in ardour.
+  - A new powerful filter-chain module was added that can
+    be used to created all kinds of filter-chains from ladspa
+    and builtin plugins.
+  - Many more pulseaudio modules are now implemented:
+    module-ladspa-sink, module-ladspa-source, module-pipe-sink,
+    module-tunnel-sink, module-tunnel-source,
+    module-zeroconf-discover
+  - Fix a bug where devices would not appear after logout/login.
+  - Fix a bug where the volume was reset to 0 and devices would
+    have no audio.
+  - Config files are now installed in the data dir, system
+    overrides in /etc/pipewire and $HOME are checked first.
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Wed, 19 May 2021 18:28:08 +0530
+
 pipewire (0.3.27-1~ubuntu20.04) focal; urgency=medium
 
   * New upstream release

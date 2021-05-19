@@ -1,14 +1,15 @@
 Source: pipewire
 Section: libs
 Priority: optional
-Maintainer: Sourav Das forked from Utopia Maintenance Team <souravdas142@gmail.com>
+Maintainer: Sourav Das <souravdas142@gmail.com>
+XSBC-Original-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@alioth-lists.debian.net>
 Uploaders: Sourav Das <souravdas142@gmail.com>
 Build-Depends:	cmake,
 				debhelper-compat (= 12),
 				doxygen <!nodoc>,
 				fakeroot,
 				graphviz <!nodoc>,
-				libavformat58,
+                libavahi-client-dev,
 				libavcodec58,
 				libasound2-dev,
 				libbluetooth-dev,

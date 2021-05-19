@@ -1,14 +1,5 @@
-etc/pipewire/client-rt.conf
-etc/pipewire/client.conf
-etc/pipewire/jack.conf
-etc/pipewire/media-session.d/alsa-monitor.conf
-etc/pipewire/media-session.d/bluez-monitor.conf
-etc/pipewire/media-session.d/media-session.conf
-etc/pipewire/media-session.d/v4l2-monitor.conf
-etc/pipewire/media-session.d/with-pulseaudio
-etc/pipewire/media-session.d/with-jack
-etc/pipewire/pipewire-pulse.conf
-etc/pipewire/pipewire.conf
+usr/share/pipewire
+usr/share/pipewire etc/
 lib/udev/rules.d
 usr/bin/pipewire
 usr/bin/pipewire-media-session
