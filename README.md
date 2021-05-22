@@ -30,7 +30,7 @@
   </a>
   <!-- PPA -->
   <a href="https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream">
-    <img src="https://img.shields.io/website?down_message=PipeWire%200.3.27&label=Launchpad%20PPA&logo=UBUNTU&up_message=PipeWire%200.3.27&url=https%3A%2F%2Flaunchpad.net%2F~pipewire-debian%2F%2Barchive%2Fubuntu%2Fpipewire-upstream">
+    <img src="https://img.shields.io/github/v/tag/pipewire-debian/pipewire-debian?label=LP%20PipeWire%20PPA&logo=Ubuntu">
   </a>
   <!-- Project License -->
   <a href="https://choosealicense.com/licenses/mit/">
@@ -145,6 +145,10 @@ sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf
 
 pulseaudio --kill        
 ```        
+
+**Since version `0.3.28` conf files are moved to `/usr/share/` directory from `/etc/` but In our package conf files are installed on both location, From `0.3.29` 
+It will be shifted to upstream default means conf files will be only installed under `/usr/share/`, You have to copy them to `/etc/` directory manually.**
+
 
 Enable and start PipeWire related services    
 ```bash
