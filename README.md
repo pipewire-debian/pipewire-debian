@@ -54,13 +54,13 @@
 
 ## [Launchpad PPA](https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream)
 
-:warning: **This repo (`master` branch) Can be viewed as a mirror of Launchpad PPA. I will keep sync this with the LP PPA. The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.**
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22> **This repo (`master` branch) Can be viewed as a mirror of Launchpad PPA. I will keep sync this with the LP PPA. The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.**
 
 ## 1. PPA Configuration
 
 ### Add the Launchpad PPA...       
 
-:bulb: **The recommended & convenient way, see next [section](#or-the-github-ppa) If you can't install from LP PPA**       
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **The recommended & convenient way, see next [section](#or-the-github-ppa) If you can't install from LP PPA**       
 
 ```bash
 # You can update your system with unsupported packages from this untrusted PPA by adding ppa:pipewire-debian/pipewire-upstream
@@ -84,7 +84,7 @@ echo "deb-src http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu 
 
 ### ...or the Github PPA
 
-:bulb: **Use IFF you have a good reason Or If your distro (other debian based) Can't install from LP PPA.**           
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **Use IFF you have a good reason Or If your distro (other debian based) Can't install from LP PPA.**           
 
 ```bash
 curl -SsL https://pipewire-debian.github.io/pipewire-debian/ubuntu/KEY.gpg | sudo apt-key add -
@@ -146,7 +146,7 @@ sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf
 pulseaudio --kill        
 ```        
 
-**Since version `0.3.28` conf files are moved to `/usr/share/` directory from `/etc/` but In our package conf files are installed on both location, From `0.3.29` 
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22> **Since version `0.3.28` conf files are moved to `/usr/share/` directory from `/etc/` but In our package conf files are installed on both location, From `0.3.29` 
 It will be shifted to upstream default means conf files will be only installed under `/usr/share/`, You have to copy them to `/etc/` directory manually.**
 
 
@@ -167,7 +167,7 @@ sudo systemctl enable --now blueman-mechanism.service
 
 
 
-# :book: Wiki
+# <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/open_book.svg" width=48 height=48> Wiki
 
 - [This Repo Wiki](https://github.com/pipewire-debian/pipewire-debian/wiki)
 - [Upstream-README](https://gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/README.md)
@@ -180,20 +180,20 @@ sudo systemctl enable --now blueman-mechanism.service
     - [Arch-wiki](https://wiki.archlinux.org/index.php/PipeWire)
     - [Arch-Bluetooth-Wiki](https://wiki.archlinux.org/title/Bluetooth)
     - [blueman](https://wiki.archlinux.org/title/Blueman)
-- [Debian-wiki](https://wiki.debian.org/PipeWire)
+- [Debian-wiki](https://wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[Depricated for this PPA]**
 
-# :hammer_and_wrench: Troubleshooting  
+# <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/wrench_and_hammer.svg" width=48 height=48> Troubleshooting  
 
 **See in wiki page - [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting)**
 
-# :fire: Notice
+# <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/flame.svg" width=48 height=48> Notice
 
 If you have any issue regarding this PPA package, create a issue here.
 
 **For features, requests or bugs, create an issue on [upstream](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues) For PW**
 **And for blueman on [here](https://github.com/blueman-project/blueman/issues/new)**    
 
-# :clap: Credits
+# <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/clap.svg" width=48 height=48> Credits
 
 Original PipeWire project maintainer:
 [Wim Taymans](https://gitlab.freedesktop.org/wtaymans) - [Source](https://gitlab.freedesktop.org/pipewire/pipewire)
