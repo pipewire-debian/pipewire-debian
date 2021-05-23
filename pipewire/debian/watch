@@ -1,3 +1,3 @@
 version=4
 https://github.com/PipeWire/pipewire/releases \
- .*/archive/@ANY_VERSION@@ARCHIVE_EXT@
+.*/@ANY_VERSION@@ARCHIVE_EXT@

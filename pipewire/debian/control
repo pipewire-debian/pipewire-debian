@@ -49,7 +49,7 @@ Multi-Arch: same
 Depends: libspa-0.2-modules (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: pipewire (= ${binary:Version})
+Recommends: pipewire (= ${binary:Version}), pipewire-locales
 Description: libraries for the PipeWire multimedia server
  PipeWire is a server and user space API to deal with multimedia
  pipelines. This includes:

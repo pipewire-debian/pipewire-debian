@@ -33,7 +33,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_context_get_properties@Base 0.3.1
  pw_context_get_support@Base 0.3.1
  pw_context_get_user_data@Base 0.3.1
- pw_context_get_work_queue@Base 0.3.26-1
+ pw_context_get_work_queue@Base 0.3.26
  pw_context_load_module@Base 0.3.1
  pw_context_load_spa_handle@Base 0.3.1
  pw_context_new@Base 0.3.1
@@ -101,13 +101,13 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_free_strv@Base 0.3.1
  pw_get_application_name@Base 0.3.1
  pw_get_client_name@Base 0.3.1
- pw_get_domain@Base 0.3.26-1
+ pw_get_domain@Base 0.3.26
  pw_get_host_name@Base 0.3.1
  pw_get_library_version@Base 0.3.1
  pw_get_prgname@Base 0.3.1
  pw_get_support@Base 0.3.1
  pw_get_user_name@Base 0.3.1
- pw_gettext@Base 0.3.26-1
+ pw_gettext@Base 0.3.26
  pw_global_add_listener@Base 0.3.1
  pw_global_add_resource@Base 0.3.1
  pw_global_bind@Base 0.3.1
@@ -253,7 +253,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_mempool_map_id@Base 0.3.1
  pw_module_info_free@Base 0.3.1
  pw_module_info_update@Base 0.3.1
- pw_ngettext@Base 0.3.26-1
+ pw_ngettext@Base 0.3.26
  pw_node_info_free@Base 0.3.1
  pw_node_info_update@Base 0.3.1
  pw_node_state_as_string@Base 0.3.1
@@ -325,7 +325,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_resource_ping@Base 0.3.1
  pw_resource_remove@Base 0.3.1
  pw_resource_set_bound_id@Base 0.3.1
- pw_set_domain@Base 0.3.26-1
+ pw_set_domain@Base 0.3.26
  pw_split_strv@Base 0.3.1
  pw_split_walk@Base 0.3.1
  pw_stream_add_listener@Base 0.3.1
@@ -369,6 +369,6 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_thread_loop_wait@Base 0.3.1
  pw_type_info@Base 0.3.1
  pw_unload_spa_handle@Base 0.3.1
- pw_work_queue_add@Base 0.3.26-1
- pw_work_queue_cancel@Base 0.3.26-1
- pw_work_queue_complete@Base 0.3.26-1
+ pw_work_queue_add@Base 0.3.26
+ pw_work_queue_cancel@Base 0.3.26
+ pw_work_queue_complete@Base 0.3.26
