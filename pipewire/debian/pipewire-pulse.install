@@ -1,0 +1,5 @@
+usr/share/pipewire/media-session.d/with-pulseaudio
+usr/share/pipewire/pipewire-pulse.conf
+usr/bin/pipewire-pulse
+usr/lib/systemd/user/pipewire-pulse.service
+usr/lib/systemd/user/pipewire-pulse.socket

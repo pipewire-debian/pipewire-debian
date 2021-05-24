@@ -1,0 +1,7 @@
+usr/share/pipewire/media-session.d/alsa-monitor.conf
+usr/share/pipewire/media-session.d/bluez-monitor.conf
+usr/share/pipewire/media-session.d/media-session.conf
+usr/share/pipewire/media-session.d/v4l2-monitor.conf
+usr/share/pipewire/media-session.d/with-jack
+usr/bin/pipewire-media-session
+usr/lib/systemd/user/pipewire-media-session.service

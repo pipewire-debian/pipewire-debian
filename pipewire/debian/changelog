@@ -1,3 +1,17 @@
+pipewire (0.3.29-1~ubuntu20.04) focal; urgency=medium
+
+  - Rebase on debian upstream agian [some portion] 
+    (At least they made changes, that make sense something, not fully) 
+  - Split pipewire-media-session from pipewire-bin package
+  - Split pipewire-pulse from pipewire-bin package
+  - 
+  -
+  -
+  
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 03 Jun 2021 18:28:08 +0530
+
 pipewire (0.3.28-1~ubuntu20.04) focal; urgency=medium
 
   - Freewheeling was implemented. This makes it possible to
