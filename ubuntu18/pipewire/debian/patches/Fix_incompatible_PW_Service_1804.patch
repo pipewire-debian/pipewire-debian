@@ -7,9 +7,9 @@ Index: pipewire-0.3.27/src/daemon/systemd/system/pipewire-media-session.service.
  RestrictNamespaces=yes
  SystemCallArchitectures=native
 -SystemCallFilter=@system-service
-+#below line is compatible with systemd(>= 239)
-+#but ubuntu 1804 have version 237,And have no way to upgrade.
-+#SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
  Type=simple
  ExecStart=@PW_MEDIA_SESSION_BINARY@
  Restart=on-failure
@@ -22,9 +22,9 @@ Index: pipewire-0.3.27/src/daemon/systemd/system/pipewire.service.in
  RestrictNamespaces=yes
  SystemCallArchitectures=native
 -SystemCallFilter=@system-service
-+#below line is compatible with systemd(>= 239)
-+#but ubuntu 1804 have version 237,And have no way to upgrade.
-+#SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
  Type=simple
  ExecStart=@PW_BINARY@
  Restart=on-failure
@@ -37,9 +37,9 @@ Index: pipewire-0.3.27/src/daemon/systemd/user/pipewire-media-session.service.in
  RestrictNamespaces=yes
  SystemCallArchitectures=native
 -SystemCallFilter=@system-service
-+#below line is compatible with systemd(>= 239)
-+#but ubuntu 1804 have version 237,And have no way to upgrade.
-+#SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
  Type=simple
  ExecStart=@PW_MEDIA_SESSION_BINARY@
  Restart=on-failure
@@ -52,9 +52,9 @@ Index: pipewire-0.3.27/src/daemon/systemd/user/pipewire-pulse.service.in
  RestrictNamespaces=yes
  SystemCallArchitectures=native
 -SystemCallFilter=@system-service
-+#below line is compatible with systemd(>= 239)
-+#but ubuntu 1804 have version 237,And have no way to upgrade.
-+#SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
  Type=simple
  ExecStart=@PW_PULSE_BINARY@
  Restart=on-failure
@@ -76,9 +76,9 @@ Index: pipewire-0.3.27/src/daemon/systemd/user/pipewire.service.in
  RestrictNamespaces=yes
  SystemCallArchitectures=native
 -SystemCallFilter=@system-service
-+#below line is compatible with systemd(>= 239)
-+#but ubuntu 1804 have version 237,And have no way to upgrade.
-+#SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
  Type=simple
  ExecStart=@PW_BINARY@
  Restart=on-failure
