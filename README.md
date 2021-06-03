@@ -54,13 +54,15 @@
 
 ## [Launchpad PPA](https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream)
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22> **This repo (`master` branch) Can be viewed as a mirror of Launchpad PPA. I will keep sync this with the LP PPA. The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.**
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **This repo (`master` branch which is <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=96 height=13> ) Can be viewed as a mirror of Launchpad PPA. I will keep sync this with the LP PPA. As this is `deprecated` use [this secion](#add-the-launchpad-ppa) section alternatively.** 
+
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.**
 
 ## 1. PPA Configuration
 
 ### Add the Launchpad PPA...       
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **The recommended & convenient way, see next [section](#or-the-github-ppa) If you can't install from LP PPA**       
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **The recommended & convenient way**
 
 ```bash
 # You can update your system with unsupported packages from this untrusted PPA by adding ppa:pipewire-debian/pipewire-upstream
@@ -73,16 +75,24 @@ sudo apt-get update
 # a file under /etc/apt/sources.list.d/ containing source mirror list. 
 # First Download key from keyservers directly into the trusted set of keys, Run 2 commands below.
 
+gpg --keyserver keyserver.ubuntu.com --recv-keys 25088A0359807596
+gpg -a --export 25088A0359807596 | sudo apt-key add -
+
+# Or, 
+
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 25088A0359807596
 
 echo "deb http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
+
+# For Non ubuntu Debian based Users, Edit `/etc/apt/sources.list.d/pipewire-upstream.list` and change your `distro_code_name` equivalent to any one of ubuntu 
+# `distro_code_name`. (For example, MX Linux 19.4 based on Debian buster, And equivalent to `ubuntu 18.04`, so replace `buster` with `bionic` in the mentioned file.)
 
 # Below is generaly not required unless you are not inspecting a package or not thinking about repackaging from the source.
 
 echo "deb-src http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
 ```
 
-### ...or the Github PPA
+### ...or the Github PPA  &nbsp; &nbsp; <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=128 height=17>
 
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **Use IFF you have a good reason Or If your distro (other debian based) Can't install from LP PPA.**           
 
@@ -105,7 +115,7 @@ sudo apt install libfdk-aac2 libldacbt-{abr,enc}2 libopenaptx0
 # If `libfdk-aac2` not found install `libfdk-aac1`
 # Install pipewire and additional packages
 
-sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,bin,locales,tests}}
+sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,pulse,media-session,bin,locales,tests}}
 
 # Additionally, if you want to install `pipewire-doc`
 
@@ -130,7 +140,7 @@ You don't need to uninstall PulseAudio to enable PipeWire, disable and mask Puls
 systemctl --user --now disable  pulseaudio.{socket,service}
 systemctl --user mask pulseaudio        
 ```
-**Additional steps for ubuntu 18.04**        
+**Additional steps for ubuntu 18.04 Or Equivalent distros**        
 
 ```bash        
 # You need to tell Pulseaudio not to respawn itself by issuing this command:     
@@ -141,16 +151,47 @@ sed -i 's/.*autospawn.*/autospawn = no/g' ~/.config/pulse/client.conf
 
 sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf        
 
+# Additonally if `/etc/pulse/client.conf.d/00-enable-autospawn.conf` this file exist do (Mx Linux)
+
+sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf.d/00-enable-autospawn.conf       
+
+# Also If `/etc/xdg/autostart/pulseaudio.desktp` file exist, you have to backup this file to somewhere or have to delete it.
+
 # And finally issue        
 
 pulseaudio --kill        
 ```        
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22> **Since version `0.3.28` conf files are moved to `/usr/share/` directory from `/etc/` but In our package conf files are installed on both location, From `0.3.29` 
-It will be shifted to upstream default means conf files will be only installed under `/usr/share/`, You have to copy them to `/etc/` directory manually.**
+**For Mx Linux Or `init` system**
+
+<pre>
+<code>
+# Mx Linux uses init system by default, Anyone using `systemd` ignore this section.
+
+# Some users feel anoying to start `pipewire` services becasue of PW doesn't shift any scripts for non systemd, So Now how to start 
+# All `pipewire` services in init system?
+
+# There is a solution on internet see this : <a href="https://www.linuxquestions.org/questions/slackware-14/using-pipewire-instead-of-pulseaudio-in-slackware-15-a-4175693980">Slackware Solution</a> the idea is same for Mx Linux also
+
+# For the above solution you have to install <a href="https://github.com/raforg/daemon">daemon program</a> or do the below modifcation on those `.desktop` files.
+
+substitue this `Exec=/usr/bin/pipewire` line with above `pipewire.desktop` file where you find lines starting with `Exec`. 
+substitue this `Exec=/usr/bin/pipewire-pulse` line with above `pipewire-pulse.desktop` file where you find lines starting with `Exec`. 
+substitue this `Exec=/usr/bin/pipewire-media-session` line with above `pipewire-media-session.desktop` file where you find lines starting with `Exec`. 
 
 
-Enable and start PipeWire related services    
+</code>
+</pre>
+
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **Since version `0.3.28` conf files are moved to `/usr/share/` directory from `/etc/`.  You have to copy them to `/etc/` directory manually. From Now `/etc/pipewire/` can be used as system wide drop in for User edited conf files. `conffile` overridden behaviour is `$HOME/.config/pipewire > /etc/pipewire > /usr/share/pipewire`**              
+
+To copy conffiles from `/usr/share/` to `/etc/`, issue below command. **(Optional)**     
+
+```bash
+sudo cp -vRa /usr/share/pipewire /etc/
+```
+
+Enable and start PipeWire related services **(`init` system users, Ignore this)**       
 ```bash
 systemctl --user --now enable pipewire{,-pulse}.{socket,service} pipewire-media-session.service
 ```
@@ -160,7 +201,7 @@ pactl info | grep '^Server Name'
 ```
 If your system doesn't have any sound, please reboot    
 
-Incase of blueman, just enable below service.
+Incase of blueman, just enable below service. **(`init` system users, Ignore this)**
 ```bash
 sudo systemctl enable --now blueman-mechanism.service
 ```
@@ -180,7 +221,7 @@ sudo systemctl enable --now blueman-mechanism.service
     - [Arch-wiki](https://wiki.archlinux.org/index.php/PipeWire)
     - [Arch-Bluetooth-Wiki](https://wiki.archlinux.org/title/Bluetooth)
     - [blueman](https://wiki.archlinux.org/title/Blueman)
-- [Debian-wiki](https://wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[Depricated for this PPA]**
+- [Debian-wiki](https://wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[ <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=96 height=13>  for this PPA ]**
 
 # <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/wrench_and_hammer.svg" width=48 height=48> Troubleshooting  
 
