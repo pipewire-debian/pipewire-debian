@@ -2,6 +2,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
 * Build-Depends-Package: libpipewire-0.3-dev
  pw_buffers_clear@Base 0.3.1
  pw_buffers_negotiate@Base 0.3.1
+ pw_check_option@Base 0.3.29
  pw_client_info_free@Base 0.3.1
  pw_client_info_update@Base 0.3.1
  pw_conf_load_conf@Base 0.3.22
