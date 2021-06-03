@@ -4,9 +4,13 @@ pipewire (0.3.29-1~ubuntu20.04) focal; urgency=medium
     (At least they made changes, that make sense something, not fully) 
   - Split pipewire-media-session from pipewire-bin package
   - Split pipewire-pulse from pipewire-bin package
-  - 
-  -
-  -
+  - Latency reporting is now implemented.
+  - Many documentation updates and cleanups.
+  - module-combine-sink was added to PulseAudio server.
+  - Better handling of multichannel input profiles.
+  - Fix 100% volume issue when monitor suspends or profile
+    changes in some cases.
+  - Bugfixes and crashes
   
 
 
