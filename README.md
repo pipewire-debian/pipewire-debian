@@ -107,6 +107,8 @@ sudo apt update
 
 ### After adding one of the PPA's, follow the installation instructions below
 
+**For MX Linux or Debian buster see [this](https://pastebin.com/S5duuECS) for which packages are to be insalled or upgraded.**
+
 ```bash
 # Install dependencies
 
