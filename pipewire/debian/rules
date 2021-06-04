@@ -37,6 +37,7 @@ override_dh_auto_configure:
 		$(NULL)
 	install -d debian/ld.so.conf.d
 	echo "/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3/jack/" > "debian/ld.so.conf.d/pipewire-jack-$(DEB_HOST_MULTIARCH).conf"
+	install -Dm644 /dev/null debian/with-alsa
 
 test_timeout_multiplier = 1
 

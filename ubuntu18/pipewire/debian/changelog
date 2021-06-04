@@ -1,14 +1,17 @@
-pipewire (0.3.29-1~ubuntu18.04) bionic; urgency=medium
+pipewire (0.3.29-2~ubuntu18.04) bionic; urgency=medium
 
   - Rebase on debian upstream agian [some portion] 
     (At least they made changes, that make sense something, not fully) 
   - Split pipewire-media-session from pipewire-bin package
   - Split pipewire-pulse from pipewire-bin package
-  - 
-  -
-  -
+  - Latency reporting is now implemented.
+  - Many documentation updates and cleanups.
+  - module-combine-sink was added to PulseAudio server.
+  - Better handling of multichannel input profiles.
+  - Fix 100% volume issue when monitor suspends or profile
+    changes in some cases.
+  - Bugfixes and crashes
   
-
 
  -- Sourav Das <souravdas142@gmail.com>  Thu, 03 Jun 2021 18:28:08 +0530
 
