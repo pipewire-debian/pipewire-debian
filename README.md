@@ -107,6 +107,8 @@ sudo apt update
 
 ### After adding one of the PPA's, follow the installation instructions below
 
+**Consult with the [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page if there is any error occured.**
+
 **For MX Linux or Debian buster see [this](https://pastebin.com/S5duuECS) for which packages are to be insalled or upgraded.**
 
 ```bash
@@ -207,6 +209,16 @@ Incase of blueman, just enable below service. **(`init` system users, Ignore thi
 ```bash
 sudo systemctl enable --now blueman-mechanism.service
 ```
+
+
+# Uninstalling
+
+If PipeWire was installed by default on your system, There are no way to completely remove it, because other packages may have dependency 
+on PipeWire, You can only downgrade PipeWire to the system default version in that case, for more consult with [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page.
+
+Normally, Uninstall pipewire is pretty straight forward like the Installation phase, So follow the [installation](#2-install-pipewire-or-blueman-git) 
+Section, you just need to reverse the whole thing in that section. For more search on the internet, `how to remove a package?`.
+
 
 
 
