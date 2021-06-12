@@ -54,7 +54,7 @@
 
 ## [Launchpad PPA](https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream)
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **This repo (`master` branch which is <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=96 height=13> ) Can be viewed as a mirror of Launchpad PPA. I will keep sync this with the LP PPA. As this is `deprecated` use [this secion](#add-the-launchpad-ppa) section alternatively.** 
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **This repo (`master` branch which is <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=105 height=13> ) Can be viewed as a mirror of Launchpad PPA. I will keep sync this with the LP PPA. As this is `deprecated` use [this section](#add-the-launchpad-ppa) section alternatively.** 
 
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.**
 
@@ -92,7 +92,7 @@ echo "deb http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(ls
 echo "deb-src http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
 ```
 
-### ...or the Github PPA  &nbsp; &nbsp; <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=128 height=17>
+### ...or the Github PPA  &nbsp; &nbsp; <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=138 height=17>
 
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **Use IFF you have a good reason Or If your distro (other debian based) Can't install from LP PPA.**           
 
@@ -235,7 +235,7 @@ Section, you just need to reverse the whole thing in that section. For more sear
     - [Arch-wiki](https://wiki.archlinux.org/index.php/PipeWire)
     - [Arch-Bluetooth-Wiki](https://wiki.archlinux.org/title/Bluetooth)
     - [blueman](https://wiki.archlinux.org/title/Blueman)
-- [Debian-wiki](https://wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[ <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=96 height=13>  for this PPA ]**
+- [Debian-wiki](https://wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[ <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=105 height=13>  for this PPA ]**
 
 # <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/wrench_and_hammer.svg" width=48 height=48> Troubleshooting  
 
