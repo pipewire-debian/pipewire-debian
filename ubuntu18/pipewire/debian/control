@@ -249,8 +249,6 @@ Architecture: linux-any
 Multi-Arch: foreign
 Replaces: pipewire-bin (<< 0.3.28-2)
 Breaks: pipewire-bin (<< 0.3.28-2)
-Provides: pulseaudio-module-bluetooth
-Conflicts: pulseaudio-module-bluetooth
 Depends: pipewire (= ${binary:Version}),
          pipewire-media-session,
          ${misc:Depends},
