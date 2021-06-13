@@ -3,7 +3,6 @@ Section: libs
 Priority: optional
 Maintainer: Sourav Das <souravdas142@gmail.com>
 XSBC-Original-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@alioth-lists.debian.net>
-Uploaders: Sourav Das <souravdas142@gmail.com>
 Build-Depends:	cmake,
 				debhelper-compat (= 12),
 				doxygen <!nodoc>,
@@ -16,7 +15,7 @@ Build-Depends:	cmake,
                 libcamera-dev,
 				libdbus-1-dev,
 				libdrm-dev,
-				libfdk-aac-dev (>=2.0),
+				libfdk-aac-dev (>= 2.0),
 				libglib2.0-dev (>= 2.32.0),
 				libgstreamer-plugins-base1.0-dev,
 				libgstreamer1.0-dev,
@@ -33,7 +32,6 @@ Build-Depends:	cmake,
 				libudev-dev [linux-any],
 				libv4l-dev,
 				libvulkan-dev,
-				make,
 				meson (>= 0.50.0),
 				pkg-config (>= 0.22),
 				systemd [linux-any],
@@ -160,7 +158,7 @@ Package: pipewire-locales
 Section: localization
 Architecture: all
 Multi-Arch: foreign
-Depends: pipewire (= ${binary:Version}),
+Depends: pipewire, 
 		 ${misc:Depends}
 Provides: libpipewire-0.3-common
 Conflicts: libpipewire-0.3-common

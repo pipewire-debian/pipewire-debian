@@ -1,3 +1,23 @@
+pipewire (0.3.30-2~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - Reverted "pulseaudio-module-bluetooth conflicts with PipeWire-pulse #17"
+      Give feedback whether should I conflict the same or not?
+      For more see : https://github.com/pipewire-debian/pipewire-debian/issues/17
+
+  PipeWire - 
+    
+    - Recording from a monitor port should work again.
+    - JACK applications should now be more stable again.
+    - Freewheeling should not lock up anymore.
+    - Fix lockups in many pulseaudio apps.
+    - module-echo-cancel was implemented in pipewire-pulse
+    - Many other stability fixes.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+ -- Sourav Das <souravdas142@gmail.com>  Mon, 14 Jun 2021 11:55:19 +0530
+
 pipewire (0.3.30-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

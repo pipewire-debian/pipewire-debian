@@ -14,15 +14,16 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.30-1 (https://pipewire-debian.github.io)
+pipewire 0.3.30-2 (https://pipewire-debian.github.io)
  
 
 CHANGELOGS - 
 
   Debian Package - 
 
-    - From now, pulseaudio-module-bluetooth conflicts with PipeWire-pulse #17
-    -  (For more see : https://github.com/pipewire-debian/pipewire-debian/issues/17)
+    - Reverted "pulseaudio-module-bluetooth conflicts with PipeWire-pulse #17"
+      Give feedback whether should I conflict the same or not?
+      For more see : https://github.com/pipewire-debian/pipewire-debian/issues/17
 
   PipeWire - 
     

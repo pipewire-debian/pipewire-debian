@@ -2,6 +2,8 @@
 # pipewire-audio-client-libraries.postinst, runs ldconfig 
 set -e 
  
+#DEBHELPER#
+
 case "$1" in 
        configure) 
                ldconfig 
