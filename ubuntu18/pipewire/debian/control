@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Sourav Das <souravdas142@gmail.com>
 XSBC-Original-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@alioth-lists.debian.net>
 Build-Depends:	cmake,
-				debhelper-compat (= 12),
+				debhelper (>= 12),
 				doxygen <!nodoc>,
 				fakeroot,
 				graphviz <!nodoc>,
@@ -13,6 +13,7 @@ Build-Depends:	cmake,
 				libasound2-dev,
 				libbluetooth-dev,
                 libcamera-dev,
+                libcap-dev,
 				libdbus-1-dev,
 				libdrm-dev,
 				libfdk-aac-dev (>= 2.0),
@@ -39,7 +40,7 @@ Build-Depends:	cmake,
 				valgrind,
                 libwebrtc-audio-processing-dev,
 				xmltoman
-Standards-Version: 4.5.1
+Standards-Version: 4.1.4
 Vcs-Browser: https://gitlab.freedesktop.org/pipewire/pipewire
 Vcs-Git: https://gitlab.freedesktop.org/pipewire/pipewire.git
 Homepage: https://pipewire.org/
