@@ -1,6 +1,6 @@
 Core properties:
-  Source dir /home/sdas/new/builddir/tmp/tmp/pipewire-0.3.27
-  Build dir  /home/sdas/new/builddir/tmp/tmp/pipewire-0.3.27/build
+  Source dir /home/sdas/git/tmp/pipewire-0.3.30
+  Build dir  /home/sdas/git/tmp/pipewire-0.3.30/build
                                                                                                                
 Main project options:                                                                                          
                                                                                                                
@@ -81,6 +81,7 @@ Main project options:
   audioconvert              auto                 [enabled, disabled, auto]                                     Enable audioconvert spa plugin integration
   audiomixer                auto                 [enabled, disabled, auto]                                     Enable audiomixer spa plugin integration
   audiotestsrc              auto                 [enabled, disabled, auto]                                     Enable audiotestsrc spa plugin integration
+  avahi                     auto                 [enabled, disabled, auto]                                     Enable code that depends on avahi
   bluez5                    auto                 [enabled, disabled, auto]                                     Enable bluez5 spa plugin integration
   bluez5-backend-hfp-native auto                 [enabled, disabled, auto]                                     Enable HFP in native backend in bluez5 spa plugin
   bluez5-backend-hsp-native auto                 [enabled, disabled, auto]                                     Enable HSP in native backend in bluez5 spa plugin
@@ -92,6 +93,7 @@ Main project options:
   control                   auto                 [enabled, disabled, auto]                                     Enable control spa plugin integration
   docdir                                                                                                       Directory for installing documentation to (defaults to pipewire_datadir/doc/meson.project_name() )
   docs                      disabled             [enabled, disabled, auto]                                     Build documentation
+  echo-cancel-webrtc        auto                 [enabled, disabled, auto]                                     Enable WebRTC-based echo canceller
   evl                       disabled             [enabled, disabled, auto]                                     Enable EVL support spa plugin integration
   examples                  enabled              [enabled, disabled, auto]                                     Build examples
   ffmpeg                    disabled             [enabled, disabled, auto]                                     Enable ffmpeg spa plugin integration
@@ -102,6 +104,7 @@ Main project options:
   jack-devel                disabled             [enabled, disabled, auto]                                     Install jack development files
   libcamera                 auto                 [enabled, disabled, auto]                                     Enable libcamera spa plugin integration
   libjack-path                                                                                                 Where to install the libjack.so library
+  libpulse                  auto                 [enabled, disabled, auto]                                     Enable code that depends on libpulse
   man                       auto                 [enabled, disabled, auto]                                     Build manpages
   media-session             auto                 [enabled, disabled, auto]                                     Build and install pipewire-media-session
   pipewire-alsa             auto                 [enabled, disabled, auto]                                     Enable pipewire-alsa integration

@@ -6,11 +6,13 @@ build_deps=(
     "fakeroot"
     "graphviz"
     "g++"
+    "libavahi-client-dev"
     "libavformat58"
     "libavcodec58"
     "libasound2-dev"
     "libbluetooth-dev"
-#    "libcamera-dev"
+    "libcamera-dev"
+	"libcap-dev"
     "libdbus-1-dev"
     "libdrm-dev"
     "libfdk-aac-dev"
@@ -33,6 +35,7 @@ build_deps=(
     "make"
     "meson"
     "valgrind"
+    "libwebrtc-audio-processing-dev"
     "xmltoman"
 )
 
