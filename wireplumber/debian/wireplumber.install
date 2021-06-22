@@ -1,0 +1,4 @@
+etc/wireplumber
+usr/bin
+usr/lib/systemd
+usr/share/wireplumber

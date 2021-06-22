@@ -1,0 +1,12 @@
+---
+include:
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/salsa-ci.yml
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/pipeline-jobs.yml
+
+variables:
+  RELEASE: 'experimental'
+  # Since those pull from unstable
+  SALSA_CI_DISABLE_REPROTEST: 1
+  SALSA_CI_DISABLE_PIUPARTS: 1
+  SALSA_CI_DISABLE_AUTOPKGTEST: 1
+
