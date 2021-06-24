@@ -1,12 +1,14 @@
 Source: wireplumber
 Section: libs
 Priority: optional
-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@alioth-lists.debian.net>
+Maintainer: Sourav Das <souravdas142@gmail.com>
+XSBC-Original-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@alioth-lists.debian.net>
 Uploaders: Sjoerd Simons <sjoerd@debian.org>
 Build-Depends: debhelper-compat (= 12),
                doxygen (>= 1.9.0),
                gobject-introspection,
                libgirepository1.0-dev,
+# WirePlumber > 0.4.0 uses libglib2.0-dev (>= 2.62)
                libglib2.0-dev (>= 2.58),
                liblua5.3-dev,
                libpipewire-0.3-dev (>= 0.3.20),

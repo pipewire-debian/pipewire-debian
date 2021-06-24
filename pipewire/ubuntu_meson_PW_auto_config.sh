@@ -46,6 +46,7 @@ meson configure build  --buildtype=plain \
 	-D man=enabled \
 	-D test=enabled \
 	-D videotestsrc=enabled \
-	-D volume=enabled 
+	-D volume=enabled \
+	-D wireplumber=disabled
 
 
