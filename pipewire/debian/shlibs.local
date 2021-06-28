@@ -1,1 +1,2 @@
 libpipewire-0.3 0 libpipewire-0.3-0 (= ${binary:Version})
+libjack 0 video-dsp-play

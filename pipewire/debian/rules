@@ -34,6 +34,7 @@ override_dh_auto_configure:
 		-Dtest=enabled \
 		-Dvideotestsrc=enabled \
 		-Dvolume=enabled \
+		-Dvulkan=enabled \
 		-Droc=enabled \
 		$(NULL)
 	install -d debian/ld.so.conf.d
