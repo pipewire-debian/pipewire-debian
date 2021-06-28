@@ -1,3 +1,32 @@
+pipewire (0.3.31-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - Reverted "pulseaudio-module-bluetooth conflicts with PipeWire-pulse #17"
+      Give feedback whether should I conflict the same or not?
+      For more see : https://github.com/pipewire-debian/pipewire-debian/issues/17
+
+    - roc-toolkit, openfec package added.
+
+  PipeWire - 
+    
+    - Fixes for alsa-lib 1.2.5
+    - New pulseaudio modules: module-avahi-zeroconf,
+      module-pipe-source, module-roc-sink, module-roc-source
+    - JACK has seen massive stability improvements. Locking
+      and correctness wrt to callbacks and has been reworked. Also
+      thread priorities have improved.
+    - Handle various crashes and lockups when running out of file
+      descriptors.
+    - Bluetooth now uses a hardware database to disable
+      non-working features on listed devices.
+    - Scheduling quantum and rate can now be changed dynamically
+      with pw-metadata.
+    - Many bugfixes and improvements.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+ -- Sourav Das <souravdas142@gmail.com>  Mon, 28 Jun 2021 21:03:13 +0530
+
 pipewire (0.3.30-2~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

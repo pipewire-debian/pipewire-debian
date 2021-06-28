@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.30-2 (https://pipewire-debian.github.io)
+pipewire 0.3.31-3 (https://pipewire-debian.github.io)
  
 
 CHANGELOGS - 
@@ -25,14 +25,23 @@ CHANGELOGS -
       Give feedback whether should I conflict the same or not?
       For more see : https://github.com/pipewire-debian/pipewire-debian/issues/17
 
+    - roc-toolkit, openfec package added.
+
   PipeWire - 
     
-    - Recording from a monitor port should work again.
-    - JACK applications should now be more stable again.
-    - Freewheeling should not lock up anymore.
-    - Fix lockups in many pulseaudio apps.
-    - module-echo-cancel was implemented in pipewire-pulse
-    - Many other stability fixes.
+    - Fixes for alsa-lib 1.2.5
+    - New pulseaudio modules: module-avahi-zeroconf,
+      module-pipe-source, module-roc-sink, module-roc-source
+    - JACK has seen massive stability improvements. Locking
+      and correctness wrt to callbacks and has been reworked. Also
+      thread priorities have improved.
+    - Handle various crashes and lockups when running out of file
+      descriptors.
+    - Bluetooth now uses a hardware database to disable
+      non-working features on listed devices.
+    - Scheduling quantum and rate can now be changed dynamically
+      with pw-metadata.
+    - Many bugfixes and improvements.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
 
@@ -51,6 +60,8 @@ Troubleshooting -
 
   - Please install "pulseaudio-module-bluetooth" again, uninstalled by previous 
     version of PipeWire.
+
+  - roc-toolkit, openfec package added.
   
 
 EOF

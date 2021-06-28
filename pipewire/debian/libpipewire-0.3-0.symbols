@@ -18,6 +18,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_context_create_device@Base 0.3.1
  pw_context_create_factory@Base 0.3.1
  pw_context_create_link@Base 0.3.1
+ pw_context_create_metadata@Base 0.3.31
  pw_context_create_node@Base 0.3.1
  pw_context_create_port@Base 0.3.1
  pw_context_destroy@Base 0.3.1
@@ -177,6 +178,15 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_impl_link_get_output@Base 0.3.1
  pw_impl_link_get_user_data@Base 0.3.1
  pw_impl_link_register@Base 0.3.1
+ pw_impl_metadata_add_listener@Base 0.3.31
+ pw_impl_metadata_destroy@Base 0.3.31
+ pw_impl_metadata_get_global@Base 0.3.31
+ pw_impl_metadata_get_implementation@Base 0.3.31
+ pw_impl_metadata_get_user_data@Base 0.3.31
+ pw_impl_metadata_register@Base 0.3.31
+ pw_impl_metadata_set_implementation@Base 0.3.31
+ pw_impl_metadata_set_property@Base 0.3.31
+ pw_impl_metadata_set_propertyf@Base 0.3.31
  pw_impl_module_add_listener@Base 0.3.1
  pw_impl_module_destroy@Base 0.3.1
  pw_impl_module_get_context@Base 0.3.1
