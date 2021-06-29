@@ -1,0 +1,63 @@
+#!/bin/sh 
+
+set -e 
+
+#DEBHELPER#
+
+
+############# Showing changelogs and Message ############# 
+
+case "$1" in 
+
+  configure) 
+
+cat << EOF
+
+
+wireplumber 0.4.1 (https://github.com/pipewire-debian/pipewire-debian)
+ 
+
+CHANGELOGS - 
+
+  Debian Package - 
+
+    - Initial Release
+
+  wireplumber - 
+    
+	Fixes:
+	
+	  - Fixed filtering of pw_metadata objects, which broke with PipeWire 0.3.31
+	  - Fixed a potential livelock condition in si-audio-adapter/endpoint where
+	    the code would wait forever for a node's ports to appear in the graph
+	  - Fixed granting access to camera device nodes in flatpak clients connecting
+	    through the camera portal
+	  - Fixed a lot of issues found by the coverity static analyzer
+	  - Fixed certain race conditions in the wpipc library
+	  - Fixed compilation with GCC older than v8.1
+	
+	Scripts:
+	
+	  - Added a policy script that matches nodes to specific devices based on the
+	    "media.role" of the nodes and the "device.intended-roles" of the devices
+	
+	Build system:
+	
+	  - Bumped GLib requirement to 2.62, as the code was already using 2.62 API
+	  - Added support for building WirePlumber as a PipeWire subproject
+	  - Doxygen version requirement has been relaxed to accept v1.8
+	  - The CI now also verifies that the build works on Ubuntu 20.04 LTS
+        and tries multiple builds with different build options
+
+Troubleshooting - 
+
+  - Have any package regarding issue? report on github :
+    https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
+
+  
+
+EOF
+  ;; 
+
+esac 
+
