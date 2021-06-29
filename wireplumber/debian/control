@@ -4,9 +4,11 @@ Priority: optional
 Maintainer: Sourav Das <souravdas142@gmail.com>
 XSBC-Original-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@alioth-lists.debian.net>
 Uploaders: Sjoerd Simons <sjoerd@debian.org>
-Build-Depends: debhelper-compat (= 12),
+Build-Depends: cmake,
+               debhelper-compat (= 12),
                doxygen (>= 1.9.0),
                gobject-introspection,
+               graphviz,
                libgirepository1.0-dev,
 # WirePlumber > 0.4.0 uses libglib2.0-dev (>= 2.62)
                libglib2.0-dev (>= 2.58),
@@ -19,6 +21,7 @@ Build-Depends: debhelper-compat (= 12),
                python3-sphinx-rtd-theme,
                python3-breathe,
                systemd,
+               valgrind,
 # Only used for automated tests
                dbus <!nocheck>,
                gstreamer1.0-pipewire,
