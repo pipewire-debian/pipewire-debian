@@ -21,7 +21,22 @@ Build-Depends: debhelper-compat (= 12),
                systemd,
 # Only used for automated tests
                dbus <!nocheck>,
-               pipewire <!nocheck>,
+               gstreamer1.0-pipewire,
+               libpipewire-0.3-0,
+               libpipewire-0.3-dev,
+               libpipewire-0.3-modules,
+               libspa-0.2-bluetooth,
+               libspa-0.2-dev,
+               libspa-0.2-jack,
+               libspa-0.2-modules,
+               pipewire,
+               pipewire-audio-client-libraries,
+               pipewire-doc,
+               pipewire-pulse,
+               pipewire-media-session,
+               pipewire-bin,
+               pipewire-locales,
+               pipewire-tests,
 Standards-Version: 4.5.1
 Homepage: https://gitlab.freedesktop.org/pipewire/wireplumber
 Vcs-Browser: https://salsa.debian.org/utopia-team/wireplumber
