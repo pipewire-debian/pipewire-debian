@@ -2,14 +2,27 @@
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
+export XDG_RUNTIME_DIR = /tmp
 
 %:
 	dh $@ --buildsystem=meson
 
+
 override_dh_auto_configure:
+	mkdir -pv $(CURDIR)/xdg_runtime || echo ok
+	mkdir -pv /tmp/sourav_wire || echo ok
+	ls -lah / || echo ok
+	ls -lah /tmp/ || echo ok
+	ls -lah /home || echo ok
+	ls -lah /run/ || echo ok
+	ls -lah /run/user/ || echo ok
+	echo $(shell pwd) || echo ok
+	ls -lah $(XDG_RUNTIME_DIR) || echo ok
 	dh_auto_configure --  --libexecdir=libexec -Dauto_features=enabled -Dsystem-lua=true -Dintrospection=enabled
 
 
 override_dh_auto_test:
-	dh_auto_test -- || echo "Test is failing continuously, So don't fail the build"
+	ls -lah $(XDG_RUNTIME_DIR) || echo ok
+	dh_auto_test
+	#dh_auto_test -- || echo "Test is failing continuously, So don't fail the build"
 
