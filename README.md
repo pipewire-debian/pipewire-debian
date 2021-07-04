@@ -167,7 +167,11 @@ sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf
 
 sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf.d/00-enable-autospawn.conf       
 
-# Also If `/etc/xdg/autostart/pulseaudio.desktp` file exist, you have to backup this file to somewhere or have to delete it.
+# Few others Ubuntu flavored distributions may have autospawn defined at some different places, check /etc/init.d/pulseaudio-enable-autospawn
+
+sudo update-rc.d pulseaudio-enable-autospawn remove
+
+# Also If `/etc/xdg/autostart/pulseaudio.desktop` file exist, you have to backup this file to somewhere or have to delete it.
 
 # And finally issue        
 
