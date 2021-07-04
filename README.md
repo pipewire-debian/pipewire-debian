@@ -54,26 +54,30 @@
 
 ## [Launchpad PPA](https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream)
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **This repo (`master` branch which is <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=105 height=13> ) Can be viewed as a mirror of Launchpad PPA. I will keep sync this with the LP PPA. As this is `deprecated` use [this section](#add-the-launchpad-ppa) section alternatively.** 
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **The `master` branch (<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=105 height=13> ) Can be viewed as a mirror of Launchpad PPA. ~~I will keep sync this with the LP PPA~~. As this is `deprecated` use [Launchpad PPA section](#add-the-launchpad-ppa) in case of adding PPA alternatively.** 
 
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.**
 
 ## 1. PPA Configuration
 
 ### Add the Launchpad PPA...       
-
+<!---
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **The recommended & convenient way**
+--->
+
+**Where `add-apt-repository` is available, Run only 2 commands below. (Skip the below subsection)**
 
 ```bash
-# You can update your system with unsupported packages from this untrusted PPA by adding ppa:pipewire-debian/pipewire-upstream
-# to your system's Software Sources.
-
 sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
 sudo apt-get update
+```
+**To Manually add The Launchpad PPA, Where `add-apt-repository` is not available, Or, In case of any special case**
 
-# This PPA can be added to your system manually by running below commands, It directly create 
-# a file under /etc/apt/sources.list.d/ containing source mirror list. 
-# First Download key from keyservers directly into the trusted set of keys, Run 2 commands below.
+```bash
+# This PPA can be added to your system manually by running below commands, It creates
+# a file under /etc/apt/sources.list.d/ containing  list of mirrors
+# To do this, First Download the gpg key from keyservers directly into the trusted set of keys,      
+# Run only two commands below.
 
 gpg --keyserver keyserver.ubuntu.com --recv-keys 25088A0359807596
 gpg -a --export 25088A0359807596 | sudo apt-key add -
@@ -82,16 +86,18 @@ gpg -a --export 25088A0359807596 | sudo apt-key add -
 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 25088A0359807596
 
+# And then run below command to add the mirror list to your system.
+
 echo "deb http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
 
 # For Non ubuntu Debian based Users, Edit `/etc/apt/sources.list.d/pipewire-upstream.list` and change your `distro_code_name` equivalent to any one of ubuntu 
 # `distro_code_name`. (For example, MX Linux 19.4 based on Debian buster, And equivalent to `ubuntu 18.04`, so replace `buster` with `bionic` in the mentioned file.)
 
-# Below is generaly not required unless you are not inspecting a package or not thinking about repackaging from the source.
+# The following command is usually not needed unless you want to install debug packages or create deb package from source.
 
 echo "deb-src http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
 ```
-
+<!---
 ### ...or the Github PPA  &nbsp; &nbsp; <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=138 height=17>
 
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **Use IFF you have a good reason Or If your distro (other debian based) Can't install from LP PPA.**           
@@ -102,14 +108,15 @@ sudo curl -SsL -o /etc/apt/sources.list.d/pipewire.list https://pipewire-debian.
 sudo apt update
 
 ```
+-->
+
+
 
 ## 2. Install PipeWire Or blueman-git
 
-### After adding one of the PPA's, follow the installation instructions below
+**After [PPA Configuration](#1-ppa-configuration), follow the installation instructions below. And Consult with the [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page if there is any error occured.**
 
-**Consult with the [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page if there is any error occured.**
-
-**For MX Linux or Debian buster see [this](https://pastebin.com/S5duuECS) for which packages are to be insalled or upgraded.**
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **For MX Linux or Debian buster see [this](https://pastebin.com/S5duuECS) for which packages are to be insalled or upgraded before installing.**
 
 ```bash
 # Install dependencies
@@ -124,10 +131,11 @@ sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.
 # Additionally, if you want to install `pipewire-doc`
 
 sudo apt install pipewire-doc     
+```
 
+**\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ For blueman-git  \~\~\~\~\~\~\~\~\~\~\~\~\~\~\~**          
 
-# ~~~~~~~~~~~~~ For blueman-git  ~~~~~~~~~~~~~~~          
-
+```bash
 # Before installing blueman-git, remove and purge any official version of blueman.        
 
 sudo apt-get remove --purge blueman && sudo rm -f /var/lib/blueman/network.state
@@ -139,7 +147,7 @@ sudo apt-get install blueman-git
 
     
 ## 3. Post Installation Steps for PipeWire or blueman-git        
-You don't need to uninstall PulseAudio to enable PipeWire, disable and mask PulseAudio related services to stop them    
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> You don't need to uninstall PulseAudio to enable PipeWire, disable and mask PulseAudio related services to stop them    
 ```bash
 systemctl --user --now disable  pulseaudio.{socket,service}
 systemctl --user mask pulseaudio        
@@ -166,11 +174,11 @@ sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf.d/00-enabl
 pulseaudio --kill        
 ```        
 
-**For Mx Linux Or `init` system**
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **For Mx Linux Or `init` system (Anyone using `systemd` ignore this subsection).**
 
 <pre>
 <code>
-# Mx Linux uses init system by default, Anyone using `systemd` ignore this section.
+# Mx Linux uses init system by default, 
 
 # Some users feel anoying to start `pipewire` services becasue of PW doesn't shift any scripts for non systemd, So Now how to start 
 # All `pipewire` services in init system?
@@ -187,25 +195,28 @@ substitue this `Exec=/usr/bin/pipewire-media-session` line with above `pipewire-
 </code>
 </pre>
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **Since version `0.3.28` conf files are moved to `/usr/share/` directory from `/etc/`.  You have to copy them to `/etc/` directory manually. From Now `/etc/pipewire/` can be used as system wide drop in for User edited conf files. `conffile` overridden behaviour is `$HOME/.config/pipewire > /etc/pipewire > /usr/share/pipewire`**              
+> <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **Since version `0.3.28` conf files are moved to `/usr/share/` directory from `/etc/`.  You have to copy them to `/etc/` directory manually. From Now `/etc/pipewire/` can be used as system wide drop in for User edited conf files. `conffile` overridden behaviour is `$HOME/.config/pipewire > /etc/pipewire > /usr/share/pipewire`**              
+>
+> To copy conffiles from `/usr/share/` to `/etc/`, issue below command. **(Optional)**     
+>
+> ```bash
+> sudo cp -vRa /usr/share/pipewire /etc/
+> ```
 
-To copy conffiles from `/usr/share/` to `/etc/`, issue below command. **(Optional)**     
-
-```bash
-sudo cp -vRa /usr/share/pipewire /etc/
-```
-
-Enable and start PipeWire related services **(`init` system users, Ignore this)**       
+**Finally,** Enable and start PipeWire related services **(`init` system users, Ignore this)**       
 ```bash
 systemctl --user --now enable pipewire{,-pulse}.{socket,service} pipewire-media-session.service
 ```
-You can check which server is in use by running (as a user):   
+You can check which server is in use by running (as a regular user):   
 ```bash
 pactl info | grep '^Server Name'
 ```
-If your system doesn't have any sound, please reboot    
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> Still doesn't your system have any sound ? , please reboot **( I highly discourage of any reboot,
+Go through all instructions again if needed).**    
 
-Incase of blueman, just enable below service. **(`init` system users, Ignore this)**
+**\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ For blueman-git  \~\~\~\~\~\~\~\~\~\~\~\~\~\~\~**          
+
+**Incase of blueman, just enable below service. (`init` system users, Ignore this)**
 ```bash
 sudo systemctl enable --now blueman-mechanism.service
 ```
@@ -214,7 +225,7 @@ sudo systemctl enable --now blueman-mechanism.service
 # Uninstalling
 
 If PipeWire was installed by default on your system, There are no way to completely remove it, because other packages may have dependency 
-on PipeWire, You can only downgrade PipeWire to the system default version in that case, for more consult with [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page.
+on PipeWire, You only can downgrade PipeWire to the system default version in that case, for more consult with [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page.
 
 Normally, Uninstall pipewire is pretty straight forward like the Installation phase, So follow the [installation](#2-install-pipewire-or-blueman-git) 
 Section, you just need to reverse the whole thing in that section. For more search on the internet, `how to remove a package?`.
@@ -222,20 +233,28 @@ Section, you just need to reverse the whole thing in that section. For more sear
 
 
 
-# <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/open_book.svg" width=48 height=48> Wiki
+# <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/open_book.svg" width=48 height=48> Wiki & Articles
 
-- [This Repo Wiki](https://github.com/pipewire-debian/pipewire-debian/wiki)
-- [Upstream-README](https://gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/README.md)
-- [Upstream-wiki](https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home)
-- [Upstream-blueman-wiki](https://github.com/blueman-project/blueman/wiki)
-- **Gentoo**
-    - [Gentoo-wiki](https://wiki.gentoo.org/wiki/PipeWire)
-    - [Gentoo-Bluetooth-Wiki](https://wiki.gentoo.org/wiki/Bluetooth)
-- **Arch-Linux** 
-    - [Arch-wiki](https://wiki.archlinux.org/index.php/PipeWire)
-    - [Arch-Bluetooth-Wiki](https://wiki.archlinux.org/title/Bluetooth)
-    - [blueman](https://wiki.archlinux.org/title/Blueman)
-- [Debian-wiki](https://wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[ <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=105 height=13>  for this PPA ]**
+**Wiki -**
+  - [This Repo Wiki](https://github.com/pipewire-debian/pipewire-debian/wiki)
+  - [Upstream-README](https://gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/README.md)
+  - [Upstream-wiki](https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home)
+  - [Upstream-blueman-wiki](https://github.com/blueman-project/blueman/wiki)
+  - **Gentoo**
+      - [Gentoo-wiki](https://wiki.gentoo.org/wiki/PipeWire)
+      - [Gentoo-Bluetooth-Wiki](https://wiki.gentoo.org/wiki/Bluetooth)
+  - **Arch-Linux** 
+      - [Arch-wiki](https://wiki.archlinux.org/index.php/PipeWire)
+      - [Arch-Bluetooth-Wiki](https://wiki.archlinux.org/title/Bluetooth)
+      - [blueman](https://wiki.archlinux.org/title/Blueman)
+  - [Debian-wiki](https://wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[ <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=105 height=13>  for this PPA ]**
+
+**Articles -**          
+ - [Making Sense of The Audio Stack On Unix](https://venam.nixers.net/blog/unix/2021/02/07/audio-stack.html)           
+ - [PipeWire Under The Hood](https://venam.nixers.net/blog/unix/2021/06/23/pipewire-under-the-hood.html)           
+ - [PIPEWIRE, THE NEWEST AUDIO KID ON THE LINUX BLOCK](https://hackaday.com/2021/06/23/pipewire-the-newest-audio-kid-on-the-linux-block)                     
+ - [WirePlumber, the PipeWire session manager](https://www.collabora.com/news-and-blog/blog/2020/05/07/wireplumber-the-pipewire-session-manager)
+ - [A step-by-step tutorial for live audio streaming with Roc](https://gavv.github.io/articles/roc-tutorial)
 
 # <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/wrench_and_hammer.svg" width=48 height=48> Troubleshooting  
 
