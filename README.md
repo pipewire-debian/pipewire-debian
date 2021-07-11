@@ -133,7 +133,7 @@ sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.
 sudo apt install pipewire-doc     
 ```
 
-**\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ For blueman-git  \~\~\~\~\~\~\~\~\~\~\~\~\~\~\~**          
+**\~\~\~\~\~\~\~\~\~\~\~ For blueman-git  \~\~\~\~\~\~\~\~\~\~\~**          
 
 ```bash
 # Before installing blueman-git, remove and purge any official version of blueman.        
@@ -147,32 +147,56 @@ sudo apt-get install blueman-git
 
     
 ## 3. Post Installation Steps for PipeWire or blueman-git        
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> You don't need to uninstall PulseAudio to enable PipeWire, disable and mask PulseAudio related services to stop them    
+
+### A) Disabling PulseAudio
+
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> You don't need to uninstall PulseAudio to enable PipeWire, disable and mask PulseAudio related services to stop them                    
 ```bash
 systemctl --user --now disable  pulseaudio.{socket,service}
 systemctl --user mask pulseaudio        
 ```
-**Additional steps for ubuntu 18.04 Or Equivalent distros**        
+**Additional steps (If prev. subsection failed to stop PA)**
 
 ```bash        
-# You need to tell Pulseaudio not to respawn itself by issuing this command:     
+# You need to tell Pulseaudio not to respawn itself by issuing command:     
 
 sed -i 's/.*autospawn.*/autospawn = no/g' ~/.config/pulse/client.conf        
 
-# If `~/.config/pulse/client.conf` not found then issue this,       
+# If `~/.config/pulse/client.conf` not found then issue,       
 
 sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf        
 
-# Additonally if `/etc/pulse/client.conf.d/00-enable-autospawn.conf` this file exist do (Mx Linux)
+# Additonally if `/etc/pulse/client.conf.d/0{0,1}-enable-autospawn.conf` exist, do      
 
 sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf.d/00-enable-autospawn.conf       
 
-# Also If `/etc/xdg/autostart/pulseaudio.desktp` file exist, you have to backup this file to somewhere or have to delete it.
+# Or,
+
+sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf.d/01-enable-autospawn.conf       
+
+# Also If `/etc/xdg/autostart/pulseaudio.desktop` exist, Rename to something like below. 
+
+sudo mv -v /etc/xdg/autostart/pulseaudio.desktop{,.bak}
 
 # And finally issue        
 
 pulseaudio --kill        
 ```        
+
+**Additional steps for `init` systems**     
+
+```bash
+# PulseAudio (>= 13.04-4) also have autospawn defined at /etc/init.d/pulseaudio-enable-autospawn
+# Just disable the init script, and reenable it again if anyhow PA needed in future
+
+sudo update-rc.d pulseaudio-enable-autospawn disable
+
+# If PA still running, Once again kill PA
+
+pulseaudio --kill
+```
+
+### B) Enabling `PipeWire` Related stuffs     
 
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **For Mx Linux Or `init` system (Anyone using `systemd` ignore this subsection).**
 
@@ -180,8 +204,8 @@ pulseaudio --kill
 <code>
 # Mx Linux uses init system by default, 
 
-# Some users feel anoying to start `pipewire` services becasue of PW doesn't shift any scripts for non systemd, So Now how to start 
-# All `pipewire` services in init system?
+# Some users feel anoying to start `pipewire` services becasue of PW doesn't shift any scripts for non systemd,
+# So Now how to start All `pipewire` services in init system?
 
 # There is a solution on internet see this : <a href="https://www.linuxquestions.org/questions/slackware-14/using-pipewire-instead-of-pulseaudio-in-slackware-15-a-4175693980">Slackware Solution</a> the idea is same for Mx Linux also
 
@@ -212,9 +236,9 @@ You can check which server is in use by running (as a regular user):
 pactl info | grep '^Server Name'
 ```
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> Still doesn't your system have any sound ? , please reboot **( I highly discourage of any reboot,
-Go through all instructions again if needed).**    
+Go through all instructions again if needed).**  <br />  <br />           
 
-**\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ For blueman-git  \~\~\~\~\~\~\~\~\~\~\~\~\~\~\~**          
+### C) **\~\~\~\~\~\~\~\~\~\~\~ For blueman-git  \~\~\~\~\~\~\~\~\~\~\~**          
 
 **Incase of blueman, just enable below service. (`init` system users, Ignore this)**
 ```bash
