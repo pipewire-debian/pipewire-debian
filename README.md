@@ -54,7 +54,7 @@
 
 ## [Launchpad PPA](https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream)
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **The `master` branch (<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=105 height=13> ) Can be viewed as a mirror of Launchpad PPA. ~~I will keep sync this with the LP PPA~~. As this is `deprecated` use [Launchpad PPA section](#add-the-launchpad-ppa) in case of adding PPA alternatively.** 
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **The `master` branch ( DEPRECATED ) Can be viewed as a mirror of Launchpad PPA. ~~I will keep sync this with the LP PPA~~. As this is `deprecated` use [Launchpad PPA section](#add-the-launchpad-ppa) in case of adding PPA alternatively.** 
 
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.**
 
@@ -271,7 +271,7 @@ Section, you just need to reverse the whole thing in that section. For more sear
       - [Arch-wiki](https://wiki.archlinux.org/index.php/PipeWire)
       - [Arch-Bluetooth-Wiki](https://wiki.archlinux.org/title/Bluetooth)
       - [blueman](https://wiki.archlinux.org/title/Blueman)
-  - [Debian-wiki](https://wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[ <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=105 height=13>  for this PPA ]**
+  - [Debian-wiki](https://wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[ DEPRECATED  for this PPA ]**
 
 **Articles -**          
  - [Making Sense of The Audio Stack On Unix](https://venam.nixers.net/blog/unix/2021/02/07/audio-stack.html)           
