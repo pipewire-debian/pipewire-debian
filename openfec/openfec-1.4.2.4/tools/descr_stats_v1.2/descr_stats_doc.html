@@ -1,0 +1,198 @@
+<title>Descriptive Statistics</title>
+<h1>Descriptive Statistics</h1>
+<p>
+<em>NOTE: this page, written by Tom Kirkman, can be found at
+URL: http://www.physics.csbsju.edu/stats/ and is included here with
+the author permission.</em>
+<p>
+<blockquote>
+They are different, but not different enough to matter --
+like the maple leaves off the tree in my yard, when all I want to do is
+rake them up.
+<P>Roald Hoffmann,  1981 Nobel Laureate in Chemistry
+<br> from: <em>The Same <u>and</u> Not the Same</em>
+</blockquote>
+
+<p>If you were to measure the size of 10 maple leaves you would quickly
+find that maple leaves in fact come in different sizes.  Thus it is
+impossible to report <em>the</em> size of maple leaves, instead the
+best you can do is to report a typical size and give some estimate
+of the range of variation above and below that typical size.
+The attempt to capture the full meaning of "<em>the size of maple
+leaves</em>" in a few numbers is bound to fail -- Nature really
+is more complex than our descriptions of it. Nevertheless
+if our choice is to be silent on "<em>the size of maple
+leaves</em>" or to provide a list of the size of every maple
+leaf in the world (on this day) or to provide a few summarizing
+numbers, the last is the best choice.  This page introduces a handful
+of statistics which are commonly used to describe the distribution
+of data. 
+<h3>Typical Values</h3>
+<p>There are several common methods of selecting a "typical" value
+for data.  The most common method is the <b>average</b> or
+<b>mean</b>.  To obtain an average value, add up all your data
+values and divide by the number of data items.  If <em>X</em><sub>01</sub>
+is the length of your first maple leave, <em>X</em><sub>02</sub>
+the length of your second maple leave, etc., then the average maple
+leaf length is:
+<p>(<em>X</em><sub>01</sub>+<em>X</em><sub>02</sub>+<em>X</em><sub>03</sub>+
+<em>X</em><sub>04</sub>+<em>X</em><sub>05</sub>+<em>X</em><sub>06</sub>+
+<em>X</em><sub>07</sub>+<em>X</em><sub>08</sub>+<em>X</em><sub>09</sub>+
+<em>X</em><sub>10</sub>)/10 = <em>X</em><sub>avg</sub>
+
+<p>To obtain the <b>median</b> value, first sort your list of leaf-lengths
+from  lowest to highest:
+<p>{5.1, 7.2, 4.1, 9.5, 6.7, 7.8, 8.5, 7.0, 7.3, 9.0} becomes:
+<p>{4.1, 5.1, 6.7, 7.0, 7.2, 7.3, 7.8, 8.5, 9.0, 9.5}
+<p>and then select the value in the exact middle as the median.  (It turns
+out that if the number of items is even, as in this example,
+there is no exact middle.  7.2 is 5 places from the front and
+6 places from the back; 7.3 is 6 places from the front and 5 places
+from the back.  So with even-numbered data sets, average the two
+near-middle values, producing <EM>X<sub>med</sub></em>=7.25 in this example.)
+
+<p>The <b>mode</b> "typical" value will be of less use to us:
+it is the most repeated value in the data set.  In the above
+example, no value is repeated (each value occurs exactly once).
+This is commonly the case with so few data items; hence its limited
+utility for us.
+
+<p>The <b>geometric mean</b> is useful for "log-normal distributions".
+To obtain the geometric mean, multiply all the numbers together
+and then take the result to the power 1/<em>N</em> (where <em>N</em>
+is the number of data items -- 10 in our example).  So the geometric
+mean is:
+<p>(<em>X</em><sub>01</sub>&#183;<em>X</em><sub>02</sub>&#183;<em>X</em><sub>03</sub>&#183;
+<em>X</em><sub>04</sub>&#183;<em>X</em><sub>05</sub>&#183;<em>X</em><sub>06</sub>&#183;
+<em>X</em><sub>07</sub>&#183;<em>X</em><sub>08</sub>&#183;<em>X</em><sub>09</sub>&#183;
+<em>X</em><sub>10</sub>)<sup>1/10</sup> = <EM>X<sub>geo</sub></em>
+
+<h3>Estimates of the Range of Variation</h3>
+In some sense, the range of variation is limited only by your
+willingness to search through ever larger piles of leaves.
+Generally, the more data you record the more extreme your highs
+and lows will be. Nevertheless, you should find that the range
+of leaf lengths, that includes say 50% of your sample, remains
+about the same even if you look through ever larger piles of leaves.
+That is to say, there is a common range of variation even as larger
+data sets produce rare "outliers" with ever more extreme deviation.
+Estimates of the range of variation seek to put a number to this
+common range of variation that doesn't depend on sample size.
+
+<p>The most common way to describe the range of variation is
+<b>standard deviation</b> (usually denoted by the Greek letter
+sigma: <img src="sigma2.gif"> ).  The standard deviation is simply
+the square root of the <b>variance</b>, so lets start by describing
+the variance.  To obtain the  variance start by subtracting the average
+from each data item.  Since there will be about as many items 
+above average as below average, the resulting list of numbers
+will have about as many positive values as negative values.
+(In fact this list of deviations-from-average must itself average to zero!)
+Square each deviation, and proceed to find the average of the
+squared-deviations.  However, in finding the average squared-deviation,
+divide by <em>N</em>-1 rather than <em>N</em>.  The result is the
+variance; take its square root to get the standard deviation.
+
+<p>variance = ( (<em>X</em><sub>01</sub>-<em>X</em><sub>avg</sub>)<sup>2</sup> +
+(<em>X</em><sub>02</sub>-<em>X</em><sub>avg</sub>)<sup>2</sup> +
+(<em>X</em><sub>03</sub>-<em>X</em><sub>avg</sub>)<sup>2</sup> + &#183;&#183;&#183; +
+(<em>X</em><sub>10</sub>-<em>X</em><sub>avg</sub>)<sup>2</sup> )/9
+
+<p>For data that is "normally distributed" we expect that about 
+68.3% of the data will be within 1 standard deviation of the mean
+(i.e., in the range <em>X</em><sub>avg</sub> &#177; <img src="sigma2.gif" alt="sdev"> ).
+In general there is a relationship between the fraction of the
+included data and the deviation from the mean in terms
+of standard deviations.
+<pre>
+Fraction    Number of Standard 
+of Data    Deviations from Mean
+
+ 50.0%           .674
+ 68.3           1.000
+ 90.0           1.645
+ 95.0           1.960
+ 95.4           2.000
+ 98.0           2.326
+ 99.0           2.576
+ 99.7           3.000</pre>
+Thus we should expect that 95% of the data would be within 1.96
+standard deviations of the mean 
+(i.e., in the range <em>X</em><sub>avg</sub> &#177; 1.96 <img src="sigma2.gif" alt="sdev"> ).
+This is called a <b>95% confidence interval</b> for the sample.
+
+<p>The <b>average deviation</b> or <b>mean absolute deviation</b>
+is calculated in a similar manner as standard deviation, except here
+you subtract the median from each data item producing a list
+of deviations from the median.  Instead of squaring each deviation,
+you absolute value of each deviation.  Finally you average in the usual
+way: using <em>N</em> not <em>N</em>-1.
+<p>average deviation = ( |<em>X</em><sub>01</sub>-<em>X</em><sub>med</sub> | +
+|<em>X</em><sub>02</sub>-<em>X</em><sub>med</sub> | +
+|<em>X</em><sub>03</sub>-<em>X</em><sub>med</sub> | + &#183;&#183;&#183; +
+|<em>X</em><sub>10</sub>-<em>X</em><sub>med</sub> | )/10
+
+<p>If the data is "normally distributed" there is a definite relationship
+between the average deviation and the standard deviation:
+
+<p>average deviation = 0.80 &#215; standard deviation;<br>
+where 0.80 = (2/pi)&#189;.
+
+<h3>Standard Deviation of the Estimated Means</h3>
+The above procedure describes how to define
+a "typical" leaf using 10 sample leaves.  Clearly if another
+group uses the same procedure on its own sample of 10 leaves,
+it is unlikely to come up with exactly the same value for
+a "typical" leaf.  How much variation is there in the estimates of 
+"typical" described above?  Clearly if we expand the sample beyond 10
+(to 100, or 1000, ...) we would expect to come closer to the
+actual "typical" leaf (i.e., that determined by looking at all the
+leaves in the world).  Thus the larger the sample you average over, the smaller
+is your expected deviation from the exact result.  But how much variation
+should you expect in a calculated average leaf?  The standard
+deviation expected in a calculated average is:
+<p><img src="sigma2.gif" alt="sdev">/<em>N<sup>1/2</sup></em>
+<p>Thus the deviations
+expected equal the standard deviation of the length of leaves if you "average" over
+just one leaf, and
+decrease as the square root of <em>N</em> as <em>N</em> increases. Thus one
+can expect to get quite close to the exact mean if the sample size <em>N</em> gets very big.
+
+<h3>"Normal" and other  Distributions</h3>
+Many pages have been written by others on this topic.  To be brief,
+a common assumption of statistics-users is that data is "normally"
+distributed.  Occasionally the folks making this assumption know
+what it means and even test to see if it's a valid assumption.  I'm
+going to leave you in the dark (like many statistics-users) about
+what this assumption means and how you test it.  There are several good
+courses and books that would include these topics.  I will give you two
+(not very helpful) hints. 
+<ol>
+<li> (Bad News) Many things in nature are <em>not</em> "normally"
+distributed.  (Good News) Much of what is not "normally" distributed in biology would be
+"normally" distributed if you took the logarithm of each data item.
+Thus there is a button on the descriptive statistics calculation page
+to do this conversion for you.  The result is that the geometric
+mean is calculated for you and a different kind of standard deviation
+is produced.
+With the usual standard deviation you add or subtract the standard deviation from the mean
+in order to test for fractions of included data; with the log
+standard deviation, you multiply or divide.  Thus you would expect
+68.3% of your data to be between <EM>X<sub>geo</sub></em>&#215; <img src="sigma2.gif" alt="sdev">
+and <EM>X<sub>geo</sub></em>&#247; <img src="sigma2.gif" alt="sdev"> ;  95.4% of your data
+would be between <EM>X<sub>geo</sub></em>&#215; <img src="sigma2.gif" alt="sdev"><sup>2</sup>
+and <EM>X<sub>geo</sub></em>&#247; <img src="sigma2.gif" alt="sdev"><sup>2</sup>
+<li> (Bad News) Much of what's in books about statistics has to do
+with "normally" distributed data. Statistics that provide useful
+information even if applied to not-"normally" distributed data are
+call <em>robust</em> statistics.  Median and average deviation are
+considered robust statistics. (Good News) The program always
+calculates them for you.
+</ol>
+<p>There is one additional distribution you should know a bit about:
+the Poisson distribution.  The Poisson distribution particularly applies
+to counts of things, like the number of maple trees per acre or the
+number of radioactive decays.  The main upshot is that with things
+distributed according to the Poisson distribution, the standard deviation of the
+count equals the square root of the mean count.
+

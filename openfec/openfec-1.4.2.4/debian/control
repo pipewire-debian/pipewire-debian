@@ -1,0 +1,19 @@
+Source: openfec
+Section: libs
+Priority: optional
+Maintainer: Sourav Das <souravdas142@gmail.com>
+Build-Depends: cmake,
+               dh-exec,
+               debhelper-compat (= 12)
+Standards-Version: 4.4.1
+Vcs-Browser: https://github.com/pipewire-debian/pipewire-debian/
+Vcs-Git: https://github.com/pipewire-debian/pipewire-debian.git
+Homepage: http://openfec.org/
+
+Package: libopenfec
+Architecture: linux-any
+Multi-Arch: same
+Replaces: openfec
+Breaks: openfec
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Open Forward Erasure Codes, openfec

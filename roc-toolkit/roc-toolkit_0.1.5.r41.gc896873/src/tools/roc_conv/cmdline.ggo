@@ -1,0 +1,35 @@
+package "roc-conv"
+usage "roc-conv OPTIONS"
+
+section "Options"
+
+    option "verbose" v "Increase verbosity level (may be used multiple times)"
+        multiple optional
+
+    option "list-drivers" L "list all supported audio drivers" optional
+
+    option "input" i "Input file" typestr="PATH" string required
+    option "output" o "Output file" typestr="PATH" string optional
+
+    option "frame-size" - "Internal frame size, number of samples"
+        int optional
+
+    option "rate" r "Output sample rate, Hz"
+        int optional
+
+    option "no-resampling" - "Disable resampling" flag off
+
+    option "resampler-profile" - "Resampler profile"
+        values="low","medium","high" default="medium" enum optional
+
+    option "resampler-interp" - "Resampler sinc table precision"
+        int optional
+
+    option "resampler-window" - "Number of samples per resampler window"
+        int optional
+
+    option "poisoning" - "Enable uninitialized memory poisoning"
+        flag off
+
+    option "color" - "Set colored logging mode for stderr output"
+        values="auto","always","never" default="auto" enum optional

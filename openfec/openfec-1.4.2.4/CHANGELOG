@@ -1,0 +1,115 @@
+OpenFEC.org project CHANGELOG
+-----------------------------
+
+December 16th, 2014: release of openfec 1.4.2
+
+- code cleanup and simplification within LDPC Gaussian Elimination decoding, fixing several memory leaks.
+  Decodign speed is slightly improved, as well as the maximum memory consumption (we avoid an extra matrix
+  allocation).
+- fixed a bug in simple_client_server/simple_client.c causing erroneous decodings when
+  USE_DECODE_WITH_NEW_SYMBOL was undefined. Fixed a small memory leaks too.
+- Mac OSX 10.9 is now supported and many compilation warnings removed.
+- added VERSION (here 1.4.2) and SOVERSION (here 1) to the dynamic library via cmake.
+  See src/CMakeLists.txt
+
+---
+
+July 16th, 2014: release of openfec 1.4.1
+
+- added a demo server/client application, which explains how to use the OpenFEC codecs. This demo application
+  opens a UDP socket, the server performs FEC encoding and sends (a subset of) encoding symbols, while the
+  client receives them and tries to FEC decode the object.
+- major code cleanup throughout the library.
+- fixed a bug in all codecs, when using of_set_available_symbols(). Thanks to Chuo-Ling who spotted the bug.
+
+---
+
+July 9th, 2014: release of openfec 1.4.0
+
+- added a new -find_min_overhead parameters to eperftool, to automatically search for the minimum overhead
+  for a given code configuration.
+- changed the simulation tools to take advantage of the eperftool -find_min_overhead capability. This change
+  enables major simulation speed improvements (the same eperftool process finds the exact overhead instead
+  of launching several eperftool processes).
+- fixed many bugs in the PERL simulation scripts, impproved the user interface as well (e.g. a new progression
+  bar is now displayed during the simulations), and provided param_file.txt examples depending on the desired
+  performance metrics and curves.
+- code maintenance and cleanup for the various codecs.
+- changed the web site totally, now based on the bootstrap (http://getbootstrap.com/). Doing so the forum
+  disappeared, but a mailing list is set up instead.
+NB: the two doc/howto_* PDF files have not been thoroughly updated. Yet to be done...
+NB: the 1D-2D and from_file codecs have not been tested in this version. Yet to be done...
+
+---
+
+April 13th, 2012: release of openfec 1.3.0
+
+- changed the LDPC-Staircase codec license for CECILL (i.e. the content of the src/lib_stable/ldpc-staircase/
+  directory only). There is no change for the rest of the library that remains under a CECILL-C license.
+- solved a bug in the LDPC-Staircase matrix creation algorithm when N1 is even. This bug makes the codec non
+  RFC5170 compliant (!). However there was no impact with odd N1 values. This means that with an even N1, an
+  application using version >= 1.3 will not interoperate with an application using version <= 1.2.
+- with LDPC-Staircase, when N1 is even, the latest repair symbol is often NULL. This property is now exploited
+  at the decoder to generate it automatically and pass it to the decoder. When this property applies, there is
+  no need to send this repair symbol. A new OF_CTRL_LDPC_STAIRCASE_IS_LAST_SYMBOL_NULL is added to check this
+  property within an application, if desired (e.g. this optimization is added to eperftool).
+- solved a bug in the generate_curves.pl script when using prepared SQL statements. Thanks to the forum users :-)
+
+---
+
+March 3rd, 2011: release of openfec 1.2.2
+
+- added some statistics about built/rebuilt/ignored symbols in IT and ML decoding.
+- solved a bug in eperftool to use the "LDPC from file" codec
+- eperftool: now, you can test codecs with callbacks for source and repair symbols creation.
+- various bug corrections
+
+---
+
+Dec 3rd, 2010: release of openfec 1.2.1
+
+- we solved a bug in of_[rs_|rs_2_m_]set_available_symbols(): shift wasn't done on a buffer (thanks Rakis).
+
+---
+
+Dec 3rd, 2010: release of openfec 1.2.0
+
+Major release: 
+- we added a new optimized Reed-Solomon codec over 2^m (with m=4,8).
+  Using m=4 is interesting for very small blocks (since k<n<=15), and is slightly faster than using m=8 in
+  that case.
+- Reed-Solomon over 2^m have both beem highly optimized and are approximatively 25 % faster than the original
+  Reed-Solomon over GF(2^8) of previous release.
+- Reed-Solomon over GF(2^8) still exists and has been optimized. It is 20 % faster than that previous release.
+- added rs_m parameter for eperftool and for simulations (i.e there is a new entry in the params.txt file)
+- Removed SSE optimization for 32bits machines. See forum for details (thanks Rakis).
+- various bug corrections
+
+---
+
+Sept 16th, 2010: release of openfec 1.1.0
+
+This is a major release. Main changes include:
+- Factorization of the binary linear system decoding code.
+  The new structure now distinguishes, in a separate directory:
+  - IT (iterative) decoding code,
+  - ML (maximum likelihood) decoding code,
+  - Binary matrix management code.
+- Various code improvements and bug corrections.
+Note that the API did not change, this version being fully
+backward compatible with existing applications.
+
+----
+
+July 2nd, 2010: first release of openfec 1.0.0 beta
+
+This is the first release:
+- It contains the following codecs:
+    * LDPC-Staircase codec
+    * Reed-Solomon GF(256) codec
+    * 2D parity codec
+    * LDPC from file codec
+- It also contains an advanced simulation environment to let
+  you perform easily many different kinds of tests.
+
+

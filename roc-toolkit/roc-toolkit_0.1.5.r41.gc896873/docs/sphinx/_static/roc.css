@@ -1,0 +1,62 @@
+/* roc css overrides */
+
+div.body {
+    max-width: 1000px;
+}
+
+div.related {
+    background-color: #3A76A4;
+    color: #FFFDAB;
+}
+
+div.topic, div.note, div.seealso {
+    background-color: #d0dcdf36;
+    border: 1px solid #c3d5e2;
+}
+
+div.footer {
+    background-color: #10212d;
+}
+
+div.body h1 {
+    background-color: #B0C8DB;
+}
+
+div.body h2 {
+    background-color: #C8DAE8;
+}
+
+div.body h3 {
+    background-color: #DEEAF3;
+}
+
+span.option {
+    white-space: nowrap;
+}
+
+dl.typedef > dt {
+    background-color: #EDF0F2;
+    padding: 4px 4px 4px 10px;
+}
+
+dl.struct > dt {
+    background-color: #EDF0F2;
+    padding: 4px 4px 4px 10px;
+}
+
+dl.enum > dt {
+    background-color: #EDF0F2;
+    padding: 4px 4px 4px 10px;
+}
+
+dl.function > dt {
+    background-color: #EDF0F2;
+    padding: 4px 4px 4px 10px;
+}
+
+pre {
+    font-size: 98%;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}

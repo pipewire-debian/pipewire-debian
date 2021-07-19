@@ -1,0 +1,54 @@
+#!/usr/bin/make -f
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+
+COMMA = ,
+ifneq (,$(filter parallel=%,$(subst $(COMMA), ,$(DEB_BUILD_OPTIONS))))
+	  NJOBS := -j $(subst parallel=,,$(filter parallel=%,$(subst $(COMMA), ,$(DEB_BUILD_OPTIONS))))
+endif
+
+
+# see FEATURE AREAS in dpkg-buildflags(1)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
+
+CFLAGS := $(shell dpkg-buildflags --get CPPFLAGS; dpkg-buildflags --get CFLAGS)
+CXXFLAGS := $(shell dpkg-buildflags --get CPPFLAGS; dpkg-buildflags --get CXXFLAGS)
+LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS)
+export CFLAGS
+export CXXFLAGS
+export LDFLAGS
+DEB_BUILD_ARCH ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+# see ENVIRONMENT in dpkg-buildflags(1)
+# package maintainers to append CFLAGS
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+# package maintainers to append LDFLAGS
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+
+%:
+	dh $@
+
+
+# This is example for Cmake (See https://bugs.debian.org/641051 )
+
+
+#CONFIGUREFLAGS += -DCMAKE_INSTALL_PREFIX=/usr
+#CONFIGUREFLAGS += -DCMAKE_INSTALL_LIBDIR=lib/$(DEB_HOST_MULTIARCH)
+CONFIGUREFLAGS += -DBUILD_SHARED_LIBS=ON
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(CONFIGUREFLAGS)
+	install -d debian/headers
+	cp -rfT src	debian/headers/openfec
+	find debian/headers/openfec/ -type f -not -iname '*.h' -delete
+	find debian/headers/openfec/ -type d -empty -delete
+
+# For ubuntu 18.04 or ubuntu < 20.04(exp) uncomment below line
+#override_dh_dwz:
+	    # This fixes for failed with 
+		# dh_dwz: dwz -q -- debian/openfec/usr/lib/$(DEB_HOST_MULTIARCH)/libopenfec.so.1.4.2 returned exit code 1
+		

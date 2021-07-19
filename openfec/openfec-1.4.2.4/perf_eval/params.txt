@@ -1,0 +1,219 @@
+################# Performance Evaluation Config file #################
+# $Id: params.txt 150 2014-07-08 13:18:04Z roca $
+
+#
+# This is the file that gathers all the parameters that control performance
+# evaluation tests. It is used both during simulations and during graph
+# generation. Feel free to edit this file as appropriate.
+#
+
+
+#################################################################################
+#	  		tools and files configuration				#
+#################################################################################
+
+# Path to the performance evaluation tool used during the first step (simulations).
+# Choose between the Release and Debug versions, and adjust the path if need be.
+# WARNING: specify a debug compilated version of eperftool if you want to
+# calcultate XOR operation number.
+#
+fec_tool   ../bin/Release/eperftool
+#fec_tool  ../bin/Debug/eperftool
+
+# Name of the trace file during the first step (simulation).
+# At the end of the tests, this file contains all the raw test results (useful
+# for future analyses if need be).
+#
+trace_file	eperftool_trace.txt
+
+# Prefix (resp. suffix) to be used for the files during the second step (curve
+# generation). Useful to easily identify curves associated to a given simulation.
+# Leave these variables empty if not interested.
+#
+file_prefix	my_test_
+file_suffix	
+
+# Number of thread to use in the test
+# Automatically set to two times the number of processors if not set here
+#
+# nb_thread 2
+
+
+#################################################################################
+#			test iteration configuration				#
+#################################################################################
+
+#
+# A test is a set of executions (iterations) of the performance evaluation tool
+# with the same parameters, except the PRNG seed which changes at each time.
+# This PRNG seed is used to determine the LDPC matrix (if applicable), the packet
+# scheduling, the erasures in the channel, etc.). Practically, the PRNG seed is
+# equal to:	1 + iteration_id 	(we add 1 to avoid value 0).
+#
+
+# Number of iterations for each test.
+# It is essential to initialize this variable accordingly in order to have reliable
+# minimum/average/maximum or decoding failure probability curves. In particular,
+# for decoding failure probability curves, nb_iterations must be large enough.
+#
+nb_iterations	1000
+
+# Start tests at this offset.
+# This is useful either to split a particularly long test on several machines:
+# each of them are given different iteration index ranges, e.g. host1 performs
+# 1,000,000 tests starting at offset 0, while host2 performs 1,000,000 tests
+# starting at offset 1,000,000.
+# This is also useful to add some iterations to an existing simulation, without
+# having to start all over again (be careful not to set erase_database to false
+# in that case).
+#
+offset_iteration	0
+
+# Number of iterations before inserting the results into the database.
+# This is useful in case of very long tests (e.g., that last several hours or days)
+# in order to have partial results and get quickly an idea of the results (you
+# can start intermediate curve generation even if the simulation is not finished).
+#
+nb_iterations_for_partial_results	100
+
+
+#################################################################################
+#	 		code/codec configuration				#
+#################################################################################
+
+#
+# General simulation parameters related to the AL-FEC code being studied.
+#
+
+# List of codecs to consider as provided by eperftool -h:
+#     1: RS over GF(2^8) stable codec
+#     2: RS over GF(2^m) (with m=4 or 8), stable codec
+#     3: LDPC-Staircase stable codec (default)
+#     5: 2D parity check matrix stable codec
+#     6: LDPC, with a binary H matrix specified in a file, advanced codec
+# You can specify one or several codes.
+#
+codec		3
+ 
+# List of the number of source symbols to consider (in <min> <max> <step> format).
+#
+#nb_source_symbols	10 100 10
+nb_source_symbols	1024 1024 1
+
+# Code rate, specified as float value, to consider. ONLY ONE code rate must be
+# specified. Fractions are NOT accepted.
+# Maximum precision : 10^(-3)
+# WARNING: choose whether the code rate or the number of repair symbols should
+# be specified, but do not specify both of them.
+#
+code_rate	0.666
+
+# List of the number of repair symbols to consider (in <min> <max> <step> format).
+#
+# WARNING: choose whether the code rate(s) or the number(s) of repair symbols should
+# be specified, but do not specify both of them.
+#
+#nb_repair_symbols	20 1000 100
+
+# List of symbol sizes (in bytes) to consider. You can specify one or several sizes.
+# WARNING: if the goal is to evaluate the erasure correction capabilities, then
+# choose 4 bytes to speed up simulations. If the goal is to measure the encoding
+# or decoding performance, choose the right value as it will significantly impact
+# the speed.
+#
+#symbol_size	1024
+symbol_size	4
+
+# LDPC codes only: list of N1 values to use, i.e. the target number of "1"s per
+# source column in the parity check matrix H (in <min> <max> <step> format).
+#
+ldpc_N1		7 7 1
+
+# Set find_min_overhead to true if you want to launch tests for curves that
+# plot the decoding failure probability as a function of the loss rate or
+# (equivalently) the overhead. For all other curves, do not use find_min_overhead.
+# This is equivalent to using eperftool with the -find_min_overhead argument.
+# This parameter is not meaningful with MDS codes (e.g., Reed-Solomon).
+#
+find_min_overhead	true
+
+
+#################################################################################
+#	  		transmission and loss configuration			#
+#################################################################################
+
+# Transmission type (i.e., the packet scheduling at the sender), as defined by
+# eperftool:
+#
+#    0		randomly send all source + repair symbols (default)
+#    1		randomly send a few source symbols (not necessarily received)
+#			+ all repair symbols
+#    2		randomly send few src symbols first (always received), then randomly
+#			all repair symbols
+#    3		randomly send only repair symbols (non systematic use, so make sure
+#			the code rate is lower or equal to 0.5)
+#    4		sequentially send all src symbols first, then repair symbols
+#    5		sequentially send all repair symbols first, then src symbols
+#    6		sequentially send all src symbols first, then randomly repair symbols
+#    7		sequentially send all repair symbols first, then randomly src symbols
+#
+# WARNING: this parameter is ignored in find_min_overhead mode (it automatically
+# select loss type 0 associated with transmission type 0).
+#
+tx_type		0
+
+# Channel loss type (i.e., the way losses occur during transmission), as defined by
+# eperftool.
+#
+#    0		no loss (default)
+#		syntax:	loss 0
+#    1		simulate random losses using two state markov model
+#		syntax:	loss 1 n1 n2
+#		with	n1: loss probability in OK state (integer, default 1)
+#			n2: success probability in NOK state (integer, default 25)
+#    2		simulate random losses by specifying the target loss probability
+#			(floating point value), using a <min> <max> <step> format.
+#		syntax:	loss 2 min max step
+#    3		simulate random losses by specifying the target number of losses
+#			(rather than probability), using a <min> <max> <step> format.
+#		syntax:	loss 3 min max step
+#    4		simulate losses by randomly choosing one packet out of all each steps
+#			(overwrites transmission type)
+#		syntax:	loss 4
+#
+# WARNING: this parameter is ignored in find_min_overhead mode (it automatically
+# select loss type 0 associated with transmission type 0).
+#
+loss	2 50 70  1 
+#loss 	3 1000
+
+
+#################################################################################
+#			database configuration					#
+#################################################################################
+
+# Set to true to erase the SQL database when launching a new test.
+# Set to false to append new simultation results to an existing SQL database.
+# WARNING: make sure this parameter is initialized appropriately before launching
+#	new tests!
+#
+erase_database  true
+
+# The SQL database can be either a file or an SQL server.
+# - if you want to use a local SQLite database, please install the Perl DBI::SQLite
+#	driver before launching the tests. The format is:
+#		database file <file>
+#	Warning: if you want to use an SQLite file, using_ml MUST be set to false
+#	since SQLite does not authorize concurrent access to the file.
+#
+# - If you want to use an MySQL database, possibly on a remote server, make sure
+#	the database on the server exists (an empty one, tables will be created
+#	automatically if required). This is the most powerful solution as sub-tests
+#	can be launched on several machines (for higher speed) and aggregated in the
+#	same SQL database. The format is:
+#		database server <database_name> <host> <port> <user> <password>
+#
+
+database file performance_test.db
+#database server test 192.168.1.11 3306 root root
+

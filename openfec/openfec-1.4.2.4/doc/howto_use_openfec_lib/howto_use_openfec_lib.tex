@@ -1,0 +1,150 @@
+\documentclass[a4paper,11pt]{article}
+
+%\usepackage[utf8]{inputenc}
+\usepackage[frenchb,english]{babel}
+%\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage{hyperref}
+\hypersetup{colorlinks=false}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{longtable,geometry}
+%\pagestyle{headings}
+%\geometry{dvips,a4paper,margin=2cm}
+\selectlanguage{english}
+
+\geometry{verbose,a4paper,tmargin=30mm,bmargin=20mm,lmargin=15mm,rmargin=15mm}
+
+
+\begin{document}
+
+\title{Using the OpenFEC.org Library: a Simple User Guide}
+
+\author{Vincent Roca (INRIA), Jonathan Detchart (INRIA), Mathieu Cunche (INRIA)\\
+	Valentin Savin (CEA-LETI), J\'er\^ome Lacan (ISAE)\\
+	\emph{http://openfec.org}}
+\date{\today} 
+
+\maketitle
+\tableofcontents
+
+\vfill
+
+\noindent version: \date{\verb;$Id: howto_use_openfec_lib.tex 110 2014-04-08 09:21:58Z roca $;
+\newpage
+
+
+\section{Introduction}
+%---------------------
+% \begin{flushright}
+% \framebox{
+% \begin{minipage}{10cm}
+% 	\emph{$\rightarrow$ In short:
+% 	...
+% 	}
+% \end{minipage}
+% }
+% \end{flushright}
+
+This document is a user guide meant to facilitate the use of the OpenFEC.org library.
+It is recommended for developpers that need to integrate one or several codecs within
+their own application.
+
+
+\subsection{Important Files}
+%---------------------
+% \begin{flushright}
+% \framebox{
+% \begin{minipage}{10cm}
+% 	\emph{$\rightarrow$ In short:
+% 	...
+% 	}
+% \end{minipage}
+% }
+% \end{flushright}
+
+The various methods of the API are defined in file \verb+src/lib_common/of_openfec_api.h+.
+This is the main file and \emph{the only one that needs to be included by any application}.
+
+In addition, to accomodate code and codec specificities, additional API files are defined.
+For instance, with the LDPC-staircase codec, the
+\verb+src/lib_stable/ldpc_staircase/of_ldpc_staircase_api.h+
+file defines additional specificities.
+This file (and the similar ones for the other codecs) are automatically included.
+
+
+
+\section{Main concepts}
+%---------------------
+% \begin{flushright}
+% \framebox{
+% \begin{minipage}{10cm}
+% 	\emph{$\rightarrow$ In short:
+% 	...
+% 	}
+% \end{minipage}
+% }
+% \end{flushright}
+
+
+\subsection{Codec identification: of\_codec\_id}
+%\subsection{Codec identification}
+%---------------------
+
+The various codecs are identified by means of a constant:
+\begin{verbatim}
+typedef enum
+{
+        OF_CODEC_NIL = 0,
+        OF_CODEC_REED_SOLOMON_GF_2_8_STABLE = 1,
+        OF_CODEC_REED_SOLOMON_GF_2_M_STABLE = 2,
+        OF_CODEC_LDPC_STAIRCASE_STABLE = 3,
+        OF_CODEC_2D_PARITY_MATRIX_STABLE = 5,
+        OF_CODEC_LDPC_FROM_FILE_ADVANCED = 6,
+	[...]
+} of_codec_id_t;
+\end{verbatim}
+Since several codecs may implement the same code, for instance using different
+algorithms, the constant identifies first of all a codec, which provides an
+implementation of a class of codes.
+
+\section{LDPC from file codec}
+%---------------------------------------
+
+The LDPC from file codec requires that the LDPC code be specified
+in a separate file whose format is the following:
+
+\begin{verbatim}
+number of rows
+number of columns
+number of source symbols
+number of repair symbols
+line_x1 col_y1 col_y2 col_y3 ...
+line_x2 col_y1 col_y2 col_y6 ...
+\end{verbatim}
+
+You only write 1 entries.
+
+Example for a k=10, r=10 matrix :
+
+\begin{verbatim}
+ 10
+ 20
+ 10
+ 10
+     0        0         1         3         4         5        10
+     1        2         3         6         7         8        10        11
+     2        2         5         6         7         9        11        12
+     3        3         4         6         8         9        12        13
+     4        4         5         6         8         9        13        14
+     5        0         1         4         5         8        14        15
+     6        0         2         4         7         8        15        16
+     7        0         1         3         5         7        16        17
+     8        1         2         3         6         9        17        18
+     9        0         1         2         7         9        18        19
+\end{verbatim}
+
+\bibliographystyle{abbrv}
+\bibliography{biblio}
+
+\end{document}

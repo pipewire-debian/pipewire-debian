@@ -1,0 +1,70 @@
+package "roc-send"
+usage "roc-send OPTIONS"
+
+section "Options"
+
+    option "verbose" v "Increase verbosity level (may be used multiple times)"
+        multiple optional
+
+    option "list-drivers" L "List all supported audio drivers" optional
+
+    option "input" i "Input file or device" typestr="INPUT" string optional
+
+    option "driver" d "Input driver" typestr="DRIVER" string optional
+
+    option "source" s "Remote source port triplet" typestr="PORT" string optional
+
+    option "repair" r "Remote repair port triplet" typestr="PORT" string optional
+
+    option "nbsrc" - "Number of source packets in FEC block"
+        int optional
+
+    option "nbrpr" - "Number of repair packets in FEC block"
+        int optional
+
+    option "packet-length" - "Outgoing packet length, TIME units"
+        string optional
+
+    option "packet-limit" - "Maximum packet size, in bytes"
+        int optional
+
+    option "frame-size" - "Internal frame size, number of samples"
+        int optional
+
+    option "rate" - "Override input sample rate, Hz"
+        int optional
+
+    option "no-resampling" - "Disable resampling" flag off
+
+    option "resampler-profile" - "Resampler profile"
+        values="low","medium","high" default="medium" enum optional
+
+    option "resampler-interp" - "Resampler sinc table precision"
+        int optional
+
+    option "resampler-window" - "Number of samples per resampler window"
+        int optional
+
+    option "interleaving" - "Enable packet interleaving" flag off
+
+    option "poisoning" - "Enable uninitialized memory poisoning"
+        flag off
+
+    option "color" - "Set colored logging mode for stderr output"
+        values="auto","always","never" default="auto" enum optional
+
+text "
+INPUT is the file name or device name, depending on the selected DRIVER, e.g.:
+  file.wav; front:CARD=PCH,DEV=0; alsa_input.pci-0000_00_1f.3.analog-stereo;
+
+DRIVER is the type of the input file or device, e.g.:
+  wav; alsa; pulseaudio;
+
+PORT is a triplet PROTOCOL:IPADDR:PORTNUM, e.g.:
+  rtp+rs8m:127.0.0.1:10001; rtp+rs8m:[::1]:10001;
+
+TIME is an integer number with a suffix, e.g.:
+  123ns; 123us; 123ms; 123s; 123m; 123h;
+
+See further details in roc-send(1) manual page locally or online:
+https://roc-streaming.org/toolkit/docs/manuals/roc_send.html"
