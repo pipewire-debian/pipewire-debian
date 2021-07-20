@@ -14,33 +14,26 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.31-3 (https://pipewire-debian.github.io)
+pipewire 0.3.32-1 (https://pipewire-debian.github.io)
  
 
 CHANGELOGS - 
 
   Debian Package - 
 
-    - Reverted "pulseaudio-module-bluetooth conflicts with PipeWire-pulse #17"
-      Give feedback whether should I conflict the same or not?
-      For more see : https://github.com/pipewire-debian/pipewire-debian/issues/17
+    - roc-toolkit splitted into libroc, libroc-dev, roc
 
-    - roc-toolkit, openfec package added.
+	- openfec renamed to libopenfec, bump to 1.4.2.4 (roc-streaming fork)
 
   PipeWire - 
-    
-    - Fixes for alsa-lib 1.2.5
-    - New pulseaudio modules: module-avahi-zeroconf,
-      module-pipe-source, module-roc-sink, module-roc-source
-    - JACK has seen massive stability improvements. Locking
-      and correctness wrt to callbacks and has been reworked. Also
-      thread priorities have improved.
-    - Handle various crashes and lockups when running out of file
-      descriptors.
-    - Bluetooth now uses a hardware database to disable
-      non-working features on listed devices.
-    - Scheduling quantum and rate can now be changed dynamically
-      with pw-metadata.
+
+    - Real-time priority handling for threads was reworked. Freewheeling
+      will now drop RT priorities to avoid being killed.
+    - Problems with filter chains and echo-cancel being linked in a loop
+      was fixed.
+    - alsamixer should now be able to see the mixer controls again.
+    - JACK has seen some latency reporting improvements that make Ardour
+      report latencies correctly.
     - Many bugfixes and improvements.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
@@ -50,18 +43,6 @@ Troubleshooting -
   - Have any package regarding issue? report on github :
     https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
 
-  - Should I conflict "pulseaudio-module-bluetooth"? Give feedback on ongoing
-    discussion : https://github.com/pipewire-debian/pipewire-debian/issues/17. 
-    I want to hear from you guys.
-
-    Does bluetooth headphone or audio profile switching works, If both PipeWire
-    and "pulseaudio-module-bluetooth" installed side by side on the same machine?
-    please give feedback.
-
-  - Please install "pulseaudio-module-bluetooth" again, uninstalled by previous 
-    version of PipeWire.
-
-  - roc-toolkit, openfec package added.
   
 
 EOF
