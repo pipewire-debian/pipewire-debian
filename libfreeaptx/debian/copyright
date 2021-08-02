@@ -1,0 +1,36 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libfreeaptx
+Upstream-Contact: Hunter Wardlaw <wardlawhunter@gmail.com>
+Copyright: 2018, Pali Rohár <pali.rohar@gmail.com>
+           2021, Hunter Wardlaw <wardlawhunter@gmail.com>
+Source: https://github.com/iamthehorker/libfreeaptx
+License: LGPL-2.1+
+
+Files: *
+Copyright: 2018-2020, Pali Rohár <pali.rohar@gmail.com>
+           2017, Aurelien Jacobs <aurel@gnuage.org>
+           2021, Hunter Wardlaw <wardlawhunter@gmail.com>
+License: LGPL-2.1+
+
+Files: debian/*
+Copyright: 2020, Didier 'OdyX' Raboud <odyx+debian.org>
+           2021, Sourav Das <souravdas142@gmail.com>
+License: LGPL-2.1+
+
+License: LGPL-2.1+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation; either version 2.1, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License along
+ with this program; if not, write to the Free Software Foundation,
+ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License version 2.1 can be found in ‘/usr/share/common-licenses/LGPL-2.1’.

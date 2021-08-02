@@ -1,0 +1,13 @@
+libfreeaptx.so.0 libfreeaptx0 #MINVER#
+* Build-Depends-Package: libfreeaptx-dev
+ aptx_decode@Base 0.1.0
+ aptx_decode_sync@Base 0.1.1
+ aptx_decode_sync_finish@Base 0.1.1
+ aptx_encode@Base 0.1.0
+ aptx_encode_finish@Base 0.1.0
+ aptx_finish@Base 0.1.0
+ aptx_init@Base 0.1.0
+ aptx_major@Base 0.1.0
+ aptx_minor@Base 0.1.0
+ aptx_patch@Base 0.1.0
+ aptx_reset@Base 0.1.0

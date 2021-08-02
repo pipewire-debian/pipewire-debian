@@ -1,0 +1,49 @@
+Source: libfreeaptx
+Maintainer: Sourav Das <souravdas142@gmail.com>
+XSBC-Original-Maintainer: Didier Raboud <odyx@debian.org>
+Section: libs
+Priority: optional
+Build-Depends: debhelper-compat (= 12),
+               help2man,
+Standards-Version: 4.5.0
+Homepage: https://github.com/iamthehorker/libfreeaptx
+Vcs-Browser: https://github.com/pipewire-debian/pipewire-debian
+Vcs-Git: https://github.com/pipewire-debian/pipewire-debian.git
+Rules-Requires-Root: no
+
+Package: libfreeaptx0
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Audio Processing Technology codec (aptX), shared libraries
+ Support for aptX and aptX HD codec variants; they both operate on raw 24-bit
+ signed stereo audio sample; at 6:1 fixed compress ratio for aptX; at 4:1 fixed
+ compress ratio for aptX HD.
+ .
+ This package contains the shared libraries.
+
+Package: libfreeaptx-dev
+Architecture: any
+Section: libdevel
+Depends: libfreeaptx0 (= ${binary:Version}),
+         ${misc:Depends}
+Multi-Arch: same
+Description: Audio Processing Technology codec (aptX), development headers
+ Support for aptX and aptX HD codec variants; they both operate on raw 24-bit
+ signed stereo audio sample; at 6:1 fixed compress ratio for aptX; at 4:1 fixed
+ compress ratio for aptX HD.
+ .
+ This package contains the development headers.
+
+Package: freeaptx-utils
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Audio Processing Technology codec (aptX), tools
+ Support for aptX and aptX HD codec variants; they both operate on raw 24-bit
+ signed stereo audio sample; at 6:1 fixed compress ratio for aptX; at 4:1 fixed
+ compress ratio for aptX HD.
+ .
+ This package contains the simple freeaptxenc and freeaptxdec utilities.
