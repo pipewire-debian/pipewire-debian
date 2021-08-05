@@ -14,28 +14,28 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.32-1 (https://pipewire-debian.github.io)
+pipewire 0.3.33-1 (https://pipewire-debian.github.io)
  
 
 CHANGELOGS - 
 
   Debian Package - 
 
-    - roc-toolkit splitted into libroc, libroc-dev, roc
-
-	- openfec renamed to libopenfec, bump to 1.4.2.4 (roc-streaming fork)
+    - use libfreeaptx instead libopenaptx as pipewire change dependencies
 
   PipeWire - 
 
-    - Real-time priority handling for threads was reworked. Freewheeling
-      will now drop RT priorities to avoid being killed.
-    - Problems with filter chains and echo-cancel being linked in a loop
-      was fixed.
-    - alsamixer should now be able to see the mixer controls again.
-    - JACK has seen some latency reporting improvements that make Ardour
-      report latencies correctly.
-    - Many bugfixes and improvements.
+    - Better support for virtual sinks/sources for Pro Audio
+      profile.
+    - Better DMA-BUF format modifier negotiation.
+    - Support multiple sample rates in the graph. Not enabled
+      by default yet.
+    - Bluetooth can now automatically switch between headset
+      and audio profile.
+    - Documentation updates.
+    - Many improvements and crasher fixes.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
 
 
 Troubleshooting - 

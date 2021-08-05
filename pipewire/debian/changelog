@@ -1,3 +1,25 @@
+pipewire (0.3.33-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - use libfreeaptx instead libopenaptx as pipewire change dependencies
+
+  PipeWire - 
+
+    - Better support for virtual sinks/sources for Pro Audio
+      profile.
+    - Better DMA-BUF format modifier negotiation.
+    - Support multiple sample rates in the graph. Not enabled
+      by default yet.
+    - Bluetooth can now automatically switch between headset
+      and audio profile.
+    - Documentation updates.
+    - Many improvements and crasher fixes.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 6 Jul 2021 10:20:19 +0530
+
 pipewire (0.3.32-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
