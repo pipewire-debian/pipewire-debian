@@ -1,3 +1,33 @@
+wireplumber (0.4.2-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - Nothing
+
+  wireplumber - 
+    
+     
+       - Requires PipeWire 0.3.32 or later at runtime
+       - Configuration files are now installed in $PREFIX/share/wireplumber, along
+         with scripts, following the paradigm of PipeWire
+       - State files are now stored in $XDG_STATE_HOME instead of $XDG_CONFIG_HOME
+       - Added new ``file-monitor-api`` module, which allows Lua scripts to watch
+         the filesystem for changes, using inotify
+       - Added monitor for MIDI devices
+       - Added a ``system-lua-version`` meson option that allows distributors to
+         choose which Lua version to build against (``auto``, ``5.3`` or ``5.4``)
+       - wpipc has been removed and split out to a separate project,
+         https://git.automotivelinux.org/src/pipewire-ic-ipc/
+       - For more, See : https://gitlab.freedesktop.org/pipewire/wireplumber/-/releases
+
+  Troubleshooting -
+
+  - Have any package regarding issue? report on github :
+    https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
+
+     
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 20 Aug 2021 20:51:11 +0530
+
 wireplumber (0.4.1.1-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
