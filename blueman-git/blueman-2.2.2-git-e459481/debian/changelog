@@ -1,3 +1,10 @@
+blueman-git (2.2.2-git-e459481-1~ubuntu21.04) hirsute; urgency=medium
+
+  * Git version New
+  * Python3.9 rebuild
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 20 Aug 2021 20:30:29 +0530
+
 blueman-git (2.1.4-git-dbfad0a-1~ubuntu21.04) hirsute; urgency=medium
 
   * Git version New
