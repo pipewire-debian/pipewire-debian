@@ -14,26 +14,28 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.33-1 (https://pipewire-debian.github.io)
+pipewire 0.3.34-1 (https://pipewire-debian.github.io)
  
 
 CHANGELOGS - 
 
   Debian Package - 
 
-    - use libfreeaptx instead libopenaptx as pipewire change dependencies
-
+    - None
+ 
   PipeWire - 
 
-    - Better support for virtual sinks/sources for Pro Audio
-      profile.
-    - Better DMA-BUF format modifier negotiation.
-    - Support multiple sample rates in the graph. Not enabled
-      by default yet.
-    - Bluetooth can now automatically switch between headset
-      and audio profile.
-    - Documentation updates.
-    - Many improvements and crasher fixes.
+    - Fixes some critical issues with previous release. Such as
+      devices not showing up and default devices being lost.
+    - Support for consumer driver streams to make the producer v-sync
+      to the consumer monitor in a headless compositor setup.
+    - Improvements to routing of streams.
+    - Bluetooth battery status support for head-set profile and
+      using Apple extensions. aptX-LL and FastStream codec support
+      was added.
+    - Internal latency of ALSA devices can now be configured.
+    - A fast convolver was added to the filter-chain to implement
+      virtual surround sinks or reverbs.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
 
