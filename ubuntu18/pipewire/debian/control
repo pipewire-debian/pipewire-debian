@@ -38,10 +38,10 @@ Build-Depends:	cmake,
 				libvulkan-dev,
 				meson (>= 0.50.0),
 				pkg-config (>= 0.22),
+                python3-docutils,
 				systemd [linux-any],
 				valgrind,
-                libwebrtc-audio-processing-dev,
-				xmltoman
+                libwebrtc-audio-processing-dev
 Standards-Version: 4.1.4
 Vcs-Browser: https://gitlab.freedesktop.org/pipewire/pipewire
 Vcs-Git: https://gitlab.freedesktop.org/pipewire/pipewire.git
