@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.34-1 (https://pipewire-debian.github.io)
+pipewire 0.3.35-1 (https://pipewire-debian.github.io)
  
 
 CHANGELOGS - 
@@ -25,17 +25,14 @@ CHANGELOGS -
  
   PipeWire - 
 
-    - Fixes some critical issues with previous release. Such as
-      devices not showing up and default devices being lost.
-    - Support for consumer driver streams to make the producer v-sync
-      to the consumer monitor in a headless compositor setup.
-    - Improvements to routing of streams.
-    - Bluetooth battery status support for head-set profile and
-      using Apple extensions. aptX-LL and FastStream codec support
-      was added.
-    - Internal latency of ALSA devices can now be configured.
-    - A fast convolver was added to the filter-chain to implement
-      virtual surround sinks or reverbs.
+    
+    - S/PDIF passthrough over optical or HDMI is now implemented.
+    - Some critical fixes to MIDI, draining of streams and various
+      modules.
+    - skypeforlinux should work better now after adding it to the
+      quirks database.
+    - Bluetooth codecs are now in separate plugins to make it easier
+      to ship them.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
 

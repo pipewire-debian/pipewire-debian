@@ -3,10 +3,11 @@ usr/share/pipewire/client.conf
 usr/share/pipewire/jack.conf
 usr/share/pipewire/pipewire.conf
 usr/share/pipewire/filter-chain/demonic.conf
-usr/share/pipewire/filter-chain/sink-convolver.conf
 usr/share/pipewire/filter-chain/sink-dolby-surround.conf
 usr/share/pipewire/filter-chain/sink-eq6.conf
 usr/share/pipewire/filter-chain/sink-matrix-spatialiser.conf
+usr/share/pipewire/filter-chain/sink-virtual-surround-5.1-kemar.conf
+usr/share/pipewire/filter-chain/sink-virtual-surround-7.1-hesuvi.conf
 usr/share/pipewire/filter-chain/source-rnnoise.conf
 lib/udev/rules.d
 usr/bin/pipewire
