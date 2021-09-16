@@ -1,3 +1,28 @@
+pipewire (0.3.36-1~ubuntu20.04) focal; urgency=medium
+
+
+  Debian Package - 
+
+    - None
+ 
+  PipeWire - 
+
+    - A quick update with mostly only bugfixes and small improvements.
+    - Capture and playback is now avoided on unavailable devices. This
+      should fix some issues where an unusable microphone was selected
+      by default.
+    - MIDI output should not stop randomly now.
+    - The GStreamer elements are much improved, cheese should work
+      a lot better now.
+    - Virtual sinks and sources should now always show up immediately.
+    - JACK processing is now delayed until buffersize and samplerate
+      are emited. This should improve stability of many JACK apps.
+    - JACK transport sync is now implemented correctly so that preroll
+      in bitwig works.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 16 Sep 2021 22:20:19 +0530
+
 pipewire (0.3.35-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
