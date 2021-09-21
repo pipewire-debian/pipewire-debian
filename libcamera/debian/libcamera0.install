@@ -1,5 +1,4 @@
-usr/lib/*/*.so.*
-usr/lib/*/*/*.so
-#usr/libexec
-usr/lib/*/*/ipa_proxy_linux
+usr/lib/*/*.so*
+usr/lib/*/libcamera
+usr/lib/*/gstreamer-1.0
 usr/share

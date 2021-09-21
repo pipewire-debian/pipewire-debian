@@ -1,38 +1,56 @@
 Source: libcamera
 Priority: optional
-Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Maintainer: Sourav Das <souravdas142@gmail.com>
+XSBC-Original-Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
 Uploaders:
  Emmanuel Arias <emmanuelarias30@gmail.com>,
  IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>,
- Andrej Shadura <andrewsh@debian.org>,
- Sourav Das <souravdas142@gmail.com>
+ Andrej Shadura <andrewsh@debian.org>
 Build-Depends: debhelper-compat (= 12),
                dh-exec,
-               meson (>= 0.47),
+               meson (>= 0.55),
                pkgconf | pkg-config,
-               libudev-dev,
                libgnutls28-dev | gnutls-dev,
-               python3-sphinx,
+               doxygen <!nodoc>,
+               python3-sphinx <!nodoc>,
+               graphviz,
                python3-yaml,
-               libjs-jquery,
-               libjs-underscore,
+               python3-ply,
+               python3-jinja2,
+               libevent-dev,
+               libjs-jquery <!nodoc>,
+               libjs-sphinxdoc <!nodoc>,
+               libjs-underscore <!nodoc>,
                libboost-dev,
                libtiff-dev,
+               libudev-dev,
+               openssl,
                qtbase5-dev <!pkg.libcamera.noqt>,
+               libqt5core5a, 
+               libqt5gui5,
+               libqt5widgets5,
+               qttools5-dev-tools,
+               libtiff-dev,
+               liblttng-ust-dev,
+               python3-jinja2,
+               lttng-tools,
+               libexif-dev,
+               libjpeg-dev,
+               libyaml-dev,
+               libgstreamer1.0-dev,
+               libgstreamer-plugins-base1.0-dev (>= 1.14.0),
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Section: libs
 Homepage: https://libcamera.org/
-Vcs-Browser: https://salsa.debian.org/multimedia-team/libcamera
-Vcs-Git: https://salsa.debian.org/multimedia-team/libcamera.git
+Vcs-Browser: https://github.com/pipewire-debian/pipewire-debian
+Vcs-Git: https://github.com/pipewire-debian/pipewire-debian.git
 
 Package: libcamera-dev
 Section: libdevel
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libjs-jquery,
-         libjs-underscore,
          libcamera0 (= ${binary:Version})
 Multi-Arch: same
 Description: complex camera support library (development files)
@@ -41,6 +59,24 @@ Description: complex camera support library (development files)
  programming interface to the applications.
  .
  This package provides the necessary files needed for development
+
+Package: libcamera-doc
+Section: doc
+Architecture: all
+Build-Profiles: <!nodoc>
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libjs-jquery,
+         libjs-sphinxdoc,
+         libjs-underscore,
+Recommends: libcamera-dev
+Multi-Arch: foreign
+Description: complex camera support library (documentation)
+ libcamera is a complex camera support library which handles low-level
+ control of the camera devices, providing a unified higher-level
+ programming interface to the applications.
+ .
+ This package contains the documentation developing with libcamera.
 
 Package: libcamera0
 Architecture: any

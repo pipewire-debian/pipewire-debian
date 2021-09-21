@@ -1,0 +1,10 @@
+Document: libcamera
+Title: libcamera -- complex camera support library (documentation)
+Abstract: libcamera is a complex camera support library which handles low-level
+ control of the camera devices, providing a unified higher-level programming
+ interface to the applications.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libcamera-doc/html/index.html
+Files: /usr/share/doc/libcamera-doc/html/*.html

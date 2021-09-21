@@ -1,21 +1,12 @@
-From: Emmanuel Arias <eamanu@yaerobi.com>
-Date: Fri, 17 Jan 2020 10:57:11 -0300
-Subject: Tell meson to add a version to the SONAME
-
-Update Andrej Shadura patch.
----
- src/libcamera/meson.build | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/src/libcamera/meson.build b/src/libcamera/meson.build
-index 3aad438..845ff9b 100644
---- a/src/libcamera/meson.build
-+++ b/src/libcamera/meson.build
-@@ -137,6 +137,7 @@ libcamera = shared_library('camera',
-                            link_with : libcamera_link_with,
+Index: libcamera_gc52e8429/src/libcamera/meson.build
+===================================================================
+--- libcamera_gc52e8429.orig/src/libcamera/meson.build	2021-09-21 09:55:48.000000000 +0530
++++ libcamera_gc52e8429/src/libcamera/meson.build	2021-09-21 12:39:18.902533613 +0530
+@@ -132,6 +132,7 @@
+                            install : true,
                             include_directories : includes,
                             build_rpath : '/',
-+                           version: '0.1.0',
++						    version: '0.1.0',
                             dependencies : libcamera_deps)
  
- libcamera_dep = declare_dependency(sources : [
+ libcamera_public = declare_dependency(sources : [
