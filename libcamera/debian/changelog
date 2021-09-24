@@ -1,6 +1,6 @@
-libcamera (0.gc52e8429-3~ubuntu20.04) focal; urgency=medium
+libcamera (0.r3055.40f5fddc-1~ubuntu20.04) focal; urgency=medium
 
   * Rebuild for Ubuntu
 
- -- Sourav Das <souravdas142@gmail.com>  Tue, 21 Sep 2021 10:13:48 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 24 Sep 2021 22:13:48 +0530
 
