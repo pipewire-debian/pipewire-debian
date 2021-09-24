@@ -1,3 +1,24 @@
+pipewire (0.3.37-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - First attempt to enable libcamera
+ 
+  PipeWire - 
+
+    - Capture and playback is now avoided even more on unavailable
+      devices. This should fix some issues where an unusable microphone
+      was selected by default. It should now also again be possible
+      to select an unavailable device as the default.
+    - Native DSD audio playback is now supported. pw-cat can now also
+      play DSF files with the -d option.
+    - JACK stability improvements with buffer-size and samplerate
+      changes in some apps.
+    - Many cleanups and bugfixes all over the place.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 24 Sep 2021 23:20:19 +0530
+
 pipewire (0.3.36-1~ubuntu20.04) focal; urgency=medium
 
 

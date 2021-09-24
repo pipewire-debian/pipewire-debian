@@ -1,5 +1,4 @@
 usr/share/pipewire/media-session.d/alsa-monitor.conf
-usr/share/pipewire/media-session.d/bluez-hardware.conf
 usr/share/pipewire/media-session.d/bluez-monitor.conf
 usr/share/pipewire/media-session.d/media-session.conf
 usr/share/pipewire/media-session.d/v4l2-monitor.conf

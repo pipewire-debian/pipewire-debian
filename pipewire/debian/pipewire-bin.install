@@ -14,6 +14,7 @@ usr/bin/pipewire
 usr/bin/pw-cat
 usr/bin/pw-cli
 usr/bin/pw-dot
+usr/bin/pw-dsdplay
 usr/bin/pw-dump
 usr/bin/pw-loopback
 usr/bin/pw-link

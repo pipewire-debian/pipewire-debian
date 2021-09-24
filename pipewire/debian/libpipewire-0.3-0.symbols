@@ -65,6 +65,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_data_loop_add_listener@Base 0.3.1
  pw_data_loop_destroy@Base 0.3.1
  pw_data_loop_exit@Base 0.3.1
+ pw_data_loop_get_loop@Base 0.3.37
  pw_data_loop_get_thread@Base 0.3.32
  pw_data_loop_in_thread@Base 0.3.1
  pw_data_loop_invoke@Base 0.3.5
@@ -259,7 +260,10 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_memblock_free@Base 0.3.1
  pw_memblock_map@Base 0.3.1
  pw_memmap_free@Base 0.3.1
+ pw_mempool_add_listener@Base 0.3.37
  pw_mempool_alloc@Base 0.3.1
+ pw_mempool_clear@Base 0.3.37
+ pw_mempool_destroy@Base 0.3.37
  pw_mempool_find_fd@Base 0.3.1
  pw_mempool_find_id@Base 0.3.1
  pw_mempool_find_ptr@Base 0.3.1
@@ -268,6 +272,8 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_mempool_import_block@Base 0.3.1
  pw_mempool_import_map@Base 0.3.1
  pw_mempool_map_id@Base 0.3.1
+ pw_mempool_new@Base 0.3.37
+ pw_mempool_remove_id@Base 0.3.37
  pw_module_info_free@Base 0.3.1
  pw_module_info_merge@Base 0.3.35
  pw_module_info_update@Base 0.3.1

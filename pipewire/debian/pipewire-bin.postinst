@@ -14,30 +14,28 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.36-1 (https://pipewire-debian.github.io)
+pipewire 0.3.37-1 (https://pipewire-debian.github.io)
  
 
 CHANGELOGS - 
 
   Debian Package - 
 
-    - None
+    - First attempt to enable libcamera
  
   PipeWire - 
 
-    - A quick update with mostly only bugfixes and small improvements.
-    - Capture and playback is now avoided on unavailable devices. This
-      should fix some issues where an unusable microphone was selected
-      by default.
-    - MIDI output should not stop randomly now.
-    - The GStreamer elements are much improved, cheese should work
-      a lot better now.
-    - Virtual sinks and sources should now always show up immediately.
-    - JACK processing is now delayed until buffersize and samplerate
-      are emited. This should improve stability of many JACK apps.
-    - JACK transport sync is now implemented correctly so that preroll
-      in bitwig works.
+    - Capture and playback is now avoided even more on unavailable
+      devices. This should fix some issues where an unusable microphone
+      was selected by default. It should now also again be possible
+      to select an unavailable device as the default.
+    - Native DSD audio playback is now supported. pw-cat can now also
+      play DSF files with the -d option.
+    - JACK stability improvements with buffer-size and samplerate
+      changes in some apps.
+    - Many cleanups and bugfixes all over the place.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
 
 
 
@@ -46,6 +44,7 @@ Troubleshooting -
   - Have any package regarding issue? report on github :
     https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
 
+  - First attempt to enable libcamera
   
 
 EOF
