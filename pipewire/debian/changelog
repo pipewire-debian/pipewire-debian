@@ -1,3 +1,20 @@
+pipewire (0.3.38-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - Attempt to build with libcamera support
+ 
+  PipeWire - 
+
+    - Topic based logging was added to improve debugging.
+    - An off-by-one error was fixed in the audio resampler that could
+    - cause distortion when downsampling.
+    - Various bluetooth compatibility improvements.
+    - More fixes and improvements.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 30 Sep 2021 23:20:19 +0530
+
 pipewire (0.3.37-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

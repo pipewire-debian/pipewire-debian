@@ -14,26 +14,22 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.37-1 (https://pipewire-debian.github.io)
+pipewire 0.3.38-1 (https://pipewire-debian.github.io)
  
 
 CHANGELOGS - 
 
   Debian Package - 
 
-    - First attempt to enable libcamera
+    - Attempt to build with libcamera support
  
   PipeWire - 
 
-    - Capture and playback is now avoided even more on unavailable
-      devices. This should fix some issues where an unusable microphone
-      was selected by default. It should now also again be possible
-      to select an unavailable device as the default.
-    - Native DSD audio playback is now supported. pw-cat can now also
-      play DSF files with the -d option.
-    - JACK stability improvements with buffer-size and samplerate
-      changes in some apps.
-    - Many cleanups and bugfixes all over the place.
+    - Topic based logging was added to improve debugging.
+    - An off-by-one error was fixed in the audio resampler that could
+    - cause distortion when downsampling.
+    - Various bluetooth compatibility improvements.
+    - More fixes and improvements.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
 
@@ -44,7 +40,7 @@ Troubleshooting -
   - Have any package regarding issue? report on github :
     https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
 
-  - First attempt to enable libcamera
+  - Attempt to build with libcamera support
   
 
 EOF
