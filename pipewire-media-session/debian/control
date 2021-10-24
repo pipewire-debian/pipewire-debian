@@ -1,0 +1,34 @@
+Source: pipewire-media-session
+Section: video
+Priority: optional
+Maintainer: Sourav Das <souravdas142@gmail.com>
+XSBC-Original-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@alioth-lists.debian.net>
+Uploaders: Dylan Aïssi <daissi@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               libasound2-dev,
+               libdbus-1-dev,
+               libpipewire-0.3-dev (>= 0.3.39),
+               libsystemd-dev,
+               meson (>= 0.56.0),
+               pkg-config (>= 0.22),
+               systemd [linux-any]
+Standards-Version: 4.5.0
+Vcs-Browser: https://github.com/pipwire-debian/
+Vcs-Git: https://github.com/pipwire-debian.git
+Homepage: https://gitlab.freedesktop.org/pipewire/media-session/
+Rules-Requires-Root: no
+
+Package: pipewire-media-session
+Architecture: linux-any
+Multi-Arch: foreign
+Replaces: pipewire-bin (<< 0.3.27-2),
+          pipewire-pulse (<< 0.3.39-1)
+Breaks: pipewire-bin (<< 0.3.27-2),
+        pipewire-pulse (<< 0.3.39-1)
+Depends: pipewire (>= 0.3.39),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: example session manager for PipeWire
+ PipeWire Media Session is an example session manager for PipeWire.
+ .
+ Note that it is recommended the use of WirePlumber instead.

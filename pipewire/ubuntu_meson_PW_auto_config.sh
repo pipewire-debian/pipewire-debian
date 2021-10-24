@@ -48,6 +48,7 @@ meson configure build  --buildtype=plain \
 	-D videotestsrc=enabled \
 	-D volume=enabled \
 	-D vulkan=enabled \
-    -D roc=enabled
+    -D roc=enabled \
+	-D session_managers= 
 
 

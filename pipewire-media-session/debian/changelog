@@ -1,0 +1,11 @@
+pipewire-media-session (0.4.0-1~ubuntu20.04) focal; urgency=medium
+
+  * Initial release 
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 24 Oct 2021 17:41:41 +0530
+
+pipewire-media-session (0.4.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #997001)
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 22 Oct 2021 11:39:07 +0200

@@ -14,23 +14,30 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.38-1 (https://pipewire-debian.github.io)
+pipewire 0.3.39-1 (https://pipewire-debian.github.io)
  
-
-CHANGELOGS - 
 
   Debian Package - 
 
-    - Attempt to build with libcamera support
+    - move out pipewire-media-session to a new package
+    - Recommending using wireplumber. add ppa :
+      ppa:pipewire-debian/wireplumber-upstream
  
   PipeWire - 
 
-    - Topic based logging was added to improve debugging.
-    - An off-by-one error was fixed in the audio resampler that could
-    - cause distortion when downsampling.
-    - Various bluetooth compatibility improvements.
-    - More fixes and improvements.
+    - media-session is now moved into a separate module to speed up its
+      deprecation in favour of WirePlumber.
+    - There is now an LD_PRELOAD v4l2 emulation library to run some existing
+      v4l2 applications on top of PipeWire.
+    - Filter-chains should now flush out remaining samples when paused. There
+      is now also the option to let a filter-chain drain so that long filters
+      such as reverbs can fade out properly.
+    - Stability and compatibility improvements in JACK apps.
+    - Better Bluetooth compatibility with more devices.
+    - libcamera plugin improvements.
+    - Many bugfixes and improvements all over the map.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
 
 
 
@@ -41,6 +48,8 @@ Troubleshooting -
     https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
 
   - Attempt to build with libcamera support
+
+  - Recommending using wireplumber instead pipewire-media-seassion 
   
 
 EOF

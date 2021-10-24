@@ -190,6 +190,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_impl_metadata_destroy@Base 0.3.31
  pw_impl_metadata_get_global@Base 0.3.31
  pw_impl_metadata_get_implementation@Base 0.3.31
+ pw_impl_metadata_get_properties@Base 0.3.39
  pw_impl_metadata_get_user_data@Base 0.3.31
  pw_impl_metadata_register@Base 0.3.31
  pw_impl_metadata_set_implementation@Base 0.3.31
@@ -217,6 +218,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_impl_node_initialized@Base 0.3.1
  pw_impl_node_is_active@Base 0.3.1
  pw_impl_node_register@Base 0.3.1
+ pw_impl_node_send_command@Base 0.3.39
  pw_impl_node_set_active@Base 0.3.1
  pw_impl_node_set_driver@Base 0.3.1
  pw_impl_node_set_implementation@Base 0.3.1
@@ -293,6 +295,11 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_properties_add_keys@Base 0.3.1
  pw_properties_clear@Base 0.3.1
  pw_properties_copy@Base 0.3.1
+ pw_properties_fetch_bool@Base 0.3.39
+ pw_properties_fetch_int32@Base 0.3.39
+ pw_properties_fetch_int64@Base 0.3.39
+ pw_properties_fetch_uint32@Base 0.3.39
+ pw_properties_fetch_uint64@Base 0.3.39
  pw_properties_free@Base 0.3.1
  pw_properties_get@Base 0.3.1
  pw_properties_iterate@Base 0.3.1

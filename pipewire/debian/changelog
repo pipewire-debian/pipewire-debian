@@ -1,3 +1,28 @@
+pipewire (0.3.39-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - move out pipewire-media-session to a new package
+    - Recommending using wireplumber. add ppa :
+      ppa:pipewire-debian/wireplumber-upstream
+ 
+  PipeWire - 
+
+    - media-session is now moved into a separate module to speed up its
+      deprecation in favour of WirePlumber.
+    - There is now an LD_PRELOAD v4l2 emulation library to run some existing
+      v4l2 applications on top of PipeWire.
+    - Filter-chains should now flush out remaining samples when paused. There
+      is now also the option to let a filter-chain drain so that long filters
+      such as reverbs can fade out properly.
+    - Stability and compatibility improvements in JACK apps.
+    - Better Bluetooth compatibility with more devices.
+    - libcamera plugin improvements.
+    - Many bugfixes and improvements all over the map.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 24 Oct 2021 17:58:57 +0530
+
 pipewire (0.3.38-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

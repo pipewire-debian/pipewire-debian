@@ -208,7 +208,7 @@ Depends: libpipewire-0.3-modules (= ${binary:Version}),
          pipewire-pulse,
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: pipewire-media-session
+Recommends: wireplumber | pipewire-media-session
 Breaks: pipewire (<< 0.3.5)
 Replaces: pipewire (<< 0.3.5)
 Description: PipeWire multimedia server - programs
@@ -224,26 +224,6 @@ Description: PipeWire multimedia server - programs
  not normally be depended on directly. PipeWire clients should depend on
  the pipewire package instead.
 
-Package: pipewire-media-session
-Section: video
-Architecture: linux-any
-Multi-Arch: foreign
-Replaces: pipewire-bin (<< 0.3.28-2)
-Breaks: pipewire-bin (<< 0.3.28-2)
-Depends: pipewire (= ${binary:Version}),
-         ${misc:Depends},
-         ${shlibs:Depends}
-Description: PipeWire multimedia session manager
- PipeWire is a server and user space API to deal with multimedia
- pipelines. This includes:
- .
-  - Making available sources of video (such as from a capture devices or
-    application provided streams) and multiplexing this with clients.
-  - Accessing sources of video for consumption.
-  - Generating graphs for audio and video processing.
- .
- This package contains the default media session manager.
-
 Package: pipewire-pulse
 Section: video
 Architecture: linux-any
@@ -251,7 +231,6 @@ Multi-Arch: foreign
 Replaces: pipewire-bin (<< 0.3.28-2)
 Breaks: pipewire-bin (<< 0.3.28-2)
 Depends: pipewire (= ${binary:Version}),
-         pipewire-media-session,
          ${misc:Depends},
          ${shlibs:Depends}
 Description: PipeWire PulseAudio daemon
