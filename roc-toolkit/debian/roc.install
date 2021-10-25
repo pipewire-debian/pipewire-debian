@@ -1,0 +1,7 @@
+usr/bin/roc-conv
+usr/bin/roc-recv
+usr/bin/roc-send
+usr/share/man/man1/roc-send.1
+usr/share/man/man1/roc-recv.1
+usr/share/man/man1/roc-conv.1
+

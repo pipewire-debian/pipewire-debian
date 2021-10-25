@@ -49,6 +49,6 @@ meson configure build  --buildtype=plain \
 	-D volume=enabled \
 	-D vulkan=enabled \
     -D roc=enabled \
-	-D session_managers= 
+	-D session-managers= 
 
 

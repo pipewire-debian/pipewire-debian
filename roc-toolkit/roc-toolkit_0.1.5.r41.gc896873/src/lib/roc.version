@@ -1,4 +1,0 @@
-ROC {
-  global: roc_*;
-  local: *;
-};
