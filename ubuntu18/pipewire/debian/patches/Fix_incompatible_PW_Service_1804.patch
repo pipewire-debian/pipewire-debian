@@ -1,18 +1,3 @@
-Index: pipewire-0.3.29/src/daemon/systemd/system/pipewire-media-session.service.in
-===================================================================
---- pipewire-0.3.29.orig/src/daemon/systemd/system/pipewire-media-session.service.in	2021-06-03 15:31:53.000000000 +0530
-+++ pipewire-0.3.29/src/daemon/systemd/system/pipewire-media-session.service.in	2021-06-03 18:50:35.235136636 +0530
-@@ -9,7 +9,9 @@
- NoNewPrivileges=yes
- RestrictNamespaces=yes
- SystemCallArchitectures=native
--SystemCallFilter=@system-service
-+# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
-+# have version 237, and have no way to upgrade. So commented out.
-+# SystemCallFilter=@system-service
- Type=simple
- ExecStart=@PW_MEDIA_SESSION_BINARY@
- Restart=on-failure
 Index: pipewire-0.3.29/src/daemon/systemd/system/pipewire.service.in
 ===================================================================
 --- pipewire-0.3.29.orig/src/daemon/systemd/system/pipewire.service.in	2021-06-03 15:31:53.000000000 +0530
@@ -28,21 +13,6 @@ Index: pipewire-0.3.29/src/daemon/systemd/system/pipewire.service.in
  Type=simple
  AmbientCapabilities=CAP_SYS_NICE
  ExecStart=@PW_BINARY@
-Index: pipewire-0.3.29/src/daemon/systemd/user/pipewire-media-session.service.in
-===================================================================
---- pipewire-0.3.29.orig/src/daemon/systemd/user/pipewire-media-session.service.in	2021-06-03 15:31:53.000000000 +0530
-+++ pipewire-0.3.29/src/daemon/systemd/user/pipewire-media-session.service.in	2021-06-03 18:56:42.762096303 +0530
-@@ -9,7 +9,9 @@
- NoNewPrivileges=yes
- RestrictNamespaces=yes
- SystemCallArchitectures=native
--SystemCallFilter=@system-service
-+# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
-+# have version 237, and have no way to upgrade. So commented out.
-+# SystemCallFilter=@system-service
- Type=simple
- ExecStart=@PW_MEDIA_SESSION_BINARY@
- Restart=on-failure
 Index: pipewire-0.3.29/src/daemon/systemd/user/pipewire-pulse.service.in
 ===================================================================
 --- pipewire-0.3.29.orig/src/daemon/systemd/user/pipewire-pulse.service.in	2021-06-03 15:31:53.000000000 +0530
