@@ -1,5 +1,0 @@
-#! /usr/bin/dh-exec
-usr/include
-usr/lib/*/*.so
-usr/lib/*/pkgconfig/*.pc
-usr/share/doc/libcamera-0.0.0 => usr/share/doc/libcamera-dev
