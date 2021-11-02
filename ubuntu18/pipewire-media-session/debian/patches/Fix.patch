@@ -1,0 +1,30 @@
+Index: pipewire-media-session/systemd/system/pipewire-media-session.service.in
+===================================================================
+--- pipewire-media-session.orig/systemd/system/pipewire-media-session.service.in	2021-10-27 06:47:00.000000000 +0530
++++ pipewire-media-session/systemd/system/pipewire-media-session.service.in	2021-11-02 16:24:02.662489608 +0530
+@@ -9,7 +9,9 @@
+ NoNewPrivileges=yes
+ RestrictNamespaces=yes
+ SystemCallArchitectures=native
+-SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
+ Type=simple
+ ExecStart=@PW_MEDIA_SESSION_BINARY@
+ Restart=on-failure
+Index: pipewire-media-session/systemd/user/pipewire-media-session.service.in
+===================================================================
+--- pipewire-media-session.orig/systemd/user/pipewire-media-session.service.in	2021-10-27 06:47:00.000000000 +0530
++++ pipewire-media-session/systemd/user/pipewire-media-session.service.in	2021-11-02 16:23:24.688569501 +0530
+@@ -9,7 +9,9 @@
+ NoNewPrivileges=yes
+ RestrictNamespaces=yes
+ SystemCallArchitectures=native
+-SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
+ Type=simple
+ ExecStart=@PW_MEDIA_SESSION_BINARY@
+ Restart=on-failure

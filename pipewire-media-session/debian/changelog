@@ -1,8 +1,8 @@
-pipewire-media-session (0.4.0-1~ubuntu20.04) focal; urgency=medium
+pipewire-media-session (0.4.1-1~ubuntu20.04) focal; urgency=medium
 
   * Initial release 
 
- -- Sourav Das <souravdas142@gmail.com>  Sun, 24 Oct 2021 17:41:41 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 30 Oct 2021 17:41:41 +0530
 
 pipewire-media-session (0.4.0-1) unstable; urgency=medium
 
