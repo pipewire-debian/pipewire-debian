@@ -21,6 +21,7 @@ Build-Depends: cmake,
                python3-sphinx-rtd-theme,
                python3-breathe,
                systemd,
+               libsystemd-dev,
                valgrind,
 # Only used for automated tests
                dbus <!nocheck>,

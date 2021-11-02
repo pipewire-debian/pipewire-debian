@@ -1,3 +1,32 @@
+wireplumber (0.4.4.r14.g51713d3-3~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - Nothing
+
+  wireplumber - 
+    
+    - Implemented linking nodes in passthrough mode, which enables encoded
+      iec958 / dsd audio passthrough
+    - Streams are now sent an error if it was not possible to link them to
+      a target (#63)
+    - When linking nodes where at least one of them has an unpositioned channel
+      layout, the other one is not reconfigured to match the channel layout;
+      it is instead linked with a best effort port matching logic
+    - Output route switches automatically to the latest one that has become
+      available (#69)
+    - Policy now respects the 'node.exclusive' and 'node.passive' properties
+    - Many other minor policy fixes for a smoother desktop usage experience
+    - For more, See : https://gitlab.freedesktop.org/pipewire/wireplumber/-/releases
+
+  Troubleshooting -
+
+    - Have any package regarding issue? report on github :
+      https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
+
+     
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 29 Oct 2021 20:51:11 +0530
+
 wireplumber (0.4.2-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

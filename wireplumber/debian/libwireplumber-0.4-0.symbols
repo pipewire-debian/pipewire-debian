@@ -1,6 +1,7 @@
 libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
 * Build-Depends-Package: libwireplumber-0.4-dev
  wp_client_get_type@Base 0.3.95
+ wp_client_send_error@Base 0.4.4
  wp_client_update_permissions@Base 0.3.95
  wp_client_update_permissions_array@Base 0.3.95
  wp_component_loader_get_type@Base 0.3.95
@@ -54,6 +55,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_impl_endpoint_new@Base 0.3.95
  wp_impl_metadata_get_type@Base 0.3.95
  wp_impl_metadata_new@Base 0.3.95
+ wp_impl_metadata_new_full@Base 0.4.3
  wp_impl_module_get_type@Base 0.4.2
  wp_impl_module_load@Base 0.4.2
  wp_impl_node_get_type@Base 0.3.95
@@ -298,6 +300,8 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_spa_pod_copy@Base 0.3.95
  wp_spa_pod_ensure_unique_owner@Base 0.3.95
  wp_spa_pod_equal@Base 0.3.95
+ wp_spa_pod_filter@Base 0.4.4
+ wp_spa_pod_fixate@Base 0.4.4
  wp_spa_pod_get_array_child@Base 0.3.95
  wp_spa_pod_get_boolean@Base 0.3.95
  wp_spa_pod_get_bytes@Base 0.3.95
@@ -440,6 +444,8 @@ libwireplumber-module-device-activation.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.3.95
 libwireplumber-module-file-monitor-api.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.4.2
+libwireplumber-module-logind.so libwireplumber-0.4-0 #MINVER#
+ wireplumber__module_init@Base 0.4.3
 libwireplumber-module-lua-scripting.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.3.95
 libwireplumber-module-metadata.so libwireplumber-0.4-0 #MINVER#
@@ -450,6 +456,8 @@ libwireplumber-module-portal-permissionstore.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.3.95
 libwireplumber-module-reserve-device.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.3.95
+libwireplumber-module-route-settings-api.so libwireplumber-0.4-0 #MINVER#
+ wireplumber__module_init@Base 0.4.3
 libwireplumber-module-si-audio-adapter.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.3.95
 libwireplumber-module-si-audio-endpoint.so libwireplumber-0.4-0 #MINVER#
