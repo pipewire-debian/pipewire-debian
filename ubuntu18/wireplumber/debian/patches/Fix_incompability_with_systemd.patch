@@ -1,0 +1,60 @@
+Index: wireplumber_0.4.4.r19.g4d5f959/src/systemd/system/wireplumber.service.in
+===================================================================
+--- wireplumber_0.4.4.r19.g4d5f959.orig/src/systemd/system/wireplumber.service.in	2021-11-04 09:36:29.000000000 +0530
++++ wireplumber_0.4.4.r19.g4d5f959/src/systemd/system/wireplumber.service.in	2021-11-04 09:54:15.916575143 +0530
+@@ -10,7 +10,9 @@
+ NoNewPrivileges=yes
+ RestrictNamespaces=yes
+ SystemCallArchitectures=native
+-SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
+ Type=simple
+ ExecStart=@WP_BINARY@
+ Restart=on-failure
+Index: wireplumber_0.4.4.r19.g4d5f959/src/systemd/system/wireplumber@.service.in
+===================================================================
+--- wireplumber_0.4.4.r19.g4d5f959.orig/src/systemd/system/wireplumber@.service.in	2021-11-04 09:36:29.000000000 +0530
++++ wireplumber_0.4.4.r19.g4d5f959/src/systemd/system/wireplumber@.service.in	2021-11-04 09:53:29.679782054 +0530
+@@ -10,7 +10,9 @@
+ NoNewPrivileges=yes
+ RestrictNamespaces=yes
+ SystemCallArchitectures=native
+-SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
+ Type=simple
+ ExecStart=@WP_BINARY@ -c %i.conf
+ Restart=on-failure
+Index: wireplumber_0.4.4.r19.g4d5f959/src/systemd/user/wireplumber.service.in
+===================================================================
+--- wireplumber_0.4.4.r19.g4d5f959.orig/src/systemd/user/wireplumber.service.in	2021-11-04 09:36:29.000000000 +0530
++++ wireplumber_0.4.4.r19.g4d5f959/src/systemd/user/wireplumber.service.in	2021-11-04 09:56:19.572909755 +0530
+@@ -10,7 +10,9 @@
+ NoNewPrivileges=yes
+ RestrictNamespaces=yes
+ SystemCallArchitectures=native
+-SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
+ Type=simple
+ ExecStart=@WP_BINARY@
+ Restart=on-failure
+Index: wireplumber_0.4.4.r19.g4d5f959/src/systemd/user/wireplumber@.service.in
+===================================================================
+--- wireplumber_0.4.4.r19.g4d5f959.orig/src/systemd/user/wireplumber@.service.in	2021-11-04 09:36:29.000000000 +0530
++++ wireplumber_0.4.4.r19.g4d5f959/src/systemd/user/wireplumber@.service.in	2021-11-04 09:55:12.414274161 +0530
+@@ -10,7 +10,9 @@
+ NoNewPrivileges=yes
+ RestrictNamespaces=yes
+ SystemCallArchitectures=native
+-SystemCallFilter=@system-service
++# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
++# have version 237, and have no way to upgrade. So commented out.
++# SystemCallFilter=@system-service
+ Type=simple
+ ExecStart=@WP_BINARY@ -c %i.conf
+ Restart=on-failure

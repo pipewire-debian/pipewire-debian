@@ -1,0 +1,130 @@
+wireplumber (0.4.4.r19.g4d5f959-2~ubuntu18.04) bionic; urgency=medium
+
+  Debian Package - 
+
+    - Fix incompability issue with systemd (< 239)
+
+  wireplumber - 
+    
+    - Implemented linking nodes in passthrough mode, which enables encoded
+      iec958 / dsd audio passthrough
+    - Streams are now sent an error if it was not possible to link them to
+      a target (#63)
+    - When linking nodes where at least one of them has an unpositioned channel
+      layout, the other one is not reconfigured to match the channel layout;
+      it is instead linked with a best effort port matching logic
+    - Output route switches automatically to the latest one that has become
+      available (#69)
+    - Policy now respects the 'node.exclusive' and 'node.passive' properties
+    - Many other minor policy fixes for a smoother desktop usage experience
+    - For more, See : https://gitlab.freedesktop.org/pipewire/wireplumber/-/releases
+
+  Troubleshooting -
+
+    - Have any package regarding issue? report on github :
+      https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
+
+     
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 02 Nov 2021 20:51:11 +0530
+
+wireplumber (0.4.2-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - Nothing
+
+  wireplumber - 
+    
+     
+       - Requires PipeWire 0.3.32 or later at runtime
+       - Configuration files are now installed in $PREFIX/share/wireplumber, along
+         with scripts, following the paradigm of PipeWire
+       - State files are now stored in $XDG_STATE_HOME instead of $XDG_CONFIG_HOME
+       - Added new ``file-monitor-api`` module, which allows Lua scripts to watch
+         the filesystem for changes, using inotify
+       - Added monitor for MIDI devices
+       - Added a ``system-lua-version`` meson option that allows distributors to
+         choose which Lua version to build against (``auto``, ``5.3`` or ``5.4``)
+       - wpipc has been removed and split out to a separate project,
+         https://git.automotivelinux.org/src/pipewire-ic-ipc/
+       - For more, See : https://gitlab.freedesktop.org/pipewire/wireplumber/-/releases
+
+  Troubleshooting -
+
+  - Have any package regarding issue? report on github :
+    https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
+
+     
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 20 Aug 2021 20:51:11 +0530
+
+wireplumber (0.4.1.1-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - Initial Release
+
+  wireplumber - 
+    
+    Fixes:
+
+      - Fixed filtering of pw_metadata objects, which broke with PipeWire 0.3.31
+      - Fixed a potential livelock condition in si-audio-adapter/endpoint where
+        the code would wait forever for a node's ports to appear in the graph
+      - Fixed granting access to camera device nodes in flatpak clients connecting
+        through the camera portal
+      - Fixed a lot of issues found by the coverity static analyzer
+      - Fixed certain race conditions in the wpipc library
+      - Fixed compilation with GCC older than v8.1
+
+    Scripts:
+
+      - Added a policy script that matches nodes to specific devices based on the
+        "media.role" of the nodes and the "device.intended-roles" of the devices
+
+    Build system:
+
+      - Bumped GLib requirement to 2.62, as the code was already using 2.62 API
+      - Added support for building WirePlumber as a PipeWire subproject
+      - Doxygen version requirement has been relaxed to accept v1.8
+      - The CI now also verifies that the build works on Ubuntu 20.04 LTS
+        and tries multiple builds with different build options
+
+  Troubleshooting -
+
+  - Have any package regarding issue? report on github :
+    https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
+
+  
+
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 29 Jun 2021 18:51:11 +0530
+
+wireplumber (0.4.0-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Frederic Danis ]
+  * New upstream version 0.3.96
+  * debian: Stop disabling doc and force gobject-introspection
+  * d/patches: Remove merged patches
+  * d/control: Add recommends of pipewire-pulse
+  * debian: Update libwireplumber-0.4 symbols
+  * d/patches: meson: force the gir target to depend on wp-gtkdoc.h
+
+  [ Dylan Aïssi ]
+  * New upstream version 0.4.0
+  * Remove d/p/meson-force-the-gir-target-to-depend-on-wp-gtkdoc.h.patch,
+      applied upstream.
+  * Update symbols file
+  * Add a versioned dependency for gir1.2-wp-0.4
+
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 16 Jun 2021 12:09:12 +0200
+
+wireplumber (0.3.95-1) experimental; urgency=medium
+
+  [ Frederic Danis ]
+  * Initial release (Closes: #988143)
+
+  [ Sjoerd Simons ]
+  * Upload to experimental
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Tue, 18 May 2021 22:02:27 +0200
