@@ -38,7 +38,7 @@
   </a>
 </p>
 
-# PipeWire & blueman-git PPA for Ubuntu (>= 18.04)
+## PipeWire & WirePlumber & blueman-git PPA for Ubuntu (>= 18.04)
 #### _An upstream version of blueman-git & PipeWire for Ubuntu maintained with a 15 day release cycle_
 
 |                                               Link                                               |          Description     |
@@ -69,9 +69,16 @@
 
 ```bash
 sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
+
+# For WirePlumber 
+
+sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream
+
 sudo apt-get update
+
 ```
-**To Manually add The Launchpad PPA, Where `add-apt-repository` is not available, Or, In case of any special case**
+**To Manually add The Launchpad PPA, Where `add-apt-repository` is not available, Or, In case of any special case**              
+</br>**Consider this is an example, Do the same for `WirePlumber` key may or may not be changed here**
 
 ```bash
 # This PPA can be added to your system manually by running below commands, It creates
@@ -112,7 +119,7 @@ sudo apt update
 
 
 
-## 2. Install PipeWire Or blueman-git
+## 2. Install PipeWire, WirePlumber Or blueman-git
 
 **After [PPA Configuration](#1-ppa-configuration), follow the installation instructions below. And Consult with the [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page if there is any error occured.**
 
@@ -131,6 +138,11 @@ sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.
 # Additionally, if you want to install `pipewire-doc`
 
 sudo apt install pipewire-doc     
+
+# For WirePlumber 
+
+sudo apt-get install wireplumber{,-doc} gir1.2-wp-0.4 libwireplumber-0.4-{0,dev}
+
 ```
 
 **\~\~\~\~\~\~\~\~\~\~\~ For blueman-git  \~\~\~\~\~\~\~\~\~\~\~**          
@@ -146,7 +158,7 @@ sudo apt-get install blueman-git
 ```   
 
     
-## 3. Post Installation Steps for PipeWire or blueman-git        
+## 3. Post Installation Steps for PipeWire, WirePlumber or blueman-git        
 
 ### A) Disabling PulseAudio
 
@@ -229,7 +241,17 @@ substitue this `Exec=/usr/bin/pipewire-media-session` line with above `pipewire-
 
 **Finally,** Enable and start PipeWire related services **(`init` system users, Ignore this)**       
 ```bash
-systemctl --user --now enable pipewire{,-pulse}.{socket,service} pipewire-media-session.service
+systemctl --user --now enable pipewire{,-pulse}.{socket,service}                 
+```
+For WirePlumber
+
+```bash
+systemctl --user --now enable wireplumber.service
+```
+For pipewire-media-session
+
+```bash
+systemctl --user enable --now pipewire-media-session.service
 ```
 You can check which server is in use by running (as a regular user):   
 ```bash
