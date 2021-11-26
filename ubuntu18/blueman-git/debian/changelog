@@ -1,3 +1,18 @@
+blueman-git (2.2.3-1~ubuntu18.04) bionic; urgency=medium
+
+  * Remove 'Recommends: pulseaudio-module-bluetooth'
+    Remove 'libpulse-mainloop-glib0' from dependencies
+    - Both doesn't make sense for PipeWire.
+      But If you want to install with PulseAudio make
+      sure you have already installed this packages 
+      as dependencies.
+
+  * Recent connections disabled after suspend and resume
+  * Service authorization notifications did not respond
+  * Passkeys did not get displayed
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 26 Nov 2021 20:30:29 +0530
+
 blueman-git (2.1.4-git-dbfad0a-3~ubuntu18.04) bionic; urgency=medium
 
   * Git version New
