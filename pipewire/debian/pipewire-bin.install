@@ -32,6 +32,7 @@ usr/bin/pw-v4l2
 usr/bin/spa-*
 usr/share/alsa-card-profile
 usr/share/man/man1/pipewire.*
+usr/share/man/man1/pipewire-pulse.*
 usr/share/man/man1/pw-cat.*
 usr/share/man/man1/pw-cli.*
 usr/share/man/man1/pw-dot.*

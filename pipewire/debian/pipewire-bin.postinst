@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.39-1 (https://pipewire-debian.github.io)
+pipewire 0.3.40-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
@@ -25,17 +25,16 @@ pipewire 0.3.39-1 (https://pipewire-debian.github.io)
  
   PipeWire - 
 
-    - media-session is now moved into a separate module to speed up its
-      deprecation in favour of WirePlumber.
-    - There is now an LD_PRELOAD v4l2 emulation library to run some existing
-      v4l2 applications on top of PipeWire.
-    - Filter-chains should now flush out remaining samples when paused. There
-      is now also the option to let a filter-chain drain so that long filters
-      such as reverbs can fade out properly.
-    - Stability and compatibility improvements in JACK apps.
-    - Better Bluetooth compatibility with more devices.
-    - libcamera plugin improvements.
-    - Many bugfixes and improvements all over the map.
+    - Producers and consumers can now incrementally negotiate a format
+      by narrowing down the options. This can be used to select an optimal
+      combination of format and modifiers.
+    - Driver nodes such as the consumer of a headless compositor can now
+      throttle the speed based on a new trigger_done event.
+    - Headless compositors can now signal a damage event to consumers
+      to start the processing of the graph.
+    - Compatibility improvements in JACK.
+    - Draining and resuming is now working correctly in pulse and alsa.
+    - Many bugfixes and improvements.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
 
@@ -50,6 +49,7 @@ Troubleshooting -
   - Attempt to build with libcamera support
 
   - Recommending using wireplumber instead pipewire-media-seassion 
+    Add ppa:pipewire-debian/wireplumber-upstream
   
 
 EOF

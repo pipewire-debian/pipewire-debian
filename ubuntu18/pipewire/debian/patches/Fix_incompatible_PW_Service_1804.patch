@@ -1,37 +1,37 @@
-Index: pipewire-0.3.29/src/daemon/systemd/system/pipewire.service.in
+Index: pipewire_0.3.40.r59.g1b06d4d/src/daemon/systemd/system/pipewire.service.in
 ===================================================================
---- pipewire-0.3.29.orig/src/daemon/systemd/system/pipewire.service.in	2021-06-03 15:31:53.000000000 +0530
-+++ pipewire-0.3.29/src/daemon/systemd/system/pipewire.service.in	2021-06-03 18:54:51.549397038 +0530
+--- pipewire_0.3.40.r59.g1b06d4d.orig/src/daemon/systemd/system/pipewire.service.in	2021-11-27 10:02:22.000000000 +0530
++++ pipewire_0.3.40.r59.g1b06d4d/src/daemon/systemd/system/pipewire.service.in	2021-11-27 16:53:16.423995403 +0530
 @@ -20,7 +20,9 @@
  NoNewPrivileges=yes
  RestrictNamespaces=yes
  SystemCallArchitectures=native
 -SystemCallFilter=@system-service
 +# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
-+# have version 237, and have no way to upgrade. So commented out.
++# has version 237, and no way to upgrade. So commented out.
 +# SystemCallFilter=@system-service
  Type=simple
  AmbientCapabilities=CAP_SYS_NICE
  ExecStart=@PW_BINARY@
-Index: pipewire-0.3.29/src/daemon/systemd/user/pipewire-pulse.service.in
+Index: pipewire_0.3.40.r59.g1b06d4d/src/daemon/systemd/user/pipewire-pulse.service.in
 ===================================================================
---- pipewire-0.3.29.orig/src/daemon/systemd/user/pipewire-pulse.service.in	2021-06-03 15:31:53.000000000 +0530
-+++ pipewire-0.3.29/src/daemon/systemd/user/pipewire-pulse.service.in	2021-06-03 18:58:03.590525374 +0530
+--- pipewire_0.3.40.r59.g1b06d4d.orig/src/daemon/systemd/user/pipewire-pulse.service.in	2021-11-27 10:02:22.000000000 +0530
++++ pipewire_0.3.40.r59.g1b06d4d/src/daemon/systemd/user/pipewire-pulse.service.in	2021-11-27 16:54:46.368905310 +0530
 @@ -25,7 +25,9 @@
  NoNewPrivileges=yes
  RestrictNamespaces=yes
  SystemCallArchitectures=native
 -SystemCallFilter=@system-service
 +# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
-+# have version 237, and have no way to upgrade. So commented out.
++# has version 237, and no way to upgrade. So commented out.
 +# SystemCallFilter=@system-service
  Type=simple
  ExecStart=@PW_PULSE_BINARY@
  Restart=on-failure
-Index: pipewire-0.3.29/src/daemon/systemd/user/pipewire.service.in
+Index: pipewire_0.3.40.r59.g1b06d4d/src/daemon/systemd/user/pipewire.service.in
 ===================================================================
---- pipewire-0.3.29.orig/src/daemon/systemd/user/pipewire.service.in	2021-06-03 15:31:53.000000000 +0530
-+++ pipewire-0.3.29/src/daemon/systemd/user/pipewire.service.in	2021-06-03 18:59:40.030965138 +0530
+--- pipewire_0.3.40.r59.g1b06d4d.orig/src/daemon/systemd/user/pipewire.service.in	2021-11-27 10:02:22.000000000 +0530
++++ pipewire_0.3.40.r59.g1b06d4d/src/daemon/systemd/user/pipewire.service.in	2021-11-27 16:56:22.774140817 +0530
 @@ -14,6 +14,8 @@
  # After=pipewire.socket is not needed, as it is already implicit in the
  # socket-service relationship, see systemd.socket(5).
@@ -47,18 +47,18 @@ Index: pipewire-0.3.29/src/daemon/systemd/user/pipewire.service.in
  SystemCallArchitectures=native
 -SystemCallFilter=@system-service
 +# Below line/option is compatible with systemd (>= 239), But ubuntu 1804
-+# have version 237, and have no way to upgrade. So commented out.
++# has version 237, and no way to upgrade. So commented out.
 +# SystemCallFilter=@system-service
  Type=simple
  ExecStart=@PW_BINARY@
  Restart=on-failure
-Index: pipewire-0.3.29/src/daemon/systemd/user/pipewire.socket
+Index: pipewire_0.3.40.r59.g1b06d4d/src/daemon/systemd/user/pipewire.socket
 ===================================================================
---- pipewire-0.3.29.orig/src/daemon/systemd/user/pipewire.socket	2021-06-03 15:31:53.000000000 +0530
-+++ pipewire-0.3.29/src/daemon/systemd/user/pipewire.socket	2021-06-03 19:00:15.995111641 +0530
+--- pipewire_0.3.40.r59.g1b06d4d.orig/src/daemon/systemd/user/pipewire.socket	2021-11-27 10:02:22.000000000 +0530
++++ pipewire_0.3.40.r59.g1b06d4d/src/daemon/systemd/user/pipewire.socket	2021-11-27 16:56:58.966642756 +0530
 @@ -1,5 +1,7 @@
  [Unit]
- Description=Multimedia System
+ Description=PipeWire Multimedia System Socket
 +# Don-t-automatically-start-pipewire-for-root-logins.patch
 +ConditionUser=!root
  
