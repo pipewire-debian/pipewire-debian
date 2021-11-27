@@ -40,6 +40,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_endpoint_get_media_class@Base 0.3.95
  wp_endpoint_get_name@Base 0.3.95
  wp_endpoint_get_type@Base 0.3.95
+ wp_factory_get_type@Base 0.4.5
  wp_feature_activation_transition_get_requested_features@Base 0.3.95
  wp_feature_activation_transition_get_type@Base 0.3.95
  wp_find_file@Base 0.4.2
