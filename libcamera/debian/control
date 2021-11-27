@@ -8,10 +8,12 @@ Uploaders:
  Andrej Shadura <andrewsh@debian.org>
 Build-Depends: debhelper-compat (= 12),
                dh-exec,
+               cmake,
                meson (>= 0.55),
                pkgconf | pkg-config,
                libgnutls28-dev | gnutls-dev,
                doxygen <!nodoc>,
+               python3:native,
                python3-sphinx <!nodoc>,
                graphviz,
                googletest,
