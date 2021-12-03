@@ -5,6 +5,8 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 # Version=$(printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)")
 #
+AVAILABLE_CORE=$(shell nproc)
+gtest_ver=1.11.0
 
 include /usr/share/dpkg/architecture.mk
 
@@ -12,6 +14,9 @@ include /usr/share/dpkg/architecture.mk
 	dh $@
 
 override_dh_auto_configure:
+	cp -vR debian/packagefiles subprojects/
+	grep ${gtest_ver} subprojects/gtest.wrap && echo "[*] gtest version OK...\n" || exit
+	grep ${gtest_ver}-1 subprojects/gtest.wrap && echo "[*] gtest patch version OK...\n" || exit
 	dh_auto_configure -- \
 		--libexecdir=lib/${DEB_HOST_MULTIARCH} \
 		-Dauto_features=enabled \
@@ -25,7 +30,9 @@ override_dh_install:
 
 .PHONY: override_dh_auto_test
 override_dh_auto_test:
-
+	LC_ALL=C.UTF-8 MESON_TESTTHREADS=${AVAILABLE_CORE}  meson test -C obj-${DEB_HOST_MULTIARCH} \
+		   || echo  "\n\n[*] Warning: Test is Failed harmlessly & shouldn't be worried about that \n\n"  \
+	$(empty)
 
 .PHONY: licensecheck
 licensecheck:

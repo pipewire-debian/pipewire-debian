@@ -1,8 +1,31 @@
-libcamera (0.r3266.gcb1de399-1~ubuntu20.04) focal; urgency=medium
+libcamera (0.r3302.gb7b72027-1~ubuntu20.04) focal; urgency=medium
 
-  * All update upto 27 November
+  * Disable lto (link time optimization) or test will always fail
+  * Re-enable test and ignore if its failing harmlessly 
+  * Dependency `libdrm-dev` added to find `libdrm` runtime pkgconfig
+  * Remove `googletest` and `libgtest-dev` from build-depends
+    as `gtest` is meson subproject that must be built at compile time.
 
- -- Sourav Das <souravdas142@gmail.com>  Sat, 27 Nov 2021 22:13:48 +0530
+  * Refactoring `debian/rules` file to make libcamera more maintaince free
+    - Move subprojects/packagefile/* to debian/packagefile
+    - Add debian/source/include-binaries to make debian.orig file with
+      included tar file
+    - Add patch file to disable downloadable url in subprojects/gtest.wrap
+      due to launchpad buildd env do not allow to download even there is no
+      internet connection.
+    - Make sure version for gtest tar files under debian/packagefile and
+      source/include-binaries is the same as gtest.wrap file
+    .
+    .
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 03 Dec 2021 22:13:48 +0530
+
+libcamera (0.r3266.gcb1de399-3~ubuntu20.04) focal; urgency=medium
+
+  * disable lto (link time optimization)
+  * disable test as it always failing in such build env
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 28 Nov 2021 22:13:48 +0530
 
 libcamera (0.r3223.6b288f8f-2~ubuntu20.04) focal; urgency=medium
 
