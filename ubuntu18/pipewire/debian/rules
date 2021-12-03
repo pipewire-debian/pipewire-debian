@@ -10,19 +10,6 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 %:
 	dh $@
 
-ifneq ($(filter nodoc,$(DEB_BUILD_PROFILES)),)
-DOCS=disabled
-else
-DOCS=enabled
-endif
-
-ifneq (,$(filter s390x hppa m68k powerpc ppc64 sparc64,$(DEB_HOST_ARCH)))
-BLUEZ5_CODEC_LDAC=disabled
-else
-BLUEZ5_CODEC_LDAC=enabled
-endif
-
-
 
 override_dh_auto_configure:
 	#below resolves `libintl found : NO`; but at the last moment there is unknown error.
@@ -49,33 +36,8 @@ override_dh_auto_configure:
 	echo "/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3/jack/" > "debian/ld.so.conf.d/pipewire-jack-$(DEB_HOST_MULTIARCH).conf"
 	install -Dm644 /dev/null debian/with-alsa
 
-test_timeout_multiplier = 1
-
-ifneq ($(filter arm hppa ia64 m68k riscv64 sh4 sparc%,$(DEB_HOST_ARCH_CPU)),)
-test_timeout_multiplier = 5
-endif
-
-ifneq ($(filter mips%,$(DEB_HOST_ARCH_CPU)),)
-test_timeout_multiplier = 10
-endif
-
-#override_dh_auto_test:
-#	dh_auto_test \
-#		-- \
-#		--timeout-multiplier $(test_timeout_multiplier) \
-#		$(NULL)
-#
-# -------------------- COMMENT -----------------
-#
-#  somehow with --timeout-multiplier option build leads to fail
-#  in ubuntu 20.04, everything is ok >=21.04(didn't test on 20.10)
-#  there is no workaround I found without removing it. If anyone
-#  have an Idea with it, please give PR with solution.
-
 override_dh_auto_test:
-	dh_auto_test \
-		-- \
-		$(NULL)
+	LC_ALL=C.UTF-8 MESON_TESTTHREADS=${AVAILABLE_CORE}  meson test -C obj-${DEB_HOST_MULTIARCH}
 
 override_dh_missing:
 	dh_missing --fail-missing
@@ -99,8 +61,4 @@ override_dh_shlibdeps-arch:
 		--remaining-packages \
 		-l/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3 \
 		$(NULL)
-
-
-
-
 
