@@ -6,17 +6,11 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 %:
 	dh $@ --buildsystem=meson
 
+AVAILABLE_CORE=$(shell nproc)
+
 override_dh_auto_configure:
 	dh_auto_configure --  --libexecdir=libexec -Dauto_features=enabled -Dsystem-lua=true -Dintrospection=enabled -Dsystemd-system-service=true  -Dsystemd-user-service=true  -Delogind=disabled 
 
-
-# If tests failed, build this project under a dir something like `/home/$USER` where dirname always gurentee 
-# not to exceeeds 108 bytes. More explicitly (dirname + servername shouldn't exceeds 108 bytes) otherwiese, 
-# pipewire server creation will be failed and all test will be failed. As I commented on the MR#181 , see
-# when it will be fixed.
-# Don't bypass any failed test, just need to excit the build
-
 override_dh_auto_test:
-	#dh_auto_test -- || echo "Test is failing continuously, So don't fail the build"
-	dh_auto_test -- 
+	LC_ALL=C.UTF-8 MESON_TESTTHREADS=${AVAILABLE_CORE}  meson test -C obj-${DEB_HOST_MULTIARCH}
 
