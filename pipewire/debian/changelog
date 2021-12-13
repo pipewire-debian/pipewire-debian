@@ -5,6 +5,21 @@ pipewire (0.3.40.r59.g1b06d4d-1~ubuntu20.04) focal; urgency=medium
     - move out pipewire-media-session to a new package
     - Recommending using wireplumber. add ppa :
       ppa:pipewire-debian/wireplumber-upstream
+    - Recommending rt-kit and dbus
+ 
+  PipeWire - 
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 27 Nov 2021 17:58:57 +0530
+
+pipewire (0.3.40.r59.g1b06d4d-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - move out pipewire-media-session to a new package
+    - Recommending using wireplumber. add ppa :
+      ppa:pipewire-debian/wireplumber-upstream
  
   PipeWire - 
 
