@@ -23,8 +23,9 @@ Build-Depends:	cmake,
 				libjack-jackd2-dev (>= 1.9.10),
 				libldacbt-abr-dev [!s390x !hppa !m68k !powerpc !ppc64 !sparc64],
 				libldacbt-enc-dev [!s390x !hppa !m68k !powerpc !ppc64 !sparc64],
+                liblilv-dev,
 				libncurses-dev,
-	            libncursesw5-dev,
+                libncursesw5-dev,
 				libfreeaptx-dev,
 				libpulse-dev (>= 11.1),
                 libreadline-dev,
@@ -37,7 +38,8 @@ Build-Depends:	cmake,
                 libusb-1.0-0-dev,
 				libv4l-dev,
 				libvulkan-dev,
-				meson (>= 0.50.0),
+                meson (>= 0.60.0),
+                openssl,
                 libssl-dev,
 				pkg-config (>= 0.22),
                 python3-docutils,
@@ -210,7 +212,9 @@ Depends: libpipewire-0.3-modules (= ${binary:Version}),
          pipewire-pulse,
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: wireplumber | pipewire-media-session
+Recommends: dbus-user-session,
+            wireplumber | pipewire-media-session,
+            rtkit
 Breaks: pipewire (<< 0.3.5)
 Replaces: pipewire (<< 0.3.5)
 Description: PipeWire multimedia server - programs

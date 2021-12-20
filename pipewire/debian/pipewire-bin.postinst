@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.40-1 (https://pipewire-debian.github.io)
+pipewire 0.3.42-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
@@ -22,19 +22,38 @@ pipewire 0.3.40-1 (https://pipewire-debian.github.io)
     - move out pipewire-media-session to a new package
     - Recommending using wireplumber. add ppa :
       ppa:pipewire-debian/wireplumber-upstream
+    - Recommending rt-kit and dbus-session-managers
  
   PipeWire - 
 
-    - Producers and consumers can now incrementally negotiate a format
-      by narrowing down the options. This can be used to select an optimal
-      combination of format and modifiers.
-    - Driver nodes such as the consumer of a headless compositor can now
-      throttle the speed based on a new trigger_done event.
-    - Headless compositors can now signal a damage event to consumers
-      to start the processing of the graph.
-    - Compatibility improvements in JACK.
-    - Draining and resuming is now working correctly in pulse and alsa.
+  0.3.41 -
+    - Improved compatibility for flatpaks. Flatpaks with newer PipeWire
+      version can connect to an older server in all cases.
+    - A new RAOP module was added to stream to Apple Airplay devices.
+    - OBS can now capture from the monitor devices again when using
+      WirePlumber.
+    - Improved JACK compatibility. Improved stability in Carla and Ardour
+      when changing buffer size. Improved latency calculations and
+      playback latency in Ardour.
+    - Improved pulse-server handling of underruns and buffer size changes.
     - Many bugfixes and improvements.
+
+  0.3.42 -
+    - Fixes a bug in pulse-server underrun handling that broke qemu
+      and orca.
+    - A fix was added to pulse-server to handle quantum changes
+      gracefully.
+    - Fix module-echo-cancel again.
+    - Fix a bug where the bluetooth headset capture was producing
+      noise.
+    - alsa: fix rate for EAC3
+    - spa: fix initializer for old GCC
+    - context: apply new quantum and rate when driver is idle
+    - pulse-server: implement fix_* fields
+    - pulse-server: improve fix_* handling
+    - acp: sync with pulseaudio
+    - alsa: only use graph rate when nothing else is fixed
+
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
 
@@ -46,10 +65,11 @@ Troubleshooting -
   - Have any package regarding issue? report on github :
     https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
 
-  - Attempt to build with libcamera support
+  - Attempt to build with latest(git) libcamera support
 
-  - Recommending using wireplumber instead pipewire-media-seassion 
-    Add ppa:pipewire-debian/wireplumber-upstream
+  - Recommending using 'WirePlumber' instead 'pipewire-media-seassion', Add
+    PPA - 'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'
+    For more instructions, see : https://pipewire-debian.github.io
   
 
 EOF
