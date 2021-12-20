@@ -107,6 +107,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_node_new_ports_iterator@Base 0.3.95
  wp_node_send_command@Base 0.3.95
  wp_node_state_get_type@Base 0.3.95
+ wp_object_abort_activation@Base 0.4.5
  wp_object_activate@Base 0.3.95
  wp_object_activate_closure@Base 0.3.95
  wp_object_activate_finish@Base 0.3.95
@@ -202,7 +203,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_proxy_get_pw_proxy@Base 0.3.95
  wp_proxy_get_type@Base 0.3.95
  wp_proxy_set_pw_proxy@Base 0.3.95
- wp_proxy_watch_bind_error@Base 0.3.96
+#MISSING: 0.4.5.r31.g6d7ae69-1~ubuntu20.04# #MISSING: 0.4.5
  wp_session_item_configure@Base 0.3.95
  wp_session_item_features_get_type@Base 0.3.95
  wp_session_item_get_associated_proxy@Base 0.3.95

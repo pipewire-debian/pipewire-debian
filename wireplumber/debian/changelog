@@ -1,4 +1,4 @@
-wireplumber (0.4.5.r19.g147f235-1~ubuntu20.04) focal; urgency=medium
+wireplumber (0.4.5.r31.g6d7ae69-2~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
 
@@ -6,21 +6,22 @@ wireplumber (0.4.5.r19.g147f235-1~ubuntu20.04) focal; urgency=medium
 
   wireplumber - 
     
-    - Fixed a crash that could happen after a node linking error (#76)
-    - Fixed a bug that would cause capture streams to link to monitor ports
-      of loopback nodes instead of linking to their capture ports
-    - Fixed a needless wait that would happen on applications using the pipewire
-      ALSA plugin (#92)
-    - Fixed an issue that would cause endless rescan loops in policy-node and
-      could potentially also cause other strange behaviors in case pavucontrol
-      or another monitoring utility was open while the policy was rescanning (#77)
-    - Fixed the endpoints-based policy that broke in recent versions and improved
-      its codebase to share more code and be more in-line with policy-node
-    - The semicolon character is now escaped properly in state files (#82)
-    - When a player requests encoded audio passthrough, the policy now prefers
-      linking to a device that supports that instead of trying to link to the
-      default device and potentially failing (#75)
-    - Miscellaneous robustness fixes in policy-node
+  - Fixed a crash that could happen after a node linking error (#76)
+  - Fixed a bug that would cause capture streams to link to monitor ports
+    of loopback nodes instead of linking to their capture ports
+  - Fixed a needless wait that would happen on applications using the pipewire
+    ALSA plugin (#92)
+  - Fixed an issue that would cause endless rescan loops in policy-node and
+    could potentially also cause other strange behaviors in case pavucontrol
+    or another monitoring utility was open while the policy was rescanning (#77)
+  - Fixed the endpoints-based policy that broke in recent versions and improved
+    its codebase to share more code and be more in-line with policy-node
+  - The semicolon character is now escaped properly in state files (#82)
+  - When a player requests encoded audio passthrough, the policy now prefers
+    linking to a device that supports that instead of trying to link to the
+    default device and potentially failing (#75)
+
+  - Miscellaneous robustness fixes in policy-node
     - For more, See : https://gitlab.freedesktop.org/pipewire/wireplumber/-/releases
 
   Troubleshooting -
@@ -29,7 +30,7 @@ wireplumber (0.4.5.r19.g147f235-1~ubuntu20.04) focal; urgency=medium
       https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
 
      
- -- Sourav Das <souravdas142@gmail.com>  Sat, 27 Nov 2021 20:51:11 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 16 Dec 2021 20:51:11 +0530
 
 wireplumber (0.4.4.r14.g51713d3-3~ubuntu20.04) focal; urgency=medium
 

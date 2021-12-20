@@ -46,7 +46,10 @@ CHANGELOGS -
   Troubleshooting -
 
     - Have any package regarding issue? report on github :
-      https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
+       https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
+    
+    - To know more how to configure WirePlumber with PipeWire, See : 
+       https://pipewire-debian.github.io
 
      
 
