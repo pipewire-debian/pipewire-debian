@@ -1,4 +1,4 @@
-libcamera (0.r3302.gb7b72027-1~ubuntu20.04) focal; urgency=medium
+libcamera (0.r3365.g015fa7f7-1~ubuntu20.04) focal; urgency=medium
 
   * Disable lto (link time optimization) or test will always fail
   * Re-enable test and ignore if its failing harmlessly 
@@ -18,7 +18,7 @@ libcamera (0.r3302.gb7b72027-1~ubuntu20.04) focal; urgency=medium
     .
     .
 
- -- Sourav Das <souravdas142@gmail.com>  Fri, 03 Dec 2021 22:13:48 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Mon, 13 Dec 2021 22:13:48 +0530
 
 libcamera (0.r3266.gcb1de399-3~ubuntu20.04) focal; urgency=medium
 
