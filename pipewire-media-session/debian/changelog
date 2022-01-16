@@ -1,4 +1,10 @@
-pipewire-media-session (0.4.1.r5.gbc7a4e1-1~ubuntu20.04) focal; urgency=medium
+pipewire-media-session (0.4.1.r6.gf15a4c7-1~ubuntu20.04) focal; urgency=medium
+
+  - release with memory leak fixed
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 16 Jan 2022 01:22:06 +0530
+
+pipewire-media-session (0.4.1.r5.gbc7a4e1-1~ubuntu21.04) hirsute; urgency=medium
 
   * Initial release 
 
