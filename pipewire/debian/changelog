@@ -1,4 +1,35 @@
-pipewire (0.3.42.r25.gc8fc79b-1~ubuntu20.04) focal; urgency=medium
+pipewire (0.3.43.r68.g7c6649b-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - move out pipewire-media-session to a new package
+    - Recommending using wireplumber. add ppa :
+      ppa:pipewire-debian/wireplumber-upstream
+    - Recommending rt-kit and dbus-session-managers
+ 
+  PipeWire - 
+
+    - Flatpak apps such as Ardour can now remove links again.
+    - Many fixes to pulse-server. Memory usage should be improved. Some
+      crashes are fixed. Underrun handling should work better. Better
+      compatibility with GStreamer based applications after seeking.
+    - Many of the samplerate and quantum changes bugs in previous releases
+      were fixed. This fixes some issues where the microphone would fail
+      to work.
+    - Many more small fixes and improvements all over the place.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 15 Jan 2022 20:33:30 +0530
+
+pipewire (0.3.42.r46.g65aadeb-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
 

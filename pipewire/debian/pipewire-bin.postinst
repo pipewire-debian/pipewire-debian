@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.42-1 (https://pipewire-debian.github.io)
+pipewire 0.3.43-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
@@ -26,38 +26,19 @@ pipewire 0.3.42-1 (https://pipewire-debian.github.io)
  
   PipeWire - 
 
-  0.3.41 -
-    - Improved compatibility for flatpaks. Flatpaks with newer PipeWire
-      version can connect to an older server in all cases.
-    - A new RAOP module was added to stream to Apple Airplay devices.
-    - OBS can now capture from the monitor devices again when using
-      WirePlumber.
-    - Improved JACK compatibility. Improved stability in Carla and Ardour
-      when changing buffer size. Improved latency calculations and
-      playback latency in Ardour.
-    - Improved pulse-server handling of underruns and buffer size changes.
-    - Many bugfixes and improvements.
-
-  0.3.42 -
-    - Fixes a bug in pulse-server underrun handling that broke qemu
-      and orca.
-    - A fix was added to pulse-server to handle quantum changes
-      gracefully.
-    - Fix module-echo-cancel again.
-    - Fix a bug where the bluetooth headset capture was producing
-      noise.
-    - alsa: fix rate for EAC3
-    - spa: fix initializer for old GCC
-    - context: apply new quantum and rate when driver is idle
-    - pulse-server: implement fix_* fields
-    - pulse-server: improve fix_* handling
-    - acp: sync with pulseaudio
-    - alsa: only use graph rate when nothing else is fixed
-
+    - Flatpak apps such as Ardour can now remove links again.
+    - Many fixes to pulse-server. Memory usage should be improved. Some
+      crashes are fixed. Underrun handling should work better. Better
+      compatibility with GStreamer based applications after seeking.
+    - Many of the samplerate and quantum changes bugs in previous releases
+      were fixed. This fixes some issues where the microphone would fail
+      to work.
+    - Many more small fixes and improvements all over the place.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
-
-
+  .
+  .
+  .
 
 
 Troubleshooting - 
@@ -67,9 +48,11 @@ Troubleshooting -
 
   - Attempt to build with latest(git) libcamera support
 
-  - Recommending using 'WirePlumber' instead 'pipewire-media-seassion', Add
-    PPA - 'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'
-    For more instructions, see : https://pipewire-debian.github.io
+  - Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    as session manager, to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+
   
 
 EOF
