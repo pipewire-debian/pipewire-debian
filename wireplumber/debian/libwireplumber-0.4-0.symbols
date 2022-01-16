@@ -28,6 +28,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_core_load_component@Base 0.3.95
  wp_core_new@Base 0.3.95
  wp_core_sync@Base 0.3.95
+ wp_core_sync_closure@Base 0.4.7
  wp_core_sync_finish@Base 0.3.95
  wp_core_timeout_add@Base 0.3.95
  wp_core_timeout_add_closure@Base 0.3.95
