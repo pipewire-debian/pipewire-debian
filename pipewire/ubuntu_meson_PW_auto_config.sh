@@ -35,11 +35,11 @@ meson configure build  --buildtype=plain \
 	--libexecdir=libexec \
     --libdir=lib/x86_64-linux-gnu \
 	"${comp_options[@]}" \
-	-D audiotestsrc=enabled \
 	-D auto_features=enabled \
+	-D audiotestsrc=enabled \
 	-D b_lto=true \
 	-D b_pie=true \
-	-D libcamera=disabled \
+	-D libcamera=enabled \
 	-D docs=enabled \
 	-D examples=enabled \
 	-D installed_tests=enabled \
