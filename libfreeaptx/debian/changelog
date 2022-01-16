@@ -1,4 +1,10 @@
-libfreeaptx (0.1.1-1) focal; urgency=medium
+libfreeaptx (0.1.1.r2.gc176b7d-1~ubuntu20.04) focal; urgency=medium
+ 
+  - Rebuild with version fix
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 16 Jan 2022 01:53:54 +0530
+
+libfreeaptx (0.1.1-1~ubuntu2104) hirsute; urgency=medium
 
   * openaptx fork < 0.2.1
 
