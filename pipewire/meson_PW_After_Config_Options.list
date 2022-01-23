@@ -1,6 +1,6 @@
 Core properties:
-  Source dir /home/sdas/pw/21/pipewire_0.3.42.r25.gc8fc79b
-  Build dir  /home/sdas/pw/21/pipewire_0.3.42.r25.gc8fc79b/obj-x86_64-linux-gnu
+  Source dir /home/sdas/pipewire/build/pipewire
+  Build dir  /home/sdas/pipewire/build/pipewire/obj-x86_64-linux-gnu
 
 Main project options:
   
@@ -53,42 +53,42 @@ Main project options:
   Compiler options               Current Value                    Possible Values                  Description
   ----------------               -------------                    ---------------                  -----------
   c_args                         [-g, -O2, -fdebug-prefix-map=/ho                                  Extra arguments passed to the c compiler
-                                 me/sdas/pw/21/pipewire_0.3.42.r2                                  
-                                 5.gc8fc79b=., -fstack-protector-                                  
-                                 strong, -Wformat,                                                 
-                                 -Werror=format-security, -Wdate-                                  
-                                 time, -D_FORTIFY_SOURCE=2]                                        
+                                 me/sdas/pipewire/build/pipewire=                                  
+                                 ., -fstack-protector-strong,                                      
+                                 -Wformat, -Werror=format-                                         
+                                 security, -Wdate-time,                                            
+                                 -D_FORTIFY_SOURCE=2]                                              
   c_link_args                    [-Wl,-Bsymbolic-functions,                                        Extra arguments passed to the c linker
                                  -Wl,-z,relro, -Wl,-z,now,                                         
                                  -Wl,-z,defs, -Wl,--as-needed,                                     
                                  -g, -O2, -fdebug-prefix-map=/hom                                  
-                                 e/sdas/pw/21/pipewire_0.3.42.r25                                  
-                                 .gc8fc79b=., -fstack-protector-                                   
-                                 strong, -Wformat,                                                 
-                                 -Werror=format-security, -Wdate-                                  
-                                 time, -D_FORTIFY_SOURCE=2]                                        
+                                 e/sdas/pipewire/build/pipewire=.                                  
+                                 , -fstack-protector-strong,                                       
+                                 -Wformat, -Werror=format-                                         
+                                 security, -Wdate-time,                                            
+                                 -D_FORTIFY_SOURCE=2]                                              
   c_std                          gnu99                            [none, c89, c99, c11, c17, c18,  C language standard to use
                                                                   c2x, gnu89, gnu99, gnu11,        
                                                                    gnu17, gnu18, gnu2x]            
   cpp_args                       [-g, -O2, -fdebug-prefix-map=/ho                                  Extra arguments passed to the cpp compiler
-                                 me/sdas/pw/21/pipewire_0.3.42.r2                                  
-                                 5.gc8fc79b=., -fstack-protector-                                  
-                                 strong, -Wformat,                                                 
-                                 -Werror=format-security, -Wdate-                                  
-                                 time, -D_FORTIFY_SOURCE=2]                                        
+                                 me/sdas/pipewire/build/pipewire=                                  
+                                 ., -fstack-protector-strong,                                      
+                                 -Wformat, -Werror=format-                                         
+                                 security, -Wdate-time,                                            
+                                 -D_FORTIFY_SOURCE=2]                                              
   cpp_debugstl                   false                            [true, false]                    STL debug mode
   cpp_eh                         default                          [none, default, a, s, sc]        C++ exception handling type.
   cpp_link_args                  [-Wl,-Bsymbolic-functions,                                        Extra arguments passed to the cpp linker
                                  -Wl,-z,relro, -Wl,-z,now,                                         
                                  -Wl,-z,defs, -Wl,--as-needed,                                     
                                  -g, -O2, -fdebug-prefix-map=/hom                                  
-                                 e/sdas/pw/21/pipewire_0.3.42.r25                                  
-                                 .gc8fc79b=., -fstack-protector-                                   
-                                 strong, -Wformat,                                                 
-                                 -Werror=format-security, -Wdate-                                  
-                                 time, -D_FORTIFY_SOURCE=2]                                        
+                                 e/sdas/pipewire/build/pipewire=.                                  
+                                 , -fstack-protector-strong,                                       
+                                 -Wformat, -Werror=format-                                         
+                                 security, -Wdate-time,                                            
+                                 -D_FORTIFY_SOURCE=2]                                              
   cpp_rtti                       true                             [true, false]                    Enable RTTI
-  cpp_std                        none                             [none, c++98, c++03, c++11,      C++ language standard to use
+  cpp_std                        c++17                            [none, c++98, c++03, c++11,      C++ language standard to use
                                                                   c++14, c++17, c++1z, c++2a,      
                                                                   c++20,                           
                                                                    gnu++03, gnu++11, gnu++14,      
@@ -148,6 +148,7 @@ Main project options:
   jack                           auto                             [enabled, disabled, auto]        Enable jack spa plugin integration
   jack-devel                     false                            [true, false]                    Install jack development files
   libcamera                      enabled                          [enabled, disabled, auto]        Enable libcamera spa plugin integration
+  libcanberra                    auto                             [enabled, disabled, auto]        Enable code that depends on libcanberra
   libjack-path                                                                                     Where to install the libjack.so library
   libpulse                       auto                             [enabled, disabled, auto]        Enable code that depends on libpulse
   libusb                         auto                             [enabled, disabled, auto]        Enable code that depends on libusb
@@ -168,6 +169,8 @@ Main project options:
   support                        enabled                          [enabled, disabled, auto]        Enable support spa plugin integration
   systemd                        auto                             [enabled, disabled, auto]        Enable systemd integration
   systemd-system-service         disabled                         [enabled, disabled, auto]        Install systemd system service file
+  systemd-system-unit-dir                                                                          Directory for system systemd units (defaults to
+                                                                                                   /usr/lib/systemd/system)
   systemd-user-service           enabled                          [enabled, disabled, auto]        Install systemd user service file (ignored without systemd)
   systemd-user-unit-dir                                                                            Directory for user systemd units (defaults to
                                                                                                    /usr/lib/systemd/user)
@@ -180,3 +183,4 @@ Main project options:
   videotestsrc                   enabled                          [enabled, disabled, auto]        Enable videotestsrc spa plugin integration
   volume                         enabled                          [enabled, disabled, auto]        Enable volume spa plugin integration
   vulkan                         enabled                          [enabled, disabled, auto]        Enable vulkan spa plugin integration
+  x11                            auto                             [enabled, disabled, auto]        Enable code that depends on X11
