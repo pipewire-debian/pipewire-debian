@@ -56,7 +56,9 @@
 
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **The `master` branch ( DEPRECATED ) Can be viewed as a mirror of Launchpad PPA. ~~I will keep sync this with the LP PPA~~. As this is `deprecated` use [Launchpad PPA section](#add-the-launchpad-ppa) in case of adding PPA alternatively.** 
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.** **CURRENTLY ONLY AMD64 BUILD IS SUPPORTED**
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is important as I will be using that branch to push new patches related to building PipeWire, blueman-git and their dependencies.** **CURRENTLY ONLY AMD64 BUILD IS SUPPORTED**                                                    
+
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **Find All(with old) Releases [PipeWire](https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream/+packages?field.name_filter=&field.status_filter=&field.series_filter=), [WirePlumber](https://launchpad.net/~pipewire-debian/+archive/ubuntu/wireplumber-upstream/+packages?field.name_filter=&field.status_filter=&field.series_filter=), [Meson-Ninja](https://launchpad.net/~pipewire-debian/+archive/ubuntu/meson-ninja/+packages?field.name_filter=&field.status_filter=&field.series_filter=), [Testing](https://launchpad.net/~pipewire-debian/+archive/ubuntu/testing/+packages?field.name_filter=&field.status_filter=&field.series_filter=)**                                                     
 
 ## 1. PPA Configuration
 
