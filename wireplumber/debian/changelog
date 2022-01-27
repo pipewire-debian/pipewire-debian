@@ -1,4 +1,4 @@
-wireplumber (0.4.7.r6.gef7504b-1~ubuntu20.04) focal; urgency=medium
+wireplumber (0.4.7.r23.gb0ddd6f-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
 
@@ -49,7 +49,60 @@ wireplumber (0.4.7.r6.gef7504b-1~ubuntu20.04) focal; urgency=medium
        configuration files (#158)
         
     
- -- Sourav Das <souravdas142@gmail.com>  Sat, 15 Jan 2022 23:20:43 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 27 Jan 2022 18:03:25 +0530
+
+wireplumber (0.4.7.r13.g411378d-1~ubuntu21.04) hirsute; urgency=medium
+
+  Debian Package - 
+
+    - Nothing
+
+  wireplumber - 
+    
+    0.4.6
+
+      -
+      - Fixed a lot of race condition bugs that would cause strange crashes or
+        many log messages being printed when streaming clients would connect and
+        disconnect very fast (#128, #78, ...)
+      - Improved the logic for selecting a default target device (#74)
+      - Fixed switching to headphones when the wired headphones are plugged in (#98)
+      - Fixed an issue where ``udevadm trigger`` would break wireplumber (#93)
+      - Fixed an issue where switching profiles of a device could kill client nodes
+      - Fixed briefly switching output to a secondary device when switching device
+        profiles (#85)
+      - Fixed ``wpctl status`` showing default device selections when dealing with
+        module-loopback virtual sinks and sources (#130)
+      - WirePlumber now ignores hidden files from the config directory (#104)
+      - Fixed an interoperability issue with jackdbus (pipewire#1846)
+      - Fixed an issue where pulseaudio tcp clients would not have permissions to
+        connect to PipeWire (pipewire#1863)
+      - Fixed a crash in the journald logger with NULL debug messages (#124)
+      - Enabled real-time priority for the bluetooth nodes to run in RT (#132)
+      - Made the default stream volume configurable
+      - Scripts are now also looked up in $XDG_CONFIG_HOME/wireplumber/scripts
+      - Updated documentation on configuring WirePlumber and fixed some more
+        documentation issues (#68)
+      - Added support for using strings as log level selectors in WIREPLUMBER_DEBUG
+      -
+  
+   0.4.7
+
+     - 
+     - Fixed a regression in 0.4.6 that caused the selection of the default audio
+       sources and sinks to be delayed until some event, which effectively caused
+       losing audio output in many circumstances (#148, #150, #151, #153)
+     - Fixed a regression in 0.4.6 that caused the echo-cancellation pipewire
+       module (and possibly others) to not work
+     - A default sink or source is now not selected if there is no available route
+       for it (#145)
+     - Fixed an issue where some clients would wait for a bit while seeking (#146)
+     - Fixed audio capture in the endpoints-based policy
+     - Fixed an issue that would cause certain lua scripts to error out with older
+       configuration files (#158)
+        
+    
+ -- Sourav Das <souravdas142@gmail.com>  Wed, 19 Jan 2022 22:43:36 +0530
 
 wireplumber (0.4.5.r46.ge04acbd-1~ubuntu20.04) focal; urgency=medium
 
