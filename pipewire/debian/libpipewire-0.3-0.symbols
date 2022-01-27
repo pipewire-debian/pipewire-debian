@@ -129,6 +129,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_global_get_object@Base 0.3.1
  pw_global_get_permissions@Base 0.3.1
  pw_global_get_properties@Base 0.3.1
+ pw_global_get_serial@Base 0.3.43
  pw_global_get_type@Base 0.3.1
  pw_global_get_version@Base 0.3.1
  pw_global_is_type@Base 0.3.1

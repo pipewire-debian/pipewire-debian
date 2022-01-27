@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.43-1 (https://pipewire-debian.github.io)
+pipewire 0.3.44-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
@@ -26,14 +26,19 @@ pipewire 0.3.43-1 (https://pipewire-debian.github.io)
  
   PipeWire - 
 
-    - Flatpak apps such as Ardour can now remove links again.
-    - Many fixes to pulse-server. Memory usage should be improved. Some
-      crashes are fixed. Underrun handling should work better. Better
-      compatibility with GStreamer based applications after seeking.
-    - Many of the samplerate and quantum changes bugs in previous releases
-      were fixed. This fixes some issues where the microphone would fail
-      to work.
-    - Many more small fixes and improvements all over the place.
+    - It is now possible to run a minimal PipeWire server without a session
+      manager, enough to run JACK clients.
+    - The maximum buffer size is now configurable and can be larger than
+      the previously hardcoded limit of 8192 samples. When using high sample
+      rates, the larger buffer size can avoid xruns.
+    - The default maximum latency was reduced from 170ms to 42ms. This should
+      improve overall latency for application that ask for a large latency,
+      such as notifications.
+    - Better JACK compatibility. Patchbays should now get less confused about
+      ports appearing and disappearing.
+    - Fix some bluetooth crashes.
+    - Fix some races in ALSA device detection.
+    - Many bug fixes and improvements all over the place.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
   .

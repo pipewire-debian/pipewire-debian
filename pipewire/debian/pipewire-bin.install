@@ -1,6 +1,7 @@
 usr/share/pipewire/client-rt.conf
 usr/share/pipewire/client.conf
 usr/share/pipewire/jack.conf
+usr/share/pipewire/minimal.conf
 usr/share/pipewire/pipewire.conf
 usr/share/pipewire/filter-chain/demonic.conf
 usr/share/pipewire/filter-chain/sink-dolby-surround.conf
