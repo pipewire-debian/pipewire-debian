@@ -1,8 +1,11 @@
-wireplumber (0.4.7.r23.gb0ddd6f-1~ubuntu20.04) focal; urgency=medium
+wireplumber (0.4.7.r24.gda023e1-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
 
-    - Nothing
+    - Disable '-Dsystemd-system-service' to match upstream
+    - Update 'libwireplumber-0.4-0.symbols' file
+    - Update 'wireplumber.install' file
+    - 'debian/patches/revert_devenv.patch' removed
 
   wireplumber - 
     

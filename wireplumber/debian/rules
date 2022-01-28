@@ -9,8 +9,7 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 AVAILABLE_CORE=$(shell nproc)
 
 override_dh_auto_configure:
-	dh_auto_configure --  --libexecdir=libexec -Dauto_features=enabled -Dsystem-lua=true -Dintrospection=enabled -Dsystemd-system-service=true  -Dsystemd-user-service=true  -Delogind=disabled 
+	dh_auto_configure --  --libexecdir=libexec -Dauto_features=enabled -Dsystem-lua=true -Dintrospection=enabled -Delogind=disabled 
 
 override_dh_auto_test:
 	LC_ALL=C.UTF-8 MESON_TESTTHREADS=${AVAILABLE_CORE}  meson test -C obj-${DEB_HOST_MULTIARCH}
-

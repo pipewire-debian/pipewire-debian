@@ -22,6 +22,10 @@ CHANGELOGS -
 
   Debian Package - 
 
+    - Disable '-Dsystemd-system-service' to match upstream
+    - Update 'libwireplumber-0.4-0.symbols' file
+    - Update 'wireplumber.install' file
+    - 'debian/patches/revert_devenv.patch' removed
     - 0.4.6 + 0.4.7 combined update
 
   wireplumber - 
