@@ -13,7 +13,7 @@ Build-Depends: cmake,
 # WirePlumber > 0.4.0 uses libglib2.0-dev (>= 2.62)
                libglib2.0-dev (>= 2.58),
                liblua5.3-dev,
-               libpipewire-0.3-dev (>= 0.3.41),
+               libpipewire-0.3-dev (>= 0.3.45),
                libspa-0.2-dev,
                meson (>= 0.60.0),
                pkg-config (>= 0.22),
@@ -31,12 +31,12 @@ Build-Depends: cmake,
                libspa-0.2-bluetooth,
                libspa-0.2-jack,
                libspa-0.2-modules,
-               pipewire (>= 0.3.41),
+               pipewire (>= 0.3.45),
                pipewire-audio-client-libraries,
                pipewire-doc,
                pipewire-pulse,
                pipewire-media-session,
-               pipewire-bin (>= 0.3.41),
+               pipewire-bin (>= 0.3.45),
                pipewire-locales,
                pipewire-tests,
 Standards-Version: 4.5.1
@@ -77,7 +77,8 @@ Package: wireplumber
 Architecture: linux-any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         pipewire (>= 0.3.41),
+         libwireplumber-0.4-0 (= ${binary:Version}),
+         pipewire (>= 0.3.45),
 Recommends: pipewire-pulse
 Section: video
 Description: modular session / policy manager for PipeWire
@@ -105,6 +106,7 @@ Description: modular session / policy manager for PipeWire - Documentation
 Package: gir1.2-wp-0.4
 Section: introspection
 Architecture: linux-any
+Multi-Arch: same
 Depends: ${misc:Depends},
          ${gir:Depends},
          ${shlibs:Depends},

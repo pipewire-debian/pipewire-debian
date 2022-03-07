@@ -509,8 +509,6 @@ libwireplumber-module-default-nodes.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.3.95
 libwireplumber-module-default-profile.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.3.95
-libwireplumber-module-device-activation.so libwireplumber-0.4-0 #MINVER#
- wireplumber__module_init@Base 0.3.95
 libwireplumber-module-file-monitor-api.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.4.2
 libwireplumber-module-logind.so libwireplumber-0.4-0 #MINVER#
@@ -525,8 +523,6 @@ libwireplumber-module-portal-permissionstore.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.3.95
 libwireplumber-module-reserve-device.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.3.95
-libwireplumber-module-route-settings-api.so libwireplumber-0.4-0 #MINVER#
- wireplumber__module_init@Base 0.4.3
 libwireplumber-module-si-audio-adapter.so libwireplumber-0.4-0 #MINVER#
  wireplumber__module_init@Base 0.3.95
 libwireplumber-module-si-audio-endpoint.so libwireplumber-0.4-0 #MINVER#
