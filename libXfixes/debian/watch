@@ -1,0 +1,4 @@
+#git=https://gitlab.freedesktop.org/xorg/lib/libXfixes
+version=3
+opts=pgpsigurlmangle=s/$/.sig/ \
+https://xorg.freedesktop.org/releases/individual/lib/ libXfixes-(.*)\.tar\.gz

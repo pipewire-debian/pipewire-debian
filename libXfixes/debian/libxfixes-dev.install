@@ -1,0 +1,5 @@
+usr/include/X11/*
+usr/lib/*/libXfixes.a
+usr/lib/*/libXfixes.so
+usr/lib/*/pkgconfig/xfixes.pc
+usr/share/man/man3/*

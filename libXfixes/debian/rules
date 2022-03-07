@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+PACKAGE = libxfixes3
+SHLIBS  = 1:5.0
+
+# Kill *.la files, and forget no-one:
+override_dh_install:
+	find debian/tmp -name '*.la' -delete
+	dh_install
+
+override_dh_missing:
+	dh_missing --fail-missing
+
+# Debug package:
+override_dh_strip:
+	dh_strip -p$(PACKAGE) --dbgsym-migration='$(PACKAGE)-dbg (<< 1:5.0.2)'
+	dh_strip -N$(PACKAGE)
+
+# Shlibs:
+override_dh_makeshlibs:
+	dh_makeshlibs -V"$(PACKAGE) (>= $(SHLIBS))" --add-udeb=$(PACKAGE)-udeb -- -c4
+
+%:
+	dh $@ --with quilt --builddirectory=build/

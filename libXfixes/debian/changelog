@@ -1,0 +1,304 @@
+libxfixes (1:6.0.0-3~ubuntu18.04) bionic; urgency=medium
+
+  * Add support for ubuntu < 22.04
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 06 Mar 2022 16:26:03 +0530
+
+libxfixes (1:6.0.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #994957)(LP: #1959363)
+  * Update signing-key.asc.
+  * symbols: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 02 Feb 2022 14:36:11 +0200
+
+libxfixes (1:5.0.3-2) unstable; urgency=medium
+
+  * control: Migrate to x11proto-dev.
+  * control: Use debhelper-compat, bump to 12.
+  * control: Bump policy to 4.5.0.
+  * control, watch: Update urls to debian/upstream git.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 14 Apr 2020 19:49:05 +0300
+
+libxfixes (1:5.0.3-1) unstable; urgency=medium
+
+  [ Andreas Boll ]
+  * New upstream release.
+    - Fixes CVE-2016-7944 (Closes: #840442).
+  * Update d/upstream/signing-key.asc with Matthieu Herrb's key.
+  * Fix Vcs-* URLs.
+  * Update a bunch of URLs in packaging to https.
+
+  [ Emilio Pozuelo Monfort ]
+  * Bump debhelper compat to 10.
+    + dh-autoreconf is now enabled by default.
+    + --disable-silent-rules is passed to configure automatically.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 05 Dec 2016 19:17:34 +0100
+
+libxfixes (1:5.0.2-1) sid; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Let uscan verify tarball signatures.
+  * Bump libx11-dev build-dep to 2:1.6 per configure.ac.
+  * Remove Drew and Cyril from Uploaders.
+  * Use https for Vcs-* control fields.
+  * Bump Standards-Version to 3.9.8.
+  * Migrate to automatic dbgsym package.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 26 Jun 2016 21:10:20 +0200
+
+libxfixes (1:5.0.1-2) sid; urgency=low
+
+  * Mark libxfixes-dev as Multi-arch: same (closes: #677657).
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 12 Jul 2014 17:26:54 +0200
+
+libxfixes (1:5.0.1-1) sid; urgency=low
+
+  * New upstream release.
+  * Remove useless dh_auto_install override.  debian/tmp is the default destdir
+    since we have more than one deb.
+  * Bump debhelper build-dep to 9 (to match compat).
+  * Disable silent build rules.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 30 Jun 2013 14:34:26 +0200
+
+libxfixes (1:5.0-4+deb7u1) wheezy-security; urgency=high
+
+  * integer overflow in XFixesGetCursorImage() [CVE-2013-1983]
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 14 May 2013 10:12:48 +0200
+
+libxfixes (1:5.0-4) unstable; urgency=low
+
+  * Team upload.
+  * Don't include debug symbols for the udeb in libxfixes3-dbg.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 12 Jun 2011 00:16:17 +0200
+
+libxfixes (1:5.0-3) unstable; urgency=low
+
+  * Team upload.
+
+  [ Steve Langasek ]
+  * Build for multiarch.
+
+  [ Julien Cristau ]
+  * Bump Standards-Version to 3.9.2.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 11 Jun 2011 16:01:20 +0200
+
+libxfixes (1:5.0-2) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * libxfixes3.symbols: no need to use a version for symbols that are there
+    forever (or close enough).
+  * Upload to unstable.
+
+  [ Cyril Brulebois ]
+  * Remove automake and libtool build-dep, they're pulled in by
+    dh-autoreconf.
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 29 Apr 2011 22:48:31 +0200
+
+libxfixes (1:5.0-1) experimental; urgency=low
+
+  * New upstream release:
+    - Pointer barriers.
+  * Bump x11proto-fixes-dev build-dep accordingly.
+  * Bump x11proto-fixes-dev dependency for libxfixes3-dev.
+  * Wrap Depends fields.
+  * Add debian/libxfixes3.symbols file.
+  * Pass -c4 to dh_makeshlibs to ensure updates are noticed.
+  * Update symbols file, and bump shlibs for new symbols:
+    - XFixesCreatePointerBarrier
+    - XFixesDestroyPointerBarrier
+  * Install manpages through dh_install.
+  * Use --fail-missing instead of --list-missing in dh_install for
+    additional safety.
+  * Switch to dh:
+    - Use debhelper 8.
+    - Use dh-autoreconf.
+  * Remove xsfbs accordingly.
+  * Update Uploaders list. Thanks, David!
+  * Add a placeholder series file.
+  * Bump Standards-Version to 3.9.1 (no changes needed).
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 09 Mar 2011 00:02:42 +0100
+
+libxfixes (1:4.0.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump xutils-dev build-dep for xorg-macros 1.8.
+  * Update debian/copyright from upstream COPYING.
+  * Bump Standards-Version to 3.9.0.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 11 Jul 2010 15:02:30 +0100
+
+libxfixes (1:4.0.4-2) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Rename the build directory to not include DEB_BUILD_GNU_TYPE for no
+    good reason.  Thanks, Colin Watson!
+
+  [ Brice Goglin ]
+  * Remove Jamey Sharp and Josh Triplett from Uploaders, closes: #568278.
+
+  [ Cyril Brulebois ]
+  * Use dh_makeshlibs’s -V argument instead of debian/libxfixes3.shlibs
+  * Add udeb needed for the graphical installer: libxfixes3-udeb.
+  * Bump the B-D on libx11-dev to ensure libxfixes3-udeb gets a dependency
+    on libx11-6-udeb.
+  * Bump Standards-Version from 3.8.3 to 3.8.4 (no changes needed).
+  * Add myself to Uploaders.
+
+ -- Cyril Brulebois <kibi@debian.org>  Thu, 11 Mar 2010 04:56:27 +0100
+
+libxfixes (1:4.0.4-1) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Remove Branden and Fabio from Uploaders with their permission.
+  * Don't build-depend on packages with a -1 debian revision.
+  * Drop the XS- prefix from the Vcs-* control fields.
+  * Remove x11-common (pre-)dependency from libxfixes3 and libxfixes3-dbg, as
+    it shouldn't be needed.
+  * Use ${binary:Version} instead of the equivalent but confusingly-named
+    ${Source-Version} in debian/control.
+  * Bump Standards-Version to 3.8.3.
+
+  [ Brice Goglin ]
+  * Add upstream URL to debian/copyright.
+  * Drop CVS header from debian/copyright.
+  * Add a link to www.X.org in the long description.
+  * Install the upstream ChangeLog.
+  * Add README.source, bump Standards-Version to 3.8.2.
+  * Use updated xsfbs, closes: #538584.
+  * Move -dbg package to section debug.
+
+  [ Timo Aaltonen ]
+  * New upstream release (closes: #556000).
+  * Run autoreconf on build. Add build-deps on automake, libtool
+    and xutils-dev.
+  * Parse space-separated DEB_BUILD_OPTIONS, and handle parallel=N.
+  * Drop pre-dependency on x11-common from libxfixes-dev. This was needed
+    for upgrades from sarge.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 25 Nov 2009 18:36:48 +0100
+
+libxfixes (1:4.0.3-2) unstable; urgency=low
+
+  * Add XS-Vcs-Browser.
+  * Upload to unstable.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 11 Apr 2007 14:58:20 +0200
+
+libxfixes (1:4.0.3-1) experimental; urgency=low
+
+  * Adjust Section values to what the override says.
+  * Update location of upstream repository from CVS to git in the long
+    descriptions.
+  * New upstream release:
+    + Drop all patches, applied upstream.
+  * Add XS-Vcs-Git header in debian/control.
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 16 Feb 2007 16:14:49 +0100
+
+libxfixes (1:4.0.1-5) unstable; urgency=low
+
+  * libXfixes: Unlocks the Display without having it locked (Closes:
+    #400446)
+  * Add Josh and myself to Uploaders.
+
+ -- Jamey Sharp <sharpone@debian.org>  Mon, 27 Nov 2006 15:19:42 -0800
+
+libxfixes (1:4.0.1-4) unstable; urgency=low
+
+  [ Drew Parsons ]
+  * Bring xfixes 4 into unstable (X11R7.1 transition).
+  * dbg package has priority extra.
+
+  [ David Nusinow ]
+  * Add 01_include_xlib.h.diff. Xfixes.h relies on the "Bool" define from
+    X11/Xlib.h but did not include that header (directly or indirectly)
+    (closes: #372756)
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 18 Sep 2006 18:09:51 -0400
+
+libxfixes (1:4.0.1-3) experimental; urgency=low
+
+  * Add shlibs file due to soversion bump (3.0.0 -> 3.1.0)
+
+ -- David Nusinow <dnusinow@debian.org>  Wed, 16 Aug 2006 20:22:46 +0000
+
+libxfixes (1:4.0.1-2) experimental; urgency=low
+
+  * Added versioned depends on x11proto-fixes-dev (>= 4.0-1).
+    Closes: #375124.
+  * Use dh_installman to install man pages.
+
+ -- Drew Parsons <dparsons@debian.org>  Mon, 14 Aug 2006 18:03:48 +1000
+
+libxfixes (1:4.0.1-1) experimental; urgency=low
+
+  * New upstream version.
+  * Standards version 3.7.2.
+  * Uses debhelper v5.
+
+ -- Drew Parsons <dparsons@debian.org>  Thu, 27 Jul 2006 23:49:26 +1000
+
+libxfixes (1:3.0.1.2-5) UNRELEASED; urgency=low
+
+  * Test for obj-$(DEB_BUILD_GNU_TYPE) before creating it during build;
+    idempotency fix.
+  * Run dh_install w/ --list-missing.
+
+ -- Andres Salomon <dilinger@debian.org>  Mon, 17 Jul 2006 01:20:55 -0400
+
+libxfixes (1:3.0.1.2-4) unstable; urgency=low
+
+  * Reorder makeshlib command in rules file so that ldconfig is run
+    properly. Thanks Drew Parsons and Steve Langasek.
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 18 Apr 2006 21:49:58 -0400
+
+libxfixes (1:3.0.1.2-3) unstable; urgency=low
+
+  * Remove x11-common depends from libxfixes-dev. Only use pre-depends. Thanks
+    Steve Langasek.
+  * Move x11-common depends to versioned pre-depends for libxfixes3.
+
+ -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 23:08:01 -0400
+
+libxfixes (1:3.0.1.2-2) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- David Nusinow <dnusinow@debian.org>  Thu, 23 Mar 2006 22:44:37 -0500
+
+libxfixes (1:3.0.1.2-1) experimental; urgency=low
+
+  * First upload to Debian
+
+ -- David Nusinow <dnusinow@debian.org>  Thu, 29 Dec 2005 20:51:40 -0500
+
+libxfixes (1:3.0.0-3) breezy; urgency=low
+
+  * Actually bump the Build-Depends this time.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Sat, 23 Jul 2005 00:52:21 +1000
+
+libxfixes (1:3.0.0-2) breezy; urgency=low
+
+  * Bump Build-Depends on libx11-dev to one which avoids the whole nasty
+    _XOPEN_SOURCE mess.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Fri, 22 Jul 2005 23:38:02 +1000
+
+libxfixes (1:3.0.0-1) breezy; urgency=low
+
+  * First libxfixes release.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Mon, 16 May 2005 22:10:17 +1000
