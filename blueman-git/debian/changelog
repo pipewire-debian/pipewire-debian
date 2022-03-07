@@ -1,4 +1,15 @@
-blueman-git (2.2.3-1~ubuntu21.04) hirsute; urgency=medium
+blueman-git (2.2.4-1~ubuntu20.04) focal; urgency=medium
+
+  * Dropped the PIN database
+
+  ### Bugs fixed
+
+    * blueman-mechanism accepted arbitrary file paths and returned the errors from trying to open them, see https://github.com/blueman-project/blueman/security/advisories/GHSA-3r9p-m5c8-8mw8
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Mon, 07 Mar 2022 10:21:36 +0530
+
+blueman-git (2.2.3-1~ubuntu20.04) focal; urgency=medium
 
   * Remove 'Recommends: pulseaudio-module-bluetooth'
     Remove 'libpulse-mainloop-glib0' from dependencies
