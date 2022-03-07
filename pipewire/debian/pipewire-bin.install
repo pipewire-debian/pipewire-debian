@@ -4,6 +4,7 @@ usr/share/pipewire/jack.conf
 usr/share/pipewire/minimal.conf
 usr/share/pipewire/pipewire.conf
 usr/share/pipewire/filter-chain/demonic.conf
+usr/share/pipewire/filter-chain/duplicate-FL.conf
 usr/share/pipewire/filter-chain/sink-dolby-surround.conf
 usr/share/pipewire/filter-chain/sink-eq6.conf
 usr/share/pipewire/filter-chain/sink-matrix-spatialiser.conf
@@ -41,4 +42,5 @@ usr/share/man/man1/pw-metadata.*
 usr/share/man/man1/pw-mididump.*
 usr/share/man/man1/pw-mon.*
 usr/share/man/man1/pw-profiler.*
+usr/share/man/man1/pw-top.*
 usr/share/man/man5

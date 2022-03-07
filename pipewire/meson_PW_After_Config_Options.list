@@ -1,6 +1,6 @@
 Core properties:
-  Source dir /home/sdas/pipewire/build/pipewire
-  Build dir  /home/sdas/pipewire/build/pipewire/obj-x86_64-linux-gnu
+  Source dir /home/sdas/pipewire/build1/pipewire
+  Build dir  /home/sdas/pipewire/build1/pipewire/obj-x86_64-linux-gnu
 
 Main project options:
   
@@ -9,7 +9,7 @@ Main project options:
   auto_features                  enabled                          [enabled, disabled, auto]        Override value of all 'auto' features
   backend                        ninja                            [ninja, vs, vs2010, vs2012,      Backend to use
                                                                   vs2013, vs2015, vs2017, vs2019,  
-                                                                   xcode]                          
+                                                                   vs2022, xcode]                  
   buildtype                      plain                            [plain, debug, debugoptimized,   Build type to use
                                                                   release, minsize, custom]        
   cmake_prefix_path              []                                                                List of additional prefixes for cmake to search
@@ -53,8 +53,8 @@ Main project options:
   Compiler options               Current Value                    Possible Values                  Description
   ----------------               -------------                    ---------------                  -----------
   c_args                         [-g, -O2, -fdebug-prefix-map=/ho                                  Extra arguments passed to the c compiler
-                                 me/sdas/pipewire/build/pipewire=                                  
-                                 ., -fstack-protector-strong,                                      
+                                 me/sdas/pipewire/build1/pipewire                                  
+                                 =., -fstack-protector-strong,                                     
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
                                  -D_FORTIFY_SOURCE=2]                                              
@@ -62,8 +62,8 @@ Main project options:
                                  -Wl,-z,relro, -Wl,-z,now,                                         
                                  -Wl,-z,defs, -Wl,--as-needed,                                     
                                  -g, -O2, -fdebug-prefix-map=/hom                                  
-                                 e/sdas/pipewire/build/pipewire=.                                  
-                                 , -fstack-protector-strong,                                       
+                                 e/sdas/pipewire/build1/pipewire=                                  
+                                 ., -fstack-protector-strong,                                      
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
                                  -D_FORTIFY_SOURCE=2]                                              
@@ -71,8 +71,8 @@ Main project options:
                                                                   c2x, gnu89, gnu99, gnu11,        
                                                                    gnu17, gnu18, gnu2x]            
   cpp_args                       [-g, -O2, -fdebug-prefix-map=/ho                                  Extra arguments passed to the cpp compiler
-                                 me/sdas/pipewire/build/pipewire=                                  
-                                 ., -fstack-protector-strong,                                      
+                                 me/sdas/pipewire/build1/pipewire                                  
+                                 =., -fstack-protector-strong,                                     
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
                                  -D_FORTIFY_SOURCE=2]                                              
@@ -82,8 +82,8 @@ Main project options:
                                  -Wl,-z,relro, -Wl,-z,now,                                         
                                  -Wl,-z,defs, -Wl,--as-needed,                                     
                                  -g, -O2, -fdebug-prefix-map=/hom                                  
-                                 e/sdas/pipewire/build/pipewire=.                                  
-                                 , -fstack-protector-strong,                                       
+                                 e/sdas/pipewire/build1/pipewire=                                  
+                                 ., -fstack-protector-strong,                                      
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
                                  -D_FORTIFY_SOURCE=2]                                              
@@ -184,3 +184,4 @@ Main project options:
   volume                         enabled                          [enabled, disabled, auto]        Enable volume spa plugin integration
   vulkan                         enabled                          [enabled, disabled, auto]        Enable vulkan spa plugin integration
   x11                            auto                             [enabled, disabled, auto]        Enable code that depends on X11
+  x11-xfixes                     auto                             [enabled, disabled, auto]        Enable code that depends on XFixes

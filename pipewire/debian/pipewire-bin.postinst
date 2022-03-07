@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.44-1 (https://pipewire-debian.github.io)
+pipewire 0.3.48-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
@@ -26,24 +26,25 @@ pipewire 0.3.44-1 (https://pipewire-debian.github.io)
  
   PipeWire - 
 
-    - It is now possible to run a minimal PipeWire server without a session
-      manager, enough to run JACK clients.
-    - The maximum buffer size is now configurable and can be larger than
-      the previously hardcoded limit of 8192 samples. When using high sample
-      rates, the larger buffer size can avoid xruns.
-    - The default maximum latency was reduced from 170ms to 42ms. This should
-      improve overall latency for application that ask for a large latency,
-      such as notifications.
-    - Better JACK compatibility. Patchbays should now get less confused about
-      ports appearing and disappearing.
-    - Fix some bluetooth crashes.
-    - Fix some races in ALSA device detection.
-    - Many bug fixes and improvements all over the place.
+    - Fix IEC958 passthrough again.
+    - Fix pulse-server crashes when playing a sample.
+    - Support for more a more advanced upmixing algorithm.
+    - filter-chain now supports arbitrary many ports.
+    - Fix multichannel support in WINE. (with new WirePlumber).
+    - Many bugfixes and improvements.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
   .
   .
+
   .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+
 
 
 Troubleshooting - 

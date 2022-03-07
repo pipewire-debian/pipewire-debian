@@ -13,6 +13,9 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_conf_save_state@Base 0.3.22
  pw_context_add_listener@Base 0.3.1
  pw_context_add_spa_lib@Base 0.3.1
+ pw_context_conf_section_for_each@Base 0.3.44
+ pw_context_conf_section_match_rules@Base 0.3.45
+ pw_context_conf_update_props@Base 0.3.44
  pw_context_connect@Base 0.3.1
  pw_context_connect_fd@Base 0.3.1
  pw_context_connect_self@Base 0.3.1
@@ -204,6 +207,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_impl_module_get_global@Base 0.3.1
  pw_impl_module_get_info@Base 0.3.1
  pw_impl_module_get_properties@Base 0.3.1
+ pw_impl_module_schedule_destroy@Base 0.3.48
  pw_impl_module_update_properties@Base 0.3.1
  pw_impl_node_add_listener@Base 0.3.1
  pw_impl_node_destroy@Base 0.3.1
