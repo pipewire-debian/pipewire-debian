@@ -1,0 +1,70 @@
+xorgproto (2021.5-3~ubuntu20.04) focal; urgency=medium
+
+  * Add support to all ubuntu < 22.04
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 06 Mar 2022 12:59:12 +0530
+
+xorgproto (2021.5-1) unstable; urgency=medium
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * Update signing-key.asc.
+
+  [ Jochen Sprickerhof ]
+  * Remove transition packages only in oldstable
+  * Make Provides versioned (Closes: #926376)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 16 Sep 2021 16:52:37 +0300
+
+xorgproto (2020.1-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #953032)
+  * control, rules: Drop obsolete transitional packages which have no
+    reverse dependencies left:
+    - x11proto-bigreqs-dev
+    - x11proto-composite-dev
+    - x11proto-damage-dev
+    - x11proto-dmx-dev
+    - x11proto-dri3-dev
+    - x11proto-fixes-dev
+    - x11proto-resource-dev
+    - x11proto-xcmisc-dev
+    - x11proto-xf86bigfont-dev
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 15 Apr 2020 00:18:42 +0300
+
+xorgproto (2019.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Use debhelper-compat, bump to 12.
+  * rules, install: Add new docs, remove more cruft.
+  * watch: Update upstream vcs url.
+  * control: Bump policy to 4.5.0.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 26 Feb 2020 18:33:26 +0200
+
+xorgproto (2018.4-4) unstable; urgency=medium
+
+  * Fix Vcs-* control fields.
+  * Stop shipping obsolete PROXY_MANAGEMENT, DEC-XTRAP and XFree86-Misc
+    headers (closes: #893975)
+  * Don't pretend to replace/provide x11proto-print-dev, we aren't shipping
+    those headers.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 03 Apr 2018 10:19:04 +0200
+
+xorgproto (2018.4-3) unstable; urgency=medium
+
+  [ Helmut Grohne ]
+  * Mark all those transitional dummy packages that forward to
+    x11proto-dev Multi-Arch: foreign. (Closes: #893943)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 24 Mar 2018 10:00:13 +0200
+
+xorgproto (2018.4-2) unstable; urgency=medium
+
+  * Initial release. (Closes: #890973)
+    - upstream merged all protocol headers into a single repository,
+      this replaces all now-obsolete x11proto-* packages
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 02 Mar 2018 11:46:05 +0200

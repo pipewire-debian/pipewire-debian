@@ -1,0 +1,225 @@
+Source: xorgproto
+Section: x11
+Priority: optional
+Maintainer: Sourav Das <souravdas142@gmail.com>
+XSBC-Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Build-Depends:
+ debhelper-compat (= 12),
+ quilt,
+ xutils-dev (>= 1:7.6+2),
+ pkg-config,
+# specs:
+ xmlto,
+ xorg-sgml-doctools (>= 1:1.8),
+ w3m,
+ xsltproc,
+Standards-Version: 4.5.0
+Vcs-Git: https://salsa.debian.org/xorg-team/proto/xorgproto.git
+Vcs-Browser: https://salsa.debian.org/xorg-team/proto/xorgproto.git
+Homepage: https://www.x.org/
+
+Package: x11proto-dev
+Architecture: all
+Depends:
+ ${misc:Depends},
+ xorg-sgml-doctools (>= 1:1.5),
+Multi-Arch: foreign
+Breaks:
+ x11proto-core-dev (<< 2018.3),
+ x11proto-dri2-dev (<< 2018.3),
+ x11proto-fonts-dev (<< 2018.3),
+ x11proto-gl-dev (<< 2018.3),
+ x11proto-input-dev (<< 2018.3),
+ x11proto-kb-dev (<< 2018.3),
+ x11proto-present-dev (<< 2018.3),
+ x11proto-randr-dev (<< 2018.3),
+ x11proto-record-dev (<< 2018.3),
+ x11proto-render-dev (<< 2:2018.3),
+ x11proto-scrnsaver-dev (<< 2018.3),
+ x11proto-video-dev (<< 2018.3),
+ x11proto-xext-dev (<< 2018.3),
+ x11proto-xf86dga-dev (<< 2018.3),
+ x11proto-xf86dri-dev (<< 2018.3),
+ x11proto-xf86vidmode-dev (<< 2018.3),
+ x11proto-xinerama-dev (<< 2018.3),
+Provides:
+ x11proto-core-dev (= ${binary:Version}),
+ x11proto-dri2-dev (= ${binary:Version}),
+ x11proto-fonts-dev (= ${binary:Version}),
+ x11proto-gl-dev (= ${binary:Version}),
+ x11proto-input-dev (= ${binary:Version}),
+ x11proto-kb-dev (= ${binary:Version}),
+ x11proto-present-dev (= ${binary:Version}),
+ x11proto-randr-dev (= ${binary:Version}),
+ x11proto-record-dev (= ${binary:Version}),
+ x11proto-render-dev (= ${binary:Version}),
+ x11proto-scrnsaver-dev (= ${binary:Version}),
+ x11proto-video-dev (= ${binary:Version}),
+ x11proto-xext-dev (= ${binary:Version}),
+ x11proto-xf86dga-dev (= ${binary:Version}),
+ x11proto-xf86dri-dev (= ${binary:Version}),
+ x11proto-xf86vidmode-dev (= ${binary:Version}),
+ x11proto-xinerama-dev (= ${binary:Version}),
+Replaces:
+ x11proto-core-dev (<< 2018.3),
+ x11proto-dri2-dev (<< 2018.3),
+ x11proto-fonts-dev (<< 2018.3),
+ x11proto-gl-dev (<< 2018.3),
+ x11proto-input-dev (<< 2018.3),
+ x11proto-kb-dev (<< 2018.3),
+ x11proto-present-dev (<< 2018.3),
+ x11proto-randr-dev (<< 2018.3),
+ x11proto-record-dev (<< 2018.3),
+ x11proto-render-dev (<< 2:2018.3),
+ x11proto-scrnsaver-dev (<< 2018.3),
+ x11proto-video-dev (<< 2018.3),
+ x11proto-xext-dev (<< 2018.3),
+ x11proto-xf86dga-dev (<< 2018.3),
+ x11proto-xf86dri-dev (<< 2018.3),
+ x11proto-xf86vidmode-dev (<< 2018.3),
+ x11proto-xinerama-dev (<< 2018.3),
+Description: X11 extension protocols and auxiliary headers
+ This package provides development headers describing the wire protocol
+ for the X11 core and extension protocols, and also provides a number of
+ utility headers, used to abstract OS-specific functions.
+ .
+ More information about X.Org can be found at:
+ <URL:https://www.X.org>
+ .
+ This package is built from the X.org xorgproto module.
+
+Package: x11proto-core-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-dri2-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-fonts-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-gl-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-input-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-kb-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-present-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-randr-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-record-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-render-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-scrnsaver-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-video-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-xext-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-xf86dga-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-xf86dri-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-xf86vidmode-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: x11proto-xinerama-dev
+Section: oldlibs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, x11proto-dev
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.

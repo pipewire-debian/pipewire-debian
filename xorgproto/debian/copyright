@@ -1,0 +1,92 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: xorgproto
+Source: https://xorg.freedesktop.org/releases/individual/proto/
+
+Files: *
+Copyright:
+	1985-2003 The Open Group
+	1986-2002 Hewlett-Packard Company
+	1987 Apollo Computer Inc., Chelmsford, Massachusetts.
+	1987-1997 Digital Equipment Corporation, Maynard, Massachusetts.
+	1988-1995 Network Computing Devices, Inc.
+	1991-2006 Oracle and/or its affiliates. All rights reserved.
+	1993-1997 Silicon Graphics, Inc. All Rights Reserved.
+	1992 X Consortium
+	1995 Kaleb S. KEITHLEY
+	1996 Fujitsu Limited
+	1996 Hitachi, Ltd.
+	1996 International Business Machines Corp.
+	1996 Novell, Inc.
+	1998-1999 Precision Insight, Inc., Cedar Park, Texas.
+	1998-1999 Shunsuke Akiyama <akiyama@jp.FreeBSD.org>.
+	1998-1999 X-TrueType Server Project, All rights reserved.
+	1999-2002 The XFree86 Project Inc.
+	2000 Compaq Computer Corporation
+	2000 SuSE, Inc.
+	2000 VA Linux Systems, Inc.
+	2001-2013 Keith Packard
+	2002-2010 Red Hat, Inc.
+	2002-2009 Apple, Inc.
+	2004 Sun Microsystems, Inc. 
+	2004 The Unichrome Project. All rights reserved.
+	2006 Intel Corporation
+	2007-2008 Peter Hutterer
+	2007 Eric Anholt
+License: MIT
+
+Files: include/GL/*
+Copyright: 1991-2000 Silicon Graphics, Inc.
+License: SGI
+
+Files: debian
+Copyright: Timo Aaltonen <tjaalton@debian.org>
+License: MIT
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the
+ Software is furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice (including the next
+ paragraph) shall be included in all copies or substantial portions of the
+ Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.
+
+License: SGI
+ SGI FREE SOFTWARE LICENSE B (Version 2.0, Sept. 18, 2008)
+ Copyright (C) 1991-2000 Silicon Graphics, Inc. All Rights Reserved.
+ .
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the
+ Software is furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice including the dates of first publication and
+ either this permission notice or a reference to
+ http://oss.sgi.com/projects/FreeB/
+ shall be included in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ SILICON GRAPHICS, INC. BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+ OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+ .
+ Except as contained in this notice, the name of Silicon Graphics, Inc.
+ shall not be used in advertising or otherwise to promote the sale, use or
+ other dealings in this Software without prior written authorization from
+ Silicon Graphics, Inc.

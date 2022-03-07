@@ -1,0 +1,4 @@
+#git=https://gitlab.freedesktop.org/xorg/proto/xorgproto.git
+version=3
+opts=pgpsigurlmangle=s/$/.sig/ \
+https://xorg.freedesktop.org/releases/individual/proto/ xorgproto-(.*)\.tar\.gz
