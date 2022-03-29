@@ -165,6 +165,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_properties_copy@Base 0.3.95
  wp_properties_ensure_unique_owner@Base 0.3.95
  wp_properties_get@Base 0.3.95
+ wp_properties_get_count@Base 0.4.9
  wp_properties_get_type@Base 0.3.95
  wp_properties_item_get_key@Base 0.4.2
  wp_properties_item_get_type@Base 0.4.2
@@ -304,6 +305,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_spa_json_new_boolean@Base 0.4.7
  wp_spa_json_new_float@Base 0.4.7
  wp_spa_json_new_from_string@Base 0.4.7
+ wp_spa_json_new_from_stringn@Base 0.4.9
  wp_spa_json_new_int@Base 0.4.7
  wp_spa_json_new_iterator@Base 0.4.7
  wp_spa_json_new_null@Base 0.4.7

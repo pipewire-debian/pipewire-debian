@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-wireplumber 0.4.8 (https://github.com/pipewire-debian/pipewire-debian)
+wireplumber 0.4.9 (https://github.com/pipewire-debian/pipewire-debian)
  
 
 CHANGELOGS - 
@@ -24,45 +24,38 @@ CHANGELOGS -
 
     - Nothing
 
-
   wireplumber - 
 
-    - Added bluetooth profile auto-switching support. Bluetooth headsets will now
-      automatically switch to the HSP/HFP profile when making a call and go back
-      to the A2DP profile after the call ends (#90)
-  
-    - Added an option (enabled by default) to auto-switch to echo-cancel virtual
-      device nodes when the echo-cancel module is loaded in pipewire-pulse, if
-      there is no other configured default node
-  
     Fixes:
-    
-      - Fixed a regression that prevented nodes from being selected as default when
-        using the pro-audio profile (#163)
-      - Fixed a regression that caused encoded audio streams to stall (#178)
-      - Fixed restoring bluetooth device profiles
-    
-    Library:
-    
-      - A new WpSpaJson API was added as a front-end to spa-json. This is also
-        exposed to Lua, so that Lua scripts can natively parse and write data in
-        the spa-json format
-    
+
+      - restore-stream no longer crashes if properties for it are not present
+        in the config (#190)
+      - spa-json no longer crashes on non-x86 architectures
+      - Fixed a potential crash in the bluetooth auto-switch module (#193)
+      - Fixed a race condition that would cause Zoom desktop audio sharing to fail
+        (#197)
+      - Surround sound in some games is now exposed properly (pipewire#876)
+      - Fixed a race condition that would cause the default source & sink to not
+        be set at startup
+      - policy-node now supports the 'target.object' key on streams and metadata
+      - Multiple fixes in policy-node that make the logic in some cases behave
+        more like PulseAudio (regarding nodes with the dont-reconnect property
+        and regarding following the default source/sink)
+      - Fixed a bug with parsing unquoted strings in spa-json
+
     Misc:
-    
-      - wpctl can now list the configured default sources and sinks and has a new
-        command that allows clearing those configured defaults, so that wireplumber
-        goes back to choosing the default nodes based on node priorities
-      - The restore-stream script now has its own configuration file in
-        main.lua.d/40-stream-defaults.lua and has independent options for
-        restoring properties and target nodes
-      - The restore-stream script now supports rule-based configuration to disable
-        restoring volume properties and/or target nodes for specific streams,
-        useful for applications that misbehave when we restore those (see #169)
-      - policy-endpoint now assigns the "Default" role to any stream that does not
-        have a role, so that it can be linked to a pre-configured endpoint
-      - The route-settings-api module was dropped in favor of dealing with json
-        natively in Lua, now that the API exists
+
+      - The policy now supports configuring "persistent" device profiles. If a
+        device is *manually* set to one of these profiles, then it will not be
+        auto-switched to another profile automatically under any circumstances
+        (#138, #204)
+      - The device-activation module was re-written in lua
+      - Brave, Edge, Vivaldi and Telegram were added in the bluetooth auto-switch
+        applications list
+      - ALSA nodes now use the PCM name to populate node.nick, which is useful
+        at least on HDA cards using UCM, where all outputs (analog, hdmi, etc)
+        are exposesd as nodes on a single profile
+      - An icon name is now set on the properties of bluetooth devices
  .    
  .
  .
