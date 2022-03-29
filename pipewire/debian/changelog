@@ -1,4 +1,37 @@
-pipewire (0.3.48.r23.g8673f8c-2~ubuntu20.04) focal; urgency=medium
+pipewire (0.3.49-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - move out pipewire-media-session to a new package
+    - Recommending using wireplumber. add ppa :
+      ppa:pipewire-debian/wireplumber-upstream
+    - Recommending rt-kit and dbus-session-managers
+ 
+  PipeWire - 
+
+    - Sample rate switching should work again.
+    - pw-dot can now use the output of pw-dump to render a graph.
+    - Bluetooth A2DP streaming was improved that would reduce stuttering on
+      some devices.
+    - A JACK bug was fixed that would sometimes make it impossible to add more
+      tracks in Ardour. (#1714)
+    - Many bugfixes and improvements.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  .
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 29 Mar 2022 16:41:16 +0530
+
+pipewire (0.3.48.r23.g8673f8c-3~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
 
@@ -28,7 +61,7 @@ pipewire (0.3.48.r23.g8673f8c-2~ubuntu20.04) focal; urgency=medium
   .
   .
 
- -- Sourav Das <souravdas142@gmail.com>  Sun, 06 Mar 2022 11:54:02 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 08 Mar 2022 06:58:08 +0530
 
 pipewire (0.3.47-1~ubuntu20.04) focal; urgency=medium
 
