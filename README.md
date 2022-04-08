@@ -182,13 +182,14 @@ sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.
 # Additionally, if you want to install `pipewire-doc`
 
 sudo apt install pipewire-doc
-
-# For WirePlumber (Recommended)
-
+```
+Install **ONE** of the following two options:
+1. For **WirePlumber (Recommended)**
+```bash
 sudo apt-get install wireplumber{,-doc} gir1.2-wp-0.4 libwireplumber-0.4-{0,dev}
-
-# For pipewire-media-session (installing WirePlumber is recommended)
-
+```
+2. For **pipewire-media-session (Optional)**
+```bash
 sudo apt-get install pipewire-media-session
 ```
 
