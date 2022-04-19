@@ -183,6 +183,15 @@ sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.
 
 sudo apt install pipewire-doc
 ```
+
+[Note]: From PipeWire 0.3.50 package `libpipewire-module-x11-bell` split from `libpipewire-0.3-modules`
+under `Wayland` package `libpipewire-module-x11-bell` is not required. If you are using `X11` server
+Please install that package to support `x11-bell` feature.
+
+```bash
+sudo apt-get install libpipewire-module-x11-bell
+```
+
 Install **ONE** of the following two options:
 1. For **WirePlumber (Recommended)**
 ```bash
