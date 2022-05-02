@@ -1,3 +1,75 @@
+pipewire (0.3.51-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - move out pipewire-media-session to a new package
+    - move out pipewire-x11-bell to a new package (=> NEW)
+    - Recommending using wireplumber. add ppa :
+      ppa:pipewire-debian/wireplumber-upstream
+    - Recommending rt-kit and dbus-session-managers
+ 
+  PipeWire - 
+
+    - Improved graph reconfiguration.
+    - Extra configuration options for streams and filters with config
+      rules and environment variable.
+    - Improve module-pulse-tunnel latency, stability and error recovery.
+    - pw-top, pw-cli and pw-link improvements.
+    - Fix a channelmixer upmixing clipping issue.
+    - The ROC module has seen many improvements.
+    - Many more bugfixes and improvements.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  .
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 28 Apr 2022 17:11:13 +0530
+
+pipewire (0.3.50.r15.gc73c852-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - move out pipewire-media-session to a new package
+    - move out pipewire-x11-bell to a new package (=> NEW)
+    - Recommending using wireplumber. add ppa :
+      ppa:pipewire-debian/wireplumber-upstream
+    - Recommending rt-kit and dbus-session-managers
+ 
+  PipeWire - 
+
+    - pw-stream can now report more timing information and can suggest
+      the optimal number of samples to queue for playback.
+    - pw-dot now works again..
+    - module-pulse-tunnel latency was improved.
+    - WINE applications using the JACK backend should no longer crash.
+    - The channelmixer defaults are improved and the muffled sound when
+      playing back 5.1 and 7.1 material has been fixed.
+    - Many fixes and improvements.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  .
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 19 Apr 2022 07:56:17 +0530
+
 pipewire (0.3.49-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

@@ -94,8 +94,11 @@ Package: libpipewire-0.3-modules
 Architecture: linux-any
 Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Breaks: pipewire (<< 0.3.5)
-Replaces: pipewire (<< 0.3.5)
+Suggests: libpipewire-module-x11-bell
+Breaks: pipewire (<< 0.3.5),
+        libpipewire-0.3-modules (<< 0.3.50),
+Replaces: pipewire (<< 0.3.5),
+        libpipewire-0.3-modules (<< 0.3.50),
 Description: libraries for the PipeWire multimedia server - modules
  PipeWire is a server and user space API to deal with multimedia
  pipelines. This includes:
@@ -106,6 +109,27 @@ Description: libraries for the PipeWire multimedia server - modules
   - Generating graphs for audio and video processing.
  .
  This package contains modules used by the PipeWire server and by clients,
+ and should not normally be depended on directly. PipeWire clients should
+ depend on the pipewire package instead.
+
+Package: libpipewire-module-x11-bell
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: pipewire (<< 0.3.5),
+        libpipewire-0.3-modules (<< 0.3.50),
+Replaces: pipewire (<< 0.3.5),
+         libpipewire-0.3-modules (<< 0.3.50),
+Description: libraries for the PipeWire multimedia server - modules
+ PipeWire is a server and user space API to deal with multimedia
+ pipelines. This includes:
+ .
+  - Making available sources of video (such as from a capture devices or
+    application provided streams) and multiplexing this with clients.
+  - Accessing sources of video for consumption.
+  - Generating graphs for audio and video processing.
+ .
+ This package contains x11-bell module used by the PipeWire server and by clients,
  and should not normally be depended on directly. PipeWire clients should
  depend on the pipewire package instead.
 
