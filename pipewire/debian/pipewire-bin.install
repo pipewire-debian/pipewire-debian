@@ -38,6 +38,7 @@ usr/share/man/man1/pipewire-pulse.*
 usr/share/man/man1/pw-cat.*
 usr/share/man/man1/pw-cli.*
 usr/share/man/man1/pw-dot.*
+usr/share/man/man1/pw-link.*
 usr/share/man/man1/pw-metadata.*
 usr/share/man/man1/pw-mididump.*
 usr/share/man/man1/pw-mon.*
