@@ -75,6 +75,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_data_loop_in_thread@Base 0.3.1
  pw_data_loop_invoke@Base 0.3.5
  pw_data_loop_new@Base 0.3.1
+ pw_data_loop_set_thread_utils@Base 0.3.50
  pw_data_loop_start@Base 0.3.1
  pw_data_loop_stop@Base 0.3.1
  pw_data_loop_wait@Base 0.3.1
@@ -384,6 +385,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_stream_get_properties@Base 0.3.1
  pw_stream_get_state@Base 0.3.1
  pw_stream_get_time@Base 0.3.1
+ pw_stream_get_time_n@Base 0.3.50
  pw_stream_is_driving@Base 0.3.34
  pw_stream_new@Base 0.3.1
  pw_stream_new_simple@Base 0.3.1
@@ -396,6 +398,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_stream_update_params@Base 0.3.1
  pw_stream_update_properties@Base 0.3.1
  pw_strip@Base 0.3.1
+ pw_thread_fill_attr@Base 0.3.50
  pw_thread_loop_accept@Base 0.3.1
  pw_thread_loop_add_listener@Base 0.3.1
  pw_thread_loop_destroy@Base 0.3.1
