@@ -1,0 +1,26 @@
+Index: blueman-2.2.1/blueman/main/indicators/AppIndicator.py
+===================================================================
+--- blueman-2.2.1.orig/blueman/main/indicators/AppIndicator.py
++++ blueman-2.2.1/blueman/main/indicators/AppIndicator.py
+@@ -4,5 +4,5 @@
+ 
++try:
++    gi.require_version('AyatanaAppIndicator3', '0.1')
++    from gi.repository import AyatanaAppIndicator3 as AppIndicator3
++except ModuleNotFoundError:
+     gi.require_version('AppIndicator3', '0.1')
+     from gi.repository import AppIndicator3
+ from blueman.main.indicators.GtkStatusIcon import build_menu
+ 
+Index: blueman-2.2.1/blueman/plugins/applet/AppIndicator.py
+===================================================================
+--- blueman-2.2.1.orig/blueman/plugins/applet/AppIndicator.py
++++ blueman-2.2.1/blueman/plugins/applet/AppIndicator.py
+@@ -9,6 +9,6 @@ from blueman.plugins.AppletPlugin import
+
+ try:
+-    require_version('AppIndicator3', '0.1')
++    require_version('AyatanaAppIndicator3', '0.1')
+ except ValueError:
++    require_version('AppIndicator3', '0.1')
+ 
