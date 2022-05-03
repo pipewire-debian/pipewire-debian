@@ -15,3 +15,4 @@ rm_conffile /etc/pipewire/filter-chain/sink-dolby-surround.conf 0.3.28-1~ pipewi
 rm_conffile /etc/pipewire/filter-chain/sink-eq6.conf 0.3.28-1~ pipewire-bin
 rm_conffile /etc/pipewire/filter-chain/sink-matrix-spatialiser.conf 0.3.28-1~ pipewire-bin
 rm_conffile /etc/pipewire/filter-chain/source-rnnoise.conf 0.3.28-1~ pipewire-bin
+rm_conffile /etc/xdg/autostart/pipewire.desktop 0.3.51-2~ pipewire-bin
