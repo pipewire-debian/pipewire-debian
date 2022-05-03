@@ -268,6 +268,7 @@ Breaks: pipewire-bin (<< 0.3.28-2)
 Depends: pipewire (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
+Suggests: pulseaudio-utils
 Description: PipeWire PulseAudio daemon
  PipeWire is a server and user space API to deal with multimedia
  pipelines. This includes:
