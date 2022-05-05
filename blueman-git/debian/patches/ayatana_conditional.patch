@@ -1,9 +1,11 @@
-Index: blueman-2.2.1/blueman/main/indicators/AppIndicator.py
+Index: blueman-git-2.2.4/blueman/main/indicators/AppIndicator.py
 ===================================================================
---- blueman-2.2.1.orig/blueman/main/indicators/AppIndicator.py
-+++ blueman-2.2.1/blueman/main/indicators/AppIndicator.py
-@@ -4,6 +4,10 @@
-
+--- blueman-git-2.2.4.orig/blueman/main/indicators/AppIndicator.py
++++ blueman-git-2.2.4/blueman/main/indicators/AppIndicator.py
+@@ -2,8 +2,13 @@ from typing import Iterable, TYPE_CHECKI
+ 
+ import gi
+ 
 -gi.require_version('AppIndicator3', '0.1')
 -from gi.repository import AppIndicator3
 +try:
@@ -12,16 +14,26 @@ Index: blueman-2.2.1/blueman/main/indicators/AppIndicator.py
 +except ModuleNotFoundError:
 +    gi.require_version('AppIndicator3', '0.1')
 +    from gi.repository import AppIndicator3
-
++
+ from blueman.main.indicators.GtkStatusIcon import build_menu
  
-Index: blueman-2.2.1/blueman/plugins/applet/AppIndicator.py
+ if TYPE_CHECKING:
+Index: blueman-git-2.2.4/blueman/plugins/applet/AppIndicator.py
 ===================================================================
---- blueman-2.2.1.orig/blueman/plugins/applet/AppIndicator.py
-+++ blueman-2.2.1/blueman/plugins/applet/AppIndicator.py
-@@ -9,12 +9,13 @@ from blueman.plugins.AppletPlugin import
-
+--- blueman-git-2.2.4.orig/blueman/plugins/applet/AppIndicator.py
++++ blueman-git-2.2.4/blueman/plugins/applet/AppIndicator.py
+@@ -8,9 +8,12 @@ from gi import require_version
+ from blueman.plugins.applet.StatusIcon import StatusIconImplementationProvider
+ 
  try:
 -    require_version('AppIndicator3', '0.1')
 +    require_version('AyatanaAppIndicator3', '0.1')
  except ValueError:
-+    require_version('AppIndicator3', '0.1')
+-    raise ImportError("AppIndicator3 not found")
++    try:
++        require_version('AppIndicator3', '0.1')
++    except ValueError:
++        raise ImportError("AppIndicator3 not found")
+ 
+ 
+ class AppIndicator(AppletPlugin, StatusIconImplementationProvider):
