@@ -1,3 +1,13 @@
+blueman-git (2.2.4-2~ubuntu20.04) focal; urgency=medium
+
+  * Make 'ayatanaappindicator' default instead 'appindicator'
+    if 'yatanaappindicator' package not found fallback to 'appindicator' 
+
+  * Add patch to 'debian/patches/ayatana_conditional.patch' for 
+    related changes
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 05 May 2022 15:34:40 +0530
+
 blueman-git (2.2.4-1~ubuntu20.04) focal; urgency=medium
 
   * Dropped the PIN database
