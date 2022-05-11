@@ -11,8 +11,8 @@ Index: wireplumber_0.4.4.r19.g4d5f959/src/systemd/system/wireplumber.service.in
 +# have version 237, and have no way to upgrade. So commented out.
 +# SystemCallFilter=@system-service
  Type=simple
+ AmbientCapabilities=CAP_SYS_NICE
  ExecStart=@WP_BINARY@
- Restart=on-failure
 Index: wireplumber_0.4.4.r19.g4d5f959/src/systemd/system/wireplumber@.service.in
 ===================================================================
 --- wireplumber_0.4.4.r19.g4d5f959.orig/src/systemd/system/wireplumber@.service.in	2021-11-04 09:36:29.000000000 +0530
@@ -26,8 +26,8 @@ Index: wireplumber_0.4.4.r19.g4d5f959/src/systemd/system/wireplumber@.service.in
 +# have version 237, and have no way to upgrade. So commented out.
 +# SystemCallFilter=@system-service
  Type=simple
+ AmbientCapabilities=CAP_SYS_NICE
  ExecStart=@WP_BINARY@ -c %i.conf
- Restart=on-failure
 Index: wireplumber_0.4.4.r19.g4d5f959/src/systemd/user/wireplumber.service.in
 ===================================================================
 --- wireplumber_0.4.4.r19.g4d5f959.orig/src/systemd/user/wireplumber.service.in	2021-11-04 09:36:29.000000000 +0530

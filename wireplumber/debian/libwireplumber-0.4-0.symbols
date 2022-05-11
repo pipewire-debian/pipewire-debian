@@ -225,7 +225,9 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_si_acquisition_get_type@Base 0.3.95
  wp_si_acquisition_release@Base 0.3.95
  wp_si_adapter_get_ports_format@Base 0.3.96
+ wp_si_adapter_get_ports_state@Base 0.4.10
  wp_si_adapter_get_type@Base 0.3.96
+ wp_si_adapter_ports_state_get_type@Base 0.4.10
  wp_si_adapter_set_ports_format@Base 0.3.96
  wp_si_adapter_set_ports_format_finish@Base 0.3.96
  wp_si_endpoint_get_properties@Base 0.3.95
