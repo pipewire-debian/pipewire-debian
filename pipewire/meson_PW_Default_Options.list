@@ -1,6 +1,6 @@
 Core properties:
-  Source dir /home/sdas/pipewire/build2/pipewire
-  Build dir  /home/sdas/pipewire/build2/pipewire/build
+  Source dir /home/sdas/pipewire-debian/pipewire/build/ok/pipewire
+  Build dir  /home/sdas/pipewire-debian/pipewire/build/ok/pipewire/build
 
 Main project options:
   
@@ -106,6 +106,7 @@ Main project options:
                                                                                                    oFono)
   bluez5-codec-aac               auto                             [enabled, disabled, auto]        Enable Fraunhofer FDK AAC open source codec implementation
   bluez5-codec-aptx              auto                             [enabled, disabled, auto]        Enable AptX Qualcomm open source codec implementation
+  bluez5-codec-lc3plus           auto                             [enabled, disabled, auto]        Enable LC3plus open source codec implementation
   bluez5-codec-ldac              auto                             [enabled, disabled, auto]        Enable LDAC Sony open source codec implementation
   control                        enabled                          [enabled, disabled, auto]        Enable control spa plugin integration
   dbus                           enabled                          [enabled, disabled, auto]        Enable code that depends on dbus
@@ -121,6 +122,7 @@ Main project options:
   installed_tests                disabled                         [enabled, disabled, auto]        Install manual and automated test executables
   jack                           auto                             [enabled, disabled, auto]        Enable jack spa plugin integration
   jack-devel                     false                            [true, false]                    Install jack development files
+  legacy-rtkit                   true                             [true, false]                    Build legacy rtkit module
   libcamera                      auto                             [enabled, disabled, auto]        Enable libcamera spa plugin integration
   libcanberra                    auto                             [enabled, disabled, auto]        Enable code that depends on libcanberra
   libjack-path                                                                                     Where to install the libjack.so library
