@@ -23,6 +23,7 @@ override_dh_auto_configure:
 		-Dwerror=false \
 		-Db_pie=true \
 		-Dv4l2=true \
+		-Dpycamera=disabled
 		$(empty)
 
 override_dh_install:
