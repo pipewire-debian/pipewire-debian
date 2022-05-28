@@ -17,7 +17,7 @@ _PREFIX := $(CURDIR)/debian/tmp/usr
 _LIBDIR := $(_PREFIX)/lib/$(DEB_HOST_MULTIARCH)
 
 SCONS=scons
-DEB_SCONS_OPTIONS := --prefix=$(_PREFIX) --libdir=$(_LIBDIR) --with-openfec-includes=/usr/include/openfec --enable-debug
+DEB_SCONS_OPTIONS := --prefix=$(_PREFIX) --libdir=$(_LIBDIR) --with-openfec-includes=/usr/include/openfec --disable-examples --enable-debug
 
 
 COMMA = ,
