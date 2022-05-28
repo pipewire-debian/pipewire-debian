@@ -3,7 +3,7 @@ openfec (1.4.2.4-1~ubuntu20.04) focal; urgency=medium
   * Package rebased on roc-streaming fork
   * Bump openfec version to 1.4.2.4
 
- -- Sourav Das <souravdas142@gmail.com>  Mon, 19 Jul 2021 18:02:24 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 19 Jul 2021 18:02:24 +0530
 
 openfec (1.4.2-2~ubuntu20.04) focal; urgency=medium
 
