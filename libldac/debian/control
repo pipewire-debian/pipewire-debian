@@ -1,15 +1,16 @@
 Source: libldac
 Section: libs
 Priority: optional
-Maintainer: Andrej Shadura <andrewsh@debian.org>
+Maintainer: Sourav Das <souravdas142@gmail.com>
 Build-Depends:
  debhelper-compat (= 12),
- mini-soong
+ cmake,
+ libglib2.0-dev
 Standards-Version: 4.5.0
 Homepage: https://android.googlesource.com/platform/external/libldac
 Rules-Requires-Root: no
-Vcs-Browser: https://salsa.debian.org/multimedia-team/libldac
-Vcs-Git: https://salsa.debian.org/multimedia-team/libldac.git
+Vcs-Browser: https://github.com/pipewire-debian/pipewire-debian
+Vcs-Git: https://github.com/pipewire-debian/pipewire-debian.git
 
 Package: libldacbt-abr-dev
 Section: libdevel
@@ -17,6 +18,8 @@ Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}, libldacbt-abr2 (= ${binary:Version})
+Conflicts: libldacbt-abr-dev (<< 2.0.2.3.r4.gaf2dd23)
+Replaces: libldacbt-abr-dev (<< 2.0.2.3.r4.gaf2dd23)
 Description: LDAC Bluetooth ABR library (development)
  LDAC is a lossy audio coding technology enabling the transmission
  of high-resolution audio content over a Bluetooth connection.
@@ -35,6 +38,8 @@ Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}
+Conflicts: libldacbt-abr2 (<< 2.0.2.3.r4.gaf2dd23)
+Replaces: libldacbt-abr2 (<< 2.0.2.3.r4.gaf2dd23)
 Description: LDAC Bluetooth ABR library (shared library)
  LDAC is a lossy audio coding technology enabling the transmission
  of high-resolution audio content over a Bluetooth connection.
@@ -53,6 +58,8 @@ Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}, libldacbt-enc2 (= ${binary:Version})
+Conflicts: libldacbt-enc-dev (<< 2.0.2.3.r4.gaf2dd23)
+Replaces: libldacbt-enc-dev (<< 2.0.2.3.r4.gaf2dd23)
 Description: LDAC Bluetooth encoder library (development)
  LDAC is a lossy audio coding technology enabling the transmission
  of high-resolution audio content over a Bluetooth connection.
@@ -71,6 +78,8 @@ Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}
+Conflicts: libldacbt-enc2 (<< 2.0.2.3.r4.gaf2dd23)
+Replaces: libldacbt-enc2 (<< 2.0.2.3.r4.gaf2dd23)
 Description: LDAC Bluetooth encoder library (shared library)
  LDAC is a lossy audio coding technology enabling the transmission
  of high-resolution audio content over a Bluetooth connection.

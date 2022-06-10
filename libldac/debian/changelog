@@ -1,46 +1,11 @@
-libldac (2.0.2.3+git20200429+ed310a0-5) focal; urgency=medium
+libldac (2.0.2.3.r4.gaf2dd23-2~ubuntu18.04) bionic; urgency=medium
 
-  * Rebuild with no source changes.
+  * Elimnate soong build system which is incompatible with desktop
+  * Linux system, everyone doing the same for example : Arch-Linux,
+  * Fedora, Gentoo, LFS, Then why debian/ubuntu different 
+  * previous approach doesn't make sense at all
+  * So make simplify debian/rules file
 
- -- Sourav Das <souravdas@gmail.com>  Sat, 24 Apr 2021 19:03:09 +0200
+  * Breaking all version prevous to this to reflect the change
 
-libldac (2.0.2.3+git20200429+ed310a0-4) unstable; urgency=medium
-
-  * Rebuild with no source changes.
-
- -- Andrej Shadura <andrewsh@debian.org>  Thu, 16 Jul 2020 19:03:09 +0200
-
-libldac (2.0.2.3+git20200429+ed310a0-3) unstable; urgency=medium
-
-  * Use mini-soong instead of micro-soong, adjust build dependencies
-    accordingly.
-
- -- Andrej Shadura <andrewsh@debian.org>  Mon, 13 Jul 2020 09:48:57 +0200
-
-libldac (2.0.2.3+git20200429+ed310a0-2) unstable; urgency=medium
-
-  * Fix the Makefile generator to actually build all sources,
-    not just the first one.
-
- -- Andrej Shadura <andrewsh@debian.org>  Wed, 08 Jul 2020 20:43:54 +0200
-
-libldac (2.0.2.3+git20200429+ed310a0-1) unstable; urgency=medium
-
-  [ Andrej Shadura ]
-  * New upstream snapshot.
-  * Point Homepage to the actual upstream.
-  * Update the copyrights and upstream metadata.
-  * Add a watch file.
-  * Ship pkgconfig files as part of the Debian delta.
-  * Use micro-soong to build the library instead of cmake.
-
-  [ Pali Rohár ]
-  * Add symbols files.
-
- -- Andrej Shadura <andrewsh@debian.org>  Tue, 07 Jul 2020 10:15:47 +0200
-
-libldac (2.0.2.3+git20180726-1) unstable; urgency=low
-
-  * Initial release (Closes: #922154).
-
- -- Andrej Shadura <andrewsh@debian.org>  Mon, 04 May 2020 17:34:36 +0200
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 10 Jun 2022 11:27:49 +0530

@@ -9,18 +9,24 @@ ifeq ($(DEB_HOST_ARCH),armel)
 export DEB_CPPFLAGS_MAINT_APPEND = -D_32BIT_FIXED_POINT
 endif
 
-export libldacBT_enc_soversion = $(basename $(DEB_VERSION_UPSTREAM))
-export libldacBT_abr_soversion = $(basename $(DEB_VERSION_UPSTREAM))
 
-export libdir = /usr/lib/$(DEB_HOST_MULTIARCH)
 
-%:
-	dh $@ --buildsystem=soong
+%: 
+	dh $@
 
-override_dh_auto_install:
-	dh_auto_install
-	mkdir -p debian/tmp/$(libdir)/pkgconfig
-	for d in debian/pkgconfig/*.pc; do \
-		sed -e 's,@VERSION@,$(DEB_VERSION_UPSTREAM),g' \
-			-e 's,@LIBDIR@,$(libdir),g' $$d > debian/tmp/$(libdir)/pkgconfig/$$(basename $$d); \
-	done
+override_dh_auto_configure:
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+	-DINSTALL_LIBDIR=/usr/lib/$(DEB_HOST_MULTIARCH) \
+	-DCMAKE_BUILD_TYPE=None \
+	-DLDAC_SOFT_FLOAT=OFF 
+
+
+override_dh_auto_build:
+	# Enforce Debian's CFLAGS and LDFLAGS in build, as there's no configure pass 
+	dh_auto_build -- \
+	CFLAGS="$(shell dpkg-buildflags --get CFLAGS)" \
+	LDFLAGS="$(shell dpkg-buildflags --get LDFLAGS)" \
+
+
+
+
