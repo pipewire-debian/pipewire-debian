@@ -10,7 +10,8 @@ Copyright: 2003-2017, Sony Corporation
 License: Apache-2
 
 Files: debian/*
-Copyright: 2020 Sourav Das <souravdas142@gmail.com>
+Copyright: 2020 Andrej Shadura <andrewsh@debian.org>
+           2022 Sourav Das <souravdas142@gmail.com>
 License: Apache-2
 
 License: Apache-2
