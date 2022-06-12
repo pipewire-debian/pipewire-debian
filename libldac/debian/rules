@@ -10,6 +10,8 @@ export DEB_CPPFLAGS_MAINT_APPEND = -D_32BIT_FIXED_POINT
 endif
 
 
+#  * Build failed under S390x so leave it.
+
 
 %: 
 	dh $@

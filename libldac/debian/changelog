@@ -1,4 +1,4 @@
-libldac (2.0.2.3.r4.gaf2dd23-2~ubuntu18.04) bionic; urgency=medium
+libldac (2.0.2.3.r4.gaf2dd23-5~ubuntu20.04) focal; urgency=medium
 
   * Elimnate soong build system which is incompatible with desktop
   * Linux system, everyone doing the same for example : Arch-Linux,
@@ -8,4 +8,6 @@ libldac (2.0.2.3.r4.gaf2dd23-2~ubuntu18.04) bionic; urgency=medium
 
   * Breaking all version prevous to this to reflect the change
 
- -- Sourav Das <souravdas142@gmail.com>  Fri, 10 Jun 2022 11:27:49 +0530
+  * Build failed under S390x so leave it.
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 12 Jun 2022 10:23:08 +0530
