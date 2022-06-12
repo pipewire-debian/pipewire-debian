@@ -1,0 +1,30 @@
+Source: qpwgraph
+Section: sound
+Priority: optional
+Maintainer: Sourav Das <souravdas142@gmail.com>
+XSBC-Original-Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders: Christopher Obbard <chris.obbard@collabora.com>
+Build-Depends: cmake,
+               debhelper-compat (= 12),
+               libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386],
+               libpipewire-0.3-dev,
+               libqt5svg5-dev,
+               libqt5x11extras5-dev,
+               pkg-config,
+               qtbase5-dev,
+               qttools5-dev,
+               qttools5-dev-tools,
+Standards-Version: 4.5.0
+Homepage: https://gitlab.freedesktop.org/rncbc/qpwgraph
+Vcs-Browser: https://salsa.debian.org/multimedia-team/qpwgraph
+Vcs-Git: https://salsa.debian.org/multimedia-team/qpwgraph.git
+Rules-Requires-Root: no
+
+Package: qpwgraph
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: User interface for controlling the PipeWire Graph
+ qpwgraph is a graph manager dedicated to PipeWire (https://pipewire.org),
+ using the Qt C++ framework (https://qt.io), based and pretty much like the
+ same of QjackCtl (https://qjackctl.sourceforge.io).

@@ -1,0 +1,23 @@
+Index: qpwgraph-0.3.1/src/qpwgraph_pipewire.cpp
+===================================================================
+--- qpwgraph-0.3.1.orig/src/qpwgraph_pipewire.cpp	2022-05-29 14:47:42.520159259 +0530
++++ qpwgraph-0.3.1/src/qpwgraph_pipewire.cpp	2022-06-12 13:27:52.402248644 +0530
+@@ -302,6 +302,7 @@
+ 	.version = PW_VERSION_CORE_EVENTS,
+ 	.info = nullptr,
+ 	.done = qpwgraph_core_event_done,
++	.ping = nullptr,
+ 	.error = qpwgraph_core_event_error,
+ };
+ // core-events.
+@@ -343,6 +344,10 @@
+ static
+ const struct pw_proxy_events qpwgraph_link_proxy_events = {
+ 	.version = PW_VERSION_PROXY_EVENTS,
++	.destroy = nullptr,
++	.bound = nullptr,
++	.removed = nullptr,
++	.done = nullptr,
+ 	.error = qpwgraph_link_proxy_error,
+ };
+ // link-events.
