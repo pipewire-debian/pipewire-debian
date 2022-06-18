@@ -1,3 +1,35 @@
+pipewire (0.3.52.r2.g9255cfb-5~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - move out pipewire-media-session to a new package
+    - move out pipewire-x11-bell to a new package (=> NEW)
+    - Recommending using wireplumber. add ppa :
+      ppa:pipewire-debian/wireplumber-upstream
+    - Recommending rt-kit and dbus-session-managers
+ 
+  PipeWire - 
+
+    - Add 44.1KHz to allowed samplerates. The server can now switch by
+      default between 48KHz and 44.1KHz.
+    - Streams now allocate less resources.
+    - Fix some bugs that could make the server crash.
+    - Bluetooth now supports the LC3plus vendor codec.
+    - Many bugfixes and improvements.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+  .
+  .
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 09 Jun 2022 22:44:39 +0530
+
 pipewire (0.3.51.r80.g3e7f975-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

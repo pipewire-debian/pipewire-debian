@@ -13,6 +13,7 @@ usr/lib/*/pipewire-0.3/libpipewire-module-filter-chain.so
 usr/lib/*/pipewire-0.3/libpipewire-module-link-factory.so
 usr/lib/*/pipewire-0.3/libpipewire-module-loopback.so
 usr/lib/*/pipewire-0.3/libpipewire-module-metadata.so
+usr/lib/*/pipewire-0.3/libpipewire-module-pipe-tunnel.so
 usr/lib/*/pipewire-0.3/libpipewire-module-portal.so
 usr/lib/*/pipewire-0.3/libpipewire-module-profiler.so
 usr/lib/*/pipewire-0.3/libpipewire-module-protocol-native.so

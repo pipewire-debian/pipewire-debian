@@ -3,10 +3,31 @@
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 
+
 %:
 	dh $@
 
+
+
+ifneq (,$(filter s390x hppa m68k powerpc ppc64 ppc64el sparc64,$(DEB_HOST_ARCH)))
+BLUEZ5_CODEC_LDAC=disabled
+LIBCAMERA=disabled
+cmnt_libcam=$(shell sed -e '/libcamera/ s/^\#*/\#/' -i debian/libspa-0.2-modules.install)
+else
+BLUEZ5_CODEC_LDAC=enabled
+LIBCAMERA=enabled
+endif
+
+ifneq (,$(filter s390x hppa m68k powerpc sparc64,$(DEB_HOST_ARCH)))
+LIBROC=disabled
+cmnt_libroc=$(shell sed -e '/module-roc-s/ s/^\#*/\#/' -i debian/libpipewire-0.3-modules.install)
+else
+LIBROC=enabled
+endif
+
 AVAILABLE_CORE=$(shell nproc)
+
+
 
 override_dh_auto_configure:
 	dh_auto_configure -- --buildtype=plain \
@@ -15,7 +36,8 @@ override_dh_auto_configure:
 		-Db_lto=true \
 		-Db_pie=true \
 		-Dbluez5-codec-lc3plus=disabled \
-		-Dlibcamera=enabled \
+		-Dbluez5-codec-ldac=$(BLUEZ5_CODEC_LDAC) \
+		-Dlibcamera=$(LIBCAMERA) \
 		-Ddocs=enabled \
 		-Dexamples=enabled \
 		-Dinstalled_tests=enabled \
@@ -24,18 +46,36 @@ override_dh_auto_configure:
 		-Dvideotestsrc=enabled \
 		-Dvolume=enabled \
 		-Dvulkan=enabled \
-		-Droc=enabled \
+		-Droc=$(LIBROC) \
 		-Dsession-managers= \
 		$(NULL)
 	install -d debian/ld.so.conf.d
 	echo "/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3/jack/" > "debian/ld.so.conf.d/pipewire-jack-$(DEB_HOST_MULTIARCH).conf"
 	install -Dm644 /dev/null debian/with-alsa
+	echo -e "\nCommenting out Disabled feature not to be installed...$(cmnt_libcam) $(cmnt_libroc)\n"
+
+
+test_timeout_multiplier = 1
+
+ifneq ($(filter arm hppa ia64 m68k riscv64 sh4 sparc%,$(DEB_HOST_ARCH_CPU)),)
+test_timeout_multiplier = 5
+endif
+
+ifneq ($(filter mips%,$(DEB_HOST_ARCH_CPU)),)
+test_timeout_multiplier = 10
+endif
+
+
 
 override_dh_auto_test:
-	LC_ALL=C.UTF-8 MESON_TESTTHREADS=${AVAILABLE_CORE}  meson test -C obj-${DEB_HOST_MULTIARCH}
+	LC_ALL=C.UTF-8 MESON_TESTTHREADS=${AVAILABLE_CORE}  meson test -t $(test_timeout_multiplier) -C obj-${DEB_HOST_MULTIARCH}
 
 override_dh_missing:
+ifeq ("enabled","$(LIBCAMERA)")
 	dh_missing --fail-missing
+else
+	dh_missing --list-missing
+endif
 
 override_dh_makeshlibs:
 	dh_makeshlibs \

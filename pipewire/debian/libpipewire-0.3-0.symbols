@@ -350,6 +350,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_proxy_set_bound_id@Base 0.3.1
  pw_proxy_sync@Base 0.3.1
  pw_proxy_unref@Base 0.3.1
+ pw_reallocarray@Base 0.3.52
  pw_resource_add_listener@Base 0.3.1
  pw_resource_add_object_listener@Base 0.3.1
  pw_resource_destroy@Base 0.3.1
