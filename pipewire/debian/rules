@@ -12,7 +12,7 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 
 VERSION_CODENAME=$(shell sed -ne '/VERSION_CODENAME/p' /etc/os-release | cut -d"=" -f2)
 
-NON_SUPPORTED_VERSION=focal bionic
+LTO_NON_SUPPORTED_VERSION_CODENAME=focal bionic
 
 ############################## Disabling Features Conditionally ##############################
 
@@ -50,7 +50,7 @@ endif
 
 
 ifneq (,$(filter armhf,$(DEB_HOST_ARCH)))
-ifneq (,$(filter ${VERSION_CODENAME},${NON_SUPPORTED_VERSION}))  
+ifneq (,$(filter ${VERSION_CODENAME},${LTO_NON_SUPPORTED_VERSION_CODENAME}))
 LTO=false
 else
 LTO=true
