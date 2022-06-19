@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+include /usr/share/dpkg/architecture.mk
+
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 #export DEB_BUILD_OPTIONS = nocheck
@@ -10,6 +12,7 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 %:
 	dh $@
 
+############################## Disabling Features Conditionally ##############################
 
 ifneq (,$(filter s390x hppa m68k powerpc ppc64 ppc64el sparc64,$(DEB_HOST_ARCH)))
 BLUEZ5_CODEC_LDAC=disabled
@@ -27,6 +30,14 @@ else
 LIBROC=enabled
 endif
 
+ifneq (,$(filter armhf,$(DEB_HOST_ARCH)))
+LTO=false
+else
+LTO=true
+endif
+
+############################## END OF Disabling Features Conditionally ##############################
+
 AVAILABLE_CORE=$(shell nproc)
 
 
@@ -38,7 +49,7 @@ override_dh_auto_configure:
         --libexecdir=/usr/libexec  \
     	-Daudiotestsrc=enabled \
 		-Dauto_features=enabled \
-		-Db_lto=true \
+		-Db_lto=$(LTO) \
 		-Db_pie=true \
 		-Dbluez5-codec-lc3plus=disabled \
 		-Dbluez5-codec-ldac=$(BLUEZ5_CODEC_LDAC) \
@@ -55,7 +66,7 @@ override_dh_auto_configure:
 		-Dsession-managers= \
 		$(NULL)
 	install -d debian/ld.so.conf.d
-	echo "/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3/jack/" > "debian/ld.so.conf.d/pipewire-jack-$(DEB_HOST_MULTIARCH).conf"
+	echo "/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3/jack/" > debian/ld.so.conf.d/pipewire-jack-$(DEB_HOST_MULTIARCH).conf
 	install -Dm644 /dev/null debian/with-alsa
 	echo -e "\nCommenting out Disabled feature not to be installed...$(cmnt_libcam) $(cmnt_libroc)\n"
 
@@ -74,7 +85,7 @@ endif
 
 
 override_dh_auto_test:
-	LC_ALL=C.UTF-8 MESON_TESTTHREADS=${AVAILABLE_CORE}  meson test -t $(test_timeout_multiplier) -C obj-${DEB_HOST_MULTIARCH}
+	LC_ALL=C.UTF-8 MESON_TESTTHREADS=${AVAILABLE_CORE}  meson test -t $(test_timeout_multiplier) -C obj-*
 
 
 override_dh_missing:
