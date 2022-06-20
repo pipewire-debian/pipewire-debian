@@ -1,0 +1,201 @@
+From 62104a0bac8b3a9b6213c666299c545c38822bf2 Mon Sep 17 00:00:00 2001
+From: Victor Westerhuis <victor@westerhu.is>
+Date: Thu, 18 Nov 2021 15:20:16 +0100
+Subject: [PATCH] Fix printf format errors
+
+Using %zu for size_t is C99, so should be portable. suseconds_t is not
+required to be either 32 or 64 bits, so use an explicit cast to long.
+For more see: https://github.com/roc-streaming/openfec/pull/3
+---
+ applis/eperftool/receiver.c                               | 8 ++++----
+ applis/eperftool/sender.c                                 | 6 +++---
+ .../howto_examples/simple_client_server/simple_client.c   | 2 +-
+ .../binary_matrix/of_matrix_dense.c                       | 6 +++---
+ src/lib_stable/2d_parity_matrix/of_2d_parity_api.c        | 4 ++--
+ src/lib_stable/ldpc_staircase/of_ldpc_staircase_api.c     | 4 ++--
+ .../reed-solomon_gf_2_8/of_reed-solomon_gf_2_8_api.c      | 4 ++--
+ .../reed-solomon_gf_2_m/of_reed-solomon_gf_2_m_api.c      | 6 +++---
+ 8 files changed, 20 insertions(+), 20 deletions(-)
+
+diff --git a/applis/eperftool/receiver.c b/applis/eperftool/receiver.c
+index 99d11a8..efbbc7c 100644
+--- a/applis/eperftool/receiver.c
++++ b/applis/eperftool/receiver.c
+@@ -85,7 +85,7 @@ receive_and_decode (void)
+ 	OF_PRINT(("decoding_start=%lI64f\n", (double)tv0.QuadPart/(double)freq.QuadPart))
+ #else
+ 	gettimeofday(&tv0, NULL);
+-	OF_PRINT(("decoding_start=%ld.%d\n", tv0.tv_sec, tv0.tv_usec))
++	OF_PRINT(("decoding_start=%ld.%ld\n", tv0.tv_sec, (long)tv0.tv_usec))
+ #endif
+ 
+ 	while ((new_symb_cb = get_next_symbol_received()) != NULL) {
+@@ -275,9 +275,9 @@ receive_and_decode (void)
+ #else
+ 		gettimeofday(&tv1, NULL);
+ 		timersub(&tv1, &tv0, &tv_delta);
+-		OF_PRINT(("decoding_end=%ld.%d  decoding_time=%ld.%06d  nb_received_symbols=%d  inefficiency_ratio=%.6f\n",
+-			tv1.tv_sec, tv1.tv_usec,
+-			tv_delta.tv_sec, tv_delta.tv_usec,
++		OF_PRINT(("decoding_end=%ld.%ld  decoding_time=%ld.%06ld  nb_received_symbols=%d  inefficiency_ratio=%.6f\n",
++			tv1.tv_sec, (long)tv1.tv_usec,
++			tv_delta.tv_sec, (long)tv_delta.tv_usec,
+ 			tot_nb_recvd_symbols, (double)tot_nb_recvd_symbols/(double)tot_nb_source_symbols))
+ #endif
+ #ifdef CHECK_INTEGRITY
+diff --git a/applis/eperftool/sender.c b/applis/eperftool/sender.c
+index 6a24607..0847ad7 100644
+--- a/applis/eperftool/sender.c
++++ b/applis/eperftool/sender.c
+@@ -269,7 +269,7 @@ encode (void)
+ 	OF_PRINT(("encoding_start=%lI64f\n", (double)tv0.QuadPart / (double)freq.QuadPart))
+ #else
+ 	gettimeofday(&tv0, NULL);
+-	OF_PRINT(("encoding_start=%ld.%d\n", tv0.tv_sec, tv0.tv_usec))
++	OF_PRINT(("encoding_start=%ld.%ld\n", tv0.tv_sec, (long)tv0.tv_usec))
+ #endif
+ 	for (sbn = 0, blk = blk_cb_tab; sbn < tot_nb_blocks; sbn++, blk++) {
+ 		k = blk->k;
+@@ -369,8 +369,8 @@ encode (void)
+ #else
+ 	gettimeofday(&tv1, NULL);
+ 	timersub(&tv1, &tv0, &tv_delta);
+-	OF_PRINT(("encoding_end=%ld.%d  encoding_time=%ld.%06d\n",
+-		tv1.tv_sec, tv1.tv_usec, tv_delta.tv_sec, tv_delta.tv_usec))
++	OF_PRINT(("encoding_end=%ld.%ld  encoding_time=%ld.%06ld\n",
++		tv1.tv_sec, (long)tv1.tv_usec, tv_delta.tv_sec, (long)tv_delta.tv_usec))
+ #endif
+ 	free(encoding_symbols_tab);
+ 	return OF_STATUS_OK;
+diff --git a/applis/howto_examples/simple_client_server/simple_client.c b/applis/howto_examples/simple_client_server/simple_client.c
+index 0fcb666..e08af3f 100755
+--- a/applis/howto_examples/simple_client_server/simple_client.c
++++ b/applis/howto_examples/simple_client_server/simple_client.c
+@@ -114,7 +114,7 @@ main (int argc, char* argv[])
+ 	}
+ 	if (len != sizeof(fec_oti_t))
+ 	{
+-		OF_PRINT_ERROR(("FEC OTI reception failed: bad size, expected %lu but received %d instead\n", sizeof(fec_oti_t), ret))
++		OF_PRINT_ERROR(("FEC OTI reception failed: bad size, expected %zu but received %d instead\n", sizeof(fec_oti_t), ret))
+ 		ret = -1;
+ 		goto end;
+ 	}
+diff --git a/src/lib_common/linear_binary_codes_utils/binary_matrix/of_matrix_dense.c b/src/lib_common/linear_binary_codes_utils/binary_matrix/of_matrix_dense.c
+index 1642f45..a507786 100644
+--- a/src/lib_common/linear_binary_codes_utils/binary_matrix/of_matrix_dense.c
++++ b/src/lib_common/linear_binary_codes_utils/binary_matrix/of_matrix_dense.c
+@@ -1724,11 +1724,11 @@ void of_mod2dense_print_memory_info (of_mod2dense *m)
+ 
+ #else
+ 	printf ("m->row=%p\n", m->row);
+-	printf (" m->row size = %lu\n", m->n_rows*sizeof *m->row);
++	printf (" m->row size = %zu\n", m->n_rows*sizeof *m->row);
+ #endif
+ 	printf ("m->bits=%p\n", m->bits);
+-	printf (" m->bits size = %lu\n", m->n_words*m->n_rows*sizeof *m->bits);
+-	printf ("sizeof(mod2word)=%lu\n", sizeof (of_mod2word));
++	printf (" m->bits size = %zu\n", m->n_words*m->n_rows*sizeof *m->bits);
++	printf ("sizeof(mod2word)=%zu\n", sizeof (of_mod2word));
+ 	OF_EXIT_FUNCTION
+ }
+ 
+diff --git a/src/lib_stable/2d_parity_matrix/of_2d_parity_api.c b/src/lib_stable/2d_parity_matrix/of_2d_parity_api.c
+index 2f272d5..ef9835a 100644
+--- a/src/lib_stable/2d_parity_matrix/of_2d_parity_api.c
++++ b/src/lib_stable/2d_parity_matrix/of_2d_parity_api.c
+@@ -431,7 +431,7 @@ of_status_t	of_2d_parity_get_control_parameter  (of_2d_parity_cb_t*	ofcb,
+ 	switch (type) {
+ 	case OF_CTRL_GET_MAX_K:
+ 		if (value == NULL || length != sizeof(UINT32)) {
+-			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_K ERROR: null value or bad length (got %d, expected %ld)\n",
++			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_K ERROR: null value or bad length (got %d, expected %zu)\n",
+ 				__FUNCTION__, length, sizeof(UINT32)))
+ 			goto error;
+ 		}
+@@ -441,7 +441,7 @@ of_status_t	of_2d_parity_get_control_parameter  (of_2d_parity_cb_t*	ofcb,
+ 
+ 	case OF_CTRL_GET_MAX_N:
+ 		if (value == NULL || length != sizeof(UINT32)) {
+-			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_N ERROR: null value or bad length (got %d, expected %ld)\n",
++			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_N ERROR: null value or bad length (got %d, expected %zu)\n",
+ 				__FUNCTION__, length, sizeof(UINT32)))
+ 			goto error;
+ 		}
+diff --git a/src/lib_stable/ldpc_staircase/of_ldpc_staircase_api.c b/src/lib_stable/ldpc_staircase/of_ldpc_staircase_api.c
+index f50c620..dbbffba 100644
+--- a/src/lib_stable/ldpc_staircase/of_ldpc_staircase_api.c
++++ b/src/lib_stable/ldpc_staircase/of_ldpc_staircase_api.c
+@@ -519,7 +519,7 @@ of_status_t	of_ldpc_staircase_get_control_parameter (of_ldpc_staircase_cb_t*	ofc
+ 	switch (type) {
+ 	case OF_CTRL_GET_MAX_K:
+ 		if (value == NULL || length != sizeof(UINT32)) {
+-			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_K ERROR: null value or bad length (got %d, expected %ld)\n",
++			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_K ERROR: null value or bad length (got %d, expected %zu)\n",
+ 				__FUNCTION__, length, sizeof(UINT32)))
+ 			goto error;
+ 		}
+@@ -529,7 +529,7 @@ of_status_t	of_ldpc_staircase_get_control_parameter (of_ldpc_staircase_cb_t*	ofc
+ 
+ 	case OF_CTRL_GET_MAX_N:
+ 		if (value == NULL || length != sizeof(UINT32)) {
+-			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_N ERROR: null value or bad length (got %d, expected %ld)\n",
++			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_N ERROR: null value or bad length (got %d, expected %zu)\n",
+ 				__FUNCTION__, length, sizeof(UINT32)))
+ 			goto error;
+ 		}
+diff --git a/src/lib_stable/reed-solomon_gf_2_8/of_reed-solomon_gf_2_8_api.c b/src/lib_stable/reed-solomon_gf_2_8/of_reed-solomon_gf_2_8_api.c
+index 153278e..9078585 100644
+--- a/src/lib_stable/reed-solomon_gf_2_8/of_reed-solomon_gf_2_8_api.c
++++ b/src/lib_stable/reed-solomon_gf_2_8/of_reed-solomon_gf_2_8_api.c
+@@ -497,7 +497,7 @@ of_status_t	of_rs_get_control_parameter    (of_rs_cb_t*	ofcb,
+ 	switch (type) {
+ 	case OF_CTRL_GET_MAX_K:
+ 		if (value == NULL || length != sizeof(UINT32)) {
+-			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_K ERROR: null value or bad length (got %d, expected %ld)\n",
++			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_K ERROR: null value or bad length (got %d, expected %zu)\n",
+ 				__FUNCTION__, length, sizeof(UINT32)))
+ 			goto error;
+ 		}
+@@ -507,7 +507,7 @@ of_status_t	of_rs_get_control_parameter    (of_rs_cb_t*	ofcb,
+ 
+ 	case OF_CTRL_GET_MAX_N:
+ 		if (value == NULL || length != sizeof(UINT32)) {
+-			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_N ERROR: null value or bad length (got %d, expected %ld)\n",
++			OF_PRINT_ERROR(("%s: OF_CTRL_GET_MAX_N ERROR: null value or bad length (got %d, expected %zu)\n",
+ 				__FUNCTION__, length, sizeof(UINT32)))
+ 			goto error;
+ 		}
+diff --git a/src/lib_stable/reed-solomon_gf_2_m/of_reed-solomon_gf_2_m_api.c b/src/lib_stable/reed-solomon_gf_2_m/of_reed-solomon_gf_2_m_api.c
+index 90c90c6..ea55a47 100644
+--- a/src/lib_stable/reed-solomon_gf_2_m/of_reed-solomon_gf_2_m_api.c
++++ b/src/lib_stable/reed-solomon_gf_2_m/of_reed-solomon_gf_2_m_api.c
+@@ -589,7 +589,7 @@ of_status_t	of_rs_2_m_set_control_parameter (of_rs_2_m_cb_t*	ofcb,
+ 	switch (type) {
+ 		case OF_RS_CTRL_SET_FIELD_SIZE:
+ 			if (value == NULL || length != sizeof(UINT16)) {
+-				OF_PRINT_ERROR(("OF_CTRL_SET_FIELD_SIZE ERROR: null value or bad length (got %d, expected %ld)\n", length, sizeof(UINT16)))
++				OF_PRINT_ERROR(("OF_CTRL_SET_FIELD_SIZE ERROR: null value or bad length (got %d, expected %zu)\n", length, sizeof(UINT16)))
+ 				goto error;
+ 			}
+ 			m = *(UINT16*)value;
+@@ -624,7 +624,7 @@ of_status_t	of_rs_2_m_get_control_parameter (of_rs_2_m_cb_t*	ofcb,
+ 	switch (type) {
+ 	case OF_CTRL_GET_MAX_K:
+ 		if (value == NULL || length != sizeof(UINT32)) {
+-			OF_PRINT_ERROR(("OF_CTRL_GET_MAX_K ERROR: null value or bad length (got %d, expected %ld)\n", length, sizeof(UINT32)))
++			OF_PRINT_ERROR(("OF_CTRL_GET_MAX_K ERROR: null value or bad length (got %d, expected %zu)\n", length, sizeof(UINT32)))
+ 			goto error;
+ 		}
+ 		if (ofcb->max_nb_source_symbols == 0) {
+@@ -637,7 +637,7 @@ of_status_t	of_rs_2_m_get_control_parameter (of_rs_2_m_cb_t*	ofcb,
+ 
+ 	case OF_CTRL_GET_MAX_N:
+ 		if (value == NULL || length != sizeof(UINT32)) {
+-			OF_PRINT_ERROR(("OF_CTRL_GET_MAX_N ERROR: null value or bad length (got %d, expected %ld)\n", length, sizeof(UINT32)))
++			OF_PRINT_ERROR(("OF_CTRL_GET_MAX_N ERROR: null value or bad length (got %d, expected %zu)\n", length, sizeof(UINT32)))
+ 			goto error;
+ 		}
+ 		if (ofcb->max_nb_encoding_symbols == 0) {
+-- 
+2.36.1
+
