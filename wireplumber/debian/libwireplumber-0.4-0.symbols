@@ -21,6 +21,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_core_get_remote_user_name@Base 0.3.95
  wp_core_get_remote_version@Base 0.3.95
  wp_core_get_type@Base 0.3.95
+ wp_core_get_vm_type@Base 0.4.10
  wp_core_idle_add@Base 0.3.95
  wp_core_idle_add_closure@Base 0.3.95
  wp_core_install_object_manager@Base 0.3.95
@@ -33,6 +34,13 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_core_timeout_add@Base 0.3.95
  wp_core_timeout_add_closure@Base 0.3.95
  wp_core_update_properties@Base 0.3.95
+ wp_dbus_features_get_type@Base 0.4.10
+ wp_dbus_get_bus_type@Base 0.4.10
+ wp_dbus_get_connection@Base 0.4.10
+ wp_dbus_get_instance@Base 0.4.10
+ wp_dbus_get_state@Base 0.4.10
+ wp_dbus_get_type@Base 0.4.10
+ wp_dbus_state_get_type@Base 0.4.10
  wp_device_get_type@Base 0.3.95
  wp_device_new_from_factory@Base 0.3.95
  wp_direction_get_type@Base 0.3.95
@@ -79,8 +87,10 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_iterator_unref@Base 0.3.95
  wp_library_error_enum_get_type@Base 0.3.95
  wp_link_get_linked_object_ids@Base 0.3.95
+ wp_link_get_state@Base 0.4.10
  wp_link_get_type@Base 0.3.95
  wp_link_new_from_factory@Base 0.3.95
+ wp_link_state_get_type@Base 0.4.10
  wp_log_level_is_enabled@Base 0.3.95
  wp_log_set_level@Base 0.3.95
  wp_log_structured_standard@Base 0.3.95
@@ -252,6 +262,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_spa_device_get_properties@Base 0.3.95
  wp_spa_device_get_type@Base 0.3.95
  wp_spa_device_new_from_spa_factory@Base 0.3.95
+ wp_spa_device_new_managed_object_iterator@Base 0.4.10
  wp_spa_device_new_wrap@Base 0.3.95
  wp_spa_device_store_managed_object@Base 0.3.95
  wp_spa_dynamic_id_table_register@Base 0.3.95
