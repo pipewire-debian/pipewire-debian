@@ -16,6 +16,7 @@
 _PREFIX := $(CURDIR)/debian/tmp/usr
 _LIBDIR := $(_PREFIX)/lib/$(DEB_HOST_MULTIARCH)
 
+
 SCONS=scons
 DEB_SCONS_OPTIONS := --prefix=$(_PREFIX) --libdir=$(_LIBDIR) --with-openfec-includes=/usr/include/openfec --disable-examples --enable-debug
 
@@ -28,6 +29,13 @@ endif
 
 %:
 	dh $@
+
+
+ifneq (,$(filter s390x,$(DEB_HOST_ARCH)))
+DEB_SCONS_OPTIONS += --disable-libunwind
+else
+DEB_SCONS_OPTIONS +=
+endif
 
 
 # This is example for Cmake (See https://bugs.debian.org/641051 )
