@@ -15,15 +15,21 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 ############################## Disabling Features Conditionally ##############################
 
 ifneq (,$(filter s390x hppa m68k powerpc ppc64 ppc64el sparc64,$(DEB_HOST_ARCH)))
-BLUEZ5_CODEC_LDAC=disabled
 LIBCAMERA=disabled
 cmnt_libcam=$(shell sed -e '/libcamera/ s/^\#*/\#/' -i debian/libspa-0.2-modules.install)
 else
-BLUEZ5_CODEC_LDAC=enabled
 LIBCAMERA=enabled
 endif
 
-ifneq (,$(filter s390x hppa m68k powerpc sparc64,$(DEB_HOST_ARCH)))
+
+ifneq (,$(filter s390x hppa m68k powerpc ppc64 sparc64,$(DEB_HOST_ARCH)))
+BLUEZ5_CODEC_LDAC=disabled
+else
+BLUEZ5_CODEC_LDAC=enabled
+endif
+
+
+ifneq (,$(filter hppa m68k powerpc sparc64,$(DEB_HOST_ARCH)))
 LIBROC=disabled
 cmnt_libroc=$(shell sed -e '/module-roc-s/ s/^\#*/\#/' -i debian/libpipewire-0.3-modules.install)
 else
