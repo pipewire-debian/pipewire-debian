@@ -1,0 +1,30 @@
+#!/bin/sh
+# autopkgtest check: Build and run a program against libwireplumber, to verify that
+# the headers and pkg-config file are installed correctly
+
+set -e
+
+if [ -n "${DEB_HOST_GNU_TYPE:-}" ]; then
+    CROSS_COMPILE="$DEB_HOST_GNU_TYPE-"
+else
+    CROSS_COMPILE=
+fi
+
+cat <<EOF > libwireplumber_test.c
+#include <wp/wp.h>
+
+int main(void)
+{
+  wp_init (WP_INIT_ALL);
+  return 0;
+}
+EOF
+
+# deliberately word-splitting pkg-config output:
+# shellcheck disable=SC2046
+"${CROSS_COMPILE}gcc" -o libwireplumber_test libwireplumber_test.c \
+$("${CROSS_COMPILE}pkg-config" --cflags --libs wireplumber-0.4)
+echo "build: OK"
+[ -x libwireplumber_test ]
+./libwireplumber_test
+echo "run: OK"
