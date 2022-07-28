@@ -1,4 +1,10 @@
-qpwgraph (0.3.2.r2.g4572c7f-1~ubuntu20.04) focal; urgency=medium
+qpwgraph (0.3.4-4~ubuntu20.04) focal; urgency=medium
+
+  * New upstream version 0.3.2
+
+ -- Sourav Das <souravdas142@gmail.com>  Wed, 13 Jul 2022 06:40:57 +0530
+
+qpwgraph (0.3.2.r2.g4572c7f-1~ubuntu21.10) impish; urgency=medium
 
   * New upstream version 0.3.2
 
