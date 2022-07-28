@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-wireplumber 0.4.10 (https://github.com/pipewire-debian/pipewire-debian)
+wireplumber 0.4.11 (https://github.com/pipewire-debian/pipewire-debian)
  
 
 CHANGELOGS - 
@@ -27,53 +27,9 @@ CHANGELOGS -
   wireplumber - 
 
     Changes:
-
-      - Added i18n support to be able to translate some user-visible strings
-      - wpctl now supports using ''@DEFAULT_{AUDIO_,VIDEO_,}{SINK,SOURCE}@'' as ID,
-        almost like pactl. Additionally, it supports a ''--pid'' flag for changing
-        volume and mute state by specifying a process ID, applying the state to all
-        nodes of a specific client process
-      - The Lua engine now supports loading Lua libraries. These can be placed
-        either in the standard Lua libraries path or in the "lib" subdirectory
-        of WirePlumber's "scripts" directory and can be loaded with ''require()''
-      - The Lua engine's sandbox has been relaxed to allow more functionality
-        in scripts (the debug & coroutine libraries and some other previously
-        disabled functions)
-      - Lua scripts are now wrapped in special WpPlugin objects, allowing them to
-        load asynchronously and declare when they have finished their loading
-      - Added a new script that provides the same functionality as
-        module-fallback-sink from PipeWire, but also takes endpoints into account
-        and can be customized more easily. Disabled by default for now to avoid
-        conflicts
     
-    Policy:
-    
-      - Added an optional experimental feature that allows filter-like streams
-        (like echo-cancel or filter-node) to match the channel layout of the
-        device they connect to, on both sides of the filter; that means that if,
-        for instance, a sink has 6 channels and the echo-cancel's source stream
-        is linked to that sink, then the virtual sink presented by echo-cancel
-        will also be configured to the same 6 channels layout. This feature needs
-        to be explicitly enabled in the configuration ("filter.forward-format")
-      - filter-like streams (filter-chain and such) no longer follow the default
-        sink when it changes, like in PulseAudio
-    
-    Fixes:
-    
-      - The suspend-node script now also suspends nodes that go into the "error"
-        state, allowing them to recover from errors without having to restart
-        WirePlumber
-      - Fixed a crash in mixer-api when setting volume with channelVolumes (#250)
-      - logind module now watches only for user state changes, avoiding errors when
-        machined is not running
-    
-    Misc:
-    
-      - The configuration files now have comments mentioning which options need to
-        be disabled in order to run WirePlumber without D-Bus
-      - The configuration files now have properties to enable/disable the monitors
-        and other sections, so that it is possible to disable them by dropping in
-        a file that just sets the relevant property to false
+      - For a complete changelog
+        see : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
    
  .    
  .

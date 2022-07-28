@@ -86,6 +86,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_iterator_reset@Base 0.3.95
  wp_iterator_unref@Base 0.3.95
  wp_library_error_enum_get_type@Base 0.3.95
+ wp_link_features_get_type@Base 0.4.11
  wp_link_get_linked_object_ids@Base 0.3.95
  wp_link_get_state@Base 0.4.10
  wp_link_get_type@Base 0.3.95
@@ -351,6 +352,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_spa_json_parser_ref@Base 0.4.7
  wp_spa_json_parser_unref@Base 0.4.7
  wp_spa_json_ref@Base 0.4.7.r23
+ wp_spa_json_to_string@Base 0.4.10
  wp_spa_json_unref@Base 0.4.7
  wp_spa_log_get_instance@Base 0.3.95
  wp_spa_pod_builder_add@Base 0.3.95

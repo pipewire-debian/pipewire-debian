@@ -1,4 +1,101 @@
-wireplumber (0.4.10-1~ubuntu20.04) focal; urgency=medium
+wireplumber (0.4.11.r4.gaee4fe2-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - Add new wireplumber-locales package
+
+  wireplumber - 
+
+    Changes:
+    
+      - For a complete changelog
+        see : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+  .
+  .
+
+
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 12 Jul 2022 10:05:44 +0530
+
+wireplumber (0.4.11-1~ubuntu21.10) impish; urgency=medium
+
+  Debian Package - 
+
+    - Add new wireplumber-locales package
+
+  wireplumber - 
+
+    Changes:
+    
+      - The libcamera monitor is now enabled by default, so if the libcamera source
+        is enabled in PipeWire, cameras discovered with the libcamera API will be
+        available out of the box. This is safe to use alongside V4L2, as long as
+        the user does not try to use the same camera over different APIs at the same
+        time
+      - Libcamera and V4L2 nodes now get assigned a ``priority.session`` number;
+        V4L2 nodes get a higher priority by default, so the default camera is going
+        to be /dev/video0 over V4L2, unless changed with ``wpctl``
+      - Libcamera nodes now get a user-friendly description based on their location
+        (ex. built-in front camera). Additionally, V4L2 nodes now have a "(V4L2)"
+        string appended to their description in order to be distinguished from
+        the libcamera ones
+      - 50-alsa-config.lua now has a section where you can set properties that
+        will only be applied if WirePlumber is running in a virtual machine. By
+        default it now sets ``api.alsa.period-size = 256`` and
+        ``api.alsa.headroom = 8192`` (#162, #134)
+    
+    Fixes:
+    
+      - The "enabled" properties in the config files are now "true" by default
+        when they are not defined. This fixes backwards compatibility with older
+        configuration files (#254)
+      - Fixed device name deduplication in the alsa monitor, when device reservation
+        is enabled (#241)
+      - Reverted a previous fix that makes it possible again to get a glitch when
+        changing default nodes while also changing the profile (GNOME Settings).
+        The fix was causing other problems and the issue will be addressed
+        differently in the future (#279)
+      - Fixed an issue that would prevent applications from being moved to a
+        recently plugged USB headset (#293)
+      - Fixed an issue where wireplumber would automatically link control ports,
+        if they are enabled, to audio ports, effectively breaking audio (#294)
+      - The policy now always considers the profile of a device that was previously
+        selected by the user, if it is available, when deciding which profile to
+        activate (#179). This may break certain use cases (see !360)
+      - A few documentation fixes
+    
+    Tools:
+    
+      - wpctl now has a ``get-volume`` command for easier scripting of volume controls
+      - wpctl now supports relative steps and percentage-based steps in ``set-volume``
+      - wpctl now also prints link states
+      - wpctl can now ``inspect`` metadata objects without showing critical warnings
+    
+    Library:
+    
+      - A new WpDBus API was added to maintain a single D-Bus connection among
+        modules that need one
+      - WpCore now has a method to get the virtual machine type, if WirePlumber
+        is running in a virtual machine
+      - WpSpaDevice now has a ``wp_spa_device_new_managed_object_iterator()`` method
+      - WpSpaJson now has a ``wp_spa_json_to_string()`` method that returns a newly
+        allocated string with the correct size of the string token
+      - WpLink now has a ``WP_LINK_FEATURE_ESTABLISHED`` that allows the caller to
+        wait until the link is in the PAUSED or ACTIVE state. This transparently
+        now enables watching links for negotiation or allocation errors and failing
+        gracefully instead of keeping dead link objects around (#294)
+    
+    Misc:
+    
+      - The Lua subproject was bumped to version 5.4.4
+
+   
+   
+ 
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 05 Jul 2022 21:07:51 +0530
+
+wireplumber (0.4.10.r48.g37bd392-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
 
@@ -57,7 +154,7 @@ wireplumber (0.4.10-1~ubuntu20.04) focal; urgency=medium
    
    
  
- -- Sourav Das <souravdas142@gmail.com>  Tue, 10 May 2022 22:36:16 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 30 Jun 2022 18:07:40 +0530
 
 wireplumber (0.4.9.r8.g812fc9b-1~ubuntu20.04) focal; urgency=medium
 
