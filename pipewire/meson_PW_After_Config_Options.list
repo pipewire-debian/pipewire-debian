@@ -1,6 +1,6 @@
 Core properties:
-  Source dir /home/sdas/pipewire-debian/pipewire/build/ok/pipewire
-  Build dir  /home/sdas/pipewire-debian/pipewire/build/ok/pipewire/obj-x86_64-linux-gnu
+  Source dir /home/sdas/imp/pw/2/pipewire
+  Build dir  /home/sdas/imp/pw/2/pipewire/obj-x86_64-linux-gnu
 
 Main project options:
   
@@ -52,9 +52,8 @@ Main project options:
   
   Compiler options               Current Value                    Possible Values                  Description
   ----------------               -------------                    ---------------                  -----------
-  c_args                         [-g, -O2, -fdebug-prefix-                                         Extra arguments passed to the c compiler
-                                 map=/home/sdas/pipewire-debian/p                                  
-                                 ipewire/build/ok/pipewire=.,                                      
+  c_args                         [-g, -O2, -fdebug-prefix-map=/ho                                  Extra arguments passed to the c compiler
+                                 me/sdas/imp/pw/2/pipewire=.,                                      
                                  -fstack-protector-strong,                                         
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
@@ -62,9 +61,8 @@ Main project options:
   c_link_args                    [-Wl,-Bsymbolic-functions,                                        Extra arguments passed to the c linker
                                  -Wl,-z,relro, -Wl,-z,now,                                         
                                  -Wl,-z,defs, -Wl,--as-needed,                                     
-                                 -g, -O2, -fdebug-prefix-                                          
-                                 map=/home/sdas/pipewire-debian/p                                  
-                                 ipewire/build/ok/pipewire=.,                                      
+                                 -g, -O2, -fdebug-prefix-map=/hom                                  
+                                 e/sdas/imp/pw/2/pipewire=.,                                       
                                  -fstack-protector-strong,                                         
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
@@ -72,9 +70,8 @@ Main project options:
   c_std                          gnu99                            [none, c89, c99, c11, c17, c18,  C language standard to use
                                                                   c2x, gnu89, gnu99, gnu11,        
                                                                    gnu17, gnu18, gnu2x]            
-  cpp_args                       [-g, -O2, -fdebug-prefix-                                         Extra arguments passed to the cpp compiler
-                                 map=/home/sdas/pipewire-debian/p                                  
-                                 ipewire/build/ok/pipewire=.,                                      
+  cpp_args                       [-g, -O2, -fdebug-prefix-map=/ho                                  Extra arguments passed to the cpp compiler
+                                 me/sdas/imp/pw/2/pipewire=.,                                      
                                  -fstack-protector-strong,                                         
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
@@ -84,9 +81,8 @@ Main project options:
   cpp_link_args                  [-Wl,-Bsymbolic-functions,                                        Extra arguments passed to the cpp linker
                                  -Wl,-z,relro, -Wl,-z,now,                                         
                                  -Wl,-z,defs, -Wl,--as-needed,                                     
-                                 -g, -O2, -fdebug-prefix-                                          
-                                 map=/home/sdas/pipewire-debian/p                                  
-                                 ipewire/build/ok/pipewire=.,                                      
+                                 -g, -O2, -fdebug-prefix-map=/hom                                  
+                                 e/sdas/imp/pw/2/pipewire=.,                                       
                                  -fstack-protector-strong,                                         
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
@@ -127,6 +123,7 @@ Main project options:
   audiomixer                     enabled                          [enabled, disabled, auto]        Enable audiomixer spa plugin integration
   audiotestsrc                   enabled                          [enabled, disabled, auto]        Enable audiotestsrc spa plugin integration
   avahi                          auto                             [enabled, disabled, auto]        Enable code that depends on avahi
+  avb                            auto                             [enabled, disabled, auto]        Enable AVB code
   bluez5                         auto                             [enabled, disabled, auto]        Enable bluez5 spa plugin integration
   bluez5-backend-hfp-native      enabled                          [enabled, disabled, auto]        Enable HFP in native backend in bluez5 spa plugin
   bluez5-backend-hsp-native      enabled                          [enabled, disabled, auto]        Enable HSP in native backend in bluez5 spa plugin
@@ -134,10 +131,11 @@ Main project options:
                                                                                                    hsphfpd)
   bluez5-backend-ofono           enabled                          [enabled, disabled, auto]        Enable oFono HFP backend in bluez5 spa plugin (no dependency on
                                                                                                    oFono)
-  bluez5-codec-aac               auto                             [enabled, disabled, auto]        Enable Fraunhofer FDK AAC open source codec implementation
-  bluez5-codec-aptx              auto                             [enabled, disabled, auto]        Enable AptX Qualcomm open source codec implementation
+  bluez5-codec-aac               enabled                          [enabled, disabled, auto]        Enable Fraunhofer FDK AAC open source codec implementation
+  bluez5-codec-aptx              enabled                          [enabled, disabled, auto]        Enable AptX Qualcomm open source codec implementation
   bluez5-codec-lc3plus           disabled                         [enabled, disabled, auto]        Enable LC3plus open source codec implementation
-  bluez5-codec-ldac              auto                             [enabled, disabled, auto]        Enable LDAC Sony open source codec implementation
+  bluez5-codec-ldac              enabled                          [enabled, disabled, auto]        Enable LDAC Sony open source codec implementation
+  bluez5-codec-opus              auto                             [enabled, disabled, auto]        Enable Opus open source codec implementation
   control                        enabled                          [enabled, disabled, auto]        Enable control spa plugin integration
   dbus                           enabled                          [enabled, disabled, auto]        Enable code that depends on dbus
   docdir                                                                                           Directory for installing documentation to (defaults to

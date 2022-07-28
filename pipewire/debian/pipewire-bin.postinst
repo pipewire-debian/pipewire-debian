@@ -14,28 +14,21 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.52-1 (https://pipewire-debian.github.io)
+pipewire 0.3.56-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
 
-    - move out pipewire-media-session to a new package
-    - move out pipewire-x11-bell to a new package (=> NEW)
-    - Recommending using wireplumber. add ppa :
-      ppa:pipewire-debian/wireplumber-upstream
-    - Recommending rt-kit and dbus-session-managers
+    - With several fixes from master
  
   PipeWire - 
-
-    - Add 44.1KHz to allowed samplerates. The server can now switch by
-      default between 48KHz and 44.1KHz.
-    - Streams now allocate less resources.
-    - Fix some bugs that could make the server crash.
-    - Bluetooth now supports the LC3plus vendor codec.
-    - Many bugfixes and improvements.
+    - A critical bug that could crash JACK apps was fixed.
+    - Some more regressions in audiomixer were fixed. This should fix crackling
+      and stuttering in some cases as well as some channel mapping regressions.
+    - A bug in the alsa plugin was fixed that could cause stuttering in VMs.
+    - Bluetooth sources should have improved latency and rate control.
+    - Many more bugfixes and improvements.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
-  .
-  .
 
   .
   . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      

@@ -35,6 +35,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_context_find_spa_lib@Base 0.3.1
  pw_context_for_each_global@Base 0.3.1
  pw_context_get_conf_section@Base 0.3.22
+ pw_context_get_data_loop@Base 0.3.56
  pw_context_get_default_core@Base 0.3.1
  pw_context_get_main_loop@Base 0.3.1
  pw_context_get_object@Base 0.3.1

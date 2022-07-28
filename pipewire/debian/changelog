@@ -1,3 +1,101 @@
+pipewire (0.3.56.r34.gb1b8b09-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - With several fixes from master
+ 
+  PipeWire - 
+    - A critical bug that could crash JACK apps was fixed.
+    - Some more regressions in audiomixer were fixed. This should fix crackling
+      and stuttering in some cases as well as some channel mapping regressions.
+    - A bug in the alsa plugin was fixed that could cause stuttering in VMs.
+    - Bluetooth sources should have improved latency and rate control.
+    - Many more bugfixes and improvements.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+
+
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 22 Jul 2022 16:40:59 +0530
+
+pipewire (0.3.55-1~ubuntu21.10) impish; urgency=medium
+
+  Debian Package - 
+
+    - With several fixes from master
+ 
+  PipeWire - 
+    - Some critical bugs in the new audioconvert were fixed. The old
+      adapter had internal buffering that was abused in some places.
+    - The bluetooth sources were rewritten using a ringbuffer to make them
+      more reliable to jitter and remove old audioconvert behaviour.
+    - Many improvements to the audio converter.
+    - Native DSD128 and up is now supported by pw-dsdplay.
+    - Fix some more critical bugs in the new audioconvert and the queueing
+      in pw-stream that causes stuttering and hickups.
+    - HFP hardware volumes are now saved and restored.
+    - Format conversions and mixing was improved.
+    - Small bug fixes and improvements.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+  .
+  .
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+
+
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 12 Jul 2022 09:31:30 +0530
+
+pipewire (0.3.53.r23.ge1cb7c6-1~ubuntu21.10) impish; urgency=medium
+
+  Debian Package - 
+
+    - With several fixes from master
+ 
+  PipeWire - 
+    - The 44.1KHz samplerate was removed again from the defaults, it caused
+      all kinds of problems with various hardware.
+    - The ALSA plugin should now be able to deal with unsupported samplerates
+      and fall back to the nearest supported one.
+    - The rlimits performance tuning wiki page was updated. Please check
+      you limits.conf file, the version on the wiki used to give all
+      processes a -19 nice level instead of just the pipewire daemon.
+    - The audioconvert plugin was rewritten to be more maintainable and
+      faster. It also gained support for control ports and dithering with
+      optional noise shaping.
+    - An impossible buffering situation is avoided in pulse-server that would
+      cause some applications (sunshine, ...) to stutter.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+  .
+  .
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 05 Jul 2022 20:05:03 +0530
+
 pipewire (0.3.52.r2.g9255cfb-10~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

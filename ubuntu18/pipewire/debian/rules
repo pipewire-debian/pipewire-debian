@@ -55,6 +55,7 @@ override_dh_auto_configure:
         --libexecdir=/usr/libexec  \
     	-Daudiotestsrc=enabled \
 		-Dauto_features=enabled \
+		-Davb=disabled \
 		-Db_lto=$(LTO) \
 		-Db_pie=true \
 		-Dbluez5-codec-lc3plus=disabled \
@@ -75,6 +76,8 @@ override_dh_auto_configure:
 	echo "/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3/jack/" > debian/ld.so.conf.d/pipewire-jack-$(DEB_HOST_MULTIARCH).conf
 	install -Dm644 /dev/null debian/with-alsa
 	echo -e "\nCommenting out Disabled feature not to be installed...$(cmnt_libcam) $(cmnt_libroc)\n"
+	sed -e '/avb/ s/^\#*/\#/' -i debian/*.install
+	echo -e "usr/bin/pipewire-avb exists\nusr/share/pipewire/pipewire-avb.conf" >> debian/not-installed
 
 
 

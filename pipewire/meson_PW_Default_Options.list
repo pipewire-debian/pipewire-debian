@@ -1,24 +1,24 @@
 Core properties:
-  Source dir /home/sdas/pipewire-debian/pipewire/build/ok/pipewire
-  Build dir  /home/sdas/pipewire-debian/pipewire/build/ok/pipewire/build
+  Source dir /home/sdas/imp/pw/4/pipewire
+  Build dir  /home/sdas/imp/pw/4/pipewire/build
 
 Main project options:
   
   Core options                   Current Value                    Possible Values                  Description
   ------------                   -------------                    ---------------                  -----------
-  auto_features                  auto                             [enabled, disabled, auto]        Override value of all 'auto' features
+  auto_features                  enabled                          [enabled, disabled, auto]        Override value of all 'auto' features
   backend                        ninja                            [ninja, vs, vs2010, vs2012,      Backend to use
                                                                   vs2013, vs2015, vs2017, vs2019,  
                                                                    vs2022, xcode]                  
-  buildtype                      debugoptimized                   [plain, debug, debugoptimized,   Build type to use
+  buildtype                      plain                            [plain, debug, debugoptimized,   Build type to use
                                                                   release, minsize, custom]        
   cmake_prefix_path              []                                                                List of additional prefixes for cmake to search
-  debug                          true                             [true, false]                    Debug
+  debug                          false                            [true, false]                    Debug
   default_library                shared                           [shared, static, both]           Default library type
   force_fallback_for             []                                                                Force fallback for those subprojects
   install_umask                  0022                             [preserve, 0000-0777]            Default umask to apply on permissions of installed files
   layout                         mirror                           [mirror, flat]                   Build directory layout
-  optimization                   2                                [0, g, 1, 2, 3, s]               Optimization level
+  optimization                   0                                [0, g, 1, 2, 3, s]               Optimization level
   pkg_config_path                []                                                                List of additional paths for pkg-config to search
   strip                          false                            [true, false]                    Strip targets on install
   unity                          off                              [on, off, subprojects]           Unity build
@@ -97,6 +97,7 @@ Main project options:
   audiomixer                     enabled                          [enabled, disabled, auto]        Enable audiomixer spa plugin integration
   audiotestsrc                   enabled                          [enabled, disabled, auto]        Enable audiotestsrc spa plugin integration
   avahi                          auto                             [enabled, disabled, auto]        Enable code that depends on avahi
+  avb                            auto                             [enabled, disabled, auto]        Enable AVB code
   bluez5                         auto                             [enabled, disabled, auto]        Enable bluez5 spa plugin integration
   bluez5-backend-hfp-native      enabled                          [enabled, disabled, auto]        Enable HFP in native backend in bluez5 spa plugin
   bluez5-backend-hsp-native      enabled                          [enabled, disabled, auto]        Enable HSP in native backend in bluez5 spa plugin
@@ -106,8 +107,9 @@ Main project options:
                                                                                                    oFono)
   bluez5-codec-aac               auto                             [enabled, disabled, auto]        Enable Fraunhofer FDK AAC open source codec implementation
   bluez5-codec-aptx              auto                             [enabled, disabled, auto]        Enable AptX Qualcomm open source codec implementation
-  bluez5-codec-lc3plus           auto                             [enabled, disabled, auto]        Enable LC3plus open source codec implementation
+  bluez5-codec-lc3plus           disabled                         [enabled, disabled, auto]        Enable LC3plus open source codec implementation
   bluez5-codec-ldac              auto                             [enabled, disabled, auto]        Enable LDAC Sony open source codec implementation
+  bluez5-codec-opus              auto                             [enabled, disabled, auto]        Enable Opus open source codec implementation
   control                        enabled                          [enabled, disabled, auto]        Enable control spa plugin integration
   dbus                           enabled                          [enabled, disabled, auto]        Enable code that depends on dbus
   docdir                                                                                           Directory for installing documentation to (defaults to

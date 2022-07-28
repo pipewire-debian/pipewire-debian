@@ -2,9 +2,9 @@
 usr/lib/*/pipewire-0.3/v4l2/libpw-v4l2.so
 
 
-
 usr/lib/*/pipewire-0.3/libpipewire-module-access.so
 usr/lib/*/pipewire-0.3/libpipewire-module-adapter.so
+usr/lib/*/pipewire-0.3/libpipewire-module-avb.so
 usr/lib/*/pipewire-0.3/libpipewire-module-client-device.so
 usr/lib/*/pipewire-0.3/libpipewire-module-client-node.so
 usr/lib/*/pipewire-0.3/libpipewire-module-echo-cancel.so
