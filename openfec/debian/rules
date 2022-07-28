@@ -47,12 +47,8 @@ override_dh_auto_configure:
 	find debian/headers/openfec/ -type f -not -iname '*.h' -delete
 	find debian/headers/openfec/ -type d -empty -delete
 
-
-
-# For ubuntu 18.04 or ubuntu < 20.04(exp) always failed, to mitigate this 
-# uncomment below only `override_dh_dwz` line, This fixes for failed with 
-# dh_dwz: dwz -q -- debian/openfec/usr/lib/$(DEB_HOST_MULTIARCH)/libopenfec.so.1.4.2 returned exit code 1
-
+# For ubuntu 18.04 or ubuntu < 20.04(exp) uncomment below line
 #override_dh_dwz:
-	    # It will bypass `dh_dwz` call
+	    # This fixes for failed with 
+		# dh_dwz: dwz -q -- debian/openfec/usr/lib/$(DEB_HOST_MULTIARCH)/libopenfec.so.1.4.2 returned exit code 1
 		

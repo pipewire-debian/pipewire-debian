@@ -1,9 +1,11 @@
-openfec (1.4.2.4-1~ubuntu20.04) focal; urgency=medium
+openfec (1.4.2.4-5~ubuntu20.04) focal; urgency=medium
 
   * Package rebased on roc-streaming fork
   * Bump openfec version to 1.4.2.4
+  * patch with latest PR on openfec repo
+  * see https://github.com/roc-streaming/openfec/pull/{2,3}
 
- -- Sourav Das <souravdas142@gmail.com>  Thu, 19 Jul 2021 18:02:24 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Mon, 20 Jun 2022 08:41:17 +0530
 
 openfec (1.4.2-2~ubuntu20.04) focal; urgency=medium
 
