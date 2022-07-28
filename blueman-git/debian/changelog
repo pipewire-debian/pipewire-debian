@@ -1,3 +1,15 @@
+blueman-git (2.3.r8.g0076185-1~ubuntu20.04) focal; urgency=low
+
+  * New release
+
+ -- Sourav Das <souravdas142@gmail.com>  Wed, 13 Jul 2022 07:23:00 +0530
+
+blueman-git (2.2.4-3~ubuntu21.10) impish; urgency=medium
+
+  * Fix Bluetooth AppIndicator is not showing
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 02 Jun 2022 18:24:00 +0530
+
 blueman-git (2.2.4-2~ubuntu20.04) focal; urgency=medium
 
   * Make 'ayatanaappindicator' default instead 'appindicator'
