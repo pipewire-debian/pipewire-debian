@@ -1,3 +1,27 @@
+libcamera (0.r3734.gd010a51a-2~ubuntu20.04) focal; urgency=medium
+
+  * Update till Fri, 22 Jul 2022 16:24:17 +0530
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 22 Jul 2022 16:24:17 +0530
+
+libcamera (0.r3718.gef77e263-1~ubuntu21.10) impish; urgency=medium
+
+  * Update till Tue, 19 Jul 2022 17:00:45 +0530
+
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 19 Jul 2022 17:00:45 +0530
+
+libcamera (0.r3704.gba643593-1~ubuntu21.10) impish; urgency=medium
+
+  * Update till Tue, 12 Jul 2022 08:59:52 +0530
+
+ -- Sourav Das <souravdas142@gmail.com>  Tue, 12 Jul 2022 08:59:52 +0530
+
+libcamera (0.r3686.g3fa79cc6-1~ubuntu21.10) impish; urgency=medium
+
+  * Update till Fri, 01 Jul 2022 20:47:59 +0530
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 01 Jul 2022 20:47:59 +0530
+
 libcamera (0.r3633.gb4d4b78c-1~ubuntu20.04) focal; urgency=medium
 
   * Update till Fri, Thu, 09 Jun 2022 20:54:06 +0530
