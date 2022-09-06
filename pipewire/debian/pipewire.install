@@ -1,2 +1,3 @@
 usr/lib/systemd/user/pipewire.service
 usr/lib/systemd/user/pipewire.socket
+usr/lib/systemd/user/filter-chain.service

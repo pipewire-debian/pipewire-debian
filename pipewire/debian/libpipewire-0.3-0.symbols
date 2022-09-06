@@ -9,6 +9,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_client_info_merge@Base 0.3.35
  pw_client_info_update@Base 0.3.1
  pw_conf_load_conf@Base 0.3.22
+ pw_conf_load_conf_for_context@Base 0.3.57
  pw_conf_load_state@Base 0.3.22
  pw_conf_save_state@Base 0.3.22
  pw_context_add_listener@Base 0.3.1

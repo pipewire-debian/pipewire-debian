@@ -1,3 +1,35 @@
+pipewire (0.3.57.r4.gf957435-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - With several fixes from master
+ 
+  PipeWire - 
+    - Support masking of conf.d/ files. (#2629)
+    - Use org.freedesktop.portal.Realtime when available. This does the
+      correct PID/TID mappings to make realtime also work from flatpaks.
+    - Fix rate adjustement logic in pulse-tunnel. This would cause
+      increasing delays and hickups when using tunnels. (#2548)
+    - Add OPUS as a new vendor codec. Add OPUS-A2DP spec. PipeWire can now
+      send and reveive OPUS data over bluetooth.
+    - An AAC decoder was added so that PipeWire can now also function as
+      an A2DP AAC receiver.
+    - Fix some issues where the wrong samplerate was used. (#2614)
+    - Fix rate match for sources. This fixes an error where follower sources
+      would generate many resync warnings.
+    - Many more bugfixes and improvements.
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 02 Sep 2022 20:16:40 +0530
+
 pipewire (0.3.56.r34.gb1b8b09-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

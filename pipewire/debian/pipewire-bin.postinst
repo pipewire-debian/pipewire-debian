@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.56-1 (https://pipewire-debian.github.io)
+pipewire 0.3.57-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
@@ -22,11 +22,18 @@ pipewire 0.3.56-1 (https://pipewire-debian.github.io)
     - With several fixes from master
  
   PipeWire - 
-    - A critical bug that could crash JACK apps was fixed.
-    - Some more regressions in audiomixer were fixed. This should fix crackling
-      and stuttering in some cases as well as some channel mapping regressions.
-    - A bug in the alsa plugin was fixed that could cause stuttering in VMs.
-    - Bluetooth sources should have improved latency and rate control.
+    - Support masking of conf.d/ files. (#2629)
+    - Use org.freedesktop.portal.Realtime when available. This does the
+      correct PID/TID mappings to make realtime also work from flatpaks.
+    - Fix rate adjustement logic in pulse-tunnel. This would cause
+      increasing delays and hickups when using tunnels. (#2548)
+    - Add OPUS as a new vendor codec. Add OPUS-A2DP spec. PipeWire can now
+      send and reveive OPUS data over bluetooth.
+    - An AAC decoder was added so that PipeWire can now also function as
+      an A2DP AAC receiver.
+    - Fix some issues where the wrong samplerate was used. (#2614)
+    - Fix rate match for sources. This fixes an error where follower sources
+      would generate many resync warnings.
     - Many more bugfixes and improvements.
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
 
