@@ -1,22 +1,21 @@
-Index: blueman-2.3.r8.g0076185/blueman/main/NetConf.py
+Index: blueman-git/blueman/main/NetConf.py
 ===================================================================
---- blueman-2.3.r8.g0076185.orig/blueman/main/NetConf.py
-+++ blueman-2.3.r8.g0076185/blueman/main/NetConf.py
-@@ -258,7 +258,7 @@ class NetConf:
-     @classmethod
-     def _add_ipt_rule(cls, table: str, chain: str, rule: str) -> None:
-         cls._ipt_rules.append((table, chain, rule))
+--- blueman-git.orig/blueman/main/NetConf.py
++++ blueman-git/blueman/main/NetConf.py
+@@ -362,14 +362,14 @@ class NetConf:
+ 
+     def add_ipt_rule(self, table: str, chain: str, rule: str) -> None:
+         self.ipt_rules.append((table, chain, rule))
 -        args = ["/sbin/iptables", "-t", table, "-A", chain] + rule.split(" ")
 +        args = ["/usr/sbin/iptables", "-t", table, "-A", chain] + rule.split(" ")
          logging.debug(" ".join(args))
          ret = call(args)
          logging.info(f"Return code {ret}")
-@@ -266,7 +266,7 @@ class NetConf:
-     @classmethod
-     def _del_ipt_rules(cls) -> None:
-         for table, chain, rule in cls._ipt_rules:
+ 
+     def del_ipt_rules(self) -> None:
+         for table, chain, rule in self.ipt_rules:
 -            call(["/sbin/iptables", "-t", table, "-D", chain] + rule.split(" "))
 +            call(["/usr/sbin/iptables", "-t", table, "-D", chain] + rule.split(" "))
-         cls._ipt_rules = []
-         cls.unlock("iptables")
+         self.ipt_rules = []
+         self.unlock("iptables")
  
