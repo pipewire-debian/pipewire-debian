@@ -55,6 +55,8 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_find_file@Base 0.4.2
  wp_get_config_dir@Base 0.3.95
  wp_get_data_dir@Base 0.3.95
+ wp_get_library_api_version@Base 0.4.11
+ wp_get_library_version@Base 0.4.11
  wp_get_module_dir@Base 0.3.95
  wp_global_proxy_bind@Base 0.3.95
  wp_global_proxy_get_global_properties@Base 0.3.95
