@@ -1,3 +1,9 @@
+libcamera (0.r3875.g5eb7be6a-1~ubuntu20.04) focal; urgency=medium
+
+  * Update till Fri, 02 Sep 2022 19:03:43 +0530
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 02 Sep 2022 19:03:43 +0530
+
 libcamera (0.r3734.gd010a51a-2~ubuntu20.04) focal; urgency=medium
 
   * Update till Fri, 22 Jul 2022 16:24:17 +0530
