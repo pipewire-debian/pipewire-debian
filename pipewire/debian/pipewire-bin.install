@@ -35,7 +35,6 @@ usr/bin/pw-profiler
 usr/bin/pw-record
 usr/bin/pw-reserve
 usr/bin/pw-top
-usr/bin/pw-v4l2
 usr/bin/spa-*
 usr/share/alsa-card-profile
 usr/share/man/man1/pipewire.*

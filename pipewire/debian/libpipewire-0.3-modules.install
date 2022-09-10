@@ -1,5 +1,4 @@
 # usr/lib/*/pipewire-0.3/*.so
-usr/lib/*/pipewire-0.3/v4l2/libpw-v4l2.so
 
 
 usr/lib/*/pipewire-0.3/libpipewire-module-access.so
