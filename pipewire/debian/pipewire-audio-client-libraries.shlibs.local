@@ -1,4 +1,0 @@
-libjack 0 pipewire-audio-client-libraries (= ${binary:Version})
-libjacknet 0 pipewire-audio-client-libraries (= ${binary:Version})
-libjackserver 0 pipewire-audio-client-libraries (= ${binary:Version})
-libpipewire-0.3 0 libpipewire-0.3-0 (= ${binary:Version})

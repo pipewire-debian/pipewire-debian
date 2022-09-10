@@ -1,5 +1,5 @@
 #!/bin/sh 
-# pipewire-audio-client-libraries.postinst, runs ldconfig 
+# pipewire-jack.postinst, runs ldconfig 
 set -e 
  
 #DEBHELPER#

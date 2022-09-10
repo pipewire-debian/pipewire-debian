@@ -1,0 +1,4 @@
+libjack 0 pipewire-jack (= ${binary:Version})
+libjacknet 0 pipewire-jack (= ${binary:Version})
+libjackserver 0 pipewire-jack (= ${binary:Version})
+libpipewire-0.3 0 libpipewire-0.3-0 (= ${binary:Version})

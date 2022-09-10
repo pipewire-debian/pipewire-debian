@@ -124,10 +124,10 @@ override_dh_makeshlibs:
 
 override_dh_shlibdeps-arch:
 	dh_shlibdeps \
-		-ppipewire-audio-client-libraries \
+		-ppipewire-jack \
 		-l/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3 \
 		-- \
-		-Ldebian/pipewire-audio-client-libraries.shlibs.local \
+		-Ldebian/pipewire-jack.shlibs.local \
 		$(NULL)
 	dh_shlibdeps \
 		--remaining-packages \

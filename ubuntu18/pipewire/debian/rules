@@ -16,7 +16,7 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 
 ifneq (,$(filter s390x hppa m68k powerpc ppc64 ppc64el sparc64,$(DEB_HOST_ARCH)))
 LIBCAMERA=disabled
-cmnt_libcam=$(shell sed -e '/libcamera/ s/^\#*/\#/' -i debian/libspa-0.2-modules.install)
+cmnt_libcam=$(shell sed -e '/libcamera/ s/^\#*/\#/' -i debian/pipewire-libcamera.install)
 else
 LIBCAMERA=enabled
 endif
@@ -115,10 +115,10 @@ override_dh_makeshlibs:
 
 override_dh_shlibdeps-arch:
 	dh_shlibdeps \
-		-ppipewire-audio-client-libraries \
+		-ppipewire-jack \
 		-l/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3 \
 		-- \
-		-Ldebian/pipewire-audio-client-libraries.shlibs.local \
+		-Ldebian/pipewire-jack.shlibs.local \
 		$(NULL)
 	dh_shlibdeps \
 		--remaining-packages \
