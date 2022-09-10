@@ -18,7 +18,7 @@ LTO_NON_SUPPORTED_VERSION_CODENAME=focal bionic
 
 ifneq (,$(filter s390x hppa i386 i686 m68k powerpc ppc64 ppc64el sparc64,$(DEB_HOST_ARCH)))
 LIBCAMERA=disabled
-cmnt_libcam=$(shell sed -e '/libcamera/ s/^\#*/\#/' -i debian/libspa-0.2-modules.install)
+cmnt_libcam=$(shell sed -e '/libcamera/ s/^\#*/\#/' -i debian/pipewire-libcamera.install)
 else
 LIBCAMERA=enabled
 endif
