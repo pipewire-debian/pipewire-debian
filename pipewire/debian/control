@@ -237,7 +237,7 @@ Description: PipeWire multimedia server - programs
  the pipewire package instead.
 
 Package: pipewire-pulse
-Section: video
+Section: sound
 Architecture: linux-any
 Multi-Arch: foreign
 Replaces: pipewire-bin (<< 0.3.28-2)
