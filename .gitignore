@@ -1,6 +1,7 @@
 roc-toolkit*/test*
 roc-toolkit*/pub*
 openfec*/test*
+build/
 tmp
 tst
 test

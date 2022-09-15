@@ -14,45 +14,24 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.57-1 (https://pipewire-debian.github.io)
+pipewire 0.3.58-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
 
-    - With several fixes from master
- 
-  PipeWire - 
-    - Support masking of conf.d/ files. (#2629)
-    - Use org.freedesktop.portal.Realtime when available. This does the
-      correct PID/TID mappings to make realtime also work from flatpaks.
-    - Fix rate adjustement logic in pulse-tunnel. This would cause
-      increasing delays and hickups when using tunnels. (#2548)
-    - Add OPUS as a new vendor codec. Add OPUS-A2DP spec. PipeWire can now
-      send and reveive OPUS data over bluetooth.
-    - An AAC decoder was added so that PipeWire can now also function as
-      an A2DP AAC receiver.
-    - Fix some issues where the wrong samplerate was used. (#2614)
-    - Fix rate match for sources. This fixes an error where follower sources
-      would generate many resync warnings.
-    - Many more bugfixes and improvements.
+    - pipewire-audio-client-library splits into pipewire-{jack,alsa}
+    - pipewire-{libcamera,v4l2} splits from libspa-0.2-modules 
+      and libpipewire-0.3-modules
+
+  Pipewire -
+
     - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
-
   .
-  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
-    to get it add another PPA,      
-    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
-    For more instruction read : https://pipewire-debian.github.io      
-  .
-  .
-
-
 
 Troubleshooting - 
 
   - Have any package regarding issue? report on github :
     https://github.com/pipewire-debian/pipewire-debian/issues/new/choose
-
-  - Attempt to build with latest(git) libcamera support
 
   - Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
     as session manager, to get it add another PPA,      

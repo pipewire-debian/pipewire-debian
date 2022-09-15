@@ -1,3 +1,26 @@
+pipewire (0.3.58-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - pipewire-audio-client-library splits into pipewire-{jack,alsa}
+    - pipewire-{libcamera,v4l2} splits from libspa-0.2-modules 
+      and libpipewire-0.3-modules
+
+  Pipewire -
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+    
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 15 Sep 2022 14:07:34 +0530
+
 pipewire (0.3.57.r4.gf957435-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

@@ -1,24 +1,24 @@
 Core properties:
-  Source dir /home/sdas/imp/pw/4/pipewire
-  Build dir  /home/sdas/imp/pw/4/pipewire/build
+  Source dir /home/sdas/pipewire-debian/pipewire/build/1/pipewire-0.3.58
+  Build dir  /home/sdas/pipewire-debian/pipewire/build/1/pipewire-0.3.58/build
 
 Main project options:
   
   Core options                   Current Value                    Possible Values                  Description
   ------------                   -------------                    ---------------                  -----------
-  auto_features                  enabled                          [enabled, disabled, auto]        Override value of all 'auto' features
+  auto_features                  auto                             [enabled, disabled, auto]        Override value of all 'auto' features
   backend                        ninja                            [ninja, vs, vs2010, vs2012,      Backend to use
                                                                   vs2013, vs2015, vs2017, vs2019,  
                                                                    vs2022, xcode]                  
-  buildtype                      plain                            [plain, debug, debugoptimized,   Build type to use
+  buildtype                      debugoptimized                   [plain, debug, debugoptimized,   Build type to use
                                                                   release, minsize, custom]        
   cmake_prefix_path              []                                                                List of additional prefixes for cmake to search
-  debug                          false                            [true, false]                    Debug
+  debug                          true                             [true, false]                    Debug
   default_library                shared                           [shared, static, both]           Default library type
   force_fallback_for             []                                                                Force fallback for those subprojects
   install_umask                  0022                             [preserve, 0000-0777]            Default umask to apply on permissions of installed files
   layout                         mirror                           [mirror, flat]                   Build directory layout
-  optimization                   0                                [0, g, 1, 2, 3, s]               Optimization level
+  optimization                   2                                [0, g, 1, 2, 3, s]               Optimization level
   pkg_config_path                []                                                                List of additional paths for pkg-config to search
   strip                          false                            [true, false]                    Strip targets on install
   unity                          off                              [on, off, subprojects]           Unity build
@@ -107,7 +107,7 @@ Main project options:
                                                                                                    oFono)
   bluez5-codec-aac               auto                             [enabled, disabled, auto]        Enable Fraunhofer FDK AAC open source codec implementation
   bluez5-codec-aptx              auto                             [enabled, disabled, auto]        Enable AptX Qualcomm open source codec implementation
-  bluez5-codec-lc3plus           disabled                         [enabled, disabled, auto]        Enable LC3plus open source codec implementation
+  bluez5-codec-lc3plus           auto                             [enabled, disabled, auto]        Enable LC3plus open source codec implementation
   bluez5-codec-ldac              auto                             [enabled, disabled, auto]        Enable LDAC Sony open source codec implementation
   bluez5-codec-opus              auto                             [enabled, disabled, auto]        Enable Opus open source codec implementation
   control                        enabled                          [enabled, disabled, auto]        Enable control spa plugin integration
@@ -119,6 +119,7 @@ Main project options:
   evl                            disabled                         [enabled, disabled, auto]        Enable EVL support spa plugin integration
   examples                       enabled                          [enabled, disabled, auto]        Build examples
   ffmpeg                         disabled                         [enabled, disabled, auto]        Enable ffmpeg spa plugin integration
+  flatpak                        enabled                          [enabled, disabled, auto]        Enable Flatpak support
   gstreamer                      auto                             [enabled, disabled, auto]        Build GStreamer plugins
   gstreamer-device-provider      auto                             [enabled, disabled, auto]        Build GStreamer device provider plugin
   installed_tests                disabled                         [enabled, disabled, auto]        Install manual and automated test executables

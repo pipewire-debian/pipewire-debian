@@ -1,6 +1,6 @@
 Core properties:
-  Source dir /home/sdas/imp/pw/2/pipewire
-  Build dir  /home/sdas/imp/pw/2/pipewire/obj-x86_64-linux-gnu
+  Source dir /home/sdas/pipewire-debian/pipewire/test/pipewire-0.3.58
+  Build dir  /home/sdas/pipewire-debian/pipewire/test/pipewire-0.3.58/obj-x86_64-linux-gnu
 
 Main project options:
   
@@ -52,8 +52,9 @@ Main project options:
   
   Compiler options               Current Value                    Possible Values                  Description
   ----------------               -------------                    ---------------                  -----------
-  c_args                         [-g, -O2, -fdebug-prefix-map=/ho                                  Extra arguments passed to the c compiler
-                                 me/sdas/imp/pw/2/pipewire=.,                                      
+  c_args                         [-g, -O2, -fdebug-prefix-                                         Extra arguments passed to the c compiler
+                                 map=/home/sdas/pipewire-debian/p                                  
+                                 ipewire/test/pipewire-0.3.58=.,                                   
                                  -fstack-protector-strong,                                         
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
@@ -61,8 +62,9 @@ Main project options:
   c_link_args                    [-Wl,-Bsymbolic-functions,                                        Extra arguments passed to the c linker
                                  -Wl,-z,relro, -Wl,-z,now,                                         
                                  -Wl,-z,defs, -Wl,--as-needed,                                     
-                                 -g, -O2, -fdebug-prefix-map=/hom                                  
-                                 e/sdas/imp/pw/2/pipewire=.,                                       
+                                 -g, -O2, -fdebug-prefix-                                          
+                                 map=/home/sdas/pipewire-debian/p                                  
+                                 ipewire/test/pipewire-0.3.58=.,                                   
                                  -fstack-protector-strong,                                         
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
@@ -70,8 +72,9 @@ Main project options:
   c_std                          gnu99                            [none, c89, c99, c11, c17, c18,  C language standard to use
                                                                   c2x, gnu89, gnu99, gnu11,        
                                                                    gnu17, gnu18, gnu2x]            
-  cpp_args                       [-g, -O2, -fdebug-prefix-map=/ho                                  Extra arguments passed to the cpp compiler
-                                 me/sdas/imp/pw/2/pipewire=.,                                      
+  cpp_args                       [-g, -O2, -fdebug-prefix-                                         Extra arguments passed to the cpp compiler
+                                 map=/home/sdas/pipewire-debian/p                                  
+                                 ipewire/test/pipewire-0.3.58=.,                                   
                                  -fstack-protector-strong,                                         
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
@@ -81,8 +84,9 @@ Main project options:
   cpp_link_args                  [-Wl,-Bsymbolic-functions,                                        Extra arguments passed to the cpp linker
                                  -Wl,-z,relro, -Wl,-z,now,                                         
                                  -Wl,-z,defs, -Wl,--as-needed,                                     
-                                 -g, -O2, -fdebug-prefix-map=/hom                                  
-                                 e/sdas/imp/pw/2/pipewire=.,                                       
+                                 -g, -O2, -fdebug-prefix-                                          
+                                 map=/home/sdas/pipewire-debian/p                                  
+                                 ipewire/test/pipewire-0.3.58=.,                                   
                                  -fstack-protector-strong,                                         
                                  -Wformat, -Werror=format-                                         
                                  security, -Wdate-time,                                            
@@ -145,6 +149,7 @@ Main project options:
   evl                            disabled                         [enabled, disabled, auto]        Enable EVL support spa plugin integration
   examples                       enabled                          [enabled, disabled, auto]        Build examples
   ffmpeg                         disabled                         [enabled, disabled, auto]        Enable ffmpeg spa plugin integration
+  flatpak                        enabled                          [enabled, disabled, auto]        Enable Flatpak support
   gstreamer                      auto                             [enabled, disabled, auto]        Build GStreamer plugins
   gstreamer-device-provider      auto                             [enabled, disabled, auto]        Build GStreamer device provider plugin
   installed_tests                enabled                          [enabled, disabled, auto]        Install manual and automated test executables
