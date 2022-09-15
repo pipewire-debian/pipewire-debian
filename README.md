@@ -177,7 +177,7 @@ sudo apt install libfdk-aac2 libldacbt-{abr,enc}2 libopenaptx0
 # If `libfdk-aac2` is not found install `libfdk-aac1`
 # Install pipewire and additional packages
 
-sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,pulse,bin,locales,tests}}
+sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,pulse,bin,jack,alsa,v4l2,libcamera,locales,tests}}
 
 # Additionally, if you want to install `pipewire-doc`
 
@@ -291,7 +291,7 @@ pulseaudio --kill
 
 **Finally,** enable and start PipeWire related services **(`init` system users, ignore this and see spoiler below)**
 ```bash
-systemctl --user --now enable pipewire{,-pulse}.{socket,service}
+systemctl --user --now enable pipewire{,-pulse}.{socket,service} filter-chain.service
 ```
 <details markdown=1><summary markdown="span">
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> <strong>For Mx Linux or <code>init</code> system (Anyone using <code>systemd</code> ignore this subsection). (Optional)</strong>
