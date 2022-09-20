@@ -170,25 +170,30 @@ After [PPA Configuration](#1-ppa-configuration), follow the installation instruc
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **For MX Linux or Debian buster see [this](https://pastebin.com/S5duuECS) for which packages are to be insalled or upgraded before installing.**
 
 ```bash
-# Install dependencies
-
-sudo apt install libfdk-aac2 libldacbt-{abr,enc}2 libopenaptx0
-
-# If `libfdk-aac2` is not found install `libfdk-aac1`
 # Install pipewire and additional packages
 
-sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,pulse,bin,locales,tests}}
+sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,pulse,bin,jack,alsa,v4l2,libcamera,locales,tests}}
 
 # Additionally, if you want to install `pipewire-doc`
 
 sudo apt install pipewire-doc
+```
 
-# For WirePlumber (Recommended)
+[Note]: From PipeWire 0.3.50 package `libpipewire-module-x11-bell` split from `libpipewire-0.3-modules`
+under `Wayland` package `libpipewire-module-x11-bell` is not required. If you are using `X11` server
+Please install that package to support `x11-bell` feature.
 
+```bash
+sudo apt-get install libpipewire-module-x11-bell
+```
+
+Install **ONE** of the following two options:
+1. For **WirePlumber (Recommended)**
+```bash
 sudo apt-get install wireplumber{,-doc} gir1.2-wp-0.4 libwireplumber-0.4-{0,dev}
-
-# For pipewire-media-session (installing WirePlumber is recommended)
-
+```
+2. For **pipewire-media-session (Optional)**
+```bash
 sudo apt-get install pipewire-media-session
 ```
 
@@ -281,7 +286,7 @@ pulseaudio --kill
 
 **Finally,** enable and start PipeWire related services **(`init` system users, ignore this and see spoiler below)**
 ```bash
-systemctl --user --now enable pipewire{,-pulse}.{socket,service}
+systemctl --user --now enable pipewire{,-pulse}.{socket,service} filter-chain.service
 ```
 <details markdown=1><summary markdown="span">
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> <strong>For Mx Linux or <code>init</code> system (Anyone using <code>systemd</code> ignore this subsection). (Optional)</strong>
