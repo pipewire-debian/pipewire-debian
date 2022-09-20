@@ -170,11 +170,6 @@ After [PPA Configuration](#1-ppa-configuration), follow the installation instruc
 <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **For MX Linux or Debian buster see [this](https://pastebin.com/S5duuECS) for which packages are to be insalled or upgraded before installing.**
 
 ```bash
-# Install dependencies
-
-sudo apt install libfdk-aac2 libldacbt-{abr,enc}2 libopenaptx0
-
-# If `libfdk-aac2` is not found install `libfdk-aac1`
 # Install pipewire and additional packages
 
 sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,pulse,bin,jack,alsa,v4l2,libcamera,locales,tests}}
