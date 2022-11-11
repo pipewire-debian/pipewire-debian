@@ -391,7 +391,7 @@ You just need to reverse the whole thing in that section. For more search on the
 
 # <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/flame.svg" width=48 height=48> Notice
 
-If you have any issues regarding this PPA package, create an issue here.
+If you have any issues regarding this PPA package, create an issue [here](https://pipewire-debian.github.io/pipewire-debian/).
 
 **For features, requests or bugs create an issue on upstream: [PipeWire](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues),**
 **[blueman](https://github.com/blueman-project/blueman/issues/new), [WirePlumber](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/new?issue)**
