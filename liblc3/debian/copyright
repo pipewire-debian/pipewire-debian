@@ -1,0 +1,15 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: liblc3
+Source: https://github.com/google/liblc3
+
+Files: *
+Copyright: 2022, Google LLC
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2022 Collabora, Ltd.
+License: Apache-2.0
+
+License: Apache-2.0
+ On Debian systems you can find the full text of the Apache License at
+ /usr/share/common-licenses/Apache-2.0.

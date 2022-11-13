@@ -1,0 +1,5 @@
+liblc3 (1.0.1-3~ubuntu20.04) focal; urgency=medium
+
+  * Initial release (Closes: #1021532)
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 10 Nov 2022 09:56:42 +0530
