@@ -1,8 +1,9 @@
-Index: libcamera_0.r3266.gcb1de399/subprojects/gtest.wrap
+Index: libcamera/subprojects/gtest.wrap
 ===================================================================
---- libcamera_0.r3266.gcb1de399.orig/subprojects/gtest.wrap	2021-11-27 14:00:39.942962128 +0530
-+++ libcamera_0.r3266.gcb1de399/subprojects/gtest.wrap	2021-11-27 14:02:01.369372917 +0530
-@@ -1,10 +1,10 @@
+--- libcamera.orig/subprojects/gtest.wrap
++++ libcamera/subprojects/gtest.wrap
+@@ -2,11 +2,11 @@
+ 
  [wrap-file]
  directory = googletest-release-1.11.0
 -source_url = https://github.com/google/googletest/archive/release-1.11.0.zip
