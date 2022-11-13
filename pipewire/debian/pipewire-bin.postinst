@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.58-1 (https://pipewire-debian.github.io)
+pipewire 0.3.60-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
@@ -22,6 +22,7 @@ pipewire 0.3.58-1 (https://pipewire-debian.github.io)
     - pipewire-audio-client-library splits into pipewire-{jack,alsa}
     - pipewire-{libcamera,v4l2} splits from libspa-0.2-modules 
       and libpipewire-0.3-modules
+    - build with liblc3 enabled
 
   Pipewire -
 

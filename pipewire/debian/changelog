@@ -1,10 +1,11 @@
-pipewire (0.3.58-1~ubuntu20.04) focal; urgency=medium
+pipewire (0.3.60.r2.g518ccdf-5~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
 
     - pipewire-audio-client-library splits into pipewire-{jack,alsa}
     - pipewire-{libcamera,v4l2} splits from libspa-0.2-modules 
       and libpipewire-0.3-modules
+    - build with liblc3 enabled
 
   Pipewire -
 
@@ -19,7 +20,7 @@ pipewire (0.3.58-1~ubuntu20.04) focal; urgency=medium
   .
     
 
- -- Sourav Das <souravdas142@gmail.com>  Thu, 15 Sep 2022 14:07:34 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 11 Nov 2022 14:11:44 +0530
 
 pipewire (0.3.57.r4.gf957435-1~ubuntu20.04) focal; urgency=medium
 

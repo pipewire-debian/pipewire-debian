@@ -9,7 +9,7 @@ Build-Depends:	cmake,
 				fakeroot,
 				graphviz <!nodoc>,
                 libavahi-client-dev,
-				libavcodec58,
+				libavcodec58 | libavcodec59,
 				libasound2-dev,
 				libbluetooth-dev,
                 libcamera-dev [!s390x !hppa !i386 !m68k !powerpc !ppc64 !ppc64el !sparc64],
@@ -22,6 +22,11 @@ Build-Depends:	cmake,
 				libgstreamer-plugins-base1.0-dev,
 				libgstreamer1.0-dev,
 				libjack-jackd2-dev (>= 1.9.10),
+# `vim` package has no relation with pipewire, but `liblc3` package is failed
+# building on focal and bionic, so we can't control `control` file for that, control
+# file is not supporting condition, so This hack will do the trick, if liblc3-dev,
+# is not found vim will be installed on build system and do nothing.
+				liblc3-dev | vim,
 				libldacbt-abr-dev [!s390x !hppa !m68k !powerpc !ppc64 !sparc64],
 				libldacbt-enc-dev [!s390x !hppa !m68k !powerpc !ppc64 !sparc64],
                 liblilv-dev,
@@ -30,7 +35,11 @@ Build-Depends:	cmake,
                 libopus-dev,
 				libpulse-dev (>= 11.1),
                 libreadline-dev,
-                libroc-dev [!hppa !m68k !powerpc !i386 !sparc64],
+# `lsof` package has no relation with pipewire, but `liblc3` package is failed
+# building on focal and bionic, so we can't control `control` file for that, control
+# file is not supporting condition, so This hack will do the trick, if liblc3-dev,
+# is not found lsof will be installed on build system and do nothing.
+                libroc-dev [!hppa !m68k !powerpc !i386 !sparc64] | lsof,
 				libsbc-dev,
 				libsdl2-dev,
 				libsndfile1-dev (>= 1.0.20),

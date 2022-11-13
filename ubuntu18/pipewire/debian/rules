@@ -21,13 +21,11 @@ else
 LIBCAMERA=enabled
 endif
 
-
 ifneq (,$(filter s390x hppa m68k powerpc ppc64 sparc64,$(DEB_HOST_ARCH)))
 BLUEZ5_CODEC_LDAC=disabled
 else
 BLUEZ5_CODEC_LDAC=enabled
 endif
-
 
 ifneq (,$(filter hppa m68k powerpc sparc64,$(DEB_HOST_ARCH)))
 LIBROC=disabled
@@ -40,6 +38,12 @@ ifneq (,$(filter armhf,$(DEB_HOST_ARCH)))
 LTO=false
 else
 LTO=true
+endif
+
+LIBLC3=enabled
+
+ifneq (,$(filter armhf,$(DEB_HOST_ARCH)))
+LIBLC3=disabled
 endif
 
 ############################## END OF Disabling Features Conditionally ##############################
@@ -58,6 +62,7 @@ override_dh_auto_configure:
 		-Davb=disabled \
 		-Db_lto=$(LTO) \
 		-Db_pie=true \
+		-Dbluez5-codec-lc3=$(LIBLC3) \
 		-Dbluez5-codec-lc3plus=disabled \
 		-Dbluez5-codec-ldac=$(BLUEZ5_CODEC_LDAC) \
 		-Dlibcamera=$(LIBCAMERA) \
@@ -80,7 +85,6 @@ override_dh_auto_configure:
 	echo -e "usr/bin/pipewire-avb exists\nusr/share/pipewire/pipewire-avb.conf" >> debian/not-installed
 
 
-
 test_timeout_multiplier = 1
 
 ifneq ($(filter arm hppa ia64 m68k riscv64 sh4 sparc%,$(DEB_HOST_ARCH_CPU)),)
@@ -96,7 +100,6 @@ endif
 override_dh_auto_test:
 	LC_ALL=C.UTF-8 MESON_TESTTHREADS=${AVAILABLE_CORE}  meson test -t $(test_timeout_multiplier) -C obj-*
 
-
 override_dh_missing:
 ifeq ("enabled","$(LIBCAMERA)")
 	dh_missing --fail-missing
@@ -104,14 +107,12 @@ else
 	dh_missing --list-missing
 endif
 
-
 override_dh_makeshlibs:
 	dh_makeshlibs \
 		--exclude=/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0 \
 		--exclude=/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3 \
 		--exclude=/usr/lib/$(DEB_HOST_MULTIARCH)/spa-0.2 \
 		-- -c4
-
 
 override_dh_shlibdeps-arch:
 	dh_shlibdeps \
@@ -124,4 +125,3 @@ override_dh_shlibdeps-arch:
 		--remaining-packages \
 		-l/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3 \
 		$(NULL)
-

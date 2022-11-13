@@ -25,6 +25,8 @@ usr/lib/*/pipewire-0.3/libpipewire-module-roc-sink.so
 usr/lib/*/pipewire-0.3/libpipewire-module-roc-source.so
 usr/lib/*/pipewire-0.3/libpipewire-module-rtkit.so
 usr/lib/*/pipewire-0.3/libpipewire-module-rt.so
+usr/lib/*/pipewire-0.3/libpipewire-module-rtp-sink.so
+usr/lib/*/pipewire-0.3/libpipewire-module-rtp-source.so
 usr/lib/*/pipewire-0.3/libpipewire-module-session-manager.so
 usr/lib/*/pipewire-0.3/libpipewire-module-spa-device-factory.so
 usr/lib/*/pipewire-0.3/libpipewire-module-spa-device.so

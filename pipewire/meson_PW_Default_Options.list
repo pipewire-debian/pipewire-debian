@@ -1,6 +1,6 @@
 Core properties:
-  Source dir /home/sdas/pipewire-debian/pipewire/build/1/pipewire-0.3.58
-  Build dir  /home/sdas/pipewire-debian/pipewire/build/1/pipewire-0.3.58/build
+  Source dir /home/sdas/pipe/1/pipewire
+  Build dir  /home/sdas/pipe/1/pipewire/build
 
 Main project options:
   
@@ -54,7 +54,7 @@ Main project options:
   ----------------               -------------                    ---------------                  -----------
   c_args                         []                                                                Extra arguments passed to the c compiler
   c_link_args                    []                                                                Extra arguments passed to the c linker
-  c_std                          gnu99                            [none, c89, c99, c11, c17, c18,  C language standard to use
+  c_std                          gnu11                            [none, c89, c99, c11, c17, c18,  C language standard to use
                                                                   c2x, gnu89, gnu99, gnu11,        
                                                                    gnu17, gnu18, gnu2x]            
   cpp_args                       []                                                                Extra arguments passed to the cpp compiler
@@ -103,10 +103,12 @@ Main project options:
   bluez5-backend-hsp-native      enabled                          [enabled, disabled, auto]        Enable HSP in native backend in bluez5 spa plugin
   bluez5-backend-hsphfpd         enabled                          [enabled, disabled, auto]        Enable hsphfpd backend in bluez5 spa plugin (no dependency on
                                                                                                    hsphfpd)
+  bluez5-backend-native-mm       disabled                         [enabled, disabled, auto]        Enable ModemManager in native backend in bluez5 spa plugin
   bluez5-backend-ofono           enabled                          [enabled, disabled, auto]        Enable oFono HFP backend in bluez5 spa plugin (no dependency on
                                                                                                    oFono)
   bluez5-codec-aac               auto                             [enabled, disabled, auto]        Enable Fraunhofer FDK AAC open source codec implementation
   bluez5-codec-aptx              auto                             [enabled, disabled, auto]        Enable AptX Qualcomm open source codec implementation
+  bluez5-codec-lc3               disabled                         [enabled, disabled, auto]        Enable LC3 open source codec implementation
   bluez5-codec-lc3plus           auto                             [enabled, disabled, auto]        Enable LC3plus open source codec implementation
   bluez5-codec-ldac              auto                             [enabled, disabled, auto]        Enable LDAC Sony open source codec implementation
   bluez5-codec-opus              auto                             [enabled, disabled, auto]        Enable Opus open source codec implementation
@@ -139,6 +141,7 @@ Main project options:
   pipewire-v4l2                  enabled                          [enabled, disabled, auto]        Enable pipewire-v4l2 integration
   pw-cat                         auto                             [enabled, disabled, auto]        Build pw-cat/pw-play/pw-record
   raop                           auto                             [enabled, disabled, auto]        Enable module for Remote Audio Output Protocol
+  readline                       auto                             [enabled, disabled, auto]        Enable code that depends on libreadline
   roc                            auto                             [enabled, disabled, auto]        Enable code that depends on roc toolkit
   sdl2                           auto                             [enabled, disabled, auto]        Enable code that depends on SDL 2
   session-managers               []                                                                Session managers to build (can be [] for none or an absolute

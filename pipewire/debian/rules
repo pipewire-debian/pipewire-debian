@@ -13,6 +13,8 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 VERSION_CODENAME=$(shell sed -ne '/VERSION_CODENAME/p' /etc/os-release | cut -d"=" -f2)
 
 LTO_NON_SUPPORTED_VERSION_CODENAME=focal bionic
+ROC_NON_SUPPORTED_VERSION_CODENAME=kinetic
+LIBLC3_NON_SUPPORTED_VERSION_CODENAME=focal bionic
 
 ############################## Disabling Features Conditionally ##############################
 
@@ -49,14 +51,33 @@ AAC=enabled
 endif
 
 
+LTO=true
+
 ifneq (,$(filter armhf,$(DEB_HOST_ARCH)))
 ifneq (,$(filter ${VERSION_CODENAME},${LTO_NON_SUPPORTED_VERSION_CODENAME}))
 LTO=false
-else
-LTO=true
 endif
-else
-LTO=true
+endif
+
+ifneq (,$(filter ${VERSION_CODENAME},${ROC_NON_SUPPORTED_VERSION_CODENAME}))
+ifneq (,$(filter arm64,$(DEB_HOST_ARCH)))
+LIBROC=disabled
+cmnt_libroc=$(shell sed -e '/module-roc-s/ s/^\#*/\#/' -i debian/libpipewire-0.3-modules.install)
+endif
+endif
+
+LIBLC3=enabled
+
+ifneq (,$(filter ${VERSION_CODENAME},${LIBLC3_NON_SUPPORTED_VERSION_CODENAME}))
+ifneq (,$(filter armhf,$(DEB_HOST_ARCH)))
+LIBLC3=disabled
+endif
+endif
+
+ifneq (,$(filter jammy kinetic,${VERSION_CODENAME}))
+ifneq (,$(filter i386,$(DEB_HOST_ARCH)))
+LIBLC3=disabled
+endif
 endif
 
 ############################## END OF Disabling Features Conditionally ##############################
@@ -72,6 +93,7 @@ override_dh_auto_configure:
 		-Db_lto=$(LTO) \
 		-Db_pie=true \
 		-Dbluez5-codec-lc3plus=disabled \
+		-Dbluez5-codec-lc3=$(LIBLC3) \
 		-Dbluez5-codec-ldac=$(BLUEZ5_CODEC_LDAC) \
 		-Dbluez5-codec-aptx=$(APTX) \
 		-Dbluez5-codec-aac=$(AAC) \
