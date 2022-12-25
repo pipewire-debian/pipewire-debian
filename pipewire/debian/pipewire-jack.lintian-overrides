@@ -1,5 +1,0 @@
-# There's very little in these libraries: they only call pw_init(), and genuinely do not call glibc functions
-library-not-linked-against-libc usr/lib/*/pipewire-0.3/jack/libjacknet.so.*
-
-# Remove unused lintian override in pipewire-audio-client-libraries
-# library-not-linked-against-libc usr/lib/*/pipewire-0.3/jack/libjackserver.so.*

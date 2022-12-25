@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.60-1 (https://pipewire-debian.github.io)
+pipewire 0.3.63-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
