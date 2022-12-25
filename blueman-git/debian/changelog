@@ -1,3 +1,9 @@
+blueman-git (2.3.r43.gc85e7af-1~ubuntu20.04) focal; urgency=low
+
+  * New release 2.3.5
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 25 Dec 2022 14:54:05 +0530
+
 blueman-git (2.3.r21.g4275c35-1~ubuntu20.04) focal; urgency=low
 
   * New release
