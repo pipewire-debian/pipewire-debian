@@ -7,6 +7,7 @@ Uploaders: Christopher Obbard <chris.obbard@collabora.com>
 Build-Depends: cmake,
                debhelper-compat (= 12),
                libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386],
+               libgl-dev,
                libpipewire-0.3-dev,
                libqt5svg5-dev,
                libqt5x11extras5-dev,
@@ -14,6 +15,7 @@ Build-Depends: cmake,
                qtbase5-dev,
                qttools5-dev,
                qttools5-dev-tools,
+			   qtbase5-dev-tools,
 Standards-Version: 4.5.0
 Homepage: https://gitlab.freedesktop.org/rncbc/qpwgraph
 Vcs-Browser: https://salsa.debian.org/multimedia-team/qpwgraph
