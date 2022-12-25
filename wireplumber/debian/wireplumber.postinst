@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-wireplumber 0.4.11 (https://github.com/pipewire-debian/pipewire-debian)
+wireplumber 0.4.13 (https://github.com/pipewire-debian/pipewire-debian)
  
 
 CHANGELOGS - 
@@ -31,12 +31,6 @@ CHANGELOGS -
       - For a complete changelog
         see : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
    
- .    
- .
- .
- .
-
-        
 
   Troubleshooting -
 
@@ -46,9 +40,6 @@ CHANGELOGS -
     - To know more how to configure WirePlumber with PipeWire, See : 
        https://pipewire-debian.github.io
 
-     
-
-  
 
 EOF
   ;; 

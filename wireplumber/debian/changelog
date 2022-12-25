@@ -1,4 +1,22 @@
-wireplumber (0.4.11.r17.g55691a0-1~ubuntu20.04) focal; urgency=medium
+wireplumber (0.4.13.r3.g6df6e1f-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - Add new wireplumber-locales package
+
+  wireplumber - 
+
+    Changes:
+    
+      - For a complete changelog
+        see : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+  .
+  .
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 24 Dec 2022 23:37:57 +0530
+
+wireplumber (0.4.11.r31.g8fa1693-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 
 
@@ -16,7 +34,7 @@ wireplumber (0.4.11.r17.g55691a0-1~ubuntu20.04) focal; urgency=medium
 
 
 
- -- Sourav Das <souravdas142@gmail.com>  Fri, 02 Sep 2022 21:50:06 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 01 Oct 2022 06:47:54 +0530
 
 wireplumber (0.4.11-1~ubuntu21.10) impish; urgency=medium
 
