@@ -14,7 +14,7 @@ case "$1" in
 cat << EOF
 
 
-wireplumber 0.4.13 (https://github.com/pipewire-debian/pipewire-debian)
+wireplumber 0.4.14 (https://github.com/pipewire-debian/pipewire-debian)
  
 
 CHANGELOGS - 
@@ -22,7 +22,7 @@ CHANGELOGS -
 
   Debian Package - 
 
-    - Add new wireplumber-locales package
+    - add bluez_update_configuration_settings.patch
 
   wireplumber - 
 

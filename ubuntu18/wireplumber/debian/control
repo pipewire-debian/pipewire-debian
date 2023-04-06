@@ -5,8 +5,8 @@ Maintainer: Sourav Das <souravdas142@gmail.com>
 XSBC-Original-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@alioth-lists.debian.net>
 Uploaders: Sjoerd Simons <sjoerd@debian.org>
 Build-Depends: cmake,
-               debhelper (>= 12),
-               doxygen (>= 1.8.0),
+               debhelper-compat (= 12),
+               doxygen (>= 1.9.0),
                gobject-introspection,
                graphviz,
                libgirepository1.0-dev,
