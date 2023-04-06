@@ -1,3 +1,15 @@
+qpwgraph (0.4.2.r1.g2f5bbc2-1~ubuntu20.04) focal; urgency=medium
+
+  * New upstream version 0.4.2
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 06 Apr 2023 18:50:35 +0530
+
+qpwgraph (0.4.0.r1.g1bcfee4-1~ubuntu20.04) focal; urgency=medium
+
+  * New upstream version 0.4.0
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 26 Feb 2023 19:42:57 +0530
+
 qpwgraph (0.3.8.r8.ge72efb4-2~ubuntu20.04) focal; urgency=medium
 
   * New upstream version 0.3.9
