@@ -8,10 +8,14 @@ Build-Depends: debhelper-compat (= 12),
                doxygen,
 			   gengetopt, 
                graphviz,
+               libasound2-dev,
 			   libcpputest-dev,
                libopenfec,
+               libopenfec-dev,
+			   libspeexdsp-dev,
 			   libpulse-dev,
 			   libsox-dev,
+               libssl-dev,
 			   libunwind-dev [!s390x],
 			   libuv1-dev,
 			   pkg-config,
@@ -31,26 +35,30 @@ Homepage: https://roc-project.github.io
 Vcs-Browser: https://github.com/pipewire-debian/pipewire-debian
 Vcs-Git: https://github.com/pipewire-debian/pipewire-debian.git
 
-Package: roc
-Architecture: linux-any
-Multi-Arch: same
-Depends: libroc, ${shlibs:Depends}, ${misc:Depends}
-Description: roc roc-toolkit Real-time audio streaming over network
- Contains binary file of roc-toolkit and manual pagaes
 
 Package: libroc
+Section: libs
 Architecture: linux-any
 Multi-Arch: same
 Replaces: roc (<< 0.1.5.r41.gc896873-6)
 Breaks: roc (<< 0.1.5.r41.gc896873-6)
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: roc (>> 0.1.5.r41.gc896873-6)
-Description: roc roc-toolkit Real-time audio streaming over network
- Contains so libraries for roc-toolkit
+Description: Roc: real-time audio streaming over the network - runtime library
+  Basically, Roc is a network transport, highly specialized for the real-time streaming use case. The user writes the stream to the one end and reads it from another end, and Roc deals with all the complexity of the task of delivering data in time and with no loss. Encoding, decoding, adjusting rates, restoring losses – all these are performed transparently under the hood.
 
 Package: libroc-dev
+Section: libdevel
+Architecture: linux-any
+Multi-Arch: same
+Depends: libroc, libopenfec-dev, ${shlibs:Depends}, ${misc:Depends}
+Description: Roc: real-time audio streaming over the network - development files
+  Roc is a network transport, highly specialized for the real-time streaming use case. The user writes the stream to the one end and reads it from another end, and Roc deals with all the complexity of the task of delivering data in time and with no loss. Encoding, decoding, adjusting rates, restoring losses – all these are performed transparently under the hood.
+
+Package: roc
+Section: utils
 Architecture: linux-any
 Multi-Arch: same
 Depends: libroc, ${shlibs:Depends}, ${misc:Depends}
-Description: roc roc-toolkit Real-time audio streaming over network
- Contains headers for roc-toolkit
+Description: Roc: real-time audio streaming over the network - utilities
+  Roc is a network transport, highly specialized for the real-time streaming use case. The user writes the stream to the one end and reads it from another end, and Roc deals with all the complexity of the task of delivering data in time and with no loss. Encoding, decoding, adjusting rates, restoring losses – all these are performed transparently under the hood.

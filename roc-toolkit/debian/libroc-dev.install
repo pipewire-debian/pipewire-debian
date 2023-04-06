@@ -1,1 +1,3 @@
 usr/include/roc
+#usr/lib/*/libroc.so
+usr/lib/*/pkgconfig/roc.pc

@@ -1,6 +1,12 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: roc-toolkit
+Upstream-Contact: victor@enise.org
 Source: https://github.com/roc-streaming/roc-toolkit
+Comment:
+ Roc Toolkit: real-time audio streaming
+ .
+ Roc is a toolkit for real-time audio streaming over the network.
+
 License: MPL-2.0
 
 Files: *
