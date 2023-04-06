@@ -1,4 +1,4 @@
-liblc3.so.0 #PACKAGE# #MINVER#
+liblc3.so.1 #PACKAGE# #MINVER#
 * Build-Depends-Package: liblc3-dev
  lc3_ac_read_renorm@Base 1.0.1
  lc3_ac_write_renorm@Base 1.0.1

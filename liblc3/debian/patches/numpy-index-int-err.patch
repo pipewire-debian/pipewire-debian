@@ -1,0 +1,17 @@
+Index: liblc3-1.0.2/test/ltpf.py
+===================================================================
+--- liblc3-1.0.2.orig/test/ltpf.py
++++ liblc3-1.0.2/test/ltpf.py
+@@ -349,10 +349,10 @@ class LtpfSynthesis(Ltpf):
+         nbits = round(nbytes*80 / T.DT_MS[dt])
+         g_idx = max(nbits // 80, 3+sr) - (3+sr)
+ 
+-        g = [ 0.4, 0.35, 0.3, 0.25 ][g_idx] if g_idx < 4 else 0
++        g = [ 0.4, 0.35, 0.3, 0.25 ][int(g_idx)] if g_idx < 4 else 0
+         g_idx = min(g_idx, 3)
+ 
+-        self.c_n[0] = 0.85 * g * LtpfSynthesis.C_N[sr][g_idx]
++        self.c_n[0] = 0.85 * g * LtpfSynthesis.C_N[sr][int(g_idx)]
+         self.c_d[0] = g * LtpfSynthesis.C_D[sr][self.p_f[0]]
+ 
+         ### 3.4.9.2 Transition handling

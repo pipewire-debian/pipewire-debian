@@ -1,0 +1,33 @@
+Index: liblc3-1.0.2/test/mdct.py
+===================================================================
+--- liblc3-1.0.2.orig/test/mdct.py
++++ liblc3-1.0.2/test/mdct.py
+@@ -15,7 +15,9 @@
+ #
+ 
+ import numpy as np
+-import scipy.fft
++#import scipy.fft
++from scipy.fftpack import fft
++from scipy.fftpack import ifft
+ 
+ import lc3
+ import tables as T, appendix_c as C
+@@ -55,7 +57,7 @@ class MdctForward(Mdct):
+         n2 = n // 2
+ 
+         z = t * np.exp(-2j * np.pi * np.arange(n) / (2*n))
+-        z = scipy.fft.fft(z)[:n2]
++        z = fft(z)[:n2]
+         z = z * np.exp(-2j * np.pi *
+                 (n2/2 + 0.5) * (np.arange(n2) + 0.5) / (2 * n2))
+         return np.real(z) * np.sqrt(2/n2)
+@@ -76,7 +78,7 @@ class MdctInverse(Mdct):
+ 
+         x = np.append(x, -x[::-1])
+         z = x * np.exp(2j * np.pi * (n/2 + 0.5) * np.arange(2*n) / (2*n))
+-        z = scipy.fft.ifft(z) * n
++        z = ifft(z) * n
+         z = z * np.exp(2j * np.pi * (np.arange(2*n) + (n/2 + 0.5)) / (4*n))
+         t = np.real(z) * np.sqrt(2/n)
+ 
