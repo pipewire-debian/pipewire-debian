@@ -1,6 +1,6 @@
 Core properties:
-  Source dir /home/sdas/pipe/1/pipewire
-  Build dir  /home/sdas/pipe/1/pipewire/build
+  Source dir /home/sdas/newPipe/2/pipewire-0.3.68
+  Build dir  /home/sdas/newPipe/2/pipewire-0.3.68/build
 
 Main project options:
   
@@ -112,6 +112,7 @@ Main project options:
   bluez5-codec-lc3plus           auto                             [enabled, disabled, auto]        Enable LC3plus open source codec implementation
   bluez5-codec-ldac              auto                             [enabled, disabled, auto]        Enable LDAC Sony open source codec implementation
   bluez5-codec-opus              auto                             [enabled, disabled, auto]        Enable Opus open source codec implementation
+  compress-offload               auto                             [enabled, disabled, auto]        Enable ALSA Compress-Offload support
   control                        enabled                          [enabled, disabled, auto]        Enable control spa plugin integration
   dbus                           enabled                          [enabled, disabled, auto]        Enable code that depends on dbus
   docdir                                                                                           Directory for installing documentation to (defaults to
@@ -122,6 +123,7 @@ Main project options:
   examples                       enabled                          [enabled, disabled, auto]        Build examples
   ffmpeg                         disabled                         [enabled, disabled, auto]        Enable ffmpeg spa plugin integration
   flatpak                        enabled                          [enabled, disabled, auto]        Enable Flatpak support
+  gsettings                      auto                             [enabled, disabled, auto]        Enable code that depends on gsettings
   gstreamer                      auto                             [enabled, disabled, auto]        Build GStreamer plugins
   gstreamer-device-provider      auto                             [enabled, disabled, auto]        Build GStreamer device provider plugin
   installed_tests                disabled                         [enabled, disabled, auto]        Install manual and automated test executables
@@ -131,17 +133,34 @@ Main project options:
   libcamera                      auto                             [enabled, disabled, auto]        Enable libcamera spa plugin integration
   libcanberra                    auto                             [enabled, disabled, auto]        Enable code that depends on libcanberra
   libjack-path                                                                                     Where to install the libjack.so library
+  libmysofa                      auto                             [enabled, disabled, auto]        Enable code that depends on libmysofa
   libpulse                       auto                             [enabled, disabled, auto]        Enable code that depends on libpulse
   libusb                         auto                             [enabled, disabled, auto]        Enable code that depends on libusb
   libv4l2-path                                                                                     Where to install the libpw-v4l2.so library
   lv2                            auto                             [enabled, disabled, auto]        Enable loading of LV2 plugins
   man                            auto                             [enabled, disabled, auto]        Build manpages
+  opus                           auto                             [enabled, disabled, auto]        Enable code that depends on opus
+  pam-defaults-install           false                            [true, false]                    Install limits.d file modifying defaults for all PAM users. Only
+                                                                                                   for old kernels/systemd!
+  pam-memlock-default            8192                             >=640                            The default memlock value for any PAM user in kilobytes.
+                                                                                                   Multiples of 64 recommended.
   pipewire-alsa                  auto                             [enabled, disabled, auto]        Enable pipewire-alsa integration
   pipewire-jack                  enabled                          [enabled, disabled, auto]        Enable pipewire-jack integration
   pipewire-v4l2                  enabled                          [enabled, disabled, auto]        Enable pipewire-v4l2 integration
   pw-cat                         auto                             [enabled, disabled, auto]        Build pw-cat/pw-play/pw-record
+  pw-cat-ffmpeg                  disabled                         [enabled, disabled, auto]        Enable FFmpeg integration in pw-cat/pw-play/pw-record
   raop                           auto                             [enabled, disabled, auto]        Enable module for Remote Audio Output Protocol
   readline                       auto                             [enabled, disabled, auto]        Enable code that depends on libreadline
+  rlimits-install                true                             [true, false]                    Install PAM limits.d file. Voids all following rlimits-*
+                                                                                                   options, if false
+  rlimits-match                  @pipewire                                                         PAM match rule for the generated limits.d file. @<name> denotes
+                                                                                                   matching a group.
+  rlimits-memlock                4194304                                                           kB of memory each process of the user matched by the rule can
+                                                                                                   lock. Can be unlimited .
+  rlimits-nice                   -19                              >=-20, <=-1                      Not niceness permitted for non-realtime threads of the matching
+                                                                                                   user(s)
+  rlimits-rtprio                 95                               >=11, <=99                       RR and FIFO scheduler priority permitted for realtime threads of
+                                                                                                   the matching user(s)
   roc                            auto                             [enabled, disabled, auto]        Enable code that depends on roc toolkit
   sdl2                           auto                             [enabled, disabled, auto]        Enable code that depends on SDL 2
   session-managers               []                                                                Session managers to build (can be [] for none or an absolute
@@ -163,7 +182,7 @@ Main project options:
   v4l2                           auto                             [enabled, disabled, auto]        Enable v4l2 spa plugin integration
   videoconvert                   enabled                          [enabled, disabled, auto]        Enable videoconvert spa plugin integration
   videotestsrc                   enabled                          [enabled, disabled, auto]        Enable videotestsrc spa plugin integration
-  volume                         enabled                          [enabled, disabled, auto]        Enable volume spa plugin integration
+  volume                         disabled                         [enabled, disabled, auto]        Build the legacy volume spa plugin
   vulkan                         disabled                         [enabled, disabled, auto]        Enable vulkan spa plugin integration
   x11                            auto                             [enabled, disabled, auto]        Enable code that depends on X11
   x11-xfixes                     auto                             [enabled, disabled, auto]        Enable code that depends on XFixes

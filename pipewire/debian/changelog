@@ -1,3 +1,95 @@
+pipewire (0.3.68-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - build with liblc3 enabled
+    - build with latest roc-toolkit (0.2.1) with roc-toolkit/openfec
+    - enable modemmanager
+
+  Pipewire -
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+    
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 06 Apr 2023 20:38:13 +0530
+
+pipewire (0.3.67-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - build with liblc3 enabled
+    - build with latest roc-toolkit (0.2.1) with roc-toolkit/openfec
+    - enable modemmanager
+
+  Pipewire -
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+    
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 09 Mar 2023 22:59:16 +0530
+
+pipewire (0.3.66-8~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - build with liblc3 enabled
+    - build with latest roc-toolkit (0.2.1) with roc-toolkit/openfec
+    - enable modemmanager
+
+  Pipewire -
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+    
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 17 Feb 2023 08:50:03 +0530
+
+pipewire (0.3.64.r58.gd83f252-5~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - build with liblc3 enabled
+    - build with latest roc-toolkit (0.2.1) with roc-toolkit/openfec
+    - enable modemmanager
+
+  Pipewire -
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+    
+
+ -- Sourav Das <souravdas142@gmail.com>  Mon, 23 Jan 2023 18:57:28 +0530
+
 pipewire (0.3.63.r1.g7758240-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

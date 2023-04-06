@@ -12,6 +12,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_conf_load_conf_for_context@Base 0.3.57
  pw_conf_load_state@Base 0.3.22
  pw_conf_save_state@Base 0.3.22
+ pw_conf_match_rules@Base 0.3.66
  pw_context_add_listener@Base 0.3.1
  pw_context_add_spa_lib@Base 0.3.1
  pw_context_conf_section_for_each@Base 0.3.44
@@ -105,6 +106,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_filter_get_properties@Base 0.3.1
  pw_filter_get_state@Base 0.3.1
  pw_filter_get_time@Base 0.3.1
+ pw_filter_is_driving@Base 0.3.66
  pw_filter_new@Base 0.3.1
  pw_filter_new_simple@Base 0.3.1
  pw_filter_queue_buffer@Base 0.3.1
@@ -112,6 +114,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_filter_set_active@Base 0.3.1
  pw_filter_set_error@Base 0.3.1
  pw_filter_state_as_string@Base 0.3.1
+ pw_filter_trigger_process@Base 0.3.66
  pw_filter_update_params@Base 0.3.1
  pw_filter_update_properties@Base 0.3.1
  pw_free_strv@Base 0.3.1
@@ -265,6 +268,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_log_logv@Base 0.3.1
  pw_log_set@Base 0.3.1
  pw_log_set_level@Base 0.3.1
+ pw_loop_check@Base 0.3.68
  pw_loop_destroy@Base 0.3.1
  pw_loop_new@Base 0.3.1
  pw_main_loop_add_listener@Base 0.3.1
@@ -352,6 +356,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_proxy_set_bound_id@Base 0.3.1
  pw_proxy_sync@Base 0.3.1
  pw_proxy_unref@Base 0.3.1
+ pw_random@Base 0.3.67
  pw_reallocarray@Base 0.3.52
  pw_resource_add_listener@Base 0.3.1
  pw_resource_add_object_listener@Base 0.3.1

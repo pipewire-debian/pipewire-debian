@@ -34,6 +34,18 @@ else
 LIBROC=enabled
 endif
 
+ifneq (,$(filter hppa i386 i686 m68k powerpc sparc64,$(DEB_HOST_ARCH)))
+APTX=disabled
+else
+APTX=enabled
+endif
+
+ifneq (,$(filter hppa i386 i686 m68k powerpc sparc64,$(DEB_HOST_ARCH)))
+AAC=disabled
+else
+AAC=enabled
+endif
+
 ifneq (,$(filter armhf,$(DEB_HOST_ARCH)))
 LTO=false
 else
@@ -65,8 +77,12 @@ override_dh_auto_configure:
 		-Dbluez5-codec-lc3=$(LIBLC3) \
 		-Dbluez5-codec-lc3plus=disabled \
 		-Dbluez5-codec-ldac=$(BLUEZ5_CODEC_LDAC) \
+		-Dbluez5-codec-aptx=$(APTX) \
+		-Dbluez5-codec-aac=$(AAC) \
+		-Dcompress-offload=disabled \
 		-Dlibcamera=$(LIBCAMERA) \
 		-Ddocs=enabled \
+		-Dbluez5-backend-native-mm=enabled \
 		-Dexamples=enabled \
 		-Dinstalled_tests=enabled \
 		-Dman=enabled \

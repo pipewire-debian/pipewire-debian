@@ -15,6 +15,7 @@ VERSION_CODENAME=$(shell sed -ne '/VERSION_CODENAME/p' /etc/os-release | cut -d"
 LTO_NON_SUPPORTED_VERSION_CODENAME=focal bionic
 ROC_NON_SUPPORTED_VERSION_CODENAME=kinetic
 LIBLC3_NON_SUPPORTED_VERSION_CODENAME=focal bionic
+COMPRESS_OFFLOAD_NON_SUPPORTED_VERSION_CODENAME=focal bionic
 
 ############################## Disabling Features Conditionally ##############################
 
@@ -80,6 +81,16 @@ LIBLC3=disabled
 endif
 endif
 
+COMPRESS_OFFLOAD=enabled
+ifneq (,$(filter ${VERSION_CODENAME},${COMPRESS_OFFLOAD_NON_SUPPORTED_VERSION_CODENAME}))
+COMPRESS_OFFLOAD=disabled
+endif
+ifneq (,$(filter jammy kinetic,${VERSION_CODENAME}))
+ifneq (,$(filter i386,$(DEB_HOST_ARCH)))
+COMPRESS_OFFLOAD=disabled
+endif
+endif
+
 ############################## END OF Disabling Features Conditionally ##############################
 
 AVAILABLE_CORE=$(shell nproc)
@@ -97,8 +108,10 @@ override_dh_auto_configure:
 		-Dbluez5-codec-ldac=$(BLUEZ5_CODEC_LDAC) \
 		-Dbluez5-codec-aptx=$(APTX) \
 		-Dbluez5-codec-aac=$(AAC) \
+		-Dcompress-offload=$(COMPRESS_OFFLOAD) \
 		-Dlibcamera=$(LIBCAMERA) \
 		-Ddocs=enabled \
+		-Dbluez5-backend-native-mm=enabled \
 		-Dexamples=enabled \
 		-Dinstalled_tests=enabled \
 		-Dman=enabled \

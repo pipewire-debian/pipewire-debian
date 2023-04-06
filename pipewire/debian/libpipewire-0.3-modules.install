@@ -6,6 +6,7 @@ usr/lib/*/pipewire-0.3/libpipewire-module-adapter.so
 usr/lib/*/pipewire-0.3/libpipewire-module-avb.so
 usr/lib/*/pipewire-0.3/libpipewire-module-client-device.so
 usr/lib/*/pipewire-0.3/libpipewire-module-client-node.so
+usr/lib/*/pipewire-0.3/libpipewire-module-combine-stream.so
 usr/lib/*/pipewire-0.3/libpipewire-module-echo-cancel.so
 usr/lib/*/pipewire-0.3/libpipewire-module-fallback-sink.so
 usr/lib/*/pipewire-0.3/libpipewire-module-filter-chain.so
@@ -25,6 +26,8 @@ usr/lib/*/pipewire-0.3/libpipewire-module-roc-sink.so
 usr/lib/*/pipewire-0.3/libpipewire-module-roc-source.so
 usr/lib/*/pipewire-0.3/libpipewire-module-rtkit.so
 usr/lib/*/pipewire-0.3/libpipewire-module-rt.so
+usr/lib/*/pipewire-0.3/libpipewire-module-rtp-sap.so
+usr/lib/*/pipewire-0.3/libpipewire-module-rtp-session.so
 usr/lib/*/pipewire-0.3/libpipewire-module-rtp-sink.so
 usr/lib/*/pipewire-0.3/libpipewire-module-rtp-source.so
 usr/lib/*/pipewire-0.3/libpipewire-module-session-manager.so

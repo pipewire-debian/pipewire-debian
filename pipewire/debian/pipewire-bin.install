@@ -3,6 +3,19 @@ usr/share/pipewire/client.conf
 usr/share/pipewire/jack.conf
 usr/share/pipewire/minimal.conf
 usr/share/pipewire/pipewire.conf
+usr/share/pipewire/pipewire-aes67.conf
+#usr/share/pipewire/client-rt.conf.d/20-upmix.conf
+#usr/share/pipewire/client.conf.d/20-upmix.conf
+#usr/share/pipewire/pipewire-pulse.conf.d/20-upmix.conf
+#usr/share/pipewire/pipewire.conf.d/10-rates.conf
+#usr/share/pipewire/pipewire.conf.d/20-upmix.conf
+
+usr/share/pipewire/client-rt.conf.avail/20-upmix.conf
+usr/share/pipewire/client.conf.avail/20-upmix.conf
+usr/share/pipewire/pipewire-pulse.conf.avail/20-upmix.conf
+usr/share/pipewire/pipewire.conf.avail/10-rates.conf
+usr/share/pipewire/pipewire.conf.avail/20-upmix.conf
+
 usr/share/pipewire/filter-chain.conf
 usr/share/pipewire/filter-chain/demonic.conf
 usr/share/pipewire/filter-chain/sink-mix-FL-FR.conf
@@ -15,14 +28,17 @@ usr/share/pipewire/filter-chain/sink-virtual-surround-5.1-kemar.conf
 usr/share/pipewire/filter-chain/sink-virtual-surround-7.1-hesuvi.conf
 usr/share/pipewire/filter-chain/source-rnnoise.conf
 usr/share/pipewire/pipewire-avb.conf
+etc/security/limits.d/25-pw-rlimits.conf usr/share/pipewire/security/limits.d/
 lib/udev/rules.d
 usr/bin/pipewire
+usr/bin/pipewire-aes67
 usr/bin/pipewire-avb
 usr/bin/pw-cat
 usr/bin/pw-cli
 usr/bin/pw-dot
 usr/bin/pw-dsdplay
 usr/bin/pw-dump
+usr/bin/pw-encplay
 usr/bin/pw-loopback
 usr/bin/pw-link
 usr/bin/pw-metadata
