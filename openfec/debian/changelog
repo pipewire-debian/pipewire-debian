@@ -1,3 +1,18 @@
+openfec (1.4.2.9.r0.gd87b258-1~ubuntu20.04) focal; urgency=medium
+
+  * Package rebased on roc-streaming fork
+  * Bump openfec version to 1.4.2.9
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 10 Mar 2023 12:00:01 +0530
+
+openfec (1.4.2.4.r0.gb6d32ed-3~ubuntu20.04) focal; urgency=medium
+
+  * Package rebased on roc-streaming fork
+  * Bump openfec version to 1.4.2.4
+  * pkgconfig file added
+
+ -- Sourav Das <souravdas142@gmail.com>  Mon, 23 Jan 2023 17:47:21 +0530
+
 openfec (1.4.2.4-5~ubuntu20.04) focal; urgency=medium
 
   * Package rebased on roc-streaming fork

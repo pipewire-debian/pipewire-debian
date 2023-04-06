@@ -1,0 +1,4 @@
+#! /usr/bin/dh-exec
+usr/include/openfec usr/include
+usr/share/pkgconfig/openfec.pc usr/share/pkgconfig
+usr/lib/${DEB_HOST_MULTIARCH}/libopenfec.so usr/lib/${DEB_HOST_MULTIARCH}

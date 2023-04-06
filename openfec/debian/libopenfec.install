@@ -1,4 +1,2 @@
-#!/usr/bin/dh-exec
-
-bin/Release/*.so* usr/lib/${DEB_HOST_MULTIARCH}/
-debian/headers/openfec usr/include/
+#! /usr/bin/dh-exec
+usr/lib/${DEB_HOST_MULTIARCH}/libopenfec.so.* usr/lib/${DEB_HOST_MULTIARCH}
