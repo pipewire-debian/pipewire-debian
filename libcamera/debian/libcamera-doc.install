@@ -1,2 +1,2 @@
 #! /usr/bin/dh-exec
-usr/share/doc/libcamera-0.0.3 => usr/share/doc/libcamera-doc
+usr/share/doc/libcamera-0.0.4 => usr/share/doc/libcamera-doc
