@@ -1,4 +1,10 @@
-roc-toolkit (0.2.3-4~ubuntu20.04) focal; urgency=medium
+roc-toolkit (0.2.4-1~ubuntu20.04) focal; urgency=medium
+
+  * new release
+
+ -- Sourav Das <souravdas142@gmail.com>  Mon, 29 May 2023 14:40:48 +0530
+
+roc-toolkit (0.2.3-4~ubuntu22.04) jammy; urgency=medium
 
   * build against openfec 1.4.2.9 (roc-streaming fork)
 
