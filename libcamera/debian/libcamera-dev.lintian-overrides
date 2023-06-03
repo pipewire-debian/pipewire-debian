@@ -1,1 +1,1 @@
-libcamera-dev: repeated-path-segment libcamera usr/include/libcamera/libcamera/*
+libcamera-dev: repeated-path-segment libcamera [usr/include/libcamera/libcamera/]

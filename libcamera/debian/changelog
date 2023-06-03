@@ -1,119 +1,302 @@
-libcamera (0.v4.r0.g6cf637eb-1~ubuntu20.04) focal; urgency=medium
+libcamera (0.v5.r0.gfb44403f-1~ubuntu20.04) focal; urgency=medium
 
-  * Update till Tue, 21 Feb 2023 13:41:48 +0530
+  * New upstream version 0.0.5
+  * Bump SONAME to libcamera0.0.5
 
- -- Sourav Das <souravdas142@gmail.com>  Tue, 21 Feb 2023 13:41:48 +0530
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 21 May 2023 15:48:01 +0530
 
-libcamera (0.v3.r8.g21a82ed-1~ubuntu20.04) focal; urgency=medium
+libcamera (0.0.5-1) experimental; urgency=medium
 
-  * Update till Sat, 24 Dec 2022 21:31:09 +0530
+  * New upstream version 0.0.5
+  * Bump SONAME to libcamera0.0.5
 
- -- Sourav Das <souravdas142@gmail.com>  Sat, 24 Dec 2022 21:31:09 +0530
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 04 May 2023 17:40:02 +0200
 
-libcamera (0.v1.r50.gaa7b374-1~ubuntu20.04) focal; urgency=medium
+libcamera (0.0.4-3) experimental; urgency=medium
 
-  * Update till Mon, 07 Nov 2022 09:08:43 +0530
+  [ George Kiagiadakis ]
+  * Add rule to re-sign the IPA modules after dh_strip
 
- -- Sourav Das <souravdas142@gmail.com>  Mon, 07 Nov 2022 09:08:43 +0530
+  [ Andrej Shadura ]
+  * Use the DEB_HOST_GNU_TYPE for the build directory
 
-libcamera (0.r3734.gd010a51a-2~ubuntu20.04) focal; urgency=medium
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 06 Mar 2023 17:45:53 +0100
 
-  * Update till Fri, 22 Jul 2022 16:24:17 +0530
+libcamera (0.0.4-2) experimental; urgency=medium
 
- -- Sourav Das <souravdas142@gmail.com>  Fri, 22 Jul 2022 16:24:17 +0530
+  * Skip more tests
 
-libcamera (0.r3718.gef77e263-1~ubuntu21.10) impish; urgency=medium
+ -- Dylan Aïssi <daissi@debian.org>  Tue, 14 Feb 2023 12:56:16 +0100
 
-  * Update till Tue, 19 Jul 2022 17:00:45 +0530
+libcamera (0.0.4-1) experimental; urgency=medium
 
- -- Sourav Das <souravdas142@gmail.com>  Tue, 19 Jul 2022 17:00:45 +0530
+  * New upstream version 0.0.4
+  * Bump SONAME to libcamera0.0.4
+  * Add superficial tests
+  * Don't ignore tests failures at build time (Closes: #1024782)
+  * Upload to experimental because of the current Bookworm freeze
 
-libcamera (0.r3704.gba643593-1~ubuntu21.10) impish; urgency=medium
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 01 Feb 2023 22:02:03 +0100
 
-  * Update till Tue, 12 Jul 2022 08:59:52 +0530
+libcamera (0.0.3-4) unstable; urgency=medium
 
- -- Sourav Das <souravdas142@gmail.com>  Tue, 12 Jul 2022 08:59:52 +0530
+  * Add doxygen-latex in Build-Deps
+  * Add libgstreamer1.0-dev in Build-Deps
+  * Drop libboost-dev from Build-Deps, not needed anymore
+  * libcamera0.0.3: add libcamera-ipa in Suggests
 
-libcamera (0.r3686.g3fa79cc6-1~ubuntu21.10) impish; urgency=medium
+ -- Dylan Aïssi <daissi@debian.org>  Tue, 24 Jan 2023 21:36:29 +0100
 
-  * Update till Fri, 01 Jul 2022 20:47:59 +0530
+libcamera (0.0.3-3) unstable; urgency=medium
 
- -- Sourav Das <souravdas142@gmail.com>  Fri, 01 Jul 2022 20:47:59 +0530
+  * Upload to unstable.
 
-libcamera (0.r3633.gb4d4b78c-1~ubuntu20.04) focal; urgency=medium
+ -- Dylan Aïssi <daissi@debian.org>  Sat, 31 Dec 2022 15:09:27 +0100
 
-  * Update till Fri, Thu, 09 Jun 2022 20:54:06 +0530
+libcamera (0.0.3-2) experimental; urgency=medium
 
- -- Sourav Das <souravdas142@gmail.com>  Thu, 09 Jun 2022 20:54:06 +0530
+  * Drop symbols file, not very useful because symbols are changing too
+    quickly. And because of the very active development, upstream bumps
+    SONAME for each release. Let's wait until upstream has stabilized
+    the libcamera API before reintroducing this symbols file.
+  * Standards-Version: 4.6.2 (no changes needed)
 
-libcamera (0.r3585.gc3515cf6-2~ubuntu20.04) focal; urgency=medium
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 26 Dec 2022 22:18:01 +0100
 
-  * Update till Fri, 27 May 2022 22:08:47 +0530
+libcamera (0.0.3-1) experimental; urgency=medium
 
- -- Sourav Das <souravdas142@gmail.com>  Sun, 05 Jun 2022 13:15:24 +0530
+  * New upstream version 0.0.3
+  * Bump SONAME to libcamera0.0.3
+  * Move the GStreamer plugin into its own package
+  * Move the v4l2 module into its own package
+  * Move the IPA modules into their own package
+  * Install *.so.sign files with libraries
+  * Add myself in Uploaders
+  * Update copyright file
 
-libcamera (0.r3517.gdd8b1723-1~ubuntu20.04) focal; urgency=medium
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 23 Dec 2022 23:56:04 +0100
 
-  * Update till Thu, 28 Apr 2022 16:37:17 +0530
+libcamera (0.0.2-2) unstable; urgency=medium
 
- -- Sourav Das <souravdas142@gmail.com>  Thu, 28 Apr 2022 16:37:17 +0530
+  * Update symbols file for x32
 
-libcamera (0.r3479.g739a6497-1~ubuntu22.04) jammy; urgency=medium
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 14 Dec 2022 17:54:17 +0100
 
-  * Update till Tue, 29 Mar 2022 16:41:16 +0530
+libcamera (0.0.2-1) unstable; urgency=medium
 
- -- Sourav Das <souravdas142@gmail.com>  Tue, 29 Mar 2022 16:41:16 +0530
+  * Team upload.
 
-libcamera (0.r3420.g039a6a02-1~ubuntu18.04) bionic; urgency=medium
+  [ Dylan Aïssi ]
+  * New upstream version 0.0.2
+  * Update symbols file
+  * Update lintian-overrides
+  * Standards-Version: 4.6.1 (no changes needed)
+  * Update debian/copyright
+  * Ignore failures in dh_auto_test for now
 
-  * Update till Thu, 17 Feb 2022 17:33:43 +0530
+  [ Sebastien Bacher ]
+  * Improve lintian-overrides (Closes: #1024803)
+  * Refresh debian/copyright
+  * debian/rules: enable the upstream tests as part of the build
 
- -- Sourav Das <souravdas142@gmail.com>  Thu, 17 Feb 2022 17:33:43 +0530
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster (oldstable)
 
-libcamera (0.r3410.g348a273c-1~ubuntu20.04) focal; urgency=medium
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 09 Dec 2022 10:59:05 +0100
 
-  * Update till Thu, 03 Feb 2022 10:08:42 +0530
+libcamera (0.0.1-4) unstable; urgency=medium
 
- -- Sourav Das <souravdas142@gmail.com>  Thu, 03 Feb 2022 10:08:42 +0530
+  * Mark liblttng-ust-dev and libudev-dev as linux-only, add more optional
+    dependencies.
+  * Don’t install documentation with libcamera0 (Closes: #1022572).
 
-libcamera (0.r3373.g57c21712-2~ubuntu20.04) focal; urgency=medium
+ -- Andrej Shadura <andrewsh@debian.org>  Wed, 26 Oct 2022 18:44:01 +0200
 
-  * Disable lto (link time optimization) or test will always fail
-  * Re-enable test and ignore if its failing harmlessly 
-  * Dependency `libdrm-dev` added to find `libdrm` runtime pkgconfig
-  * Remove `googletest` and `libgtest-dev` from build-depends
-    as `gtest` is meson subproject that must be built at compile time.
+libcamera (0.0.1-3) unstable; urgency=medium
 
-  * Refactoring `debian/rules` file to make libcamera more maintaince free
-    - Move subprojects/packagefile/* to debian/packagefile
-    - Add debian/source/include-binaries to make debian.orig file with
-      included tar file
-    - Add patch file to disable downloadable url in subprojects/gtest.wrap
-      due to launchpad buildd env do not allow to download even there is no
-      internet connection.
-    - Make sure version for gtest tar files under debian/packagefile and
-      source/include-binaries is the same as gtest.wrap file
-    .
-    .
+  * Use wildcards and arch-specific symbols.
+  * Fix the syntax of the symbols file.
 
- -- Sourav Das <souravdas142@gmail.com>  Mon, 13 Dec 2021 22:13:48 +0530
+ -- Andrej Shadura <andrewsh@debian.org>  Wed, 19 Oct 2022 22:58:29 +0100
 
-libcamera (0.r3266.gcb1de399-3~ubuntu20.04) focal; urgency=medium
+libcamera (0.0.1-2) unstable; urgency=medium
 
-  * disable lto (link time optimization)
-  * disable test as it always failing in such build env
+  * Add the missing build dependency on libyaml-dev.
+  * Bump meson dependency.
 
- -- Sourav Das <souravdas142@gmail.com>  Sun, 28 Nov 2021 22:13:48 +0530
+ -- Andrej Shadura <andrewsh@debian.org>  Wed, 19 Oct 2022 14:14:02 +0100
 
-libcamera (0.r3223.6b288f8f-2~ubuntu20.04) focal; urgency=medium
+libcamera (0.0.1-1) unstable; urgency=medium
 
-  * All update upto 24 October
+  * New upstream release (Closes: #962650).
+  * Update debian/copyright.
+  * Update the patch.
+  * Update debian/watch.
+  * Rename the doc directory manually instead of using dh-exec, drop
+    dh-exec build dependency.
+  * Bring back and refresh the symbols file.
+  * Disable verbose build logs by default.
 
- -- Sourav Das <souravdas142@gmail.com>  Thu, 11 Nov 2021 22:13:48 +0530
+ -- Andrej Shadura <andrewsh@debian.org>  Wed, 19 Oct 2022 14:00:31 +0100
 
-libcamera (0.r3072.c8c1d07c-1~ubuntu20.04) focal; urgency=medium
+libcamera (0~git20211108+1b30992b623e-5) unstable; urgency=medium
 
-  * Rebuild for Ubuntu
+  * Team upload.
 
- -- Sourav Das <souravdas142@gmail.com>  Fri, 24 Sep 2021 22:13:48 +0530
+  [ Olivier Gayot ]
+  * Add patch that fixes FTBFS on ppc64el + GCC (Closes: #1021544, LP: #1992331)
 
+ -- Benjamin Drung <bdrung@debian.org>  Wed, 12 Oct 2022 11:43:40 +0200
+
+libcamera (0~git20211108+1b30992b623e-4) unstable; urgency=medium
+
+  [ Christopher Obbard ]
+  * Don't treat compilation warnings as errors (Closes: #1012786).
+
+ -- Andrej Shadura <andrew.shadura@collabora.co.uk>  Tue, 14 Jun 2022 14:07:18 +0200
+
+libcamera (0~git20211108+1b30992b623e-3) unstable; urgency=medium
+
+  [ Andrej Shadura ]
+  * Add upstream metadata.
+
+  [ Dorota Czaplejewicz ]
+  * Remove soname patch as the upstream already sets it.
+
+ -- Andrej Shadura <andrew.shadura@collabora.co.uk>  Wed, 10 Nov 2021 12:55:10 +0100
+
+libcamera (0~git20211108+1b30992b623e-2) unstable; urgency=medium
+
+  * Add missing Python build dependencies.
+
+ -- Andrej Shadura <andrew.shadura@collabora.co.uk>  Wed, 10 Nov 2021 12:34:27 +0100
+
+libcamera (0~git20211108+1b30992b623e-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * Drop patch applied upstream, refresh the remaining one.
+  * Update copyrights.
+  * Update build dependencies.
+  * Update install lists for the new ipa_proxy binary name.
+  * Install v4l2-compat.so into the non-dev package.
+  * Update standards version to 4.6.0, no changes needed.
+
+ -- Andrej Shadura <andrew.shadura@collabora.co.uk>  Tue, 09 Nov 2021 18:17:51 +0100
+
+libcamera (0~git20200629+e7aa92a-8) unstable; urgency=medium
+
+  * Explicitly not install *.so.sign — or maybe we should?
+  * Support nodoc build profile.
+  * Add the missing doxygen dependency.
+  * Add openssl as an explicit dependency.
+
+ -- Andrej Shadura <andrew.shadura@collabora.co.uk>  Sun, 21 Feb 2021 15:51:17 +0100
+
+libcamera (0~git20200629+e7aa92a-7) unstable; urgency=medium
+
+  [ You-Sheng Yang ]
+  * debian: build with v4l2.
+  * debian: build gstlibcamera.
+  * debian: move documentation into libcamera-doc.
+  * debian: lintian: fix embedded-javascript-library.
+  * lintian: override repeated-path-segment warnings.
+  * debian: fix spelling error.
+
+  [ IOhannes m zmölnig (Debian/GNU) ]
+  * Bump dh-compat to 13.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Mon, 19 Oct 2020 15:32:04 +0200
+
+libcamera (0~git20200629+e7aa92a-6) unstable; urgency=medium
+
+  * Stop shipping this symbols file, the symbols change all the time
+    depending on the architecture and the compiler version.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sun, 12 Jul 2020 12:09:02 +0200
+
+libcamera (0~git20200629+e7aa92a-5) unstable; urgency=medium
+
+  * Fix the symbol file syntax.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sun, 12 Jul 2020 11:26:33 +0200
+
+libcamera (0~git20200629+e7aa92a-4) unstable; urgency=medium
+
+  * Add wildcards for std::* and boost::* to the symbols file.
+  * Install ipa_proxy_linux into a multiarch directory.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sun, 12 Jul 2020 11:13:16 +0200
+
+libcamera (0~git20200629+e7aa92a-3) unstable; urgency=medium
+
+  * Allow actual pkg-config to be used as, well, pkg-config.
+  * Add libcamera0.symbols, probably not very useful right now.
+  * Install more files for libcamera0.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Tue, 30 Jun 2020 18:12:32 +0200
+
+libcamera (0~git20200629+e7aa92a-2) unstable; urgency=medium
+
+  * Depend on a pkg-config implementation (Really closes: #959853).
+
+ -- Andrej Shadura <andrewsh@debian.org>  Tue, 30 Jun 2020 16:20:56 +0200
+
+libcamera (0~git20200629+e7aa92a-1) unstable; urgency=medium
+
+  * New upstream snapshot (Closes: #962274).
+  * Update patches.
+  * Update debian/copyright.
+  * Update build dependencies enabling qcam to be built (Closes: #959853).
+
+ -- Andrej Shadura <andrewsh@debian.org>  Tue, 30 Jun 2020 15:41:29 +0200
+
+libcamera (0~git20200513+924778e-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/control: added libboost-dev to Build-Depends field to avoid a FTBFS.
+    Thanks to Logan Rosen <logan@ubuntu.com>. (Closes: #960758)
+
+ -- Luis Paulo Linares <lpfllinares@gmail.com>  Tue, 09 Jun 2020 13:08:13 -0300
+
+libcamera (0~git20200513+924778e-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * Update copyrights.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Fri, 15 May 2020 16:24:53 +0200
+
+libcamera (0~git20200417+35269f0-2) unstable; urgency=medium
+
+  * Update d/copyright
+    * Add GPL-2 license
+    * Use "Comment" for note about where to find licenses on "Debian systems"
+    * Regenerate d/copyright_hints
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Sun, 19 Apr 2020 16:22:23 +0200
+
+libcamera (0~git20200417+35269f0-1) unstable; urgency=medium
+
+  * New upstream version 0~git20200417+35269f0
+    * Refresh patches
+  * B-D un gnutls-dev
+  * Add patch take return value of write() into account
+  * Add patch to fix spelling errors
+  * Enable hardening
+  * Move "libcamera-tools" into section "video" (Closes: 956720)
+  * Make build reproducible.
+    Thanks to Chris Lamb <lamby@debian.org> (Closes: #956304)
+  * Declare that building this package does not require 'root' powers.
+  * Update d/copyright
+    * Rearrange d/copyright paragraphs
+    * Add 'licensecheck' target
+    * Generate d/copyright_hints
+    * Add myself to copyright holders
+  * Bump standards version to 4.5.0
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Sat, 18 Apr 2020 23:28:05 +0200
+
+libcamera (0~git20200116+30f9624-1) unstable; urgency=medium
+
+  * Initial release (Closes: #930456).
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Sat, 22 Feb 2020 19:57:58 +0200

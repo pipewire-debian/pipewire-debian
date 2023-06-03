@@ -1,0 +1,38 @@
+From: Olivier Gayot <olivier.gayot@canonical.com>
+Date: Tue, 18 Oct 2022 16:48:14 +0100
+Subject: fix expressions not considered constant on ppc64el with GCC
+
+On ppc64el, GCC seems to be unable to determine the result of some long double
+expressions at compile time. This makes libcamera fail to build from source on
+ppc64el.
+Make sure we only use constexpr on expressions that are considered constant on
+all architectures.
+
+Bug-Ubuntu: https://launchpad.net/bugs/1992331
+Bug-Debian: https://bugs.debian.org/1021544
+Forwarded: https://lists.libcamera.org/pipermail/libcamera-devel/2022-October/034764.html
+Last-Update: 2022-10-18
+---
+ src/ipa/raspberrypi/raspberrypi.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+--- a/src/ipa/raspberrypi/raspberrypi.cpp
++++ b/src/ipa/raspberrypi/raspberrypi.cpp
+@@ -71,7 +71,7 @@
+ /* Configure the sensor with these values initially. */
+ constexpr double defaultAnalogueGain = 1.0;
+ constexpr Duration defaultExposureTime = 20.0ms;
+-constexpr Duration defaultMinFrameDuration = 1.0s / 30.0;
++constexpr Duration defaultMinFrameDuration = 1s / 30.0;
+ constexpr Duration defaultMaxFrameDuration = 250.0s;
+ 
+ /*
+@@ -80,7 +80,7 @@
+  * we rate-limit the controller Prepare() and Process() calls to lower than or
+  * equal to this rate.
+  */
+-constexpr Duration controllerMinFrameDuration = 1.0s / 30.0;
++constexpr Duration controllerMinFrameDuration = 1s / 30.0;
+ 
+ /* List of controls handled by the Raspberry Pi IPA */
+ static const ControlInfoMap::Map ipaControls{

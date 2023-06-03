@@ -2,64 +2,64 @@ Source: libcamera
 Priority: optional
 Maintainer: Sourav Das <souravdas142@gmail.com>
 XSBC-Original-Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
-Uploaders:
- Emmanuel Arias <emmanuelarias30@gmail.com>,
- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>,
- Andrej Shadura <andrewsh@debian.org>
+Uploaders: Emmanuel Arias <emmanuelarias30@gmail.com>,
+           IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>,
+           Andrej Shadura <andrewsh@debian.org>,
+           Dylan Aïssi <daissi@debian.org>
 Build-Depends: debhelper-compat (= 12),
                dh-exec,
                cmake,
-               meson (>= 0.55),
-               pkgconf | pkg-config,
-               libgnutls28-dev | gnutls-dev,
                doxygen <!nodoc>,
-               python3:native,
-               python3-sphinx <!nodoc>,
-               graphviz,
-               python3-yaml,
-               python3-ply,
-               python3-jinja2,
+               doxygen-latex <!nodoc>,
+               graphviz <!nodoc>,
+               libboost-dev,
+               libdrm-dev,
+               libdw-dev <!pkg.libcamera.notrace>,
                libevent-dev,
+               libexif-dev,
+               libgnutls28-dev | gnutls-dev,
+               libgstreamer-plugins-base1.0-dev,
+               libgstreamer1.0-dev,
+               libgtest-dev <!nocheck>,
+               libjpeg-dev <!pkg.libcamera.nosdl>,
                libjs-jquery <!nodoc>,
                libjs-sphinxdoc <!nodoc>,
                libjs-underscore <!nodoc>,
-               libboost-dev,
-               libdw-dev,
-               libdrm-dev,
-               libsdl2-dev,
+               liblttng-ust-dev [linux-any],
+               libsdl2-dev <!pkg.libcamera.nosdl>,
                libsdl2-image-dev,
                libtiff-dev,
-               libudev-dev,
+               libudev-dev [linux-any],
+               libunwind-dev,
+               libyaml-dev,
+               lttng-tools,
+               meson (>= 0.56),
                openssl,
+               pkgconf | pkg-config,
+               python3:native,
+               python3-jinja2,
+               python3-ply,
+               python3-sphinx <!nodoc>,
+               python3-yaml,
                qtbase5-dev <!pkg.libcamera.noqt>,
-               libqt5core5a, 
+               libqt5core5a,
                libqt5gui5,
                libqt5widgets5,
                qttools5-dev-tools,
-               libtiff-dev,
-               libunwind-dev,
-               liblttng-ust-dev,
-               python3-jinja2,
-               lttng-tools,
-               libexif-dev,
-               libjpeg-dev,
-               libyaml-dev,
-               libgstreamer1.0-dev,
-               libgstreamer-plugins-base1.0-dev (>= 1.14.0),
-               texlive-latex-extra
-Standards-Version: 4.5.0
+               texlive-latex-extra,
+Standards-Version: 4.5.1
 Rules-Requires-Root: no
 Section: libs
 Homepage: https://libcamera.org/
-Vcs-Browser: https://github.com/pipewire-debian/pipewire-debian
-Vcs-Git: https://github.com/pipewire-debian/pipewire-debian.git
+Vcs-Browser: https://salsa.debian.org/multimedia-team/libcamera
+Vcs-Git: https://salsa.debian.org/multimedia-team/libcamera.git
 
 Package: libcamera-dev
 Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends},
+Depends: libcamera0.0.5 (= ${binary:Version}),
          ${misc:Depends},
-         libcamera0 (= ${binary:Version})
+         ${shlibs:Depends}
 Multi-Arch: same
 Description: complex camera support library (development files)
  libcamera is a complex camera support library which handles low-level
@@ -72,11 +72,11 @@ Package: libcamera-doc
 Section: doc
 Architecture: all
 Build-Profiles: <!nodoc>
-Depends: ${shlibs:Depends},
-         ${misc:Depends},
-         libjs-jquery,
+Depends: libjs-jquery,
          libjs-sphinxdoc,
          libjs-underscore,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Recommends: libcamera-dev
 Multi-Arch: foreign
 Description: complex camera support library (documentation)
@@ -86,26 +86,72 @@ Description: complex camera support library (documentation)
  .
  This package contains the documentation developing with libcamera.
 
-Package: libcamera0
+Package: libcamera0.0.5
 Architecture: any
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
+Suggests: libcamera-ipa
+Breaks: libcamera0 (<< 0.0.3-1~)
+Replaces: libcamera0 (<< 0.0.3-1~)
 Multi-Arch: same
 Description: complex camera support library
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level
  programming interface to the applications.
 
+Package: libcamera-ipa
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: libcamera0 (<< 0.0.3-1~)
+Replaces: libcamera0 (<< 0.0.3-1~)
+Multi-Arch: same
+Description: complex camera support library (IPA modules)
+ libcamera is a complex camera support library which handles low-level
+ control of the camera devices, providing a unified higher-level
+ programming interface to the applications.
+ .
+ This package contains the libcamera IPA (Image Processing Algorithms) modules.
+
 Package: libcamera-tools
 Section: video
 Architecture: any
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: foreign
 Description: complex camera support library (tools)
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level
+ programming interface to the applications.
  .
  This package provides cam and qcam, libcamera "Swiss army knife" tools.
+
+Package: libcamera-v4l2
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: libcamera0 (<< 0.0.3-1~)
+Replaces: libcamera0 (<< 0.0.3-1~)
+Multi-Arch: same
+Description: complex camera support library (V4L2 module)
+ libcamera is a complex camera support library which handles low-level
+ control of the camera devices, providing a unified higher-level
+ programming interface to the applications.
+ .
+ This package contains the libcamera V4L2 module.
+
+Package: gstreamer1.0-libcamera
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: libcamera0 (<< 0.0.3-1~)
+Replaces: libcamera0 (<< 0.0.3-1~)
+Multi-Arch: same
+Description: complex camera support library (GStreamer plugin)
+ libcamera is a complex camera support library which handles low-level
+ control of the camera devices, providing a unified higher-level
+ programming interface to the applications.
+ .
+ This package contains the libcamera GStreamer plugin.

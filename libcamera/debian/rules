@@ -1,12 +1,8 @@
 #!/usr/bin/make -f
 
-export DH_VERBOSE = 1
+# export DH_VERBOSE = 1
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-
-# Version=$(printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)")
-#
-AVAILABLE_CORE=$(shell nproc)
-gtest_ver=1.11.0
+export DEB_CXXFLAGS_MAINT_APPEND = -Wno-error
 
 include /usr/share/dpkg/architecture.mk
 
@@ -14,26 +10,31 @@ include /usr/share/dpkg/architecture.mk
 	dh $@
 
 override_dh_auto_configure:
-	cp -vR debian/packagefiles subprojects/
-	grep ${gtest_ver} subprojects/gtest.wrap && echo "[*] gtest version OK...\n" || exit
-	grep ${gtest_ver}-1 subprojects/gtest.wrap && echo "[*] gtest patch version OK...\n" || exit
 	dh_auto_configure -- \
 		--libexecdir=lib/${DEB_HOST_MULTIARCH} \
 		-Dauto_features=enabled \
 		-Dwerror=false \
-		-Db_pie=true \
+		-Dpycamera=disabled \
+		-Dgstreamer=enabled \
 		-Dv4l2=true \
-		-Dpycamera=disabled
+		-Dtest=true \
 		$(empty)
 
 override_dh_install:
+	mv debian/tmp/usr/share/doc/libcamera-0.* debian/tmp/usr/share/doc/libcamera-doc
 	dh_install -X/.doctrees/
+
+override_dh_strip:
+	dh_strip -a
+	MESON_INSTALL_DESTDIR_PREFIX=. ./src/ipa/ipa-sign-install.sh \
+		./obj-${DEB_HOST_GNU_TYPE}/src/ipa-priv-key.pem \
+		debian/libcamera-ipa/usr/lib/${DEB_HOST_MULTIARCH}/libcamera/ipa_*.so
 
 .PHONY: override_dh_auto_test
 override_dh_auto_test:
 	LC_ALL=C.UTF-8 MESON_TESTTHREADS=${AVAILABLE_CORE}  meson test -C obj-${DEB_HOST_MULTIARCH} \
-		   || echo  "\n\n[*] Warning: Test is Failed harmlessly & shouldn't be worried about that \n\n"  \
-	$(empty)
+		|| echo  "\n\n[*] Warning: Test is Failed harmlessly & shouldn't be worried about that \n\n"  \
+		$(empty)
 
 .PHONY: licensecheck
 licensecheck:
