@@ -1,0 +1,30 @@
+From a8145cb676a249d8c6c21dbe0bfd7389cbe56f20 Mon Sep 17 00:00:00 2001
+From: Sourav Das <souravdas142@gmail.com>
+Date: Sat, 20 May 2023 20:16:02 +0530
+Subject: [PATCH] spa:plugins: fixes compilation error gcc<=7.5
+
+sorry, unimplemented: non-trivial designated initializers not supported
+---
+ spa/plugins/aec/aec-webrtc.cpp | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/spa/plugins/aec/aec-webrtc.cpp b/spa/plugins/aec/aec-webrtc.cpp
+index cb19392..8f15380 100644
+--- a/spa/plugins/aec/aec-webrtc.cpp
++++ b/spa/plugins/aec/aec-webrtc.cpp
+@@ -261,6 +261,12 @@ static const struct spa_audio_aec_methods impl_aec = {
+ 	.add_listener = NULL,
+ 	.init = webrtc_init,
+ 	.run = webrtc_run,
++	.set_props = NULL,
++	.activate = NULL,
++	.deactivate = NULL,
++	.enum_props = NULL,
++	.get_params = NULL,
++	.set_params = NULL,
+ 	.init2 = webrtc_init2,
+ };
+ 
+-- 
+2.25.1
+

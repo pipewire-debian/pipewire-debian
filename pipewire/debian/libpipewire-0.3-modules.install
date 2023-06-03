@@ -10,6 +10,8 @@ usr/lib/*/pipewire-0.3/libpipewire-module-combine-stream.so
 usr/lib/*/pipewire-0.3/libpipewire-module-echo-cancel.so
 usr/lib/*/pipewire-0.3/libpipewire-module-fallback-sink.so
 usr/lib/*/pipewire-0.3/libpipewire-module-filter-chain.so
+usr/lib/*/pipewire-0.3/libpipewire-module-jack-tunnel.so
+usr/lib/*/pipewire-0.3/libpipewire-module-jackdbus-detect.so
 usr/lib/*/pipewire-0.3/libpipewire-module-link-factory.so
 usr/lib/*/pipewire-0.3/libpipewire-module-loopback.so
 usr/lib/*/pipewire-0.3/libpipewire-module-metadata.so

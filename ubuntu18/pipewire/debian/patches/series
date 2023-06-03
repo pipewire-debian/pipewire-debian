@@ -1,1 +1,3 @@
 Fix_incompatible_PW_Service_1804.patch
+ce71b37b58d5e251ae7acda0799f696688df11c2.patch
+0001-spa-plugins-fixes-compilation-error-gcc-7.5.patch

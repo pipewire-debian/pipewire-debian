@@ -12,6 +12,9 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_conf_load_conf_for_context@Base 0.3.57
  pw_conf_load_state@Base 0.3.22
  pw_conf_save_state@Base 0.3.22
+ pw_conf_section_for_each@Base 0.3.70
+ pw_conf_section_match_rules@Base 0.3.70
+ pw_conf_section_update_props@Base 0.3.70
  pw_conf_match_rules@Base 0.3.66
  pw_context_add_listener@Base 0.3.1
  pw_context_add_spa_lib@Base 0.3.1
@@ -405,6 +408,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_stream_set_active@Base 0.3.1
  pw_stream_set_control@Base 0.3.1
  pw_stream_set_error@Base 0.3.1
+ pw_stream_set_param@Base 0.3.70
  pw_stream_state_as_string@Base 0.3.1
  pw_stream_trigger_process@Base 0.3.34
  pw_stream_update_params@Base 0.3.1
