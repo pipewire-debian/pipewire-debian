@@ -1,3 +1,9 @@
+liblc3 (1.0.3-1~ubuntu20.04) focal; urgency=medium
+
+  * New upstream version 1.0.3
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 21 May 2023 11:48:34 +0530
+
 liblc3 (1.0.2-4~ubuntu20.04) focal; urgency=medium
 
   * New upstream version 1.0.2
