@@ -4,6 +4,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  _pw_log_topic_new@Base 0.3.38
  pw_buffers_clear@Base 0.3.1
  pw_buffers_negotiate@Base 0.3.1
+ pw_check_library_version@Base 0.3.76
  pw_check_option@Base 0.3.29
  pw_client_info_free@Base 0.3.1
  pw_client_info_merge@Base 0.3.35
@@ -43,6 +44,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_context_get_data_loop@Base 0.3.56
  pw_context_get_default_core@Base 0.3.1
  pw_context_get_main_loop@Base 0.3.1
+ pw_context_get_mempool@Base 0.3.76
  pw_context_get_object@Base 0.3.1
  pw_context_get_properties@Base 0.3.1
  pw_context_get_support@Base 0.3.1
@@ -157,6 +159,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_impl_client_get_core_resource@Base 0.3.1
  pw_impl_client_get_global@Base 0.3.1
  pw_impl_client_get_info@Base 0.3.1
+ pw_impl_client_get_mempool@Base 0.3.76
  pw_impl_client_get_properties@Base 0.3.1
  pw_impl_client_get_protocol@Base 0.3.1
  pw_impl_client_get_user_data@Base 0.3.1
@@ -220,6 +223,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_impl_module_schedule_destroy@Base 0.3.48
  pw_impl_module_update_properties@Base 0.3.1
  pw_impl_node_add_listener@Base 0.3.1
+ pw_impl_node_add_rt_listener@Base 0.3.76
  pw_impl_node_destroy@Base 0.3.1
  pw_impl_node_find_port@Base 0.3.1
  pw_impl_node_for_each_param@Base 0.3.1
@@ -234,6 +238,7 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_impl_node_initialized@Base 0.3.1
  pw_impl_node_is_active@Base 0.3.1
  pw_impl_node_register@Base 0.3.1
+ pw_impl_node_remove_rt_listener@Base 0.3.76
  pw_impl_node_send_command@Base 0.3.39
  pw_impl_node_set_active@Base 0.3.1
  pw_impl_node_set_driver@Base 0.3.1
@@ -347,7 +352,8 @@ libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
  pw_proxy_errorf@Base 0.3.1
  pw_proxy_get_bound_id@Base 0.3.1
  pw_proxy_get_core@Base 0.3.1
- pw_proxy_get_id@Base 0.3.1
+#MISSING: 0.3.76-1~ubuntu20.04# pw_proxy_get_core@Base 0.3.1
+ pw_proxy_get_id@Base 0.3.76
  pw_proxy_get_marshal@Base 0.3.1
  pw_proxy_get_object_listeners@Base 0.3.1
  pw_proxy_get_protocol@Base 0.3.1

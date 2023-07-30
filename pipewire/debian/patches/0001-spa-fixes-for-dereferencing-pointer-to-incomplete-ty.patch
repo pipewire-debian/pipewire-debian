@@ -1,0 +1,56 @@
+From 3dc68b992eaa37f82b3c7035a0b962cd410b602a Mon Sep 17 00:00:00 2001
+From: Sourav Das <souravdas142@gmail.com>
+Date: Fri, 28 Jul 2023 21:03:57 +0530
+Subject: [PATCH] spa: fixes for dereferencing pointer to incomplete type in
+ __typeof__
+
+before gcc 10 its not supporting pointer dereferencing in __typeof__.
+so made changes according to that.
+---
+ spa/include/spa/utils/cleanup.h | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+
+diff --git a/spa/include/spa/utils/cleanup.h b/spa/include/spa/utils/cleanup.h
+index 04e2bd1..f9b2356 100644
+--- a/spa/include/spa/utils/cleanup.h
++++ b/spa/include/spa/utils/cleanup.h
+@@ -39,14 +39,27 @@ __extension__ ({ \
+ 	(var) = (new_value); \
+ 	_old_value; \
+ })
+-
++#if __GNUC__ < 10
++#define spa_steal_ptr(ptr) ((__typeof__(ptr)) spa_exchange((ptr), NULL))
++#else
+ #define spa_steal_ptr(ptr) ((__typeof__(*(ptr)) *) spa_exchange((ptr), NULL))
++#endif
++
+ #define spa_steal_fd(fd) spa_exchange((fd), -1)
+ 
+ /* ========================================================================== */
+ 
+ #include <stdlib.h>
+ 
++#if __GNUC__ < 10
++#define spa_clear_ptr(ptr, destructor) \
++__extension__ ({ \
++	__typeof__(ptr) _old_value = spa_steal_ptr(ptr); \
++	if (_old_value) \
++		destructor(_old_value); \
++	(void) 0; \
++})
++#else
+ #define spa_clear_ptr(ptr, destructor) \
+ __extension__ ({ \
+ 	__typeof__(*(ptr)) *_old_value = spa_steal_ptr(ptr); \
+@@ -54,6 +67,7 @@ __extension__ ({ \
+ 		destructor(_old_value); \
+ 	(void) 0; \
+ })
++#endif
+ 
+ static inline void _spa_autofree_cleanup_func(void *p)
+ {
+-- 
+2.25.1
+

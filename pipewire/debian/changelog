@@ -1,3 +1,24 @@
+pipewire (0.3.76-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - enable modemmanager
+
+  Pipewire -
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+    
+
+ -- Sourav Das <souravdas142@gmail.com>  Fri, 28 Jul 2023 21:12:30 +0530
+
 pipewire (0.3.71-2~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

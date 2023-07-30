@@ -10,11 +10,16 @@ usr/lib/*/pipewire-0.3/libpipewire-module-combine-stream.so
 usr/lib/*/pipewire-0.3/libpipewire-module-echo-cancel.so
 usr/lib/*/pipewire-0.3/libpipewire-module-fallback-sink.so
 usr/lib/*/pipewire-0.3/libpipewire-module-filter-chain.so
+usr/lib/*/pipewire-0.3/libpipewire-module-filter-chain-lv2.so
+usr/lib/*/pipewire-0.3/libpipewire-module-filter-chain-sofa.so
+usr/lib/*/pipewire-0.3/libpipewire-module-ffado-driver.so
 usr/lib/*/pipewire-0.3/libpipewire-module-jack-tunnel.so
 usr/lib/*/pipewire-0.3/libpipewire-module-jackdbus-detect.so
 usr/lib/*/pipewire-0.3/libpipewire-module-link-factory.so
 usr/lib/*/pipewire-0.3/libpipewire-module-loopback.so
 usr/lib/*/pipewire-0.3/libpipewire-module-metadata.so
+usr/lib/*/pipewire-0.3/libpipewire-module-netjack2-driver.so
+usr/lib/*/pipewire-0.3/libpipewire-module-netjack2-manager.so
 usr/lib/*/pipewire-0.3/libpipewire-module-pipe-tunnel.so
 usr/lib/*/pipewire-0.3/libpipewire-module-portal.so
 usr/lib/*/pipewire-0.3/libpipewire-module-profiler.so
@@ -37,5 +42,7 @@ usr/lib/*/pipewire-0.3/libpipewire-module-spa-device-factory.so
 usr/lib/*/pipewire-0.3/libpipewire-module-spa-device.so
 usr/lib/*/pipewire-0.3/libpipewire-module-spa-node-factory.so
 usr/lib/*/pipewire-0.3/libpipewire-module-spa-node.so
+usr/lib/*/pipewire-0.3/libpipewire-module-vban-recv.so
+usr/lib/*/pipewire-0.3/libpipewire-module-vban-send.so
 #usr/lib/*/pipewire-0.3/libpipewire-module-x11-bell.so
 usr/lib/*/pipewire-0.3/libpipewire-module-zeroconf-discover.so
