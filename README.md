@@ -39,7 +39,8 @@
 
 <br/>
 
-## PipeWire PPA for Ubuntu (>= 18.04)
+## PipeWire PPA for Ubuntu (>= 20.04)
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **Deprication Notice:** PipeWire for ubuntu 18.04 will no longer be maintained, as codebase is becoming difficult to maintain. Now version >= 20.04 is supported.
 #### _An upstream version of PipeWire for Ubuntu maintained with a 15 day release cycle_
 
 
