@@ -37,9 +37,17 @@
   </a>
 </p>
 
+<p align="center">
+  <!-- donation button -->
+  <a href="https://ko-fi.com/G2G2LWMZX"> 
+    <img alt="buy me a coffee at ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg">
+  </a>
+</p>
+
 <br/>
 
-## PipeWire PPA for Ubuntu (>= 18.04)
+## PipeWire PPA for Ubuntu (>= 20.04)
+<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **Deprication Notice:** PipeWire for ubuntu 18.04 will no longer be maintained, as codebase is becoming difficult to maintain. Now version >= 20.04 is supported.
 #### _An upstream version of PipeWire for Ubuntu maintained with a 15 day release cycle_
 
 
@@ -391,7 +399,7 @@ You just need to reverse the whole thing in that section. For more search on the
 
 # <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/flame.svg" width=48 height=48> Notice
 
-If you have any issues regarding this PPA package, create an issue here.
+If you have any issues regarding this PPA package, create an issue [here](https://pipewire-debian.github.io/pipewire-debian/).
 
 **For features, requests or bugs create an issue on upstream: [PipeWire](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues),**
 **[blueman](https://github.com/blueman-project/blueman/issues/new), [WirePlumber](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/new?issue)**
