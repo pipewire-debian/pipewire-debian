@@ -57,7 +57,7 @@ Vcs-Git: https://salsa.debian.org/multimedia-team/libcamera.git
 Package: libcamera-dev
 Section: libdevel
 Architecture: any
-Depends: libcamera0.0.5 (= ${binary:Version}),
+Depends: libcamera0.1.0 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Multi-Arch: same
@@ -86,7 +86,7 @@ Description: complex camera support library (documentation)
  .
  This package contains the documentation developing with libcamera.
 
-Package: libcamera0.0.5
+Package: libcamera0.1.0
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}

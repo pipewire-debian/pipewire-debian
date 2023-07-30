@@ -1,3 +1,10 @@
+libcamera (0.ver1.0.r0.g668a5e6-4~ubuntu20.04) focal; urgency=medium
+
+  * New upstream version 0.1.0
+  * Bump SONAME to libcamera0.1.0
+
+ -- Sourav Das <souravdas142@gmail.com>  Sun, 30 Jul 2023 10:45:46 +0530
+
 libcamera (0.v5.r0.gfb44403f-1~ubuntu20.04) focal; urgency=medium
 
   * New upstream version 0.0.5

@@ -1,1 +1,1 @@
-usr/lib/*/v4l2-compat.so
+usr/lib/*/libcamera/v4l2-compat.so
