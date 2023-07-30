@@ -37,6 +37,13 @@
   </a>
 </p>
 
+<p align="center">
+  <!-- donation button -->
+  <a href="https://ko-fi.com/G2G2LWMZX"> 
+    <img alt="buy me a coffee at ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg">
+  </a>
+</p>
+
 <br/>
 
 ## PipeWire PPA for Ubuntu (>= 20.04)
