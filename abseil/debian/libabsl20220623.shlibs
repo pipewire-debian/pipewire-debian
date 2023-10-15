@@ -1,0 +1,78 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+#
+libabsl_bad_any_cast_impl 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_bad_optional_access 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_bad_variant_access 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_base 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_city 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_civil_time 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_cord 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_cord_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_cordz_functions 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_cordz_handle 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_cordz_info 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_cordz_sample_token 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_debugging_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_demangle_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_examine_stack 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_exponential_biased 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_failure_signal_handler 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_commandlineflag 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_commandlineflag_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_config 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_marshalling 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_parse 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_private_handle_accessor 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_program_name 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_reflection 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_usage 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_flags_usage_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_graphcycles_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_hash 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_hashtablez_sampler 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_int128 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_leak_check 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_log_severity 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_low_level_hash 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_malloc_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_periodic_sampler 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_distributions 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_internal_distribution_test_util 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_internal_platform 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_internal_pool_urbg 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_internal_randen 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_internal_randen_hwaes 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_internal_randen_hwaes_impl 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_internal_randen_slow 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_internal_seed_material 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_seed_gen_exception 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_random_seed_sequences 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_raw_hash_set 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_raw_logging_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_scoped_set_env 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_spinlock_wait 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_stacktrace 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_status 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_statusor 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_str_format_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_strerror 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_strings 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_strings_internal 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_symbolize 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_synchronization 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_throw_delegate 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_time 20220623 libabsl20220623 (>= 0~20220623.0-1)
+libabsl_time_zone 20220623 libabsl20220623 (>= 0~20220623.0-1)

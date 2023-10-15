@@ -1,0 +1,19 @@
+From: Benjamin Barenblat <bbaren@google.com>
+Subject: Eliminate libabsl_flags.so and libabsl_flags.a
+Forwarded: not-needed
+
+The libabsl_flags library only contains code when compiling with MSVC, which
+Debian doesn't use. Skip compiling absl/flags/flag.cc, and make the Abseil flags
+library header-only.
+
+--- a/absl/flags/CMakeLists.txt
++++ b/absl/flags/CMakeLists.txt
+@@ -199,8 +199,6 @@
+ absl_cc_library(
+   NAME
+     flags
+-  SRCS
+-    "flag.cc"
+   HDRS
+     "declare.h"
+     "flag.h"

@@ -1,0 +1,18 @@
+From: Benjamin Barenblat <bbaren@google.com>
+Subject: Use rdtime instead of rdcycle for cycle counting
+
+rdcycle isn’t necessarily monotonic if the thread gets scheduled onto a separate
+core, and Linux can disable it for security reasons. Use rdtime instead, which
+is monotonic and always accessible from userland.
+
+--- a/absl/base/internal/unscaledcycleclock.cc
++++ b/absl/base/internal/unscaledcycleclock.cc
+@@ -126,7 +126,7 @@
+ 
+ int64_t UnscaledCycleClock::Now() {
+   int64_t virtual_timer_value;
+-  asm volatile("rdcycle %0" : "=r"(virtual_timer_value));
++  asm volatile("rdtime %0" : "=r"(virtual_timer_value));
+   return virtual_timer_value;
+ }
+ 

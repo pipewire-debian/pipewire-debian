@@ -1,0 +1,159 @@
+abseil (20220623.1-2~ubuntu20.04) focal; urgency=medium
+
+  * Patch cycle-counting code for riscv64 to use the monotonic and
+    unprivileged rdtime instruction instead of rdcycle.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Wed, 09 Aug 2023 18:33:54 -0400
+
+abseil (20220623.1-2) unstable; urgency=medium
+
+  * Constrain build to GCC 12, since this version of Abseil doesn’t build
+    work with GCC 13.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Sun, 06 Aug 2023 11:55:52 -0400
+
+abseil (20220623.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Tue, 18 Oct 2022 10:02:49 -0400
+
+abseil (0~20220623.0-2) unstable; urgency=medium
+
+  * Backport an upstream patch to correct pkg-config file generation.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Tue, 30 Aug 2022 22:54:45 -0400
+
+abseil (0~20220623.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #1008730, #1012194)
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Mon, 22 Aug 2022 22:17:36 -0400
+
+abseil (0~20210324.2-4) unstable; urgency=medium
+
+  * Fix "spurious -Wl flag in some pkg-config entries" by backporting a
+    patch from upstream that corrects CMake pkg-config generation.
+    (Closes: #1011294)
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Fri, 27 May 2022 16:58:38 -0400
+
+abseil (0~20210324.2-3) unstable; urgency=medium
+
+  * Backport an upstream patch to disable a problematic unit test.
+    (Closes: #1007136)
+  * Reenable unit tests on hppa.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Thu, 14 Apr 2022 13:20:16 -0400
+
+abseil (0~20210324.2-2) unstable; urgency=medium
+
+  * Disable a test that doesn’t play well with multiarch on armel and
+    armhf.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Mon, 07 Feb 2022 11:54:21 -0500
+
+abseil (0~20210324.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Stop installing libabsl_flags.so and libabsl_flags.a, since they are
+    empty on every platform that Debian supports.
+  * Correct debian/watch search URLs to avoid picking up rc versions.
+  * Mangle upstream version in debian/watch to match manual mangling in
+    debian/changelog.
+  * Stop forcing -Wl,--no-as-needed on dependents. (Closes: #1001596)
+  * Compute Thumb function bounds correctly. (Closes: #987314)
+  * Reenable unit tests on most architectures.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Fri, 04 Feb 2022 13:11:32 -0500
+
+abseil (0~20200923.3-3) unstable; urgency=medium
+
+  * Fix "ftbfs with -march=x86-64-v3" by correcting the relevant unit
+    tests. (Closes: #983936)
+  * Disable double-double unit tests due to compiler bugs.
+  * Reenable unit tests on ppc64el.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Fri, 05 Mar 2021 15:57:38 -0500
+
+abseil (0~20200923.3-2) unstable; urgency=medium
+
+  * Correct string formatting on POWER.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Tue, 09 Feb 2021 14:41:06 -0500
+
+abseil (0~20200923.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Correct endianness issues in hash functions and RNG.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Mon, 08 Feb 2021 15:04:52 -0500
+
+abseil (0~20200923.2-3) unstable; urgency=medium
+
+  * Fix some issues in unit tests.
+  * Re-disable unit tests on most platforms until they’re working
+    everywhere.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Sun, 31 Jan 2021 15:13:51 -0500
+
+abseil (0~20200923.2-2) unstable; urgency=medium
+
+  * Reenable unit tests.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Tue, 01 Dec 2020 12:37:56 -0500
+
+abseil (0~20200923.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Fix build on hppa via patch. (Closes: #971768)
+  * Link libatomic where necessary to prevent issues with load-time
+    symbol resolution. (Closes: #973492)
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Fri, 06 Nov 2020 16:51:39 -0500
+
+abseil (0~20200923.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Mon, 12 Oct 2020 12:40:50 -0400
+
+abseil (0~20200923-2) unstable; urgency=medium
+
+  * Release for unstable.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Tue, 06 Oct 2020 10:00:02 -0400
+
+abseil (0~20200923-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Fri, 25 Sep 2020 17:57:31 -0400
+
+abseil (0~20200225.2-4) unstable; urgency=medium
+
+  * Fix "autopkgtest needs update for new version of cmake: warning on
+    stderr" by applying a patch from upstream. (Closes: #970333)
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Mon, 14 Sep 2020 17:40:05 -0400
+
+abseil (0~20200225.2-3) unstable; urgency=medium
+
+  * Replace symbols file with shlibs infrastructure. (Closes: #966183)
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Fri, 24 Jul 2020 09:42:03 -0400
+
+abseil (0~20200225.2-2) unstable; urgency=medium
+
+  * Rebuild for unstable.
+  * Rework symbols file using pkg-kde-tools for increased robustness.
+  * Avoid SSSE3 on amd64 and SSE2 on i386 for greater processor
+    compatibility.
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Thu, 23 Jul 2020 17:23:57 -0400
+
+abseil (0~20200225.2-1) experimental; urgency=medium
+
+  * Initial release. (Closes: #888705)
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Thu, 18 Jun 2020 16:27:49 -0400

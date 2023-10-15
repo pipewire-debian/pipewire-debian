@@ -1,0 +1,57 @@
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+Source: abseil
+Priority: optional
+Maintainer: Benjamin Barenblat <bbaren@debian.org>
+Build-Depends:
+ cmake (>= 3.5),
+ debhelper-compat (= 12),
+ g++,
+ googletest [!mipsel !ppc64] <!nocheck>
+Rules-Requires-Root: no
+Standards-Version: 4.5.1
+Section: libs
+Homepage: https://abseil.io/
+Vcs-Browser: https://salsa.debian.org/debian/abseil
+Vcs-Git: https://salsa.debian.org/debian/abseil.git
+Description: extensions to the C++ standard library
+ Abseil is an open-source collection of C++ library code designed to augment the
+ C++ standard library. The Abseil library code is collected from Google's C++
+ codebase and has been extensively tested and used in production. In some cases,
+ Abseil provides pieces missing from the C++ standard; in others, Abseil
+ provides alternatives to the standard for special needs.
+
+Package: libabsl-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends:
+ libabsl20220623 (= ${binary:Version}),
+ ${misc:Depends},
+Recommends: cmake (>= 2.6) | pkg-config, g++ (>= 5.1)
+Description: ${source:Synopsis} (development files)
+ ${source:Extended-Description}
+ .
+ This package contains header files and other data necessary for developing with
+ Abseil.
+
+Package: libabsl20220623
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: ${source:Synopsis}
+ ${source:Extended-Description}
+ .
+ This package contains Abseil's shared libraries.

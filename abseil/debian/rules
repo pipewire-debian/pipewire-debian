@@ -1,0 +1,60 @@
+#!/usr/bin/make -f
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+include /usr/share/dpkg/architecture.mk
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow reproducible=+fixfilepath
+
+# Unit tests require more than 2 GB of RAM, so disable them on mipsel.
+#
+# Unit tests are not yet passing on ppc64, so disable them there as well.
+#
+# Disable unit tests unconditionally if nocheck is set.
+ifneq ($(filter $(DEB_HOST_ARCH),mipsel ppc64),)
+ABSL_RUN_TESTS=OFF
+else ifneq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
+ABSL_RUN_TESTS=OFF
+else
+ABSL_RUN_TESTS=ON
+endif
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	$(RM) -r $(CURDIR)/static
+	$(RM) -r $(CURDIR)/shared
+
+override_dh_auto_configure:
+	dh_auto_configure -Bstatic -- -DCMAKE_C_COMPILER=$(DEB_HOST_GNU_TYPE)-gcc-9 -DCMAKE_CXX_COMPILER=$(DEB_HOST_GNU_TYPE)-g++-9 -DCMAKE_CXX_STANDARD=17 -DBUILD_SHARED_LIBS=OFF
+ifeq ($(ABSL_RUN_TESTS),ON)
+	dh_auto_configure -Bshared -- -DCMAKE_C_COMPILER=$(DEB_HOST_GNU_TYPE)-gcc-9 -DCMAKE_CXX_COMPILER=$(DEB_HOST_GNU_TYPE)-g++-9 -DCMAKE_CXX_STANDARD=17 -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=ON -DABSL_BUILD_TESTING=ON -DABSL_USE_GOOGLETEST_HEAD=OFF
+else
+	dh_auto_configure -Bshared -- -DCMAKE_C_COMPILER=$(DEB_HOST_GNU_TYPE)-gcc-9 -DCMAKE_CXX_COMPILER=$(DEB_HOST_GNU_TYPE)-g++-9 -DCMAKE_CXX_STANDARD=17 -DBUILD_SHARED_LIBS=ON
+endif
+
+override_dh_auto_build:
+	dh_auto_build -Bstatic
+	dh_auto_build -Bshared
+
+ifeq ($(ABSL_RUN_TESTS),ON)
+override_dh_auto_test:
+	dh_auto_test -Bshared
+endif
+
+override_dh_auto_install:
+	dh_auto_install -Bstatic
+	dh_auto_install -Bshared
+	find debian/tmp -type d -empty -delete

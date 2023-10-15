@@ -1,0 +1,7 @@
+configure.diff
+cpu-features.diff
+latomic.diff
+empty-flags-library.diff
+leaky-pkgconfig-cflags.diff
+cordz-info-statistics-test.diff
+riscv-rdcycle.diff

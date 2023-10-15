@@ -1,0 +1,16 @@
+From: Bruno Pitrus <brunopitrus@hotmail.com>
+Subject: Do not leak -maes -msse4.1 into pkgconfig
+Forwarded: https://github.com/abseil/abseil-cpp/pull/1216
+Origin: upstream, https://github.com/abseil/abseil-cpp/commit/09e96049995584c3489e4bd1467313e3e85af99c
+
+--- a/CMake/AbseilHelpers.cmake
++++ b/CMake/AbseilHelpers.cmake
+@@ -166,6 +166,8 @@
+           set(PC_CFLAGS "${PC_CFLAGS} ${cflag}")
+         elseif(${cflag} MATCHES "^(-W|/w[1234eo])")
+           # Don't impose our warnings on others.
++        elseif(${cflag} MATCHES "^-m")
++          # Don't impose CPU instruction requirements on others, as the code performs feature detection on runtime.
+         else()
+           set(PC_CFLAGS "${PC_CFLAGS} ${cflag}")
+         endif()

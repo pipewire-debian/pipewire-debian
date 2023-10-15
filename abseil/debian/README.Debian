@@ -1,0 +1,9 @@
+Abseil for Debian
+-----------------
+
+libabsl-dev installs a number of files to 'internal' directories. In general,
+your project should not directly include any files from these directories; they
+may change without warning. If you think you need something from one of those
+files, please report a bug with reportbug(1).
+
+ -- Benjamin Barenblat <bbaren@debian.org>  Thu, 07 May 2020 11:35:28 -0400

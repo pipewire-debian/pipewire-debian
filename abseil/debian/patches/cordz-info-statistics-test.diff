@@ -1,0 +1,11 @@
+--- a/absl/strings/internal/cordz_info_statistics_test.cc
++++ b/absl/strings/internal/cordz_info_statistics_test.cc
+@@ -466,6 +466,8 @@
+ }
+ 
+ TEST(CordzInfoStatisticsTest, ThreadSafety) {
++  GTEST_SKIP() << "Skipping test; see https://bugs.debian.org/1018804";
++
+   Notification stop;
+   static constexpr int kNumThreads = 8;
+   int64_t sampled_node_count = 0;

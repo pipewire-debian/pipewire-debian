@@ -1,0 +1,54 @@
+From: Benjamin Barenblat <bbaren@google.com>
+Subject: Canonicalize supported CPU feature set
+Forwarded: not-needed
+
+Explicitly set supported CPU features.
+
+  - Disable Intel SSE and SSE2 on i386, since Debian supports some i386
+    processors without those extensions. Keep them enabled on amd64, since all
+    amd64 processors have them.
+
+  - Disable Intel SSSE3 entirely, since no i386 processor supports it and Debian
+    supports amd64 processors without it.
+
+  - Disable NEON on armel and armhf, since no armel processor supports NEON and
+    Debian supports some armhf processors without it. Keep it enabled on arm64,
+    since all arm64 processors have it.
+
+--- a/absl/base/config.h
++++ b/absl/base/config.h
+@@ -862,7 +862,7 @@
+ // which architectures support the various x86 instruction sets.
+ #ifdef ABSL_INTERNAL_HAVE_SSE
+ #error ABSL_INTERNAL_HAVE_SSE cannot be directly set
+-#elif defined(__SSE__)
++#elif defined(__x86_64__)
+ #define ABSL_INTERNAL_HAVE_SSE 1
+ #elif defined(_M_X64) || (defined(_M_IX86_FP) && _M_IX86_FP >= 1)
+ // MSVC only defines _M_IX86_FP for x86 32-bit code, and _M_IX86_FP >= 1
+@@ -877,7 +877,7 @@
+ // which architectures support the various x86 instruction sets.
+ #ifdef ABSL_INTERNAL_HAVE_SSE2
+ #error ABSL_INTERNAL_HAVE_SSE2 cannot be directly set
+-#elif defined(__SSE2__)
++#elif defined(__x86_64__)
+ #define ABSL_INTERNAL_HAVE_SSE2 1
+ #elif defined(_M_X64) || (defined(_M_IX86_FP) && _M_IX86_FP >= 2)
+ // MSVC only defines _M_IX86_FP for x86 32-bit code, and _M_IX86_FP >= 2
+@@ -898,15 +898,13 @@
+ // by the CPU.
+ #ifdef ABSL_INTERNAL_HAVE_SSSE3
+ #error ABSL_INTERNAL_HAVE_SSSE3 cannot be directly set
+-#elif defined(__SSSE3__)
+-#define ABSL_INTERNAL_HAVE_SSSE3 1
+ #endif
+ 
+ // ABSL_INTERNAL_HAVE_ARM_NEON is used for compile-time detection of NEON (ARM
+ // SIMD).
+ #ifdef ABSL_INTERNAL_HAVE_ARM_NEON
+ #error ABSL_INTERNAL_HAVE_ARM_NEON cannot be directly set
+-#elif defined(__ARM_NEON)
++#elif defined(__aarch64__)
+ #define ABSL_INTERNAL_HAVE_ARM_NEON 1
+ #endif
+ 
