@@ -1,0 +1,75 @@
+Index: googletest-1.14.0/googlemock/CMakeLists.txt
+===================================================================
+--- googletest-1.14.0.orig/googlemock/CMakeLists.txt
++++ googletest-1.14.0/googlemock/CMakeLists.txt
+@@ -112,7 +112,14 @@ target_include_directories(gmock_main SY
+ ########################################################################
+ #
+ # Install rules
+-install_project(gmock gmock_main)
++install_project(GMockTargets gmock gmock_main)
++
++if(INSTALL_GTEST)
++  set(cmake_files_install_dir "${CMAKE_INSTALL_LIBDIR}/cmake/${cmake_package_name}")
++  install(EXPORT GMockTargets
++    NAMESPACE ${cmake_package_name}::
++    DESTINATION ${cmake_files_install_dir})
++endif()
+ 
+ ########################################################################
+ #
+Index: googletest-1.14.0/googletest/cmake/Config.cmake.in
+===================================================================
+--- googletest-1.14.0.orig/googletest/cmake/Config.cmake.in
++++ googletest-1.14.0/googletest/cmake/Config.cmake.in
+@@ -5,5 +5,6 @@ if (@GTEST_HAS_PTHREAD@)
+   find_dependency(Threads)
+ endif()
+ 
+-include("${CMAKE_CURRENT_LIST_DIR}/@targets_export_name@.cmake")
++include("${CMAKE_CURRENT_LIST_DIR}/GTestTargets.cmake")
++include("${CMAKE_CURRENT_LIST_DIR}/GMockTargets.cmake" OPTIONAL)
+ check_required_components("@project_name@")
+Index: googletest-1.14.0/googletest/cmake/internal_utils.cmake
+===================================================================
+--- googletest-1.14.0.orig/googletest/cmake/internal_utils.cmake
++++ googletest-1.14.0/googletest/cmake/internal_utils.cmake
+@@ -294,14 +294,14 @@ endfunction()
+ # install_project(targets...)
+ #
+ # Installs the specified targets and configures the associated pkgconfig files.
+-function(install_project)
++function(install_project ExportName)
+   if(INSTALL_GTEST)
+     install(DIRECTORY "${PROJECT_SOURCE_DIR}/include/"
+       COMPONENT "${PROJECT_NAME}"
+       DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
+     # Install the project targets.
+     install(TARGETS ${ARGN}
+-      EXPORT ${targets_export_name}
++      EXPORT ${ExportName}
+       COMPONENT "${PROJECT_NAME}"
+       RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+       ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+Index: googletest-1.14.0/googletest/CMakeLists.txt
+===================================================================
+--- googletest-1.14.0.orig/googletest/CMakeLists.txt
++++ googletest-1.14.0/googletest/CMakeLists.txt
+@@ -94,7 +94,7 @@ if (INSTALL_GTEST)
+   set(cmake_files_install_dir "${CMAKE_INSTALL_LIBDIR}/cmake/${cmake_package_name}")
+   set(version_file "${generated_dir}/${cmake_package_name}ConfigVersion.cmake")
+   write_basic_package_version_file(${version_file} VERSION ${GOOGLETEST_VERSION} COMPATIBILITY AnyNewerVersion)
+-  install(EXPORT ${targets_export_name}
++  install(EXPORT GTestTargets
+     COMPONENT "${PROJECT_NAME}"
+     NAMESPACE ${cmake_package_name}::
+     DESTINATION ${cmake_files_install_dir})
+@@ -155,7 +155,7 @@ target_link_libraries(gtest_main PUBLIC
+ ########################################################################
+ #
+ # Install rules
+-install_project(gtest gtest_main)
++install_project(GTestTargets gtest gtest_main)
+ 
+ ########################################################################
+ #

@@ -1,0 +1,3 @@
+0001-inconsistency-with-GTEST_HAS_PTHREAD-in-library-inte.patch
+0005-Add-GoogleTest-version-to-each-sub-project-to-allow-.patch
+0006-Separate-GTest-and-GMock-targets.patch

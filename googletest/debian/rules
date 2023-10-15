@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DEB_CXXFLAGS_MAINT_APPEND = -fPIC
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure --buildsystem=cmake -- -Dgmock_build_tests=ON -Dgtest_build_tests=ON
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	cd obj-* && ctest || (cat Testing/Temporary/LastTest.log; true)
+endif
+
+override_dh_prep:
+	dh_prep
+	find googletest -iname __pycache__ -type d | xargs rm -rf
+
+override_dh_install-indep:
+	dh_install
+	find debian -iname '*.py' -print0 | xargs -0 chmod -x
+
+override_dh_clean:
+	dh_clean
+	find googletest -iname __pycache__ -type d | xargs rm -rf

@@ -1,0 +1,57 @@
+From: Steven Robbins <smr@debian.org>
+Date: Sun, 8 Apr 2018 14:29:43 -0500
+Subject: inconsistency with GTEST_HAS_PTHREAD in library interface leads to
+ crashes on non-linux
+
+Current libgtest-dev has two different means to determine if
+GTEST_HAS_PTHREAD is defined: one in CMake rules and second one in
+the header. When they don't match, the static library and the
+client code might be compiled with different value of this define.
+This, in turn, leads to the crashes because the definition of
+ThreadLocal class are different depending on the value of
+GTEST_HAS_PTHREAD.
+
+This patch adds CMake-determined defines as a public interface of
+gtest target, so everything which links gtest will get those defines
+as well.
+---
+ googletest/CMakeLists.txt             | 1 +
+ googletest/cmake/internal_utils.cmake | 6 ++++++
+ 2 files changed, 7 insertions(+)
+
+diff --git a/googletest/CMakeLists.txt b/googletest/CMakeLists.txt
+index 95bfa44..ee97e92 100644
+--- a/googletest/CMakeLists.txt
++++ b/googletest/CMakeLists.txt
+@@ -125,6 +125,7 @@ include_directories(${gtest_build_include_dirs})
+ # aggressive about warnings.
+ cxx_library(gtest "${cxx_strict}" src/gtest-all.cc)
+ set_target_properties(gtest PROPERTIES VERSION ${GOOGLETEST_VERSION})
++target_compile_options(gtest INTERFACE ${cxx_public})
+ if(GTEST_HAS_ABSL)
+   target_compile_definitions(gtest PUBLIC GTEST_HAS_ABSL=1)
+   target_link_libraries(gtest PUBLIC
+diff --git a/googletest/cmake/internal_utils.cmake b/googletest/cmake/internal_utils.cmake
+index 4140558..048c752 100644
+--- a/googletest/cmake/internal_utils.cmake
++++ b/googletest/cmake/internal_utils.cmake
+@@ -58,6 +58,11 @@ macro(fix_default_compiler_settings_)
+   endif()
+ endmacro()
+ 
++macro(set_public_compiler_definitions)
++  string(REGEX MATCHALL "-DGTEST_HAS_[^ ]*( |$)" list_of_definitions "${cxx_default}")
++  string(REPLACE " " "" cxx_public "${list_of_definitions}")
++endmacro()
++
+ # Defines the compiler/linker flags used to build Google Test and
+ # Google Mock.  You can tweak these definitions to suit your need.  A
+ # variable's value is empty before it's explicitly assigned to.
+@@ -149,6 +154,7 @@ macro(config_compiler_and_linker)
+ 
+   # For building the gtest libraries.
+   set(cxx_strict "${cxx_default} ${cxx_strict_flags}")
++  set_public_compiler_definitions()
+ endmacro()
+ 
+ # Defines the gtest & gtest_main libraries.  User tests should link

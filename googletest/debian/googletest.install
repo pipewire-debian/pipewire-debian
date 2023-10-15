@@ -1,0 +1,3 @@
+googlemock /usr/src/googletest
+googletest /usr/src/googletest
+CMakeLists.txt /usr/src/googletest

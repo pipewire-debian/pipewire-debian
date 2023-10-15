@@ -1,0 +1,43 @@
+	Use of precompiled libgtest Not Recommended
+	-------------------------------------------
+
+The Google C++ Testing Framework uses conditional compilation for some
+things.  Because of the C++ "One Definition Rule", gtest and gmock
+must be compiled with exactly the same flags as your C++ code under
+test.  Because this is hard to manage, upstream no longer recommends
+using precompiled libraries [1].
+
+
+	Using GTest with your project
+	-----------------------------
+
+See the upstream README for instructions on using gtest with your
+project.  The sources for libgtest are installed into
+/usr/src/googletest/googletest along with CMakeLists.txt for use with
+cmake.
+
+If your build system uses CMake, the ExternalProject command can be
+used to build gtest, then FindGTest can be used to find the built
+library.
+
+
+	Using gmock with your project
+	-----------------------------
+
+See the upstream README for instructions on using gmock with your
+project.  The sources for libgmock are installed into
+/usr/src/googletest/googlemock along with CMakeLists.txt for use with
+cmake.
+
+With this Debian package something like the following should be enough to build 
+a static library (which also includes gtest):
+
+g++ -I/usr/src/googletest/googlemock -c /usr/src/googletest/googlemock/src/gmock-all.cc
+g++ -I/usr/src/googletest/googletest -c /usr/src/googletest/googletest/src/gtest-all.cc
+ar -rv libgmock.a gmock-all.o gtest-all.o
+
+
+
+[1] http://groups.google.com/group/googletestframework/browse_thread/thread/668eff1cebf5309d
+
+ -- Steve M. Robbins <smr@debian.org>, Sat, 19 Nov 2016 21:58:04 -0600

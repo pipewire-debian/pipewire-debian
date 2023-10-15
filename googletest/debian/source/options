@@ -1,0 +1,9 @@
+# ignore Cmake generated files
+extend-diff-ignore = "CMakeFiles"
+extend-diff-ignore = "CMakeCache.txt"
+extend-diff-ignore = ".*.cmake$"
+extend-diff-ignore = "Makefile$"
+
+# Other generated files
+extend-diff-ignore = "/generated/"
+extend-diff-ignore = "install_manifest.txt"

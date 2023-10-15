@@ -1,0 +1,37 @@
+From: Steve Robbins <steve@sumost.ca>
+Date: Sun, 25 Oct 2020 23:29:36 -0500
+Subject: Add GoogleTest version to each sub-project to allow builds from the
+ sub-project. Work around for upstream
+ https://github.com/google/googletest/issues/2950
+
+---
+ googlemock/CMakeLists.txt | 2 ++
+ googletest/CMakeLists.txt | 2 ++
+ 2 files changed, 4 insertions(+)
+
+diff --git a/googlemock/CMakeLists.txt b/googlemock/CMakeLists.txt
+index 5c1f0da..1998caf 100644
+--- a/googlemock/CMakeLists.txt
++++ b/googlemock/CMakeLists.txt
+@@ -8,6 +8,8 @@
+ # ctest.  You can select which tests to run using 'ctest -R regex'.
+ # For more options, run 'ctest --help'.
+ 
++set(GOOGLETEST_VERSION 1.13.0)
++
+ option(gmock_build_tests "Build all of Google Mock's own tests." OFF)
+ 
+ # A directory to find Google Test sources.
+diff --git a/googletest/CMakeLists.txt b/googletest/CMakeLists.txt
+index ee97e92..bb85883 100644
+--- a/googletest/CMakeLists.txt
++++ b/googletest/CMakeLists.txt
+@@ -8,6 +8,8 @@
+ # ctest.  You can select which tests to run using 'ctest -R regex'.
+ # For more options, run 'ctest --help'.
+ 
++set(GOOGLETEST_VERSION 1.13.0)
++
+ # When other libraries are using a shared version of runtime libraries,
+ # Google Test also has to use one.
+ option(
