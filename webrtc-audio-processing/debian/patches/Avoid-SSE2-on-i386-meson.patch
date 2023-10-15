@@ -1,0 +1,46 @@
+Description: Avoid SSE2 usage on i386 without properly checks - meson addon
+ Telegram patch at <https://github.com/desktop-app/tg_owt/pull/45>
+ also patched cmake files which don't apply here.
+ .
+ This patch extend the telegram patch with meson enablement.
+Author: Jonas Smedegaard <dr@jones.dk>
+Last-Update: 2022-08-03
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+Index: webrtc-audio-processing-1.3/meson.build
+===================================================================
+--- webrtc-audio-processing-1.3.orig/meson.build
++++ webrtc-audio-processing-1.3/meson.build
+@@ -115,6 +115,7 @@ have_mips = false
+ have_mips64 = false
+ have_x86 = false
+ have_avx2 = false
++have_sse2 = false
+ if host_machine.cpu_family() == 'arm'
+   if cc.compiles('''#ifndef __ARM_ARCH_ISA_ARM
+ #error no arm arch
+@@ -148,6 +149,11 @@ if ['x86', 'x86_64'].contains(host_machi
+   # runtime CPU detection, so we're just assuming the compiler supports avx2
+   have_avx2 = true
+   arch_cflags += ['-DWEBRTC_ENABLE_AVX2']
++  # ...but disable by default where CPU detection is unsupported
++  if cc.has_argument('-msse2')
++    have_sse2 = true
++    arch_cflags += ['-DWEBRTC_HAS_SSE2']
++  endif
+ endif
+ 
+ neon_opt = get_option('neon')
+Index: webrtc-audio-processing-1.3/webrtc/third_party/pffft/meson.build
+===================================================================
+--- webrtc-audio-processing-1.3.orig/webrtc/third_party/pffft/meson.build
++++ webrtc-audio-processing-1.3/webrtc/third_party/pffft/meson.build
+@@ -4,7 +4,7 @@ pffft_sources = [
+ 
+ pffft_cflags = [ '-D_GNU_SOURCE' ]
+ 
+-if (have_arm and not have_neon) or (have_mips and host_machine.endian() == 'little') or have_mips64
++if (have_x86 and not have_sse2) or (have_arm and not have_neon) or (have_mips and host_machine.endian() == 'little') or have_mips64
+   pffft_cflags += [ '-DPFFFT_SIMD_DISABLE' ]
+ endif
+ 

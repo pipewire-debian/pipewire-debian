@@ -1,0 +1,17 @@
+Description: build: fix -Dneon=runtime
+Author: Jan Palus <jpalus@fastmail.com>
+Origin: upstream, https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/commit/26f4493
+Last-Update: 2022-08-03
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/meson.build
++++ b/meson.build
+@@ -126,7 +126,7 @@
+       have_neon = true
+     endif
+   else
+-    neon_opt += ['-DWEBRTC_DETECT_NEON', '-mfpu=neon']
++    arch_cflags += ['-DWEBRTC_DETECT_NEON', '-mfpu=neon']
+     have_neon = true
+   endif
+ endif

@@ -1,0 +1,22 @@
+Description: build: Fix ARM ISA detection
+ armv7 isn't a real cpu_family in meson, so drop that.
+ The detection for __ARM_ARCH_ISA_ARM was also inverted.
+Author: Arun Raghavan <arun@asymptotic.io>
+Origin: upstream, https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/commit/b34c1d5
+Bug: https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/issues/6
+Last-Update: 2022-02-01
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/meson.build
++++ b/meson.build
+@@ -83,8 +83,8 @@
+ have_mips64 = false
+ have_x86 = false
+ have_avx2 = false
+-if ['arm', 'armv7'].contains(host_machine.cpu_family())
+-  if cc.compiles('''#ifdef __ARM_ARCH_ISA_ARM
++if host_machine.cpu_family() == 'arm'
++  if cc.compiles('''#ifndef __ARM_ARCH_ISA_ARM
+ #error no arm arch
+ #endif''')
+     have_arm = true

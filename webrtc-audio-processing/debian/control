@@ -1,0 +1,36 @@
+Source: webrtc-audio-processing
+Maintainer: Sourav Das <pipewire-debian@gmail.com>
+XSBC-Original-Maintainer: Pulseaudio maintenance team <pkg-pulseaudio-devel@lists.alioth.debian.org>, 
+                          Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:
+ Sjoerd Simons <sjoerd@debian.org>,
+ Felipe Sateler <fsateler@debian.org>
+Section: libs
+Priority: optional
+Build-Depends: debhelper-compat (= 12), pkg-config, meson, libabsl-dev [!i386] | lsof, gcc, g++, cmake
+Standards-Version: 4.5.0
+Vcs-Browser: https://github.com/pipewire-debian
+Vcs-Git: https://github.com/pipewire-debian.git
+Homepage: http://freedesktop.org/software/pulseaudio/webrtc-audio-processing/
+
+Package: libwebrtc-audio-processing-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libwebrtc-audio-processing1 (= ${binary:Version}), libabsl-dev [!i386], ${misc:Depends}
+Description: development files for the webrtc-audio-processing library
+ Audio processing library (echo-cancellation, gain control etc) around the
+ AudioProcessing module from the WebRTC project
+ .
+ Headers and libraries for developing applications using
+ libwebrtc-audio-processing
+
+Package: libwebrtc-audio-processing1
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: AudioProcessing module from the WebRTC project.
+ Audio processing library (echo-cancellation, gain control etc) around the
+ AudioProcessing module from the WebRTC project

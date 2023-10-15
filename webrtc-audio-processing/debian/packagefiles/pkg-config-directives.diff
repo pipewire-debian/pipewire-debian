@@ -1,0 +1,16 @@
+Index: abseil-cpp-20230125.1/CMake/AbseilHelpers.cmake
+===================================================================
+--- abseil-cpp-20230125.1.orig/CMake/AbseilHelpers.cmake
++++ abseil-cpp-20230125.1/CMake/AbseilHelpers.cmake
+@@ -188,10 +188,7 @@ function(absl_cc_library)
+         endif()
+       endforeach()
+       foreach(cflag ${ABSL_CC_LIB_COPTS})
+-        if(${cflag} MATCHES "^(-Wno|/wd)")
+-          # These flags are needed to suppress warnings that might fire in our headers.
+-          set(PC_CFLAGS "${PC_CFLAGS} ${cflag}")
+-        elseif(${cflag} MATCHES "^(-W|/w[1234eo])")
++        if(${cflag} MATCHES "^(-W|/w[1234eo])")
+           # Don't impose our warnings on others.
+         elseif(${cflag} MATCHES "^-m")
+           # Don't impose CPU instruction requirements on others, as

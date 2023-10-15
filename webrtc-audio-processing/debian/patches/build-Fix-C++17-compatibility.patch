@@ -1,0 +1,16 @@
+Description: Add missing header for C++17 compatibility
+Author: Arun Raghavan <arun@asymptotic.io>
+Origin: upstream, https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/commit/6064932
+Last-Update: 2022-02-01
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/webrtc/modules/audio_processing/aec3/reverb_frequency_response.h
++++ b/webrtc/modules/audio_processing/aec3/reverb_frequency_response.h
+@@ -12,6 +12,7 @@
+ #define MODULES_AUDIO_PROCESSING_AEC3_REVERB_FREQUENCY_RESPONSE_H_
+ 
+ #include <array>
++#include <memory>
+ #include <vector>
+ 
+ #include "absl/types/optional.h"

@@ -1,0 +1,6 @@
+configure.diff
+cpu-features.diff
+latomic.diff
+empty-flags-library.diff
+cordz-info-statistics-test.diff
+pkg-config-directives.diff

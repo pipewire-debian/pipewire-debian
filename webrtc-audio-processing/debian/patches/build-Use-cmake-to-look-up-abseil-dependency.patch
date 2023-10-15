@@ -1,0 +1,57 @@
+Description: build: Use cmake to look up abseil dependency
+ This should be much more robust than looking up the library directly.
+Author: Arun Raghavan <arun@asymptotic.io>
+Origin: upstream, https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/commit/3f9907f
+Bug: https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/issues/4
+Last-Update: 2022-02-01
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/.gitlab-ci.yml
++++ b/.gitlab-ci.yml
+@@ -19,7 +19,7 @@
+   # CI runs, for example when adding new packages to FDO_DISTRIBUTION_PACKAGES.
+   # The tag is an arbitrary string that identifies the exact container
+   # contents.
+-  BASE_TAG: '2020-11-27.1'
++  BASE_TAG: '2020-12-10.1'
+   FDO_DISTRIBUTION_VERSION: '20.10'
+   FDO_UPSTREAM_REPO: 'pulseaudio/webrtc-audio-processing'
+ 
+@@ -43,6 +43,7 @@
+     FDO_DISTRIBUTION_PACKAGES: >-
+       g++
+       gcc
++      cmake
+       libabsl-dev
+       meson
+       ninja-build
+--- a/meson.build
++++ b/meson.build
+@@ -40,19 +40,14 @@
+ have_posix = false
+ have_win = false
+ 
+-absl_dep = [
+-  cpp.find_library('absl_base'),
+-  cpp.find_library('absl_bad_optional_access'),
+-  cpp.find_library('absl_flags_internal'),
+-  cpp.find_library('absl_flags_marshalling'),
+-  cpp.find_library('absl_flags_parse'),
+-  cpp.find_library('absl_flags_registry'),
+-  cpp.find_library('absl_flags_usage_internal'),
+-  cpp.find_library('absl_raw_logging_internal'),
+-  cpp.find_library('absl_strings'),
+-  cpp.find_library('absl_synchronization'),
+-  cpp.find_library('absl_throw_delegate'),
+-]
++absl_dep = dependency('absl', method : 'cmake',
++  modules : [
++    'absl::base',
++    'absl::flags_parse',
++    'absl::strings',
++    'absl::synchronization',
++  ]
++)
+ 
+ if ['darwin', 'ios'].contains(host_system)
+   os_cflags = ['-DWEBRTC_MAC']

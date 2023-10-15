@@ -1,0 +1,82 @@
+From: Benjamin Barenblat <bbaren@google.com>
+Subject: Set package configuration options
+Forwarded: not-needed
+
+Configure Abseil for Debian.
+
+  - Set the SONAME appropriately.
+
+  - To minimize the possibility of future ABI breakage, treat absl::any,
+    absl::optional, absl::string_view, and absl::variant as their own types
+    (rather than aliases for the std:: versions), and compile everything in an
+    inline namespace.
+
+  - Enable upstream's hardened build mode.
+
+--- a/CMake/AbseilHelpers.cmake
++++ b/CMake/AbseilHelpers.cmake
+@@ -309,7 +309,8 @@
+     if(ABSL_ENABLE_INSTALL)
+       set_target_properties(${_NAME} PROPERTIES
+         OUTPUT_NAME "absl_${_NAME}"
+-        SOVERSION "2301.0.0"
++        SOVERSION 20230125
++        VERSION "20230125.0.0"
+       )
+     endif()
+   else()
+--- a/absl/base/options.h
++++ b/absl/base/options.h
+@@ -94,7 +94,7 @@
+ // User code should not inspect this macro.  To check in the preprocessor if
+ // absl::any is a typedef of std::any, use the feature macro ABSL_USES_STD_ANY.
+ 
+-#define ABSL_OPTION_USE_STD_ANY 2
++#define ABSL_OPTION_USE_STD_ANY 0
+ 
+ 
+ // ABSL_OPTION_USE_STD_OPTIONAL
+@@ -121,7 +121,7 @@
+ // absl::optional is a typedef of std::optional, use the feature macro
+ // ABSL_USES_STD_OPTIONAL.
+ 
+-#define ABSL_OPTION_USE_STD_OPTIONAL 2
++#define ABSL_OPTION_USE_STD_OPTIONAL 0
+ 
+ 
+ // ABSL_OPTION_USE_STD_STRING_VIEW
+@@ -148,7 +148,7 @@
+ // absl::string_view is a typedef of std::string_view, use the feature macro
+ // ABSL_USES_STD_STRING_VIEW.
+ 
+-#define ABSL_OPTION_USE_STD_STRING_VIEW 2
++#define ABSL_OPTION_USE_STD_STRING_VIEW 0
+ 
+ // ABSL_OPTION_USE_STD_VARIANT
+ //
+@@ -174,7 +174,7 @@
+ // absl::variant is a typedef of std::variant, use the feature macro
+ // ABSL_USES_STD_VARIANT.
+ 
+-#define ABSL_OPTION_USE_STD_VARIANT 2
++#define ABSL_OPTION_USE_STD_VARIANT 0
+ 
+ 
+ // ABSL_OPTION_USE_INLINE_NAMESPACE
+@@ -200,7 +200,7 @@
+ // allowed.
+ 
+ #define ABSL_OPTION_USE_INLINE_NAMESPACE 1
+-#define ABSL_OPTION_INLINE_NAMESPACE_NAME lts_20230125
++#define ABSL_OPTION_INLINE_NAMESPACE_NAME debian4
+ 
+ // ABSL_OPTION_HARDENED
+ //
+@@ -227,6 +227,6 @@
+ // checks enabled by this option may abort the program in a different way and
+ // log additional information when `NDEBUG` is not defined.
+ 
+-#define ABSL_OPTION_HARDENED 0
++#define ABSL_OPTION_HARDENED 1
+ 
+ #endif  // ABSL_BASE_OPTIONS_H_

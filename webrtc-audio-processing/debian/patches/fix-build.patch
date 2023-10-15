@@ -1,0 +1,60 @@
+Index: webrtc-audio-processing-1.3/webrtc/modules/audio_processing/agc2/adaptive_mode_level_estimator.cc
+===================================================================
+--- webrtc-audio-processing-1.3.orig/webrtc/modules/audio_processing/agc2/adaptive_mode_level_estimator.cc
++++ webrtc-audio-processing-1.3/webrtc/modules/audio_processing/agc2/adaptive_mode_level_estimator.cc
+@@ -39,6 +39,7 @@ float GetLevel(const VadLevelAnalyzer::R
+       return vad_level.rms_dbfs;
+       break;
+     case LevelEstimatorType::kPeak:
++    default:
+       return vad_level.peak_dbfs;
+       break;
+   }
+Index: webrtc-audio-processing-1.3/webrtc/modules/audio_processing/audio_processing_impl.cc
+===================================================================
+--- webrtc-audio-processing-1.3.orig/webrtc/modules/audio_processing/audio_processing_impl.cc
++++ webrtc-audio-processing-1.3/webrtc/modules/audio_processing/audio_processing_impl.cc
+@@ -112,6 +112,7 @@ GainControl::Mode Agc1ConfigModeToInterf
+     case Agc1Config::kAdaptiveDigital:
+       return GainControl::kAdaptiveDigital;
+     case Agc1Config::kFixedDigital:
++    default:
+       return GainControl::kFixedDigital;
+   }
+ }
+@@ -1852,6 +1853,7 @@ void AudioProcessingImpl::InitializeNois
+               return NsConfig::SuppressionLevel::k21dB;
+             default:
+               RTC_NOTREACHED();
++              return NsConfig::SuppressionLevel::k21dB;  // Just to keep the compiler happy
+           }
+         };
+ 
+Index: webrtc-audio-processing-1.3/webrtc/modules/audio_processing/include/audio_processing.cc
+===================================================================
+--- webrtc-audio-processing-1.3.orig/webrtc/modules/audio_processing/include/audio_processing.cc
++++ webrtc-audio-processing-1.3/webrtc/modules/audio_processing/include/audio_processing.cc
+@@ -26,6 +26,7 @@ std::string NoiseSuppressionLevelToStrin
+     case AudioProcessing::Config::NoiseSuppression::Level::kHigh:
+       return "High";
+     case AudioProcessing::Config::NoiseSuppression::Level::kVeryHigh:
++    default:
+       return "VeryHigh";
+   }
+ }
+@@ -38,6 +39,7 @@ std::string GainController1ModeToString(
+     case AudioProcessing::Config::GainController1::Mode::kAdaptiveDigital:
+       return "AdaptiveDigital";
+     case AudioProcessing::Config::GainController1::Mode::kFixedDigital:
++    default:
+       return "FixedDigital";
+   }
+ }
+@@ -48,6 +50,7 @@ std::string GainController2LevelEstimato
+     case AudioProcessing::Config::GainController2::LevelEstimator::kRms:
+       return "Rms";
+     case AudioProcessing::Config::GainController2::LevelEstimator::kPeak:
++    default:
+       return "Peak";
+   }
+ }

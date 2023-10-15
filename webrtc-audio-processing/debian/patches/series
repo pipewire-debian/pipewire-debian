@@ -1,0 +1,18 @@
+#build-Use-cmake-to-look-up-abseil-dependency.patch
+#build-Fix-ARM-ISA-detection.patch
+#build-Add-RISC-V-support.patch
+#build-Fix-C++17-compatibility.patch
+#build-fix-neon=runtime.patch
+#build-fix-no-neon-again.patch --------->>
+big-endian-support.patch
+#Avoid-SSE2-on-i386.patch
+#Avoid-SSE2-on-i386-meson.patch
+Add-generic-byte-order-and-pointer-size-detection.patch
+fix-mips-source-path.patch
+abseil-offline-subproject.patch
+fix-build.patch
+#big_endian_support.patch
+#big_endian_support_2.patch
+fix-i586.patch
+webrtc-ppc64.patch
+webrtc-s390x.patch

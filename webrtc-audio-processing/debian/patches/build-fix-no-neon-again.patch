@@ -1,0 +1,19 @@
+Description: build: don't detect neon again when building on aarch64
+ it will try to add -mfpu=neon to cflags
+ not available on aarch64 since neon is mandatory there
+Author: Jan Palus <jpalus@fastmail.com>
+Origin: upstream, https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/commit/ca11869
+Last-Update: 2022-08-03
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/meson.build
++++ b/meson.build
+@@ -119,7 +119,7 @@
+ endif
+ 
+ neon_opt = get_option('neon')
+-if neon_opt != 'no'
++if neon_opt != 'no' and not have_neon
+   if neon_opt != 'runtime'
+     if cc.compiles('#include <arm_neon.h>', args : '-mfpu=neon')
+       arch_cflags += ['-mfpu=neon', '-DWEBRTC_HAS_NEON']

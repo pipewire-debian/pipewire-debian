@@ -1,0 +1,17 @@
+Index: webrtc-audio-processing-v1.3/webrtc/rtc_base/system/arch.h
+===================================================================
+--- webrtc-audio-processing-v1.3.orig/webrtc/rtc_base/system/arch.h
++++ webrtc-audio-processing-v1.3/webrtc/rtc_base/system/arch.h
+@@ -66,6 +66,12 @@
+ #elif defined(__powerpc__)
+ #define WEBRTC_ARCH_BIG_ENDIAN
+ #define WEBRTC_ARCH_32_BITS
++#elif defined(__s390x__)
++#define WEBRTC_ARCH_BIG_ENDIAN
++#define WEBRTC_ARCH_64_BITS
++#elif defined(__s390__)
++#define WEBRTC_ARCH_BIG_ENDIAN
++#define WEBRTC_ARCH_32_BITS
+ #else
+ /* instead of failing, use typical unix defines... */
+ #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__

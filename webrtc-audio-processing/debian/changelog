@@ -1,0 +1,97 @@
+webrtc-audio-processing (1.3-9~ubuntu20.04) focal; urgency=high
+
+  * New version
+
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 14 Oct 2023 05:01:45 +0530
+
+webrtc-audio-processing (0.3.1-0ubuntu5) jammy; urgency=high
+
+  * No change rebuild for ppc64el baseline bump.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Fri, 25 Mar 2022 10:53:25 +0100
+
+webrtc-audio-processing (0.3.1-0ubuntu4) impish; urgency=medium
+
+  * No-change rebuild to build packages with zstd compression.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 07 Oct 2021 12:26:21 +0200
+
+webrtc-audio-processing (0.3.1-0ubuntu3) focal; urgency=medium
+
+  * No-change rebuild for libgcc-s1 package name change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 21 Mar 2020 13:29:39 +0100
+
+webrtc-audio-processing (0.3.1-0ubuntu2) eoan; urgency=medium
+
+  * debian/control: build-depends on pkg-config
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 28 Aug 2019 17:37:13 +0200
+
+webrtc-audio-processing (0.3.1-0ubuntu1) eoan; urgency=medium
+
+  * New upstream version
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 27 Aug 2019 16:23:08 +0300
+
+webrtc-audio-processing (0.3-1) unstable; urgency=medium
+
+  [ Luke Yelavich ]
+  * New upstream release
+  * Apply-msse2-flag-to-the-source-objects-that-require-.patch:
+    - Dropped, applied upstream
+
+ -- Felipe Sateler <fsateler@debian.org>  Sun, 03 Jul 2016 11:38:54 -0400
+
+webrtc-audio-processing (0.2-3) experimental; urgency=medium
+
+  * Add debian/gbp.conf
+  * Drop patch numbering
+  * Replace "Don't error on unknown archs patch" with generic detection code
+
+ -- Felipe Sateler <fsateler@debian.org>  Wed, 08 Jun 2016 19:27:28 -0400
+
+webrtc-audio-processing (0.2-2) experimental; urgency=medium
+
+  * Section and priority cleanup
+  * Add patch to support big endian archs
+  * Add patch to fix sse2 compilation on i386
+
+ -- Felipe Sateler <fsateler@debian.org>  Mon, 06 Jun 2016 18:57:45 -0400
+
+webrtc-audio-processing (0.2-1) experimental; urgency=medium
+
+  * New upstream release.
+   - Drop 0002-fix-compiler-warning.patch, applied upstream
+   - Refresh 0001-Don-t-error-or-set-options-for-unknown-architectures.patch
+   - Bump soname
+  * Remove reference to google code
+  * d/copyright: use SPDX name for bsd license
+  * Remove extra leading spaces from descriptions
+  * Bump standards-version
+  * Set pulseaudio team as maintainer, add myself to uploaders
+  * Canonicalize vcs and copyright format urls
+
+ -- Felipe Sateler <fsateler@debian.org>  Wed, 27 Apr 2016 20:36:19 -0300
+
+webrtc-audio-processing (0.1-3) unstable; urgency=medium
+
+  * Use --with autoreconf (Closes: #736967)
+  * debian/patches/0002-fix-compiler-warning.patch
+    + Added. Fix compiler warning (from upstream svn)
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 05 Jul 2014 22:00:02 +0200
+
+webrtc-audio-processing (0.1-2) unstable; urgency=low
+
+  * d/p/0001-Don-t-error-or-set-options-for-unknown-architectures.patch
+    - Added. Don't error out if the architecture isn't recognised, as the
+      defines aren't strictly necessary for the audio processing subset.
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 19 May 2012 22:00:19 +0200
+
+webrtc-audio-processing (0.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #672797)
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sun, 13 May 2012 19:09:01 +0200

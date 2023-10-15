@@ -1,0 +1,22 @@
+Description: arch.h: Add RISC-V support
+Author: Zhaofeng Li <hello@zhaofeng.li>
+Origin: upstream, https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/commit/e47b68d
+Last-Update: 2022-02-01
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/webrtc/rtc_base/system/arch.h
++++ b/webrtc/rtc_base/system/arch.h
+@@ -27,6 +27,13 @@
+ #define WEBRTC_ARCH_ARM_FAMILY
+ #define WEBRTC_ARCH_64_BITS
+ #define WEBRTC_ARCH_LITTLE_ENDIAN
++#elif defined(__riscv) || defined(__riscv__)
++#define WEBRTC_ARCH_LITTLE_ENDIAN
++#if __riscv_xlen == 64
++#define WEBRTC_ARCH_64_BITS
++#else
++#define WEBRTC_ARCH_32_BITS
++#endif
+ #elif defined(_M_IX86) || defined(__i386__)
+ #define WEBRTC_ARCH_X86_FAMILY
+ #define WEBRTC_ARCH_X86

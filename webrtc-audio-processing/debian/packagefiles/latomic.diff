@@ -1,0 +1,20 @@
+From: Benjamin Barenblat <bbaren@google.com>
+Subject: Use libatomic if necessary
+Bug-Debian: https://bugs.debian.org/973492
+
+On some architectures, notably armel, Abseil needs symbols defined in
+libatomic. Abseil does not currently have a well-developed system to
+declare external library dependencies, so just have the linker determine
+if anything needs libatomic and add the DT_NEEDED entry where necessary.
+
+--- a/absl/copts/AbseilConfigureCopts.cmake
++++ b/absl/copts/AbseilConfigureCopts.cmake
+@@ -93,4 +93,8 @@
+   set(ABSL_TEST_COPTS "")
+ endif()
+ 
++list(APPEND ABSL_DEFAULT_LINKOPTS
++    "-Wl,--push-state,--as-needed" "-latomic" "-Wl,--pop-state"
++)
++
+ set(ABSL_CXX_STANDARD "${CMAKE_CXX_STANDARD}")
