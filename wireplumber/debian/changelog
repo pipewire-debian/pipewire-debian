@@ -1,3 +1,21 @@
+wireplumber (0.4.15-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - none
+
+  wireplumber - 
+
+    Changes:
+    
+      - For a complete changelog
+        see : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+  .
+  .
+
+
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 14 Oct 2023 21:14:45 +0530
+
 wireplumber (0.4.14-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

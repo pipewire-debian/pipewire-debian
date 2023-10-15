@@ -70,6 +70,7 @@ libwireplumber-0.4.so.0 libwireplumber-0.4-0 #MINVER#
  wp_impl_metadata_new_full@Base 0.4.3
  wp_impl_module_get_type@Base 0.4.2
  wp_impl_module_load@Base 0.4.2
+ wp_impl_module_load_file@Base 0.4.15
  wp_impl_node_get_type@Base 0.3.95
  wp_impl_node_new_from_pw_factory@Base 0.3.95
  wp_impl_node_new_wrap@Base 0.3.95
