@@ -16,6 +16,7 @@ LTO_NON_SUPPORTED_VERSION_CODENAME=focal bionic
 ROC_NON_SUPPORTED_VERSION_CODENAME=kinetic
 LIBLC3_NON_SUPPORTED_VERSION_CODENAME=focal bionic
 COMPRESS_OFFLOAD_NON_SUPPORTED_VERSION_CODENAME=focal bionic
+VULKAN_NON_SUPPORTED_VERSION_CODENAME=focal bionic
 
 ############################## Disabling Features Conditionally ##############################
 
@@ -91,6 +92,12 @@ COMPRESS_OFFLOAD=disabled
 endif
 endif
 
+VULKAN_ENABLED=enabled
+ifneq (,$(filter ${VERSION_CODENAME},${VULKAN_NON_SUPPORTED_VERSION_CODENAME}))
+VULKAN_ENABLED=disabled
+cmnt_vulkan=$(shell sed -e '/vulkan/ s/^\#*/\#/' -i debian/libspa-0.2-modules.install debian/pipewire-vulkan.install)
+endif
+
 ############################## END OF Disabling Features Conditionally ##############################
 
 AVAILABLE_CORE=$(shell nproc)
@@ -118,14 +125,14 @@ override_dh_auto_configure:
 		-Dtest=enabled \
 		-Dvideotestsrc=enabled \
 		-Dvolume=enabled \
-		-Dvulkan=enabled \
+		-Dvulkan=$(VULKAN_ENABLED) \
 		-Droc=$(LIBROC) \
 		-Dsession-managers= \
 		$(NULL)
 	install -d debian/ld.so.conf.d
 	echo "/usr/lib/$(DEB_HOST_MULTIARCH)/pipewire-0.3/jack/" > debian/ld.so.conf.d/pipewire-jack-$(DEB_HOST_MULTIARCH).conf
 	install -Dm644 /dev/null debian/with-alsa
-	echo -e "\nCommenting out Disabled feature not to be installed...$(cmnt_libcam) $(cmnt_libroc)\n"
+	echo -e "\nCommenting out Disabled feature not to be installed...$(cmnt_libcam) $(cmnt_libroc) $(cmnt_vulkan)\n"
 
 
 test_timeout_multiplier = 1

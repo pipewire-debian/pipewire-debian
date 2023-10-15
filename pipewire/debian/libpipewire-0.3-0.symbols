@@ -1,8 +1,8 @@
 libpipewire-0.3.so.0 libpipewire-0.3-0 #MINVER#
 * Build-Depends-Package: libpipewire-0.3-dev
  PW_LOG_TOPIC_DEFAULT@Base 0.3.38
- _pw_log_topic_new@Base 0.3.38
  pw_buffers_clear@Base 0.3.1
+#MISSING: 0.3.82-1~ubuntu20.04# _pw_log_topic_new@Base 0.3.38
  pw_buffers_negotiate@Base 0.3.1
  pw_check_library_version@Base 0.3.76
  pw_check_option@Base 0.3.29

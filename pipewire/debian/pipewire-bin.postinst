@@ -14,12 +14,12 @@ case "$1" in
 cat << EOF
 
 
-pipewire 0.3.76-1 (https://pipewire-debian.github.io)
+pipewire 0.3.82-1 (https://pipewire-debian.github.io)
  
 
   Debian Package - 
 
-	- enable modemmanager
+	- none
 
   Pipewire -
 

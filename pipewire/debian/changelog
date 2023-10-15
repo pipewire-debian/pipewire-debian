@@ -1,3 +1,88 @@
+pipewire (0.3.82-4~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - pipewire-vulkan new pkg
+    - for focal disable pipewire-vulkan
+
+  Pipewire -
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+    
+
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 14 Oct 2023 05:01:45 +0530
+
+pipewire (0.3.81-1~ubuntu22.04) jammy; urgency=medium
+
+  Debian Package - 
+
+    - none
+
+  Pipewire -
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+    
+
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 07 Oct 2023 22:47:01 +0530
+
+pipewire (0.3.79-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - enable modemmanager
+
+  Pipewire -
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+    
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 07 Sep 2023 07:52:04 +0530
+
+pipewire (0.3.78-1~ubuntu20.04) focal; urgency=medium
+
+  Debian Package - 
+
+    - enable modemmanager
+
+  Pipewire -
+
+    - For more : https://gitlab.freedesktop.org/pipewire/pipewire/-/releases
+
+  .
+  . Upstream recommends to use 'WirePlumber' instead 'pipewire-media-session'      
+    to get it add another PPA,      
+    'sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream'      
+    For more instruction read : https://pipewire-debian.github.io      
+  .
+  .
+    
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 24 Aug 2023 07:52:04 +0530
+
 pipewire (0.3.76-1~ubuntu20.04) focal; urgency=medium
 
   Debian Package - 

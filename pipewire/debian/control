@@ -9,7 +9,7 @@ Build-Depends:	cmake,
 				fakeroot,
 				graphviz <!nodoc>,
                 libavahi-client-dev,
-				libavcodec58 | libavcodec59,
+				libavcodec58 | libavcodec59 | libavcodec60,
 				libasound2-dev,
 				libbluetooth-dev,
                 libcamera-dev [!s390x !hppa !i386 !m68k !powerpc !ppc64 !ppc64el !sparc64],
@@ -56,19 +56,19 @@ Build-Depends:	cmake,
 				libunwind-dev [!s390x],
 				libv4l-dev,
 				libvulkan-dev,
+                libwebrtc-audio-processing-dev,
                 libx11-dev,
                 libxfixes-dev,
                 meson (>= 0.60.0),
 				modemmanager-dev,
-                openal-info,
+                openal-info | openal-tools,
                 openssl,
                 libssl-dev,
 				pkg-config (>= 0.22),
                 python3-docutils,
                 pulseaudio-utils,
 				systemd [linux-any],
-				valgrind,
-                libwebrtc-audio-processing-dev
+				valgrind
 Standards-Version: 4.5.1
 Vcs-Browser: https://gitlab.freedesktop.org/pipewire/pipewire
 Vcs-Git: https://gitlab.freedesktop.org/pipewire/pipewire.git
@@ -460,3 +460,12 @@ Description: transitional package for pipewire-alsa and pipewire-jack
  .
  This is a transitional package for pipewire-alsa and pipewire-jack.
  It can safely be removed.
+
+Package: pipewire-vulkan
+Section: video
+Architecture: linux-any
+Multi-Arch: same
+Depends: pipewire (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: PipeWire vulkan plugin
