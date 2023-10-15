@@ -1,0 +1,94 @@
+Source: opus
+Section: sound
+Priority: optional
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders:
+ IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>,
+ Ron Lee <ron@debian.org>,
+Build-Depends:
+ debhelper-compat (= 12),
+Build-Depends-Indep:
+ doxygen,
+ graphviz,
+Standards-Version: 4.5.1
+Rules-Requires-Root: no
+Homepage: http://www.opus-codec.org
+Vcs-Git: https://salsa.debian.org/multimedia-team/opus.git
+Vcs-Browser: https://salsa.debian.org/multimedia-team/opus
+
+Package: libopus0
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Suggests:
+ opus-tools,
+Description: Opus codec runtime library
+ The Opus codec is designed for interactive speech and audio transmission over
+ the Internet. It is designed by the IETF Codec Working Group and incorporates
+ technology from Skype's SILK codec and Xiph.Org's CELT codec.
+ .
+ It is intended to suit a wide range of interactive audio applications,
+ including Voice over IP, videoconferencing, in-game chat, and even remote live
+ music performances.  It can scale from low bit-rate narrowband speech to very
+ high quality stereo music. The current features are:
+ .
+  Bit-rates from 6 kb/s 510 kb/s
+  Sampling rates from 8 to 48 kHz
+  Frame sizes from 2.5 ms to 60 ms
+  Support for both constant bit-rate (CBR) and variable bit-rate (VBR)
+  Audio bandwidth from narrowband to full-band
+  Support for speech and music
+  Support for mono and stereo
+  Support for up to 255 channels (multistream frames)
+  Dynamically adjustable bitrate, audio bandwidth, and frame size
+  Good loss robustness and packet loss concealment (PLC)
+  Floating point and fixed-point implementation
+ .
+ This package provides the Opus runtime library.
+
+Package: libopus-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ libopus0 (= ${binary:Version}),
+ ${misc:Depends},
+Description: Opus codec library development files
+ The Opus codec is designed for interactive speech and audio transmission over
+ the Internet. It is designed by the IETF Codec Working Group and incorporates
+ technology from Skype's SILK codec and Xiph.Org's CELT codec.
+ .
+ It is intended to suit a wide range of interactive audio applications,
+ including Voice over IP, videoconferencing, in-game chat, and even remote live
+ music performances.  It can scale from low bit-rate narrowband speech to very
+ high quality stereo music. The current features are:
+ .
+  Bit-rates from 6 kb/s 510 kb/s
+  Sampling rates from 8 to 48 kHz
+  Frame sizes from 2.5 ms to 60 ms
+  Support for both constant bit-rate (CBR) and variable bit-rate (VBR)
+  Audio bandwidth from narrowband to full-band
+  Support for speech and music
+  Support for mono and stereo
+  Support for up to 255 channels (multistream frames)
+  Dynamically adjustable bitrate, audio bandwidth, and frame size
+  Good loss robustness and packet loss concealment (PLC)
+  Floating point and fixed-point implementation
+ .
+ This package provides the Opus library headers and development files.
+
+Package: libopus-doc
+Section: doc
+Architecture: all
+Depends:
+ ${misc:Depends},
+Multi-Arch: foreign
+Description: libopus API documentation
+ The Opus codec is designed for interactive speech and audio transmission over
+ the Internet. It is designed by the IETF Codec Working Group and incorporates
+ technology from Skype's SILK codec and Xiph.Org's CELT codec.
+ .
+ This package contains the developer documentation for libopus.

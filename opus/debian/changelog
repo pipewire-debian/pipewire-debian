@@ -1,0 +1,383 @@
+opus (1.4-1~ubuntu20.04) focal; urgency=medium
+
+  * New upstream version 1.4
+  * Update d/copyright
+    + Bump copyright dates
+    + Re-generate d/copyright_hints
+
+ -- Sourav Das <souravdas142@gmail.com>  Sat, 14 Oct 2023 05:01:45 +0530
+
+opus (1.4-1) unstable; urgency=medium
+
+  * New upstream version 1.4
+  * Update d/copyright
+    + Bump copyright dates
+    + Re-generate d/copyright_hints
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Tue, 13 Jun 2023 18:10:36 +0200
+
+opus (1.3.1-3) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints.
+    + libopus-doc: Add Multi-Arch: foreign.
+
+  [ IOhannes m zmölnig (Debian/GNU) ]
+  * Modernize 'licensecheck' target
+    + Re-generate d/copyright_hints
+  * Bump standards version to 4.6.2
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Sat, 28 Jan 2023 00:10:34 +0100
+
+opus (1.3.1-2) unstable; urgency=medium
+
+  * Enable custom-modes (Closes: #686777)
+  * Add patch to fix spelling mistakes
+  * Drop libopus-dbg in favour of auto-generated dbgsym packages
+  * Longer extended description for libopus-doc
+  * Update packaging to use short-form dh
+    - Add depends on ${misc:Depends}
+  * Add autopkgtest
+  * Declare that building this package does not require 'root' powers.
+  * Declare that .la-files are not installed
+  * Declarative file and manpage installation
+  * Fix installation path for doc-base files
+  * Add B-D stanza to .symbols file
+  * d/copyright
+    - Machine-readable d/copyright
+    - Add licensecheck target to d/rules
+    - Generate d/copyright_hints
+  * Remove trailing whitespace in debian/* files
+  * Add watch-file
+  * Add salsa-ci configuration
+  * DEP14: use standard branch names
+  * Switch to source format 3.0 (Closes: #1007034)
+  * Bump dh-version to 13
+    - via debhelper-compat pseudo B-D
+  * Bump standards version to 4.6.1
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Sat, 18 Jun 2022 16:56:23 +0200
+
+opus (1.3.1-1) unstable; urgency=medium
+
+  * Salvaging package on behalf of the Multimedia Team (Closes: #1011281)
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Fri, 10 Jun 2022 08:51:39 +0200
+
+opus (1.3.1-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream release (closes: #934809).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 25 Sep 2020 18:09:03 +0300
+
+opus (1.3-1) unstable; urgency=medium
+
+  * Enable support for ambisonics coding using mappings 2 and 3.
+  * Use wideband encoding down to 9 kb/s.
+  * Retrain RNN classifier weights to include reverberated speech.
+  * Drop the explicit --enable-hardening from d/rules, it's enabled by default
+    upstream now.
+
+ -- Ron Lee <ron@debian.org>  Tue, 18 Dec 2018 06:04:03 +1030
+
+opus (1.3~beta+20180518-1) unstable; urgency=medium
+
+  * Fix the CELT input NaN test.
+
+ -- Ron Lee <ron@debian.org>  Fri, 18 May 2018 05:04:27 +0930
+
+opus (1.3~beta+20180516-1) unstable; urgency=medium
+
+  * Snapshot from 652c4559f593d3aad78bd5c85a216eeae7859429 as a preview of
+    patches pending for the 1.3 release.  The main motivation for doing this
+    now is to pull in the fix for the PLC regression introduced just before
+    1.2~alpha2, which Closes: #898690, and to get some broader testing on the
+    new hardening checks before flipping the switch to enable those by default
+    upstream.
+  * Fix celt_pitch_xcorr() ARM jump table compiling error for a bug introduced
+    in 1.2-rc1.
+  * Better rate allocation for stereo SILK in hybrid mode.
+  * Add RNN for VAD and speech/music classification.
+  * Fixing bandwidth detection for 24 kHz analysis.
+  * Enable RFC 8251 changes by default.
+  * Better tuning for low-bitrate music.
+  * Don't set _FORTIFY_SOURCE and -fstack-protector as part of the packaging
+    anymore, the upstream build system will add them where they are supported
+    and needed now.
+  * Build with --enable-hardening, which isn't related to the compile options
+    above, but instead includes additional opus-specific runtime sanity checks
+    which are cheap and certain enough to use in production builds.
+  * Use dh compat 9, not because it actually brings anything new which we need
+    here, but it hushes the increasingly insistent warnings about deprecated
+    compat levels, and is a baseline supported by all of the releases we still
+    need to be able to support.  I'm going to say this Closes: #810258, since
+    the rest of the 'modernisation' there mostly isn't helpful.  We've already
+    been running the tests since the very first release, we release directly
+    from upstream git and maintain upstream patches there, so format 3(quilt)
+    adds nothing but pain, and we have upstream build and install targets that
+    are designed to cleanly separate the -arch specific and -indep components,
+    so regressing to make those codependent isn't very appealing either.  It
+    would have also broken support for building where m-a wasn't supported,
+    though that's less of a problem today than it was previously.
+
+ -- Ron Lee <ron@debian.org>  Thu, 17 May 2018 16:07:39 +0930
+
+opus (1.2.1-1) unstable; urgency=medium
+
+  * Fixes a bug in surround encoding causing very bad quality on loud signals
+    beyond a certain amplitude.
+  * Speech quality improvements especially in the 12-24 kbit/s range.
+  * Music quality improvements in the 32-48 kb/s range.
+  * More aggressive use of wider speech bandwidth, including fullband speech
+    starting at 14 kbit/s.
+  * Improved VBR encoding for hybrid mode.
+  * SILK CBR improvements.
+  * DTX support for CELT mode.
+  * Support for directly encoding packets up to 120 ms.
+  * Improves quality on files with powerful tones that cause MDCT leakage.
+  * Fixes for speech/music detection at the very beginning of files.
+  * Fixes an issue where the encoder can misdetect that the signal is SWB
+    instead of FB, lowpassing the signal.
+
+ -- Ron Lee <ron@debian.org>  Thu, 28 Sep 2017 01:48:45 +0930
+
+opus (1.2~alpha2-1) unstable; urgency=medium
+
+  * Run the tonality analysis at 24 kHz, which reduces complexity while giving
+    better frequency resolution for the tonality estimate.
+  * Speech quality improvements especially in the 12-20 kbit/s range.
+  * Improved VBR encoding for hybrid mode.
+  * More aggressive use of wider speech bandwidth, including fullband speech
+    starting at 14 kbit/s.
+  * Music quality improvements in the 32-48 kb/s range.
+  * Generic and SSE CELT optimizations.
+  * Support for directly encoding packets up to 120 ms.
+  * DTX support for CELT mode.
+  * SILK CBR improvements.
+  * Ensure that NLSF cannot be negative when computing a min distance between
+    them.  This was reported and fixed in July, and assessed as having only a
+    relatively minor impact (garbage output, from the garbage input needed to
+    trigger it), or at very worst, an assertion failure or simple crash from
+    a slightly out of bounds read.  In December it was assigned CVE-2017-0381
+    by someone other than the upstream developers, with claims of it being a
+    'Critical' issue on Android, but we're yet to see any analysis to back
+    that up.  Closes: #851612
+
+ -- Ron Lee <ron@debian.org>  Fri, 20 Jan 2017 02:48:31 +1030
+
+opus (1.1.3-1) unstable; urgency=medium
+
+  * Remove the generation date from the docs to improve reproducible builds.
+    Closes: #825345
+  * Fixes some corner cases with the soft clipper.
+  * Improve CBR and some other issues seen with using crazy low rates.
+  * More robustness fixes for reporting bad input.
+  * More optimisations, mostly for ARM.
+  * More precision fixes for edge cases.
+  * Fixes to comfort noise generation.
+
+ -- Ron Lee <ron@debian.org>  Thu, 27 Oct 2016 23:58:06 +1030
+
+opus (1.1.2-1) unstable; urgency=medium
+
+  * Fixes the transient detector on silence.
+  * Fixes discontinuities in background noise after extended PLC.
+  * Make the CELT background noise estimator adapt more quickly on DTX update.
+  * Fixes max_decay for LFE in fixed-point.
+  * Fixes patch_transient_decision() for hybrid mode.
+  * Don't reset the RTCD arch on encoder/decoder reset.
+
+ -- Ron Lee <ron@debian.org>  Wed, 13 Jan 2016 07:26:14 +1030
+
+opus (1.1.1-1) unstable; urgency=medium
+
+  * Mostly just lots of new optimisation, with a few minor bug fixes and
+    quality improvements.
+
+ -- Ron Lee <ron@debian.org>  Fri, 27 Nov 2015 00:08:55 +1030
+
+opus (1.1-2) unstable; urgency=medium
+
+  * Regenerate build system files, mostly to pull in a later libtool.m4
+    which has fixes for building the ppc64le architecture.  Closes: #751982
+
+ -- Ron Lee <ron@debian.org>  Tue, 26 Aug 2014 19:43:46 +0930
+
+opus (1.1-1) unstable; urgency=low
+
+  * Bump to the final 1.1 release version.
+  * Relax the shlibs and track real symbol versions from here on,
+    now that we have a real stable release version in the distro.
+
+ -- Ron Lee <ron@debian.org>  Mon, 09 Dec 2013 02:04:41 +1030
+
+opus (1.1~rc+20131204-1) unstable; urgency=low
+
+  * Really 1.1-rc3, except 3 < + to dpkg.
+  * Fixes fixed-point OPUS_SET_GAIN.
+  * Fixes fixed-point stereo regression.
+
+ -- Ron Lee <ron@debian.org>  Wed, 04 Dec 2013 23:16:57 +1030
+
+opus (1.1~rc+20131128-1) unstable; urgency=low
+
+  * Fixes the EDSP asm for ARMv5TE.
+  * Uses the actually intended NEON code.
+
+ -- Ron Lee <ron@debian.org>  Thu, 28 Nov 2013 04:30:46 +1030
+
+opus (1.1~rc-1) unstable; urgency=low
+
+  * Adds the new packet padding API and OPUS_SET_PREDICTION_DISABLED ctl.
+  * Supports the SET_MAX_BANDWIDTH ctl for multstream encoders too.
+  * Many improvements to surround encoding.
+  * More asm optimisation for ARM, and speed ups for other CPUs.
+  * Many fixes for oddball corner cases, and improvements to calibration.
+
+ -- Ron Lee <ron@debian.org>  Tue, 26 Nov 2013 21:46:41 +1030
+
+opus (1.1~beta-4) unstable; urgency=low
+
+  * Revert bogus NMU.
+
+ -- Ron Lee <ron@debian.org>  Mon, 18 Nov 2013 06:26:21 +1030
+
+opus (1.1~beta-3) unstable; urgency=low
+
+  * Bump shlibs for the surround API.
+
+ -- Ron Lee <ron@debian.org>  Sun, 14 Jul 2013 01:02:28 +0930
+
+opus (1.1~beta-2) unstable; urgency=low
+
+  * Rebuild with the correct package_version indicated.
+
+ -- Ron Lee <ron@debian.org>  Sat, 13 Jul 2013 02:49:49 +0930
+
+opus (1.1~beta-1) unstable; urgency=low
+
+  * Adds the new surround API.
+  * Many encoder improvements, better tonality and speech/music probability
+    estimation, temporal VBR, surround masking, numerous speed optimisations.
+
+ -- Ron Lee <ron@debian.org>  Sat, 13 Jul 2013 01:54:14 +0930
+
+opus (1.1~alpha+20130512-1) unstable; urgency=low
+
+  * Preview snapshot of the 1.1 release.  Mostly to give people who need some
+    of the newer API functions for their own projects something to play with
+    while we finalise the rest of what is planned for this one.
+    The encoder should perform better (both for quality and bitrate) than the
+    1.0.x releases, but please do report any regressions you find upstream
+    so that they can be fixed.
+
+ -- Ron Lee <ron@debian.org>  Sun, 12 May 2013 16:33:52 +0930
+
+opus (1.0.1-1) experimental; urgency=low
+
+  * The RFC 6716 release.
+  * Cherry pick be0d8c5ee1 to fix the build system breakage from -rc3.
+  * Add the stack protector flags to /rules which got dropped from the
+    upstream build system in -rc3 too.
+  * Pushed to experimental for the new libav which needs the gain ctls.
+    Closes: #690563
+
+ -- Ron Lee <ron@debian.org>  Thu, 18 Oct 2012 10:38:53 +1030
+
+opus (0.9.14+20120615-1) unstable; urgency=low
+
+  * Add extern "C" protection to opus_multistream.h.
+  * Warn about unused returns and NULL arguments for functions where that would
+    always be an error in the calling code.
+  * Clearly mark fixed point builds in the internal versioning.
+  * Better documentation.
+  * Suggest opus-tools.
+
+ -- Ron Lee <ron@debian.org>  Fri, 15 Jun 2012 11:58:27 +0930
+
+opus (0.9.14+20120521-2) unstable; urgency=low
+
+  * Build the fixed point version for arm(el) and mips(el).
+    Fixes the unit test timeout seen on the mips buildd.
+  * Add some extra 'hardening' flags to those upstream uses already.
+
+ -- Ron Lee <ron@debian.org>  Wed, 23 May 2012 12:49:50 +0930
+
+opus (0.9.14+20120521-1) unstable; urgency=low
+
+  * Opus draft-14 release testing.
+  * This one's for Sid.  Closes: #610980
+
+ -- Ron Lee <ron@debian.org>  Mon, 21 May 2012 06:24:33 +0930
+
+opus (0.9.8-1) experimental; urgency=low
+
+  * Opus draft-10 release testing.
+
+ -- Ron Lee <ron@debian.org>  Wed, 02 Nov 2011 22:55:51 +1030
+
+opus (0.9.4-1) experimental; urgency=low
+
+  * Initial (re)release as Opus.  Closes: #610980
+
+ -- Ron Lee <ron@debian.org>  Sat, 30 Apr 2011 18:31:33 +0930
+
+celt (0.7.1-1) unstable; urgency=low
+
+  * The "correlation does not imply causation" release.
+    To celebrate the first release of celt that is actually compatible with a
+    a previously distributed version, we've renamed the library!
+  * libcelt is now libcelt0.  The intent from upstream being to make it clear
+    that one of the above was an accident, and unlikely to be repeated soon.
+    On the bright side, this means we should be getting proper soname bumps
+    from now on when the code ABI changes.  The bitstream format still remains
+    entirely fluid though, applications which communicate with a peer _must_
+    check that the formats are compatible at runtime.  It may, and indeed is
+    very likely to, continue changing with every release.
+  * By some small miracle, this should be an entirely painless transition
+    though.  The new package doesn't conflict with the existing one, and all
+    rdeps except mumble will switch to the new package with a binNMU, but not
+    be broken in the meantime.  They use the .pc file provided, and have been
+    build tested.  The mumble package is waiting on this one before it can work
+    properly anyway, so a fix for that is just waiting for this to get through
+    the NEW queue first now.
+  * The new PLC is reported to be working Really Well.
+
+ -- Ron Lee <ron@debian.org>  Wed, 20 Jan 2010 18:31:33 +1030
+
+celt (0.7.0-1) unstable; urgency=low
+
+  * Another day, another bitstream format.  Closes: #554559
+  * Drop the IETF drafts for now.  Better to leave worrying about the
+    paperwork for this until we have some documents that aren't actually
+    supposed to expire in less than the life of a distro release.
+    Closes: #538990 for now.  If you really need to reference them, then
+    you should probably be tracking git anyhow, as they should be changing
+    while the codec evolves too.
+
+ -- Ron Lee <ron@debian.org>  Sat, 07 Nov 2009 17:48:35 +1030
+
+celt (0.6.1-1) unstable; urgency=low
+
+  * New upstream release.  Closes: #511163
+
+ -- Ron Lee <ron@debian.org>  Sun, 26 Jul 2009 05:16:42 +0930
+
+celt (0.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ron Lee <ron@debian.org>  Sat, 26 Jul 2008 23:21:35 +0930
+
+celt (0.3.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ron Lee <ron@debian.org>  Sat, 17 May 2008 04:31:42 +0930
+
+celt (0.3.0-1) unstable; urgency=low
+
+  * Initial release.  Closes: #474392
+
+ -- Ron Lee <ron@debian.org>  Sat, 05 Apr 2008 03:07:18 +0930

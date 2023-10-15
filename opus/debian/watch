@@ -1,0 +1,4 @@
+# Use uscan to check for newer upstream releases
+version=4
+opts="dversionmangle=auto" \
+   https://downloads.xiph.org/releases/opus/ @PACKAGE@-@ANY_VERSION@@ARCHIVE_EXT@

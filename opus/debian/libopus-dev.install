@@ -1,0 +1,5 @@
+usr/include/opus/*
+usr/lib/*/lib*.a
+usr/lib/*/lib*.so
+usr/lib/*/pkgconfig/*.pc
+usr/share/aclocal/*.m4

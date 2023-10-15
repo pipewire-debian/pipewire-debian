@@ -1,0 +1,69 @@
+#!/usr/bin/make -f
+# © 2003-2018, Ron Lee
+# © 2022-2023, IOhannes m zmölnig
+
+#export DH_VERBOSE=1
+export DH_OPTIONS
+
+
+EXTRA_CONFIG_FLAGS = --enable-custom-modes
+
+## We don't need to add this here either anymore, the upstream build system will
+## also use -fstack-protector-strong where it is supported.
+##
+##ifneq (,$(filter-out alpha hppa arm, $(DEB_HOST_ARCH)))
+##	HARD_CFLAGS += -fstack-protector --param ssp-buffer-size=4
+##endif
+#ifneq (,$(filter-out ia64 hppa avr32, $(DEB_HOST_ARCH)))
+#	HARD_LDFLAGS += -Wl,-z,relro
+#endif
+#
+## Keep dpkg-buildpackage the hell out of messing with our compile flags,
+## we should trust upstream to know better than it what to use here.
+## We explicitly re-add -g and -O2 here, since by explicitly overriding
+## these variables, we otherwise disable autoconf adding them by default.
+#CPPFLAGS = $(HARD_CPPFLAGS)
+#CFLAGS   = $(HARD_CFLAGS) -g -O2
+#CXXFLAGS = $(HARD_CFLAGS) -g -O2
+#LDFLAGS  = $(HARD_LDFLAGS)
+#
+#
+#ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+#	CFLAGS = -g -O0
+#endif
+#ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+#	INSTALL_PROGRAM += -s
+#endif
+#ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
+#	BUILD_TARGET = check-opus
+#else
+#	BUILD_TARGET = opus
+#endif
+
+
+ifneq (,$(filter arm armel mips mipsel, $(DEB_HOST_ARCH)))
+	EXTRA_CONFIG_FLAGS += --enable-fixed-point
+endif
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		$(EXTRA_CONFIG_FLAGS)
+
+override_dh_strip:
+	dh_strip --dbgsym-migration="libopus-dbg (<< 1.3.1-1~)"
+
+
+DEB_COPYRIGHT_CHECK_IGNORE_REGEX = \
+        debian/.*
+# licensecheck v1
+.PHONY: licensecheck
+licensecheck:
+	LANG=C.UTF-8 licensecheck \
+		-i "^($(DEB_COPYRIGHT_CHECK_IGNORE_REGEX))$$" \
+		--check '.*' --recursive --deb-machine --lines 0 * \
+		> debian/copyright_newhints
+	cmp debian/copyright_hints debian/copyright_newhints \
+		&& rm debian/copyright_newhints
