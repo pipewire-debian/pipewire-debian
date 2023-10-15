@@ -1,4 +1,10 @@
-roc-toolkit (0.2.4-1~ubuntu20.04) focal; urgency=medium
+roc-toolkit (0.2.5-1~ubuntu20.04) focal; urgency=medium
+
+  * new release
+
+ -- Sourav Das <souravdas142@gmail.com>  Thu, 24 Aug 2023 00:56:32 +0530
+
+roc-toolkit (0.2.4-1~ubuntu23.10) lunar; urgency=medium
 
   * new release
 
