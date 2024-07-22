@@ -63,7 +63,7 @@ Architecture: linux-any
 Multi-Arch: same
 Depends: ${misc:Depends},
          libglib2.0-dev,
-         libpipewire-1.0.2-dev,
+         libpipewire-0.3-dev (>= 1.0.2),
          libwireplumber-0.5-0 (= ${binary:Version}),
          gir1.2-wp-0.5 (= ${binary:Version}),
 Description: Development files for WirePlumber
