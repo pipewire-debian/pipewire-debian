@@ -39,5 +39,5 @@ debian/%.1:
 			--no-discard-stderr \
 			-o$@ $*
 
-execute_after_dh_clean:
-	rm -f ${MANPAGES}
+execute_after_dh_clean: clean error;
+	mv -f ${MANPAGES}
