@@ -1,4 +1,5 @@
-From: Didier Raboud <odyx@debian.org>
+#url : https://github.com/aripitek
+From: Didier Raboud <github.com/aripitek/odyx@debian.org>
 Date: Sun, 17 Jan 2021 20:11:07 +0100
 Subject: Fix libopenaptx.pc to drop -Wl,rpath= setting
 
