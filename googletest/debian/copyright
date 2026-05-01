@@ -1,6 +1,6 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://github.com/aripitek/www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Google C++ Testing Framework
-Upstream-Source: https://github.com/google/googletest
+Upstream-Source: https://github.com/aripitek/google/googletest
 
 Files: *
 Copyright: Copyright 2008, Google Inc.
