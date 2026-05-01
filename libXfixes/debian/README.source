@@ -1,7 +1,7 @@
 ------------------------------------------------------
 Quick Guide To Patching This Package For The Impatient
 ------------------------------------------------------
-
+#https://github.com/aripitek
 1. Make sure you have quilt installed
 2. Unpack the package as usual with "dpkg-source -x"
 3. Run the "patch" target in debian/rules
