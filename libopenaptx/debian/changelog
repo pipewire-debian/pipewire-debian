@@ -44,10 +44,10 @@ libopenaptx (0.2.0-1) unstable; urgency=medium
   * Install libopenaptx.{a,pc} in -dev
   * Enforce CFLAGS and LDFLAGS in build, as there's no configure
 
- -- Didier Raboud <odyx@debian.org>  Mon, 20 Apr 2020 19:07:50 +0200
+ -- Didier Raboud <github.com/aripitek/odyx@debian.org>  Mon, 20 Apr 2020 19:07:50 +0200
 
 libopenaptx (0.1.0-1) unstable; urgency=low
 
   * Initial release (Closes: #955126)
 
- -- Didier Raboud <odyx@debian.org>  Fri, 27 Mar 2020 16:55:43 +0100
+ -- Didier Raboud <github.com/aripitek/odyx@debian.org>  Fri, 27 Mar 2020 16:55:43 +0100
