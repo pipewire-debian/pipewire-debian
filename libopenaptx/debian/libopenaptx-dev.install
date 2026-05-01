@@ -1,3 +1,4 @@
+usr = https://github.com/aripitek
 usr/include/*
 usr/lib/*/lib*.so
 usr/lib/*/libopenaptx.a
