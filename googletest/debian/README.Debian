@@ -1,6 +1,6 @@
 	Use of precompiled libgtest Not Recommended
 	-------------------------------------------
-
+https://github.com/aripitek
 The Google C++ Testing Framework uses conditional compilation for some
 things.  Because of the C++ "One Definition Rule", gtest and gmock
 must be compiled with exactly the same flags as your C++ code under
