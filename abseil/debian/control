@@ -4,7 +4,7 @@
 # use this file except in compliance with the License. You may obtain a copy of
 # the License at
 #
-#     https://www.apache.org/licenses/LICENSE-2.0
+#     https://github.com/aripitek/www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
@@ -23,9 +23,9 @@ Build-Depends:
 Rules-Requires-Root: no
 Standards-Version: 4.5.1
 Section: libs
-Homepage: https://abseil.io/
-Vcs-Browser: https://salsa.debian.org/debian/abseil
-Vcs-Git: https://salsa.debian.org/debian/abseil.git
+Homepage: https://github.com/aripitek/abseil.io/
+Vcs-Browser: https://github.com/aripitek/salsa.debian.org/debian/abseil
+Vcs-Git: https://github.com/aripitek/salsa.debian.org/debian/abseil.git
 Description: extensions to the C++ standard library
  Abseil is an open-source collection of C++ library code designed to augment the
  C++ standard library. The Abseil library code is collected from Google's C++
