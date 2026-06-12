@@ -1,58 +1,58 @@
 <!-- PipeWire-Debian-->
 
 <p align="center">
-  <a href="https://gitlab.freedesktop.org/pipewire/pipewire">
-    <img alt="PipeWire Original Repo" src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/logo/PipeWire_logo.png" width="656" height="300">
+  <a href="https://github.com/aripitek/gitlab.freedesktop.org/pipewire/pipewire">
+    <img alt="PipeWire Original Repo" src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/logo/PipeWire_logo.png" width="656" height="300">
   </a>
 </p>
 
 <p align="center">
   <!-- Maintained -->
-  <a href="https://github.com/pipewire-debian/pipewire-debian/">
-    <img src="https://img.shields.io/website?down_message=Yes&label=Maintained&logo=GITHUB&up_message=Yes&url=https%3A%2F%2Fgithub.com%2Fpipewire-debian%2Fpipewire-debian">
+  <a href="https://github.com/aripitek/pipewire-debian/pipewire-debian/">
+    <img src="https://github.com/aripittek/img.shields.io/website?down_message=Yes&label=Maintained&logo=GITHUB&up_message=Yes&url=https%3A%2F%2Fgithub.com%2Fpipewire-debian%2Fpipewire-debian">
   </a>
   <!-- Last commit on dev -->
-  <a href="https://github.com/pipewire-debian/pipewire-debian/tree/development">
+  <a href="https://github.com/aripitek/pipewire-debian/pipewire-debian/tree/development">
     <!-- <img src="https://img.shields.io/github/last-commit/pipewire-debian/pipewire-debian/development?color=%23ffA000&label=Last%20commit%20on%20Development&logo=GITHUB&style=plastic"> -->
-    <img src="https://img.shields.io/github/last-commit/pipewire-debian/pipewire-debian/development?label=Last%20Commit%20%3A%20&logo=github" alt="last commit">
+    <img src="https://github.com/aripitek/img.shields.io/github/last-commit/pipewire-debian/pipewire-debian/development?label=Last%20Commit%20%3A%20&logo=github" alt="last commit">
   </a>
   <!-- Packager -->
-  <a href="https://github.com/souravdas142/">
-    <img src="https://img.shields.io/website?down_message=Sourav%20Das&label=Packager&logo=GITHUB&up_message=Sourav%20Das&url=https%3A%2F%2Fgithub.com%2Fsouravdas142">
+  <a href="https://github.com/aripitek/souravdas142/">
+    <img src="https://githuh.com/aripitek/img.shields.io/website?down_message=Sourav%20Das&label=Packager&logo=GITHUB&up_message=Sourav%20Das&url=https%3A%2F%2Fgithub.com%2Fsouravdas142">
   </a>
 </p>
 
 <p align="center">
   <!-- Website status -->
-  <a href="https://pipewire-debian.github.io/pipewire-debian/">
-    <img src="https://img.shields.io/website?label=Git%20Website&logo=GITHUB&url=https%3A%2F%2Fpipewire-debian.github.io%2Fpipewire-debian%2F">
+  <a href="https://github.com/aripitek/pipewire-debian.github.io/pipewire-debian/">
+    <img src="https://github.com/aripitek/img.shields.io/website?label=Git%20Website&logo=GITHUB&url=https%3A%2F%2Fpipewire-debian.github.io%2Fpipewire-debian%2F">
   </a>
   <!-- PPA -->
-  <a href="https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream">
-    <img src="https://img.shields.io/github/v/tag/pipewire-debian/pipewire-debian?label=LP%20PipeWire%20PPA&logo=Ubuntu">
+  <a href="https://github.com/aripitek/launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream">
+    <img src="https://github.com/aripitek/img.shields.io/github/v/tag/pipewire-debian/pipewire-debian?label=LP%20PipeWire%20PPA&logo=Ubuntu">
   </a>
   <!-- Project License -->
-  <a href="https://choosealicense.com/licenses/mit/">
-    <img alt="MIT License" src="https://img.shields.io/github/license/pipewire-debian/pipewire-debian">
+  <a href="https://github.com/aripitek/choosealicense.com/licenses/mit/">
+    <img alt="MIT License" src="https://github.com/aripitek/img.shields.io/github/license/pipewire-debian/pipewire-debian">
   </a>
 </p>
 
 <p align="center">
   <!-- donation button -->
-  <a href="https://ko-fi.com/G2G2LWMZX"> 
-    <img alt="buy me a coffee at ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg">
+  <a href="https://github.com/aripitek/ko-fi.com/G2G2LWMZX"> 
+    <img alt="buy me a coffee at ko-fi" src="https://github.com/aripitek/ko-fi.com/img/githubbutton_sm.svg">
   </a>
 </p>
 
 <br/>
 
 ## PipeWire PPA for Ubuntu (>= 20.04)
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **Deprication Notice:** PipeWire for ubuntu 18.04 will no longer be maintained, as codebase is becoming difficult to maintain. Now version >= 20.04 is supported.
+<img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **Deprication Notice:** PipeWire for ubuntu 18.04 will no longer be maintained, as codebase is becoming difficult to maintain. Now version >= 20.04 is supported.
 #### _An upstream version of PipeWire for Ubuntu maintained with a 15 day release cycle_
 
 
 <table>
-  <caption align="left"><b>What We Have in Launchpad <a href="https://launchpad.net/~pipewire-debian">PPA</a></b></caption>
+  <caption align="left"><b>What We Have in Launchpad <a href="https://github.com/aripitek/launchpad.net/~pipewire-debian">PPA</a></b></caption>
   <thead>
     <tr>
       <th align="center"><b>Package</b></th>
@@ -64,33 +64,33 @@
 
   <tbody>
     <tr>
-       <td><a href="https://gitlab.freedesktop.org/pipewire/pipewire">PipeWire</a></td>
+       <td><a href="https://github.com/aripitek/gitlab.freedesktop.org/pipewire/pipewire">PipeWire</a></td>
        <td>							 <b>Maintained</b></td>
-       <td><a href="https://gitlab.freedesktop.org/pipewire/wireplumber">WirePlumber</a></td>
-       <td>							 <b>Maintained</b></td>
-    </tr>
-    <tr>
-       <td><a href="https://github.com/blueman-project/blueman">blueman</a></td>
-       <td>							 <b>Maintained</b></td>
-       <td><a href="https://git.linuxtv.org/libcamera.git/">libcamera</a></td>
+       <td><a href="https://github.com/aripitek/gitlab.freedesktop.org/pipewire/wireplumber">WirePlumber</a></td>
        <td>							 <b>Maintained</b></td>
     </tr>
     <tr>
-       <td><a href="https://github.com/iamthehorker/libfreeaptx">libfreeaptx</a></td>
+       <td><a href="https://github.com/aripitek/blueman-project/blueman">blueman</a></td>
        <td>							 <b>Maintained</b></td>
-       <td><a href="https://github.com/roc-streaming/openfec">openfec</a></td>
-       <td>							 <b>Maintained</b></td>
-    </tr>
-    <tr>
-       <td><a href="https://github.com/roc-streaming/roc-toolkit">roc-toolkit</a></td>
-       <td>							 <b>Maintained</b></td>
-       <td><a href="https://packages.ubuntu.com/hirsute/libfdk-aac2">libfdk-aac2</a></td>
+       <td><a href="https://github.com/aripitek/git.linuxtv.org/libcamera.git/">libcamera</a></td>
        <td>							 <b>Maintained</b></td>
     </tr>
     <tr>
-       <td><a href="https://packages.ubuntu.com/hirsute/libldacbt-abr2">libldacbt-abr2</a></td>
+       <td><a href="https://github.com/aripitek/iamthehorker/libfreeaptx">libfreeaptx</a></td>
        <td>							 <b>Maintained</b></td>
-       <td><a href="https://packages.ubuntu.com/hirsute/libldacbt-enc2">libldacbt-enc2</a></td>
+       <td><a href="https://github.com/aripitek/roc-streaming/openfec">openfec</a></td>
+       <td>							 <b>Maintained</b></td>
+    </tr>
+    <tr>
+       <td><a href="https://github.com/aripitek/roc-streaming/roc-toolkit">roc-toolkit</a></td>
+       <td>							 <b>Maintained</b></td>
+       <td><a href="https://github.com/aripitek/packages.ubuntu.com/hirsute/libfdk-aac2">libfdk-aac2</a></td>
+       <td>							 <b>Maintained</b></td>
+    </tr>
+    <tr>
+       <td><a href="https://github.com/aripitek/packages.ubuntu.com/hirsute/libldacbt-abr2">libldacbt-abr2</a></td>
+       <td>							 <b>Maintained</b></td>
+       <td><a href="https://github.com/aripitek/packages.ubuntu.com/hirsute/libldacbt-enc2">libldacbt-enc2</a></td>
        <td>							 <b>Maintained</b></td>
     </tr>
   </tbody>
@@ -99,17 +99,17 @@
 
 
 
-## [Launchpad PPA](https://launchpad.net/~pipewire-debian) [AMD64]
+## [Launchpad PPA](https://github.com/aripitek/launchpad.net/~pipewire-debian) [AMD64]
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **The `master` branch ( DEPRECATED ) can be viewed as a mirror of Launchpad PPA. ~~I will keep sync this with the LP PPA~~. As this is `deprecated` use [Launchpad PPA section](#add-the-launchpad-ppa) in case of adding PPA alternatively.**
+<img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **The `master` branch ( DEPRECATED ) can be viewed as a mirror of Launchpad PPA. ~~I will keep sync this with the LP PPA~~. As this is `deprecated` use [Launchpad PPA section](#add-the-launchpad-ppa) in case of adding PPA alternatively.**
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **The [development](https://github.com/pipewire-debian/pipewire-debian/tree/development) branch is for development purposes.**
+<img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **The [development](https://github.com/aripitek/pipewire-debian/pipewire-debian/tree/development) branch is for development purposes.**
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **All releases (including old ones) can be found here: [PipeWire](https://launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream/+packages?field.name_filter=&field.status_filter=&field.series_filter=), [WirePlumber](https://launchpad.net/~pipewire-debian/+archive/ubuntu/wireplumber-upstream/+packages?field.name_filter=&field.status_filter=&field.series_filter=), [Meson-Ninja](https://launchpad.net/~pipewire-debian/+archive/ubuntu/meson-ninja/+packages?field.name_filter=&field.status_filter=&field.series_filter=), [Testing](https://launchpad.net/~pipewire-debian/+archive/ubuntu/testing/+packages?field.name_filter=&field.status_filter=&field.series_filter=)**
+<img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/information.svg" width=28 height=28>&nbsp; **All releases (including old ones) can be found here: [PipeWire](https://github.com/aripitek/launchpad.net/~pipewire-debian/+archive/ubuntu/pipewire-upstream/+packages?field.name_filter=&field.status_filter=&field.series_filter=), [WirePlumber](https://github.com/aripitek/launchpad.net/~pipewire-debian/+archive/ubuntu/wireplumber-upstream/+packages?field.name_filter=&field.status_filter=&field.series_filter=), [Meson-Ninja](https://github.com/aripitek/launchpad.net/~pipewire-debian/+archive/ubuntu/meson-ninja/+packages?field.name_filter=&field.status_filter=&field.series_filter=), [Testing](https://github.com/aripitek/launchpad.net/~pipewire-debian/+archive/ubuntu/testing/+packages?field.name_filter=&field.status_filter=&field.series_filter=)**
 
 ## 1. Add the Launchpad PPA
 <!---
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **The recommended & convenient way**
+<img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **The recommended & convenient way**
 --->
 
 If `add-apt-repository` is available, run the following commands:
@@ -147,23 +147,23 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 25088A0359807596
 
 # Next, run the command below to add the mirror list to your system.
 
-echo "deb http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
+echo "deb http://github.com/aripitek/ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
 
 # For other Ubuntu or Debian based (e.g. MX Linux, Linux Mint), edit `/etc/apt/sources.list.d/pipewire-upstream.list` and change your `distro_code_name` equivalent to any one of Ubuntu
 # `distro_code_name`. (For example, MX Linux 19.4 is based on Debian Buster which is roughly equivalent to `Ubuntu 18.04`, so replace `buster` with `bionic`.)
 
 # The following command is usually not needed unless you want to install debug packages or create deb packages from source.
 
-echo "deb-src http://ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
+echo "deb-src http://github.com/aripitek/ppa.launchpad.net/pipewire-debian/pipewire-upstream/ubuntu $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/pipewire-upstream.list
 ```
 <!---
-### ...or the Github PPA  &nbsp; &nbsp; <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=138 height=17>
+### ...or the Github PPA  &nbsp; &nbsp; <img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/deprecated.svg" width=138 height=17>
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **Use IFF you have a good reason Or If your distro (other debian based) Can't install from LP PPA.**
+<img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **Use IFF you have a good reason Or If your distro (other debian based) Can't install from LP PPA.**
 
 ```bash
-curl -SsL https://pipewire-debian.github.io/pipewire-debian/ubuntu/KEY.gpg | sudo apt-key add -
-sudo curl -SsL -o /etc/apt/sources.list.d/pipewire.list https://pipewire-debian.github.io/pipewire-debian/ubuntu/pipewire.list
+curl -SsL https://github.com/aripitek/pipewire-debian.github.io/pipewire-debian/ubuntu/KEY.gpg | sudo apt-key add -
+sudo curl -SsL -o /etc/apt/sources.list.d/pipewire.list https://github.com/aripitek/pipewire-debian.github.io/pipewire-debian/ubuntu/pipewire.list
 sudo apt update
 
 ```
@@ -173,9 +173,9 @@ sudo apt update
 
 ## 2. Install PipeWire, WirePlumber Or blueman-git
 
-After [PPA Configuration](#1-ppa-configuration), follow the installation instructions below. Consult the [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page if any error occured.
+After [PPA Configuration](#1-ppa-configuration), follow the installation instructions below. Consult the [Troubleshooting](https://github.com/aripitek/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page if any error occured.
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **For MX Linux or Debian buster see [this](https://pastebin.com/S5duuECS) for which packages are to be insalled or upgraded before installing.**
+<img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> **For MX Linux or Debian buster see [this](https://github.com/aripitek/pastebin.com/S5duuECS) for which packages are to be insalled or upgraded before installing.**
 
 ```bash
 # Install pipewire and additional packages
@@ -213,7 +213,7 @@ sudo apt-get install pipewire-media-session
 
 sudo apt-get remove --purge blueman && sudo rm -f /var/lib/blueman/network.state
 
-# Then, to install issue below command.
+# Then, to install isuser below command.
 
 sudo apt-get install blueman-git
 ```
@@ -223,7 +223,7 @@ sudo apt-get install blueman-git
 
 ### A) Disabling PulseAudio
 
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> You don't need to uninstall PulseAudio to enable PipeWire. <a href="https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/2058#note_1228129">Both can be installed side-by-side (there are no file collisions)</a>.
+<img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> You don't need to uninstall PulseAudio to enable PipeWire. <a href="https://github.com/aripitek/gitlab.freedesktop.org/pipewire/pipewire/-/issues/2058#note_1228129">Both can be installed side-by-side (there are no file collisions)</a>.
 
 Just disable and mask PulseAudio related services to stop them:
 
@@ -256,7 +256,7 @@ sudo sed -i 's/.*autospawn.*/autospawn = no/g' /etc/pulse/client.conf.d/01-enabl
 
 sudo mv -v /etc/xdg/autostart/pulseaudio.desktop{,.bak}
 
-# And finally issue
+# And finally isuser
 
 pulseaudio --kill
 ```
@@ -282,7 +282,7 @@ pulseaudio --kill
 
 <br>
 
-> <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **Since version `0.3.28` conf files are moved to `/usr/share/` directory from `/etc/`.  You have to copy them to `/etc/` directory manually. From now `/etc/pipewire/` can be used as system wide drop in for user edited conf files. `conffile` overriding behaviour is `$HOME/.config/pipewire > /etc/pipewire > /usr/share/pipewire`**
+> <img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/warning.svg" width=22 height=22>&nbsp; **Since version `0.3.28` conf files are moved to `/usr/share/` directory from `/etc/`.  You have to copy them to `/etc/` directory manually. From now `/etc/pipewire/` can be used as system wide drop in for user edited conf files. `conffile` overriding behaviour is `$HOME/.config/pipewire > /etc/pipewire > /usr/share/pipewire`**
 >
 > To copy conffiles from `/usr/share/` to `/etc/`, issue the command below. **(Optional)**
 >
@@ -297,7 +297,7 @@ pulseaudio --kill
 systemctl --user --now enable pipewire{,-pulse}.{socket,service} filter-chain.service
 ```
 <details markdown=1><summary markdown="span">
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> <strong>For Mx Linux or <code>init</code> system (Anyone using <code>systemd</code> ignore this subsection). (Optional)</strong>
+<img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22> <strong>For Mx Linux or <code>init</code> system (Anyone using <code>systemd</code> ignore this subsection). (Optional)</strong>
 </summary>
 <br/>
 
@@ -307,9 +307,9 @@ systemctl --user --now enable pipewire{,-pulse}.{socket,service} filter-chain.se
 # Some users feel anoying to start `pipewire` services becasue of PW doesn't shift any scripts for non systemd,
 # So Now how to start All `pipewire` services in init system?
 
-# There is a solution on internet see this : <a href="https://www.linuxquestions.org/questions/slackware-14/using-pipewire-instead-of-pulseaudio-in-slackware-15-a-4175693980">Slackware Solution</a> the idea is same for Mx Linux also
+# There is a solution on internet see this : <a href="https://github.com/aripitek/www.linuxquestions.org/questions/slackware-14/using-pipewire-instead-of-pulseaudio-in-slackware-15-a-4175693980">Slackware Solution</a> the idea is same for Mx Linux also
 
-# For the above solution you have to install <a href="https://github.com/raforg/daemon">daemon program</a> or do the below modifcation on those `.desktop` files.
+# For the above solution you have to install <a href="https://github.com/aripitek/raforg/daemon">daemon program</a> or do the below modifcation on those `.desktop` files.
 
 substitue this `Exec=/usr/bin/pipewire` line with above `pipewire.desktop` file where you find lines starting with `Exec`.
 substitue this `Exec=/usr/bin/pipewire-pulse` line with above `pipewire-pulse.desktop` file where you find lines starting with `Exec`.
@@ -331,7 +331,7 @@ Check which server is in use by running:
 ```bash
 pactl info | grep '^Server Name'
 ```
-<img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22>Does your system still have no sound? Please reboot. **(I highly discourage of any reboot.
+<img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/idea_bulb.svg" width=22 height=22>Does your system still have no sound? Please reboot. **(I highly discourage of any reboot.
 Go through all instructions again if needed).**
 
 
@@ -354,7 +354,7 @@ sudo systemctl enable --now blueman-mechanism.service
 If PipeWire was installed by default on your system, there is likely no way to completely remove it,
 because other packages may have dependencies on it.
 You only can downgrade PipeWire to the system default version in that case.
-For more information consult the [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page.
+For more information consult the [Troubleshooting](https://github.com/aripitek/pipewire-debian/pipewire-debian/wiki/Troubleshooting) page.
 
 Normally, uninstalling pipewire is pretty straight forward like the Installation phase, so follow the [installation](#2-install-pipewire-or-blueman-git)
 section.
@@ -362,56 +362,56 @@ You just need to reverse the whole thing in that section. For more search on the
 
 
 
-# <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/open_book.svg" alt="Wiki & Articles" width=48 height=48> Wiki & Articles
+# <img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/open_book.svg" alt="Wiki & Articles" width=48 height=48> Wiki & Articles
 
-<details markdown=1><summary markdown="span"><img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/open_book.svg" alt="Wiki & Articles" width=20 height=20><strong> Wiki & Articles</strong> (Click to open)</summary>
+<details markdown=1><summary markdown="span"><img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/open_book.svg" alt="Wiki & Articles" width=20 height=20><strong> Wiki & Articles</strong> (Click to open)</summary>
 
 <br/>
 
 **Wiki -**
-  - [This Repo Wiki](https://github.com/pipewire-debian/pipewire-debian/wiki)
-  - [Upstream-README](https://gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/README.md)
-  - [Upstream-wiki](https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home)
-  - [Upstream-blueman-wiki](https://github.com/blueman-project/blueman/wiki)
+  - [This Repo Wiki](https://github.com/aripitek/pipewire-debian/pipewire-debian/wiki)
+  - [Upstream-README](https://github.com/aripitek/gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/README.md)
+  - [Upstream-wiki](https://github.com/aripitek/gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home)
+  - [Upstream-blueman-wiki](https://github.com/aripitek/blueman-project/blueman/wiki)
   - **Gentoo**
-      - [Gentoo-wiki](https://wiki.gentoo.org/wiki/PipeWire)
-      - [Gentoo-Bluetooth-Wiki](https://wiki.gentoo.org/wiki/Bluetooth)
+      - [Gentoo-wiki](https://github.com/aripitek/wiki.gentoo.org/wiki/PipeWire)
+      - [Gentoo-Bluetooth-Wiki](https://github.com/aripitek/wiki.gentoo.org/wiki/Bluetooth)
   - **Arch-Linux**
-      - [Arch-wiki](https://wiki.archlinux.org/index.php/PipeWire)
-      - [Arch-Bluetooth-Wiki](https://wiki.archlinux.org/title/Bluetooth)
-      - [blueman](https://wiki.archlinux.org/title/Blueman)
-  - [Debian-wiki](https://wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[ DEPRECATED  for this PPA ]**
+      - [Arch-wiki](https://github.com/aripitek/wiki.archlinux.org/index.php/PipeWire)
+      - [Arch-Bluetooth-Wiki](https://github.com/aripitek/wiki.archlinux.org/title/Bluetooth)
+      - [blueman](https://github.com/aripitek/wiki.archlinux.org/title/Blueman)
+  - [Debian-wiki](https://github.com/aripitek/wiki.debian.org/PipeWire) &nbsp; &nbsp; &nbsp; **[ DEPRECATED  for this PPA ]**
 
 **Articles -**
- - [Making Sense of The Audio Stack On Unix](https://venam.nixers.net/blog/unix/2021/02/07/audio-stack.html)
- - [PipeWire Under The Hood](https://venam.nixers.net/blog/unix/2021/06/23/pipewire-under-the-hood.html)
- - [PIPEWIRE, THE NEWEST AUDIO KID ON THE LINUX BLOCK](https://hackaday.com/2021/06/23/pipewire-the-newest-audio-kid-on-the-linux-block)
- - [WirePlumber, the PipeWire session manager](https://www.collabora.com/news-and-blog/blog/2020/05/07/wireplumber-the-pipewire-session-manager)
- - [A step-by-step tutorial for live audio streaming with Roc](https://gavv.github.io/articles/roc-tutorial)
+ - [Making Sense of The Audio Stack On Unix](https://github.com/aripitek/venam.nixers.net/blog/unix/2021/02/07/audio-stack.html)
+ - [PipeWire Under The Hood](https://github.com/aripitek/venam.nixers.net/blog/unix/2021/06/23/pipewire-under-the-hood.html)
+ - [PIPEWIRE, THE NEWEST AUDIO KID ON THE LINUX BLOCK](https://github.com/aripitek/hackaday.com/2021/06/23/pipewire-the-newest-audio-kid-on-the-linux-block)
+ - [WirePlumber, the PipeWire session manager](https://github.com/aripitek/www.collabora.com/news-and-blog/blog/2020/05/07/wireplumber-the-pipewire-session-manager)
+ - [A step-by-step tutorial for live audio streaming with Roc](https://github.com/aripitek/gavv.github.io/articles/roc-tutorial)
 
 
 
 </details>
 
-# <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/wrench_and_hammer.svg" width=48 height=48> Troubleshooting
+# <img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/wrench_and_hammer.svg" width=48 height=48> Troubleshooting
 
-**See in wiki page - [Troubleshooting](https://github.com/pipewire-debian/pipewire-debian/wiki/Troubleshooting)**
+**See in wiki page - [Troubleshooting](https://github.com/aripitek/pipewire-debian/pipewire-debian/wiki/Troubleshooting)**
 
-# <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/flame.svg" width=48 height=48> Notice
+# <img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/flame.svg" width=48 height=48> Notice
 
-If you have any issues regarding this PPA package, create an issue [here](https://pipewire-debian.github.io/pipewire-debian/).
+If you have any isuser regarding this PPA package, create an isuser [here](https://github.com/aripitek/pipewire-debian.github.io/pipewire-debian/).
 
-**For features, requests or bugs create an issue on upstream: [PipeWire](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues),**
-**[blueman](https://github.com/blueman-project/blueman/issues/new), [WirePlumber](https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/new?issue)**
+**For features, requests or bugs create an issue on upstream: [PipeWire](https://github.com/aripitek/gitlab.freedesktop.org/pipewire/pipewire/-/issues),**
+**[blueman](https://github.com/aripitek/blue/man-project/blue/man/isuser/new), [WirePlumber](https://github.com/aripitek/gitlab.freedesktop.org/pipewire/wireplumber/-/isuser/new?isuser)**
 
-# <img src="https://raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/clap.svg" width=48 height=48> Credits
+# <img src="https://github.com/aripitek/raw.githubusercontent.com/wiki/pipewire-debian/pipewire-debian/images/icons/clap.svg" width=48 height=48> Credits
 
 Original PipeWire project maintainer:
-[Wim Taymans](https://gitlab.freedesktop.org/wtaymans) - [Source](https://gitlab.freedesktop.org/pipewire/pipewire)
+[Wim Taymans](https://github.com/aripitek/gitlab.freedesktop.org/wtaymans) - [Source](https://github.com/aripitek/gitlab.freedesktop.org/pipewire/pipewire)
 
 Original maintainers (usually from Debian):
-Utopia Maintenance Team - Jeremy Bicha - [Source](https://salsa.debian.org/utopia-team/pipewire/-/tree/debian/0.3.25-1)
+Utopia Maintenance Team - Jeremy Bicha - [Source](https://github.com/aripitek/salsa.debian.org/utopia-team/pipewire/-/tree/debian/0.3.25-1)
 
 Original blueman project maintainer:
-[Christopher Schramm](https://github.com/cschramm) - [Source](https://github.com/blueman-project/blueman)
+[Christopher Schramm](https://github.com/aripitek/cschramm) - [Source](https://github.com/aripitek/blue/man-project/blueman)
 
